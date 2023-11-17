@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/coverstyles.css') }}">
+    <script src="{{ url_for('static', filename='js/coverscript.js') }}" defer></script>
+    <title>Interactive Intelligence Study Aid</title>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="logo"><a href="#home" style="color: #FFFFFF; text-decoration: none;">Interactive Intelligence Study Aid</a></div>
+        <div class="menu">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('login') }}">Login</a>
+        </div>
+        <div class="dropdown" id="navDropdown">
+            <a class="dropbtn">☰</a>
+            <div class="dropdown-content">
+                <a href="{{ url_for('home') }}">Home</a>
+                <a href="{{ url_for('about') }}">About</a>
+                <a href="{{ url_for('login') }}">Login</a>
+            </div>
+        </div>
+    </div>        
+    <div id="home" class="content" style="background-image: url('https://img.freepik.com/free-photo/learn-learning-education-studying-concept_53876-120493.jpg?w=996&t=st=1697524372~exp=1697524972~hmac=95e59f29dbc39249bb3525adc54e9d2f0205b6b9e2d1035758d86059f77d1cf7');">
+        <div class="text-container">
+            <h1>Welcome to Your Personalized Learning Journey</h1>
+            <p>Master personal finance, calculus, and algorithms with our interactive study aid platform.</p>
+            <a href="#about" class="cta-button">Learn More</a>
+        </div>
+    </div>
+    <div id="about" class="content" style="background-image: url('https://t4.ftcdn.net/jpg/05/61/11/71/240_F_561117157_988B9Ktezw5I5XuZlORWJBngNbL3WcWW.jpg');">
+        <div class="text-container">
+            <h1>About Interactive Study Aid</h1>
+            <p>Our study aid platform is designed to help you excel in personal finance, calculus, and algorithms. We offer a personalized learning experience with interactive lessons, quizzes, and progress tracking.</p>
+            <a href="#subjects" class="cta-button">Let's Get Started</a>
+        </div>
+    </div>
+    <main>
+        <section id="subjects">
+            <h1><center>Choose a Subject to Get Started</center></h1>
+            <div class="subject-card">
+                <img src="https://img.freepik.com/free-vector/programmer-concept-illustration_114360-2284.jpg?w=740&t=st=1697525771~exp=1697526371~hmac=5f1e6d9d2c69e11d50d49211248bf74e3c2c149c2e1884b16e3fa2b3118d829c" alt="Algorithms">
+                <div class="text-container">
+                    <h2>Algorithms</h2>
+                    <p>Master coding algorithms and problem-solving techniques.</p>
+                    <a href="{{ url_for('algorithms') }}" class="cta-button">Start Learning</a>
+                </div>
+            </div>
+            <div class="subject-card">
+                <div class="text-container">
+                    <h2>Personal Finance</h2>
+                    <p>Master money management and financial planning.</p>
+                    <a href="{{ url_for('personalfinance') }}" class="cta-button">Start Learning</a>
+                </div>
+                <br>
+                <img src="https://img.freepik.com/free-vector/revenue-concept-illustration_114360-2803.jpg?w=740&t=st=1697526571~exp=1697527171~hmac=7285598d0e3f4581c565e7e90e16404609ca089d8f3c5d544abc945d255c156a" alt="Personal Finance">
+            </div>
+            <div class="subject-card">
+                <img src="https://img.freepik.com/free-vector/mathematics-concept-illustration_114360-3972.jpg?w=740&t=st=1697526726~exp=1697527326~hmac=6472f4854b5b129683faeafde1a59e0f3b4a2e2591d5015582534553fae8df18" alt="Calculus">
+                <div class="text-container">
+                    <h2>Calculus</h2>
+                    <p>Unlock the secrets of calculus and advanced mathematics.</p>
+                    <a href="{{ url_for('calculus') }}" class="cta-button">Start Learning</a>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
