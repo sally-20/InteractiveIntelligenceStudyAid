@@ -26,7 +26,8 @@
     </div> 
     <div class="form-container">
         <h2><center>Login</center></h2>
-        <form action="/login" method="post">
+        <form action="{{ url_for('login') }}" method="post">
+            {{ form.hidden_tag() }}
             <label for="username"><b>Username</b></label>
             <input type="text" placeholder="Enter Username" name="username" required>
             <label for="password"><b>Password</b></label>
