@@ -240,34 +240,51 @@ document.addEventListener('DOMContentLoaded', function () {
     const inputForm = document.getElementById('input-form');
     const inputField = document.getElementById('input-field');
 
-    inputForm.addEventListener('submit', function (event) {
+    inputForm.addEventListener('submit', async function (event) {
         event.preventDefault();
         const input = inputField.value;
         inputField.value = '';
         const currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: "2-digit" });
-    
         let message = document.createElement('div');
         message.classList.add('chatbot-message', 'user-message');
         message.innerHTML = `<p class="chatbot-text" sentTime="${currentTime}">${input}</p>`;
         conversation.appendChild(message);
+        try {
+            // Use the input to generate chatbot response
+            const response = await generateChatResponse(input);
+            message = document.createElement('div');
+            message.classList.add('chatbot-message', 'chatbot');
+            message.innerHTML = `<p class="chatbot-text" sentTime="${currentTime}">${response}</p>`;
+            conversation.appendChild(message);
+            message.scrollIntoView({ behavior: "smooth" });
+        } catch (error) {
+            console.error(error);
+        }
+    });    
     
-        // Use the input to generate chatbot response
-        const response = generateChatResponse(input);
+    async function generateChatResponse(userInput) {
+        try {
+            const response = await fetch('/chatbot', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams({
+                    'user_input': userInput,
+                }),
+            });
     
-        message = document.createElement('div');
-        message.classList.add('chatbot-message', 'chatbot');
-        message.innerHTML = `<p class="chatbot-text" sentTime="${currentTime}">${response}</p>`;
-        conversation.appendChild(message);
-        message.scrollIntoView({ behavior: "smooth" });
-    });
+            if (!response.ok) {
+                throw new Error('Failed to fetch chatbot response');
+            }
     
-    function generateChatResponse(userInput) {
-        // Call the Python code to generate chatbot response using OpenAI API
-        // You can use AJAX, Fetch API, or other methods to send the user input to the server
-        // and receive the response.
-    
-        // For simplicity, simulate the response using a predefined function
-        return simulateChatbotResponse(userInput);
+            const responseData = await response.json();
+            return responseData.response;
+        } catch (error) {
+            console.error(error);
+            // Handle error appropriately (e.g., show a message to the user)
+            return 'An error occurred while processing your request.';
+        }
     }
 
     // Generate chatbot response function
