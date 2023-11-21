@@ -1,13 +1,21 @@
 {
     "cSpell.words": [
+        "algadvlsn",
+        "algbeglsn",
+        "algitdlsn",
         "algorithmslearning",
         "calculuslearning",
         "dotenv",
+        "dropbtn",
+        "ondelete",
+        "openai",
+        "OPENAI",
         "personalfinance",
         "personalfinancelearning",
         "sqlalchemy",
         "SQLALCHEMY",
-        "wtforms"
+        "wtforms",
+        "werkzeug"
     ],
     "svn.ignoreMissingSvnWarning": true
 }

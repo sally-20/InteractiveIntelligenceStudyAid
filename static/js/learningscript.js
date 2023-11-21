@@ -240,37 +240,38 @@ document.addEventListener('DOMContentLoaded', function () {
     const inputForm = document.getElementById('input-form');
     const inputField = document.getElementById('input-field');
 
-    // Add event listener to input form
     inputForm.addEventListener('submit', function (event) {
-        // Prevent form submission
         event.preventDefault();
-
-        // Get user input
         const input = inputField.value;
-
-        // Clear input field
         inputField.value = '';
         const currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: "2-digit" });
-
-        // Add user input to conversation
+    
         let message = document.createElement('div');
         message.classList.add('chatbot-message', 'user-message');
         message.innerHTML = `<p class="chatbot-text" sentTime="${currentTime}">${input}</p>`;
         conversation.appendChild(message);
-
-        // Generate chatbot response
-        const response = generateResponse(input);
-
-        // Add chatbot response to conversation
+    
+        // Use the input to generate chatbot response
+        const response = generateChatResponse(input);
+    
         message = document.createElement('div');
         message.classList.add('chatbot-message', 'chatbot');
         message.innerHTML = `<p class="chatbot-text" sentTime="${currentTime}">${response}</p>`;
         conversation.appendChild(message);
         message.scrollIntoView({ behavior: "smooth" });
     });
+    
+    function generateChatResponse(userInput) {
+        // Call the Python code to generate chatbot response using OpenAI API
+        // You can use AJAX, Fetch API, or other methods to send the user input to the server
+        // and receive the response.
+    
+        // For simplicity, simulate the response using a predefined function
+        return simulateChatbotResponse(userInput);
+    }
 
     // Generate chatbot response function
-    function generateResponse(input) {
+    function simulateChatbotResponse(input) {
         // Add chatbot logic here
         const responses = [
             "Hello, how can I help you today? 😊",
