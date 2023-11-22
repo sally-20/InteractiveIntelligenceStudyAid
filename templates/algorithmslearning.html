@@ -655,12 +655,12 @@
                 </div>
                 <form id="input-form">
                     <message-container>
-                        <input id="input-field" type="text" placeholder="Type your message here">
+                        <input id="input-field" name="user_input" type="text" placeholder="Type your message here">
                         <button id="submit-button" type="submit">
                             <img class="send-icon" src="{{ url_for('static', filename='images/send-message.png') }}" alt="">
                         </button>
                     </message-container>
-                </form>
+                </form>                              
             </div>
         </div>               
         <div class="feedback-button">

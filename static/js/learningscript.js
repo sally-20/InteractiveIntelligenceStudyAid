@@ -267,13 +267,12 @@ document.addEventListener('DOMContentLoaded', function () {
             const response = await fetch('/chatbot', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'Content-Type': 'application/json',
                 },
-                body: new URLSearchParams({
+                body: JSON.stringify({
                     'user_input': userInput,
                 }),
             });
-    
             if (!response.ok) {
                 throw new Error('Failed to fetch chatbot response');
             }

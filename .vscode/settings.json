@@ -7,6 +7,7 @@
         "calculuslearning",
         "dotenv",
         "dropbtn",
+        "jsonify",
         "ondelete",
         "openai",
         "OPENAI",
