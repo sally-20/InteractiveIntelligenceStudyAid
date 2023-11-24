@@ -2,7 +2,7 @@ import os
 import importlib
 import openai
 
-openai.api_key = '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' # os.getenv('OPENAI_API_KEY')
+openai.api_key = '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' # os.getenv('OPENAI_API_KEY')
 
 def initialize_messages() -> list:
     """Initialize the chat messages with system and user messages."""
