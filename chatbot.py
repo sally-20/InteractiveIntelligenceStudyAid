@@ -2,7 +2,7 @@ import os
 import importlib
 import openai
 
-openai.api_key = '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' # os.getenv('OPENAI_API_KEY')
+openai.api_key = os.getenv('OPENAI_API_KEY')
 
 def initialize_messages() -> list:
     """Initialize the chat messages with system and user messages."""
@@ -35,7 +35,7 @@ def main():
         add_message(messages, "user", user_message)
 
         chat_response = generate_chat_response(messages)
-        print(f'ChatGPT: {chat_response}')
+        print(f'Clarifier: {chat_response}')
         add_message(messages, "assistant", chat_response)
 
 if __name__ == '__main__':
