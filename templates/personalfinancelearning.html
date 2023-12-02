@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/learningstyles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='js/learningscript.js') }}" defer></script>
+    <title>Learning Path</title>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar-left">
+            <ul class="sidebar-menu">
+                <li>
+                    <h2 class="sidebar-title">Study Aid</h2>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="colored-icon">
+                        <i class="fas fa-graduation-cap"></i> Learn
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="courses-toggle">
+                        <i class="fas fa-book"></i> Courses
+                    </a>
+                    <ul class="course-list hidden">
+                        <li>
+                            <a href="{{ url_for('algorithms') }}">
+                                <i class="fas fa-chart-line"></i> Algorithms
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url_for('personalfinance') }}">
+                                <i class="fas fa-rupee-sign"></i> Personal Finance
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url_for('calculus') }}">
+                                <i class="fas fa-calculator"></i> Calculus
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="colored-icon">
+                        <i class="fas fa-user"></i> Profile
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="colored-icon">
+                        <i class="fas fa-cog"></i> Settings
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="{{ url_for('home') }}" class="colored-icon">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <main class="main-content">
+            <div class="main-content-top-bar">
+                <div class="level-dropdown">
+                    <button class="dropbtn"></button>
+                    <div class="dropdown-content">
+                        <a href="#beginner" class="option beginner" data-color="#F4F4F4" data-section="beginner"><b>Beginner</b></a>
+                        <a href="#intermediate" class="option intermediate" data-color="#E8D3FF" data-section="intermediate"><b>Intermediate</b></a>
+                        <a href="#advanced" class="option advanced" data-color="#333333" data-section="advanced"><b>Advanced</b></a>
+                    </div>
+                </div>
+            </div>
+            <section class="section-switcher">
+                <section id="beginner">
+                    <div class="unit">
+                        <hr class="unit-ruler">
+                        <div class="unit-name">Unit 1: Basic Financial Literacy</div>
+                        <hr class="unit-ruler">
+                    </div>
+                    <div class="stars-container">
+                        <div class="four-pointed-star" data-target="dialog-boxpfbeg1"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfbeg1">
+                            <div class="dialog-text" data-lesson="pfbeglsn1">Budgeting Basics</div>
+                            <button class="start-button" data-lesson="pfbeglsn1">Start</button>
+                        </div>
+                        <div class="four-pointed-star" data-target="dialog-boxpfbeg2"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfbeg2">
+                            <div class="dialog-text" data-lesson="pfbeglsn2">Setting Financial Goals</div>
+                            <button class="start-button" data-lesson="pfbeglsn2">Start</button>
+                        </div>
+                        <div class="four-pointed-star" data-target="dialog-boxpfbeg3"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfbeg3">
+                            <div class="dialog-text" data-lesson="pfbeglsn3">Understanding Compound Interest</div>
+                            <button class="start-button" data-lesson="pfbeglsn3">Start</button>
+                        </div>
+                    </div>
+                    <div class="unit">
+                        <hr class="unit-ruler">
+                        <div class="unit-name">Unit 2: Debt Management</div>
+                        <hr class="unit-ruler">
+                    </div>
+                    <div class="stars-container">
+                        <div class="four-pointed-star" data-target="dialog-boxpfbeg4"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfbeg4">
+                            <div class="dialog-text" data-lesson="pfbeglsn4">Types of Debts</div>
+                            <button class="start-button" data-lesson="pfbeglsn4">Start</button>
+                        </div>
+                        <div class="four-pointed-star" data-target="dialog-boxpfbeg5"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfbeg5">
+                            <div class="dialog-text" data-lesson="pfbeglsn5">Debt Reduction Strategies</div>
+                            <button class="start-button" data-lesson="pfbeglsn5">Start</button>
+                        </div>
+                    </div>
+                    <div class="unit">
+                        <hr class="unit-ruler">
+                        <div class="unit-name">Unit 3: Emergency Fund and Insurance</div>
+                        <hr class="unit-ruler">
+                    </div>
+                    <div class="stars-container">
+                        <div class="four-pointed-star" data-target="dialog-boxpfbeg6"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfbeg6">
+                            <div class="dialog-text" data-lesson="pfbeglsn6">Building an Emergency Fund</div>
+                            <button class="start-button" data-lesson="pfbeglsn6">Start</button>
+                        </div>
+                        <div class="four-pointed-star" data-target="dialog-boxpfbeg7"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfbeg7">
+                            <div class="dialog-text" data-lesson="pfbeglsn7">Basics of Insurance</div>
+                            <button class="start-button" data-lesson="pfbeglsn7">Start</button>
+                        </div>
+                    </div>
+                    <div class="unit">
+                        <hr class="unit-ruler">
+                        <div class="unit-name">Unit 4: Investment Basics</div>
+                        <hr class="unit-ruler">
+                    </div>
+                    <div class="stars-container">
+                        <div class="four-pointed-star" data-target="dialog-boxpfbeg8"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfbeg8">
+                            <div class="dialog-text" data-lesson="pfbeglsn8">Intro to Investments</div>
+                            <button class="start-button"  data-lesson="pfbeglsn8">Start</button>
+                        </div>
+                        <div class="four-pointed-star" data-target="dialog-boxpfbeg9"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfbeg9">
+                            <div class="dialog-text" data-lesson="pfbeglsn9">Risk and Return Trade-offs</div>
+                            <button class="start-button"  data-lesson="pfbeglsn9">Start</button>
+                        </div>
+                    </div>
+                    <div class="unit">
+                        <hr class="unit-ruler">
+                        <div class="unit-name">Unit 5: Introduction to Taxation</div>
+                        <hr class="unit-ruler">
+                    </div>
+                    <div class="stars-container">
+                        <div class="four-pointed-star" data-target="dialog-boxpfbeg10"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfbeg10">
+                            <div class="dialog-text" data-lesson="pfbeglsn10">Income Tax Basics</div>
+                            <button class="start-button" data-lesson="pfbeglsn10">Start</button>
+                        </div>
+                        <div class="four-pointed-star" data-target="dialog-boxpfbeg11"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfbeg11">
+                            <div class="dialog-text" data-lesson="pfbeglsn11">Tax-Saving Investments</div>
+                            <button class="start-button" data-lesson="pfbeglsn11">Start</button>
+                        </div>
+                    </div>                                                          
+                </section>
+                <section id="intermediate">
+                    <div class="unit">
+                        <hr class="unit-ruler">
+                        <div class="unit-name">Unit 1: Advanced Budgeting</div>
+                        <hr class="unit-ruler">
+                    </div>
+                    <div class="flower">
+                        <div class="flower_head" data-target="dialog-boxpfitd1"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfitd1">
+                            <div class="dialog-text" data-lesson="pfitdlsn1">Building a detailed budget with income and expenses</div>
+                            <button class="start-button" data-lesson="pfitdlsn1">Start</button>
+                        </div>
+                        <div class="flower_head" data-target="dialog-boxpfitd2"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfitd2">
+                            <div class="dialog-text" data-lesson="pfitdlsn2">Allocating funds for savings and investments</div>
+                            <button class="start-button" data-lesson="pfitdlsn2">Start</button>
+                        </div>
+                        <div class="flower_head" data-target="dialog-boxpfitd3"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfitd3">
+                            <div class="dialog-text" data-lesson="pfitdlsn3">Prioritizing financial goals within the budget</div>
+                            <button class="start-button" data-lesson="pfitdlsn3">Start</button>
+                        </div>
+                    </div>
+                    <div class="unit">
+                        <hr class="unit-ruler">
+                        <div class="unit-name">Unit 2: Monitoring and Adjusting the Budget</div>
+                        <hr class="unit-ruler">
+                    </div>
+                    <div class="flower">
+                        <div class="flower_head" data-target="dialog-boxpfitd4"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfitd4">
+                            <div class="dialog-text" data-lesson="pfitdlsn4">Regular tracking of expenses</div>
+                            <button class="start-button" data-lesson="pfitdlsn4">Start</button>
+                        </div>
+                        <div class="flower_head" data-target="dialog-boxpfitd5"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfitd5">
+                            <div class="dialog-text" data-lesson="pfitdlsn5">Making necessary adjustments to the budget</div>
+                            <button class="start-button" data-lesson="pfitdlsn5">Start</button>
+                        </div>
+                        <div class="flower_head" data-target="dialog-boxpfitd6"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfitd6">
+                            <div class="dialog-text" data-lesson="pfitdlsn6">Handling unexpected financial changes</div>
+                            <button class="start-button" data-lesson="pfitdlsn6">Start</button>
+                        </div>
+                    </div>
+                    <div class="unit">
+                        <hr class="unit-ruler">
+                        <div class="unit-name">Unit 3: In-Depth Exploration of Mutual Funds</div>
+                        <hr class="unit-ruler">
+                    </div>
+                    <div class="flower">
+                        <div class="flower_head" data-target="dialog-boxpfitd7"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfitd7">
+                            <div class="dialog-text" data-lesson="pfitdlsn7">Types of mutual funds (equity, debt, hybrid)</div>
+                            <button class="start-button" data-lesson="pfitdlsn7">Start</button>
+                        </div>
+                        <div class="flower_head" data-target="dialog-boxpfitd8"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfitd8">
+                            <div class="dialog-text" data-lesson="pfitdlsn8">How to select and invest in mutual funds</div>
+                            <button class="start-button" data-lesson="pfitdlsn8">Start</button>
+                        </div>
+                        <div class="flower_head" data-target="dialog-boxpfitd9"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfitd9">
+                            <div class="dialog-text" data-lesson="pfitdlsn9">Monitoring and managing mutual fund investments</div>
+                            <button class="start-button" data-lesson="pfitdlsn9">Start</button>
+                        </div>
+                    </div>
+                    <div class="unit">
+                        <hr class="unit-ruler">
+                        <div class="unit-name">Unit 4: In-Depth Exploration of Stocks</div>
+                        <hr class="unit-ruler">
+                    </div>
+                    <div class="flower">
+                        <div class="flower_head" data-target="dialog-boxpfitd10"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfitd10">
+                            <div class="dialog-text" data-lesson="pfitdlsn10">Stock market basics</div>
+                            <button class="start-button" data-lesson="pfitdlsn10">Start</button>
+                        </div>
+                        <div class="flower_head" data-target="dialog-boxpfitd11"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfitd11">
+                            <div class="dialog-text" data-lesson="pfitdlsn11">Fundamental and technical analysis</div>
+                            <button class="start-button" data-lesson="pfitdlsn11">Start</button>
+                        </div>
+                        <div class="flower_head" data-target="dialog-boxpfitd12"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfitd12">
+                            <div class="dialog-text" data-lesson="pfitdlsn12">Building and managing a stock portfolio</div>
+                            <button class="start-button" data-lesson="pfitdlsn12">Start</button>
+                        </div>
+                    </div>
+                    <div class="unit">
+                        <hr class="unit-ruler">
+                        <div class="unit-name">Unit 5: In-Depth Exploration of Bonds</div>
+                        <hr class="unit-ruler">
+                    </div>
+                    <div class="flower">
+                        <div class="flower_head" data-target="dialog-boxpfitd13"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfitd13">
+                            <div class="dialog-text" data-lesson="pfitdlsn13">Types of bonds (government, corporate)</div>
+                            <button class="start-button" data-lesson="pfitdlsn13">Start</button>
+                        </div>
+                        <div class="flower_head" data-target="dialog-boxpfitd14"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfitd14">
+                            <div class="dialog-text" data-lesson="pfitdlsn14">How bonds work and their risk factors</div>
+                            <button class="start-button" data-lesson="pfitdlsn14">Start</button>
+                        </div>
+                        <div class="flower_head" data-target="dialog-box-pfitd15"></div>
+                        <div class="dialog-box hidden" id="dialog-box-pfitd15">
+                            <div class="dialog-text" data-lesson="pfitdlsn15">Strategies for investing in bonds</div>
+                            <button class="start-button" data-lesson="pfitdlsn15">Start</button>
+                        </div>
+                    </div>
+                    <div class="unit">
+                        <hr class="unit-ruler">
+                        <div class="unit-name">Unit 6: In-Depth Exploration of SIPs</div>
+                        <hr class="unit-ruler">
+                    </div>
+                    <div class="flower">
+                        <div class="flower_head" data-target="dialog-boxpfitd16"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfitd16">
+                            <div class="dialog-text" data-lesson="pfitdlsn16">Systematic Investment Plan (SIP) explained</div>
+                            <button class="start-button" data-lesson="pfitdlsn16">Start</button>
+                        </div>
+                        <div class="flower_head" data-target="dialog-boxpfitd17"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfitd17">
+                            <div class="dialog-text" data-lesson="pfitdlsn17">Benefits of SIP investing</div>
+                            <button class="start-button" data-lesson="pfitdlsn17">Start</button>
+                        </div>
+                        <div class="flower_head" data-target="dialog-boxpfitd18"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfitd18">
+                            <div class="dialog-text" data-lesson="pfitdlsn18">SIP portfolio management and rebalancing</div>
+                            <button class="start-button" data-lesson="pfitdlsn18">Start</button>
+                        </div>
+                    </div>
+                    <div class="unit">
+                        <hr class="unit-ruler">
+                        <div class="unit-name">Unit 7: Diversification and Portfolio Management</div>
+                        <hr class="unit-ruler">
+                    </div>
+                    <div class="flower">
+                        <div class="flower_head" data-target="dialog-boxpfitd19"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfitd19">
+                            <div class="dialog-text" data-lesson="pfitdlsn19">Importance of diversifying investments</div>
+                            <button class="start-button" data-lesson="pfitdlsn19">Start</button>
+                        </div>
+                        <div class="flower_head" data-target="dialog-boxpfitd20"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfitd20">
+                            <div class="dialog-text" data-lesson="pfitdlsn20">Constructing a diversified investment portfolio</div>
+                            <button class="start-button" data-lesson="pfitdlsn20">Start</button>
+                        </div>
+                        <div class="flower_head" data-target="dialog-boxpfitd21"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfitd21">
+                            <div class="dialog-text" data-lesson="pfitdlsn21">Regular portfolio review and adjustments</div>
+                            <button class="start-button" data-lesson="pfitdlsn21">Start</button>
+                        </div>
+                    </div>
+                    <div class="unit">
+                        <hr class="unit-ruler">
+                        <div class="unit-name">Unit 8: Calculating Retirement Corpus</div>
+                        <hr class="unit-ruler">
+                    </div>
+                    <div class="flower">
+                        <div class="flower_head" data-target="dialog-boxpfitd22"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfitd22">
+                            <div class="dialog-text" data-lesson="pfitdlsn22">Estimating retirement expenses</div>
+                            <button class="start-button" data-lesson="pfitdlsn22">Start</button>
+                        </div>
+                        <div class="flower_head" data-target="dialog-boxpfitd23"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfitd23">
+                            <div class="dialog-text" data-lesson="pfitdlsn23">Determining the required retirement savings</div>
+                            <button class="start-button" data-lesson="pfitdlsn23">Start</button>
+                        </div>
+                        <div class="flower_head" data-target="dialog-boxpfitd24"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfitd24">
+                            <div class="dialog-text" data-lesson="pfitdlsn24">Factoring in inflation and life expectancy</div>
+                            <button class="start-button" data-lesson="pfitdlsn24">Start</button>
+                        </div>
+                    </div>
+                    <div class="unit">
+                        <hr class="unit-ruler">
+                        <div class="unit-name">Unit 9: Planning for Post-Retirement Income</div>
+                        <hr class="unit-ruler">
+                    </div>
+                    <div class="flower">
+                        <div class="flower_head" data-target="dialog-boxpfitd25"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfitd25">
+                            <div class="dialog-text" data-lesson="pfitdlsn25">Social Security and pension plans</div>
+                            <button class="start-button" data-lesson="pfitdlsn25">Start</button>
+                        </div>
+                        <div class="flower_head" data-target="dialog-boxpfitd26"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfitd26">
+                            <div class="dialog-text" data-lesson="pfitdlsn26">Creating a retirement income strategy</div>
+                            <button class="start-button" data-lesson="pfitdlsn26">Start</button>
+                        </div>
+                        <div class="flower_head" data-target="dialog-boxpfitd27"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfitd27">
+                            <div class="dialog-text" data-lesson="pfitdlsn27">Managing retirement investments for income</div>
+                            <button class="start-button" data-lesson="pfitdlsn27">Start</button>
+                        </div>
+                    </div>
+                    <div class="unit">
+                        <hr class="unit-ruler">
+                        <div class="unit-name">Unit 10: Retirement Investment Options</div>
+                        <hr class="unit-ruler">
+                    </div>
+                    <div class="flower">
+                        <div class="flower_head" data-target="dialog-boxpfitd28"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfitd28">
+                            <div class="dialog-text" data-lesson="pfitdlsn28">Understanding Employee Provident Fund (EPF)</div>
+                            <button class="start-button" data-lesson="pfitdlsn28">Start</button>
+                        </div>
+                        <div class="flower_head" data-target="dialog-boxpfitd29"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfitd29">
+                            <div class="dialog-text" data-lesson="pfitdlsn29">National Pension Scheme (NPS) and its benefits</div>
+                            <button class="start-button" data-lesson="pfitdlsn29">Start</button>
+                        </div>
+                        <div class="flower_head" data-target="dialog-boxpfitd30"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfitd30">
+                            <div class="dialog-text" data-lesson="pfitdlsn30">Public Provident Fund (PPF) for long-term savings</div>
+                            <button class="start-button" data-lesson="pfitdlsn30">Start</button>
+                        </div>
+                    </div>
+                    <div class="unit">
+                        <hr class="unit-ruler">
+                        <div class="unit-name">Unit 11: Tax Planning Strategies</div>
+                        <hr class="unit-ruler">
+                    </div>
+                    <div class="flower">
+                        <div class="flower_head" data-target="dialog-boxpfitd31"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfitd31">
+                            <div class="dialog-text" data-lesson="pfitdlsn31">Tax planning strategies for individuals</div>
+                            <button class="start-button" data-lesson="pfitdlsn31">Start</button>
+                        </div>
+                        <div class="flower_head" data-target="dialog-boxpfitd32"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfitd32">
+                            <div class="dialog-text" data-lesson="pfitdlsn32">Tax-saving investment options</div>
+                            <button class="start-button" data-lesson="pfitdlsn32">Start</button>
+                        </div>
+                        <div class="flower_head" data-target="dialog-boxpfitd33"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfitd33">
+                            <div class="dialog-text" data-lesson="pfitdlsn33">Utilizing deductions and exemptions</div>
+                            <button class="start-button" data-lesson="pfitdlsn33">Start</button>
+                        </div>
+                    </div>
+                    <div class="unit">
+                        <hr class="unit-ruler">
+                        <div class="unit-name">Unit 12: Understanding Tax Deductions and Exemptions</div>
+                        <hr class="unit-ruler">
+                    </div>
+                    <div class="flower">
+                        <div class="flower_head" data-target="dialog-boxpfitd34"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfitd34">
+                            <div class="dialog-text" data-lesson="pfitdlsn34">Exploring common tax deductions</div>
+                            <button class="start-button" data-lesson="pfitdlsn34">Start</button>
+                        </div>
+                        <div class="flower_head" data-target="dialog-boxpfitd35"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfitd35">
+                            <div class="dialog-text" data-lesson="pfitdlsn35">Identifying eligible exemptions</div>
+                            <button class="start-button" data-lesson="pfitdlsn35">Start</button>
+                        </div>
+                        <div class="flower_head" data-target="dialog-boxpfitd36"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfitd36">
+                            <div class="dialog-text" data-lesson="pfitdlsn36">Filing tax returns accurately</div>
+                            <button class="start-button" data-lesson="pfitdlsn36">Start</button>
+                        </div>
+                    </div>
+                    <div class="unit">
+                        <hr class="unit-ruler">
+                        <div class="unit-name">Unit 13: Basics of Property Investment</div>
+                        <hr class="unit-ruler">
+                    </div>
+                    <div class="flower">
+                        <div class="flower_head" data-target="dialog-boxpfitd37"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfitd37">
+                            <div class="dialog-text" data-lesson="pfitdlsn37">Pros and cons of real estate investment</div>
+                            <button class="start-button" data-lesson="pfitdlsn37">Start</button>
+                        </div>
+                        <div class="flower_head" data-target="dialog-boxpfitd38"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfitd38">
+                            <div class="dialog-text" data-lesson="pfitdlsn38">Property selection criteria</div>
+                            <button class="start-button" data-lesson="pfitdlsn38">Start</button>
+                        </div>
+                    </div>
+                    <div class="unit">
+                        <hr class="unit-ruler">
+                        <div class="unit-name">Unit 14: Home Loans and Mortgage Basics</div>
+                        <hr class="unit-ruler">
+                    </div>
+                    <div class="flower">
+                        <div class="flower_head" data-target="dialog-boxpfitd39"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfitd39">
+                            <div class="dialog-text" data-lesson="pfitdlsn39">How home loans work</div>
+                            <button class="start-button" data-lesson="pfitdlsn39">Start</button>
+                        </div>
+                        <div class="flower_head" data-target="dialog-boxpfitd40"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfitd40">
+                            <div class="dialog-text" data-lesson="pfitdlsn40">Understanding mortgage terms and interest rates</div>
+                            <button class="start-button" data-lesson="pfitdlsn40">Start</button>
+                        </div>
+                        <div class="flower_head" data-target="dialog-boxpfitd41"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfitd41">
+                            <div class="dialog-text" data-lesson="pfitdlsn41">Managing home loan repayments</div>
+                            <button class="start-button" data-lesson="pfitdlsn41">Start</button>
+                        </div>
+                    </div>
+                    <div class="unit">
+                        <hr class="unit-ruler">
+                        <div class="unit-name">Unit 15: Rental Income and Property Management</div>
+                        <hr class="unit-ruler">
+                    </div>
+                    <div class="flower">
+                        <div class="flower_head" data-target="dialog-boxpfitd42"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfitd42">
+                            <div class="dialog-text" data-lesson="pfitdlsn42">Generating rental income from property</div>
+                            <button class="start-button" data-lesson="pfitdlsn42">Start</button>
+                        </div>
+                        <div class="flower_head" data-target="dialog-boxpfitd43"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfitd43">
+                            <div class="dialog-text" data-lesson="pfitdlsn43">Property maintenance and legal considerations</div>
+                            <button class="start-button" data-lesson="pfitdlsn43">Start</button>
+                        </div>
+                        <div class="flower_head" data-target="dialog-boxpfitd44"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfitd44">
+                            <div class="dialog-text" data-lesson="pfitdlsn44">Tax implications of rental income</div>
+                            <button class="start-button" data-lesson="pfitdlsn44">Start</button>
+                        </div>
+                    </div>
+                </section>
+                <section id="advanced">
+                    <div class="unit">
+                        <hr class="unit-ruler">
+                        <div class="unit-name">Unit 1: In-Depth Analysis of Market Trends and Strategies</div>
+                        <hr class="unit-ruler">
+                    </div>
+                    <div class="bolt-container">
+                        <div class="bolt" data-target="dialog-boxpfadv1"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfadv1">
+                            <div class="dialog-text" data-lesson="pfadvlsn1">Technical and fundamental analysis</div>
+                            <button class="start-button" data-lesson="pfadvlsn1">Start</button>
+                        </div>
+                        <div class="bolt" data-target="dialog-boxpfadv2"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfadv2">
+                            <div class="dialog-text" data-lesson="pfadvlsn2">Market timing strategies</div>
+                            <button class="start-button" data-lesson="pfadvlsn2">Start</button>
+                        </div>
+                        <div class="bolt" data-target="dialog-boxpfadv3"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfadv3">
+                            <div class="dialog-text" data-lesson="pfadvlsn3">Risk management techniques</div>
+                            <button class="start-button" data-lesson="pfadvlsn3">Start</button>
+                        </div>
+                    </div>
+                    <div class="unit">
+                        <hr class="unit-ruler">
+                        <div class="unit-name">Unit 2: Options Trading</div>
+                        <hr class="unit-ruler">
+                    </div>
+                    <div class="bolt-container">
+                        <div class="bolt" data-target="dialog-boxpfadv4"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfadv4">
+                            <div class="dialog-text" data-lesson="pfadvlsn4">Understanding options contracts</div>
+                            <button class="start-button" data-lesson="pfadvlsn4">Start</button>
+                        </div>
+                        <div class="bolt" data-target="dialog-boxpfadv5"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfadv5">
+                            <div class="dialog-text" data-lesson="pfadvlsn5">Option strategies (covered calls, puts, spreads)</div>
+                            <button class="start-button" data-lesson="pfadvlsn5">Start</button>
+                        </div>
+                        <div class="bolt" data-target="dialog-boxpfadv6"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfadv6">
+                            <div class="dialog-text" data-lesson="pfadvlsn6">Risk and reward in options trading</div>
+                            <button class="start-button" data-lesson="pfadvlsn6">Start</button>
+                        </div>
+                    </div>
+                    <div class="unit">
+                        <hr class="unit-ruler">
+                        <div class="unit-name">Unit 3: Derivatives</div>
+                        <hr class="unit-ruler">
+                    </div>
+                    <div class="bolt-container">
+                        <div class="bolt" data-target="dialog-boxpfadv7"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfadv7">
+                            <div class="dialog-text" data-lesson="pfadvlsn7">Introduction to derivatives markets</div>
+                            <button class="start-button" data-lesson="pfadvlsn7">Start</button>
+                        </div>
+                        <div class="bolt" data-target="dialog-boxpfadv8"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfadv8">
+                            <div class="dialog-text" data-lesson="pfadvlsn8">Futures and options trading</div>
+                            <button class="start-button" data-lesson="pfadvlsn8">Start</button>
+                        </div>
+                        <div class="bolt" data-target="dialog-boxpfadv9"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfadv9">
+                            <div class="dialog-text" data-lesson="pfadvlsn9">Hedging strategies using derivatives</div>
+                            <button class="start-button" data-lesson="pfadvlsn9">Start</button>
+                        </div>
+                    </div>
+                    <div class="unit">
+                        <hr class="unit-ruler">
+                        <div class="unit-name">Unit 4: Commodities</div>
+                        <hr class="unit-ruler">
+                    </div>
+                    <div class="bolt-container">
+                        <div class="bolt" data-target="dialog-boxpfadv10"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfadv10">
+                            <div class="dialog-text" data-lesson="pfadvlsn10">Investing in commodities (e.g., gold, oil)</div>
+                            <button class="start-button" data-lesson="pfadvlsn10">Start</button>
+                        </div>
+                        <div class="bolt" data-target="dialog-boxpfadv11"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfadv11">
+                            <div class="dialog-text" data-lesson="pfadvlsn11">Commodity market dynamics</div>
+                            <button class="start-button" data-lesson="pfadvlsn11">Start</button>
+                        </div>
+                        <div class="bolt" data-target="dialog-boxpfadv12"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfadv12">
+                            <div class="dialog-text" data-lesson="pfadvlsn12">Risks and rewards of commodity investments</div>
+                            <button class="start-button" data-lesson="pfadvlsn12">Start</button>
+                        </div>
+                    </div>
+                    <div class="unit">
+                        <hr class="unit-ruler">
+                        <div class="unit-name">Unit 5: Creating Wills</div>
+                        <hr class="unit-ruler">
+                    </div>
+                    <div class="bolt-container">
+                        
+                        <div class="bolt" data-target="dialog-boxpfadv13"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfadv13">
+                            <div class="dialog-text" data-lesson="pfadvlsn13">Importance of a will</div>
+                            <button class="start-button" data-lesson="pfadvlsn13">Start</button>
+                        </div>
+                        <div class="bolt" data-target="dialog-boxpfadv14"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfadv14">
+                            <div class="dialog-text" data-lesson="pfadvlsn14">How to create a legally valid will</div>
+                            <button class="start-button" data-lesson="pfadvlsn14">Start</button>
+                        </div>
+                        <div class="bolt" data-target="dialog-boxpfadv15"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfadv15">
+                            <div class="dialog-text" data-lesson="pfadvlsn15">Designating beneficiaries and executors</div>
+                            <button class="start-button" data-lesson="pfadvlsn15">Start</button>
+                        </div>
+                    </div>
+                    <div class="unit">
+                        <hr class="unit-ruler">
+                        <div class="unit-name">Unit 6: Establishing Trusts</div>
+                        <hr class="unit-ruler">
+                    </div>
+                    <div class="bolt-container">
+                        <div class="bolt" data-target="dialog-boxpfadv16"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfadv16">
+                            <div class="dialog-text" data-lesson="pfadvlsn16">Types of trusts (revocable, irrevocable)</div>
+                            <button class="start-button" data-lesson="pfadvlsn16">Start</button>
+                        </div>
+                        <div class="bolt" data-target="dialog-boxpfadv17"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfadv17">
+                            <div class="dialog-text" data-lesson="pfadvlsn17">Setting up and managing trusts</div>
+                            <button class="start-button" data-lesson="pfadvlsn17">Start</button>
+                        </div>
+                        <div class="bolt" data-target="dialog-boxpfadv18"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfadv18">
+                            <div class="dialog-text" data-lesson="pfadvlsn18">Benefits of using trusts in estate planning</div>
+                            <button class="start-button" data-lesson="pfadvlsn18">Start</button>
+                        </div>
+                    </div>
+                    <div class="unit">
+                        <hr class="unit-ruler">
+                        <div class="unit-name">Unit 7: Estate Plans</div>
+                        <hr class="unit-ruler">
+                    </div>
+                    <div class="bolt-container">
+                        <div class="bolt" data-target="dialog-boxpfadv19"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfadv19">
+                            <div class="dialog-text" data-lesson="pfadvlsn19">Comprehensive estate planning strategies</div>
+                            <button class="start-button" data-lesson="pfadvlsn19">Start</button>
+                        </div>
+                        <div class="bolt" data-target="dialog-boxpfadv20"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfadv20">
+                            <div class="dialog-text" data-lesson="pfadvlsn20">Minimizing estate taxes</div>
+                            <button class="start-button" data-lesson="pfadvlsn20">Start</button>
+                        </div>
+                        <div class="bolt" data-target="dialog-boxpfadv21"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfadv21">
+                            <div class="dialog-text" data-lesson="pfadvlsn21">Ensuring a smooth transfer of assets</div>
+                            <button class="start-button" data-lesson="pfadvlsn21">Start</button>
+                        </div>
+                    </div>
+                    <div class="unit">
+                        <hr class="unit-ruler">
+                        <div class="unit-name">Unit 8: Strategies to Protect and Transfer Wealth</div>
+                        <hr class="unit-ruler">
+                    </div>
+                    <div class="bolt-container">
+                        <div class="bolt" data-target="dialog-boxpfadv22"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfadv22">
+                            <div class="dialog-text" data-lesson="pfadvlsn22">Asset protection techniques</div>
+                            <button class="start-button" data-lesson="pfadvlsn22">Start</button>
+                        </div>
+                        <div class="bolt" data-target="dialog-boxpfadv23"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfadv23">
+                            <div class="dialog-text" data-lesson="pfadvlsn23">Gifting strategies</div>
+                            <button class="start-button" data-lesson="pfadvlsn23">Start</button>
+                        </div>
+                        <div class="bolt" data-target="dialog-boxpfadv24"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfadv24">
+                            <div class="dialog-text" data-lesson="pfadvlsn24">Succession planning for family businesses</div>
+                            <button class="start-button" data-lesson="pfadvlsn24">Start</button>
+                        </div>
+                    </div>
+                    <div class="unit">
+                        <hr class="unit-ruler">
+                        <div class="unit-name">Unit 9: Financial Aspects of Starting a Business</div>
+                        <hr class="unit-ruler">
+                    </div>
+                    <div class="bolt-container">
+                        
+                        <div class="bolt" data-target="dialog-boxpfadv25"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfadv25">
+                            <div class="dialog-text" data-lesson="pfadvlsn25">Creating a business plan and financial projections</div>
+                            <button class="start-button" data-lesson="pfadvlsn25">Start</button>
+                        </div>
+                        <div class="bolt" data-target="dialog-boxpfadv26"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfadv26">
+                            <div class="dialog-text" data-lesson="pfadvlsn26">Funding options for startups</div>
+                            <button class="start-button" data-lesson="pfadvlsn26">Start</button>
+                        </div>
+                        <div class="bolt" data-target="dialog-boxpfadv27"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfadv27">
+                            <div class="dialog-text" data-lesson="pfadvlsn27">Managing cash flow and expenses</div>
+                            <button class="start-button" data-lesson="pfadvlsn27">Start</button>
+                        </div>
+                    </div>
+                    <div class="unit">
+                        <hr class="unit-ruler">
+                        <div class="unit-name">Unit 10: Financial Aspects of Running a Business</div>
+                        <hr class="unit-ruler">
+                    </div>
+                    <div class="bolt-container">
+                        <div class="bolt" data-target="dialog-boxpfadv28"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfadv28">
+                            <div class="dialog-text" data-lesson="pfadvlsn28">Business accounting and financial statements</div>
+                            <button class="start-button" data-lesson="pfadvlsn28">Start</button>
+                        </div>
+                        <div class="bolt" data-target="dialog-boxpfadv29"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfadv29">
+                            <div class="dialog-text" data-lesson="pfadvlsn29">Budgeting and cost control</div>
+                            <button class="start-button" data-lesson="pfadvlsn29">Start</button>
+                        </div>
+                        <div class="bolt" data-target="dialog-boxpfadv30"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfadv30">
+                            <div class="dialog-text" data-lesson="pfadvlsn30">Business financing and growth strategies</div>
+                            <button class="start-button" data-lesson="pfadvlsn30">Start</button>
+                        </div>
+                    </div>
+                    <div class="unit">
+                        <hr class="unit-ruler">
+                        <div class="unit-name">Unit 11: Tax Implications for Business Owners</div>
+                        <hr class="unit-ruler">
+                    </div>
+                    <div class="bolt-container">
+                        <div class="bolt" data-target="dialog-boxpfadv31"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfadv31">
+                            <div class="dialog-text" data-lesson="pfadvlsn31">Choosing the right business structure (e.g., LLC, corporation)</div>
+                            <button class="start-button" data-lesson="pfadvlsn31">Start</button>
+                        </div>
+                        <div class="bolt" data-target="dialog-boxpfadv32"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfadv32">
+                            <div class="dialog-text" data-lesson="pfadvlsn32">Tax planning for business income</div>
+                            <button class="start-button" data-lesson="pfadvlsn32">Start</button>
+                        </div>
+                        <div class="bolt" data-target="dialog-boxpfadv33"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfadv33">
+                            <div class="dialog-text" data-lesson="pfadvlsn33">Managing payroll and employee taxes</div>
+                            <button class="start-button" data-lesson="pfadvlsn33">Start</button>
+                        </div>
+                    </div>
+                    <div class="unit">
+                        <hr class="unit-ruler">
+                        <div class="unit-name">Unit 12: Investment Options Outside India</div>
+                        <hr class="unit-ruler">
+                    </div>
+                    <div class="bolt-container">
+                        <div class="bolt" data-target="dialog-box-bolt34"></div>
+                        <div class="dialog-box hidden" id="dialog-box-bolt34">
+                            <div class="dialog-text" data-lesson="pfadvlsn34">Exploring international investment markets</div>
+                            <button class="start-button" data-lesson="pfadvlsn34">Start</button>
+                        </div>
+                        <div class="bolt" data-target="dialog-boxpfadv35"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfadv35">
+                            <div class="dialog-text" data-lesson="pfadvlsn35">Currency risk and exchange rates</div>
+                            <button class="start-button" data-lesson="pfadvlsn35">Start</button>
+                        </div>
+                        <div class="bolt" data-target="dialog-boxpfadv36"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfadv36">
+                            <div class="dialog-text" data-lesson="pfadvlsn36">Considerations for investing in foreign assets</div>
+                            <button class="start-button" data-lesson="pfadvlsn36">Start</button>
+                        </div>
+                    </div>
+                    <div class="unit">
+                        <hr class="unit-ruler">
+                        <div class="unit-name">Unit 13: Managing Taxation for International Investments</div>
+                        <hr class="unit-ruler">
+                    </div>
+                    <div class="bolt-container">
+                        <div class="bolt" data-target="dialog-boxpfadv37"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfadv37">
+                            <div class="dialog-text" data-lesson="pfadvlsn37">Understanding tax treaties and foreign tax credits</div>
+                            <button class="start-button" data-lesson="pfadvlsn37">Start</button>
+                        </div>
+                        <div class="bolt" data-target="dialog-boxpfadv38"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfadv38">
+                            <div class="dialog-text" data-lesson="pfadvlsn38">Reporting foreign income and assets</div>
+                            <button class="start-button" data-lesson="pfadvlsn38">Start</button>
+                        </div>
+                        <div class="bolt" data-target="dialog-boxpfadv39"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfadv39">
+                            <div class="dialog-text" data-lesson="pfadvlsn39">Tax-efficient structuring of international investments</div>
+                            <button class="start-button" data-lesson="pfadvlsn39">Start</button>
+                        </div>
+                    </div>
+                    <div class="unit">
+                        <hr class="unit-ruler">
+                        <div class="unit-name">Unit 14: Financial Considerations for Marriage</div>
+                        <hr class="unit-ruler">
+                    </div>
+                    <div class="bolt-container">
+                        <div class="bolt" data-target="dialog-boxpfadv40"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfadv40">
+                            <div class="dialog-text" data-lesson="pfadvlsn40">Budgeting for a wedding</div>
+                            <button class="start-button" data-lesson="pfadvlsn40">Start</button>
+                        </div>
+                        <div class="bolt" data-target="dialog-boxpfadv41"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfadv41">
+                            <div class="dialog-text" data-lesson="pfadvlsn41">Combining finances as a couple</div>
+                            <button class="start-button" data-lesson="pfadvlsn41">Start</button>
+                        </div>
+                        <div class="bolt" data-target="dialog-boxpfadv42"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfadv42">
+                            <div class="dialog-text" data-lesson="pfadvlsn42">Long-term financial planning for married life</div>
+                            <button class="start-button" data-lesson="pfadvlsn42">Start</button>
+                        </div>
+                    </div>
+                    <div class="unit">
+                        <hr class="unit-ruler">
+                        <div class="unit-name">Unit 15: Financial Considerations for Parenthood</div>
+                        <hr class="unit-ruler">
+                    </div>
+                    <div class="bolt-container">
+                        <div class="bolt" data-target="dialog-boxpfadv43"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfadv43">
+                            <div class="dialog-text" data-lesson="pfadvlsn43">Budgeting for childcare and education</div>
+                            <button class="start-button" data-lesson="pfadvlsn43">Start</button>
+                        </div>
+                        <div class="bolt" data-target="dialog-boxpfadv44"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfadv44">
+                            <div class="dialog-text" data-lesson="pfadvlsn44">Saving for children's future needs</div>
+                            <button class="start-button" data-lesson="pfadvlsn44">Start</button>
+                        </div>
+                        <div class="bolt" data-target="dialog-boxpfadv45"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfadv45">
+                            <div class="dialog-text" data-lesson="pfadvlsn45">Life insurance and estate planning for parents</div>
+                            <button class="start-button" data-lesson="pfadvlsn45">Start</button>
+                        </div>
+                    </div>
+                    <div class="unit">
+                        <hr class="unit-ruler">
+                        <div class="unit-name">Unit 16: Financial Considerations for Education Planning</div>
+                        <hr class="unit-ruler">
+                    </div>
+                    <div class="bolt-container">
+                        <div class="bolt" data-target="dialog-boxpfadv46"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfadv46">
+                            <div class="dialog-text" data-lesson="pfadvlsn46">Saving for children's education expenses</div>
+                            <button class="start-button" data-lesson="pfadvlsn46">Start</button>
+                        </div>
+                        <div class="bolt" data-target="dialog-boxpfadv47"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfadv47">
+                            <div class="dialog-text" data-lesson="pfadvlsn47">Exploring education savings plans</div>
+                            <button class="start-button" data-lesson="pfadvlsn47">Start</button>
+                        </div>
+                        <div class="bolt" data-target="dialog-boxpfadv48"></div>
+                        <div class="dialog-box hidden" id="dialog-boxpfadv48">
+                            <div class="dialog-text" data-lesson="pfadvlsn48">Maximizing financial aid opportunities</div>
+                            <button class="start-button" data-lesson="pfadvlsn48">Start</button>
+                        </div>
+                    </div>
+                </section>
+            </section>
+            </div>
+        </main>
+        <div class="chat-button">
+            <div class="icon">
+                <i class="far fa-comments"></i>
+            </div>
+            <div class="text">Clarifier</div>
+        </div> 
+        <div class="chatbot-container" id="chatbot-container">
+            <div id="header">
+                <h1>Clarify your doubts here</h1>
+                <button id="close-button"><span></span></button>
+            </div>
+            <div id="chatbot">
+                <div id="conversation">
+                    <div class="chatbot-message">
+                        <p class="chatbot-text">Hi! 👋 How can I help you?</p>
+                    </div>
+                </div>
+                <form id="input-form">
+                    <message-container>
+                        <input id="input-field" name="user_input" type="text" placeholder="Type your message here">
+                        <button id="submit-button" type="submit">
+                            <img class="send-icon" src="{{ url_for('static', filename='images/send-message.png') }}" alt="">
+                        </button>
+                    </message-container>
+                </form>                              
+            </div>
+        </div>               
+        <div class="feedback-button">
+            <div class="icon">
+                <i class="far fa-comment-dots"></i> 
+            </div>
+            <div class="text">Feedback</div>
+        </div>  
+        <div id="feedback-container" class="feedback-container">
+            <form id="feedback-form">
+                <button id="close-feedback-button" class="close-button">×</button> <!-- Close button -->
+                <h2>Feedback Form</h2>            
+                <textarea id="feedback-message" rows="4" placeholder="Enter your feedback"></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>      
+    </div>
+</body>
+</html>
