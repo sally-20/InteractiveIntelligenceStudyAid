@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/learningstyles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='js/learningscript.js') }}" defer></script>
+    <title>Learning Path</title>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar-left">
+            <ul class="sidebar-menu">
+                <li>
+                    <h2 class="sidebar-title">Study Aid</h2>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="colored-icon">
+                        <i class="fas fa-graduation-cap"></i> Learn
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="courses-toggle">
+                        <i class="fas fa-book"></i> Courses
+                    </a>
+                    <ul class="course-list hidden">
+                        <li>
+                            <a href="{{ url_for('algorithms') }}">
+                                <i class="fas fa-chart-line"></i> Algorithms
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url_for('personalfinance') }}">
+                                <i class="fas fa-rupee-sign"></i> Personal Finance
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url_for('calculus') }}">
+                                <i class="fas fa-calculator"></i> Calculus
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="colored-icon">
+                        <i class="fas fa-user"></i> Profile
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="colored-icon">
+                        <i class="fas fa-cog"></i> Settings
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="{{ url_for('home') }}" class="colored-icon">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <main class="main-content">
+            <div class="main-content-top-bar">
+                <div class="level-dropdown">
+                    <button class="dropbtn"></button>
+                    <div class="dropdown-content">
+                        <a href="#beginner" class="option beginner" data-color="#F4F4F4" data-section="beginner"><b>Beginner</b></a>
+                        <a href="#intermediate" class="option intermediate" data-color="#E8D3FF" data-section="intermediate"><b>Intermediate</b></a>
+                        <a href="#advanced" class="option advanced" data-color="#333333" data-section="advanced"><b>Advanced</b></a>
+                    </div>
+                </div>
+            </div>
+            <section class="section-switcher">
+                <section id="beginner">
+                    <div class="unit">
+                        <hr class="unit-ruler">
+                        <div class="unit-name">Unit 1: Introduction to Calculus</div>
+                        <hr class="unit-ruler">
+                    </div>
+                    <div class="stars-container">
+                        <div class="four-pointed-star" data-target="dialog-boxcalbeg1"></div>
+                        <div class="dialog-box hidden" id="dialog-boxcalbeg1">
+                            <div class="dialog-text" data-lesson="calbeglsn1">Fundamentals of Calculus</div>
+                            <button class="start-button" data-lesson="calbeglsn1">Start</button>
+                        </div>
+                        <div class="four-pointed-star" data-target="dialog-boxcalbeg2"></div>
+                        <div class="dialog-box hidden" id="dialog-boxcalbeg2">
+                            <div class="dialog-text" data-lesson="calbeglsn2">Basic Concepts of Differentiation and Integration</div>
+                            <button class="start-button" data-lesson="calbeglsn2">Start</button>
+                        </div>
+                    </div>
+                    <div class="unit">
+                        <hr class="unit-ruler">
+                        <div class="unit-name">Unit 2: Limits and Continuity</div>
+                        <hr class="unit-ruler">
+                    </div>
+                    <div class="stars-container">
+                        <div class="four-pointed-star" data-target="dialog-boxcalbeg3"></div>
+                        <div class="dialog-box hidden" id="dialog-boxcalbeg3">
+                            <div class="dialog-text" data-lesson="calbeglsn3">The Concept of Limits</div>
+                            <button class="start-button" data-lesson="calbeglsn3">Start</button>
+                        </div>
+                        <div class="four-pointed-star" data-target="dialog-boxcalbeg4"></div>
+                        <div class="dialog-box hidden" id="dialog-boxcalbeg4">
+                            <div class="dialog-text" data-lesson="calbeglsn4">Advanced Topics in Continuity</div>
+                            <button class="start-button" data-lesson="calbeglsn4">Start</button>
+                        </div>
+                    </div>
+                    <div class="unit">
+                        <hr class="unit-ruler">
+                        <div class="unit-name">Unit 3: Differentiation Basics</div>
+                        <hr class="unit-ruler">
+                    </div>
+                    <div class="stars-container">
+                        <div class="four-pointed-star" data-target="dialog-boxcalbeg5"></div>
+                        <div class="dialog-box hidden" id="dialog-boxcalbeg5">
+                            <div class="dialog-text" data-lesson="calbeglsn5">Foundations of Derivatives</div>
+                            <button class="start-button" data-lesson="calbeglsn5">Start</button>
+                        </div>
+                        <div class="four-pointed-star" data-target="dialog-boxcalbeg6"></div>
+                        <div class="dialog-box hidden" id="dialog-boxcalbeg6">
+                            <div class="dialog-text" data-lesson="calbeglsn6">Rules and Techniques of Differentiation</div>
+                            <button class="start-button" data-lesson="calbeglsn6">Start</button>
+                        </div>
+                    </div>
+                    <div class="unit">
+                        <hr class="unit-ruler">
+                        <div class="unit-name">Unit 4: Applications of Differentiation</div>
+                        <hr class="unit-ruler">
+                    </div>
+                    <div class="stars-container">
+                        <div class="four-pointed-star" data-target="dialog-boxcalbeg7"></div>
+                        <div class="dialog-box hidden" id="dialog-boxcalbeg7">
+                            <div class="dialog-text" data-lesson="calbeglsn7">Optimizing Functions and Tangent Approximations</div>
+                            <button class="start-button" data-lesson="calbeglsn7">Start</button>
+                        </div>
+                        <div class="four-pointed-star" data-target="dialog-boxcalbeg8"></div>
+                        <div class="dialog-box hidden" id="dialog-boxcalbeg8">
+                            <div class="dialog-text" data-lesson="calbeglsn8">Differential Equations and Mathematical Modeling</div>
+                            <button class="start-button"  data-lesson="calbeglsn8">Start</button>
+                        </div>
+                    </div>                                                          
+                </section>
+                <section id="intermediate">
+                    <div class="unit">
+                        <hr class="unit-ruler">
+                        <div class="unit-name">Unit 1: Advanced Differentiation Techniques</div>
+                        <hr class="unit-ruler">
+                    </div>
+                    <div class="flower">
+                        <div class="flower_head" data-target="dialog-boxcalitd1"></div>
+                        <div class="dialog-box hidden" id="dialog-boxcalitd1">
+                            <div class="dialog-text" data-lesson="calitdlsn1">Multivariable Calculus and Chain Rule</div>
+                            <button class="start-button" data-lesson="calitdlsn1">Start</button>
+                        </div>
+                        <div class="flower_head" data-target="dialog-boxcalitd2"></div>
+                        <div class="dialog-box hidden" id="dialog-boxcalitd2">
+                            <div class="dialog-text" data-lesson="calitdlsn2">Implicit Differentiation and Related Rates in Multivariable Context</div>
+                            <button class="start-button" data-lesson="calitdlsn2">Start</button>
+                        </div>
+                    </div>
+                    <div class="unit">
+                        <hr class="unit-ruler">
+                        <div class="unit-name">Unit 2: Integration Basics</div>
+                        <hr class="unit-ruler">
+                    </div>
+                    <div class="flower">
+                        <div class="flower_head" data-target="dialog-boxcalitd3"></div>
+                        <div class="dialog-box hidden" id="dialog-boxcalitd3">
+                            <div class="dialog-text" data-lesson="calitdlsn3">Techniques of Integration</div>
+                            <button class="start-button" data-lesson="calitdlsn3">Start</button>
+                        </div>
+                        <div class="flower_head" data-target="dialog-boxcalitd4"></div>
+                        <div class="dialog-box hidden" id="dialog-boxcalitd4">
+                            <div class="dialog-text" data-lesson="calitdlsn4">Advanced Integration Methods</div>
+                            <button class="start-button" data-lesson="calitdlsn4">Start</button>
+                        </div>
+                    </div>
+                    <div class="unit">
+                        <hr class="unit-ruler">
+                        <div class="unit-name">Unit 3: Applications of Integration</div>
+                        <hr class="unit-ruler">
+                    </div>
+                    <div class="flower">
+                        <div class="flower_head" data-target="dialog-boxcalitd5"></div>
+                        <div class="dialog-box hidden" id="dialog-boxcalitd5">
+                            <div class="dialog-text" data-lesson="calitdlsn5">Volume Calculations in Multivariable Context</div>
+                            <button class="start-button" data-lesson="calitdlsn5">Start</button>
+                        </div>
+                        <div class="flower_head" data-target="dialog-boxcalitd6"></div>
+                        <div class="dialog-box hidden" id="dialog-boxcalitd6">
+                            <div class="dialog-text" data-lesson="calitdlsn6">Advanced Topics in Differential Equations</div>
+                            <button class="start-button" data-lesson="calitdlsn6">Start</button>
+                        </div>
+                    </div>
+                    <div class="unit">
+                </section>
+                <section id="advanced">
+                    <div class="unit">
+                        <hr class="unit-ruler">
+                        <div class="unit-name">Unit 1: Advanced Integration Techniques</div>
+                        <hr class="unit-ruler">
+                    </div>
+                    <div class="bolt-container">
+                        <div class="bolt" data-target="dialog-boxcaladv1"></div>
+                        <div class="dialog-box hidden" id="dialog-boxcaladv1">
+                            <div class="dialog-text" data-lesson="caladvlsn1">Fourier Series and Transforms</div>
+                            <button class="start-button" data-lesson="caladvlsn1">Start</button>
+                        </div>
+                        <div class="bolt" data-target="dialog-boxcaladv2"></div>
+                        <div class="dialog-box hidden" id="dialog-boxcaladv2">
+                            <div class="dialog-text" data-lesson="caladvlsn2">Calculus of Variations</div>
+                            <button class="start-button" data-lesson="caladvlsn2">Start</button>
+                        </div>
+                    </div>
+                    <div class="unit">
+                        <hr class="unit-ruler">
+                        <div class="unit-name">Unit 2: Sequences and Series</div>
+                        <hr class="unit-ruler">
+                    </div>
+                    <div class="bolt-container">
+                        <div class="bolt" data-target="dialog-boxcaladv3"></div>
+                        <div class="dialog-box hidden" id="dialog-boxcaladv3">
+                            <div class="dialog-text" data-lesson="caladvlsn3">Convergence and Divergence of Series</div>
+                            <button class="start-button" data-lesson="caladvlsn3">Start</button>
+                        </div>
+                        <div class="bolt" data-target="dialog-boxcaladv4"></div>
+                        <div class="dialog-box hidden" id="dialog-boxcaladv4">
+                            <div class="dialog-text" data-lesson="caladvlsn4">Analytic Functions and Complex Integration</div>
+                            <button class="start-button" data-lesson="caladvlsn4">Start</button>
+                        </div>
+                    </div>
+                    <div class="unit">
+                        <hr class="unit-ruler">
+                        <div class="unit-name">Unit 3: Multivariable Calculus</div>
+                        <hr class="unit-ruler">
+                    </div>
+                    <div class="bolt-container">
+                        <div class="bolt" data-target="dialog-boxcaladv5"></div>
+                        <div class="dialog-box hidden" id="dialog-boxcaladv5">
+                            <div class="dialog-text" data-lesson="caladvlsn5">Advanced Topics in Vector Calculus</div>
+                            <button class="start-button" data-lesson="caladvlsn5">Start</button>
+                        </div>
+                        <div class="bolt" data-target="dialog-boxcaladv6"></div>
+                        <div class="dialog-box hidden" id="dialog-boxcaladv6">
+                            <div class="dialog-text" data-lesson="caladvlsn6">Manifolds and Differential Forms</div>
+                            <button class="start-button" data-lesson="caladvlsn6">Start</button>
+                        </div>
+                    </div>
+                    <div class="unit">
+                        <hr class="unit-ruler">
+                        <div class="unit-name">Unit 4: Advanced Differential Equations</div>
+                        <hr class="unit-ruler">
+                    </div>
+                    <div class="bolt-container">
+                        <div class="bolt" data-target="dialog-boxcaladv7"></div>
+                        <div class="dialog-box hidden" id="dialog-boxcaladv7">
+                            <div class="dialog-text" data-lesson="caladvlsn7">Laplace Transform and Applications</div>
+                            <button class="start-button" data-lesson="caladvlsn7">Start</button>
+                        </div>
+                        <div class="bolt" data-target="dialog-boxcaladv8"></div>
+                        <div class="dialog-box hidden" id="dialog-boxcaladv8">
+                            <div class="dialog-text" data-lesson="caladvlsn8">Nonlinear Systems and Chaos Theory</div>
+                            <button class="start-button" data-lesson="caladvlsn8">Start</button>
+                        </div>
+                    </div>
+                </section>
+            </section>
+            </div>
+        </main>
+        <div class="chat-button">
+            <div class="icon">
+                <i class="far fa-comments"></i>
+            </div>
+            <div class="text">Clarifier</div>
+        </div> 
+        <div class="chatbot-container" id="chatbot-container">
+            <div id="header">
+                <h1>Clarify your doubts here</h1>
+                <button id="close-button"><span></span></button>
+            </div>
+            <div id="chatbot">
+                <div id="conversation">
+                    <div class="chatbot-message">
+                        <p class="chatbot-text">Hi! 👋 How can I help you?</p>
+                    </div>
+                </div>
+                <form id="input-form">
+                    <message-container>
+                        <input id="input-field" name="user_input" type="text" placeholder="Type your message here">
+                        <button id="submit-button" type="submit">
+                            <img class="send-icon" src="{{ url_for('static', filename='images/send-message.png') }}" alt="">
+                        </button>
+                    </message-container>
+                </form>                              
+            </div>
+        </div>               
+        <div class="feedback-button">
+            <div class="icon">
+                <i class="far fa-comment-dots"></i> 
+            </div>
+            <div class="text">Feedback</div>
+        </div>  
+        <div id="feedback-container" class="feedback-container">
+            <form id="feedback-form">
+                <button id="close-feedback-button" class="close-button">×</button> <!-- Close button -->
+                <h2>Feedback Form</h2>            
+                <textarea id="feedback-message" rows="4" placeholder="Enter your feedback"></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>      
+    </div>
+</body>
+</html>
