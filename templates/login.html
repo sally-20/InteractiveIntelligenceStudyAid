@@ -28,13 +28,16 @@
         <h2><center>Login</center></h2>
         <form action="{{ url_for('login') }}" method="post">
             {{ form.hidden_tag() }}
-            <label for="username"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="username" required>
+            <label for="username_or_email"><b>Username or Email</b></label>
+            <input type="text" placeholder="Enter Username or Email" name="username_or_email" required>
             <label for="password"><b>Password</b></label>
             <input type="password" placeholder="Enter Password" name="password" required>
             <a href="{{ url_for('algorithms') }}"><button type="submit">Login</button></a>
             <a href="{{ url_for('signup') }}"><button type="button">Sign Up</button></a>
         </form>
+        <div class="forgot-password">
+            <p><a href="{{ url_for('forgot_password') }}" style="color:#000000">Forgot Password</a></p>
+        </div>
     </div>
 </body>
 </html>
