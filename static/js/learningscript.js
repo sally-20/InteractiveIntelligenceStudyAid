@@ -307,17 +307,47 @@ document.addEventListener('DOMContentLoaded', function () {
         // Return a random response
         return responses[Math.floor(Math.random() * responses.length)];
     }
-    
-    // Function to toggle visibility of the feedback form
+
+    // Function to submit feedback
     const feedbackButton = document.querySelector(".feedback-button");
     const feedbackContainer = document.getElementById("feedback-container");
     const closeFeedbackButton = document.getElementById("close-feedback-button");
+    const submitFeedbackButton = document.getElementById("submit-feedback-button");
+    const feedbackMessage = document.getElementById("feedback-message");
 
     feedbackButton.addEventListener("click", function () {
-        feedbackContainer.style.display = "block"; // Show the feedback container
+        feedbackContainer.style.display = "block";
+    });
+    
+    closeFeedbackButton.addEventListener("click", function () {
+        feedbackContainer.style.display = "none";
     });
 
-    closeFeedbackButton.addEventListener("click", function () {
-        feedbackContainer.style.display = "none"; // Hide the feedback container
-    });
+    function submitFeedback(url, username, feedbackContainer) {
+        // Fetch the feedback message and other data from the form
+        const feedbackMessage = document.getElementById("feedback-message").value;
+        // Make a POST request to the feedback submission endpoint
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+            feedback_message: feedbackMessage,
+                username: username,
+            }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Handle the response, e.g., show a success message
+            console.log(data);
+            alert("Feedback submitted successfully!");
+            feedbackContainer.style.display = "none";
+        })
+        .catch(error => {
+            // Handle errors
+            console.error('Error submitting feedback:', error);
+            alert("Error submitting feedback. Please try again.");
+        });
+    }  
 });
