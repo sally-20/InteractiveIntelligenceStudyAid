@@ -1,22 +1,3 @@
-{
-    "cSpell.words": [
-        "algadvlsn",
-        "algbeglsn",
-        "algitdlsn",
-        "algorithmslearning",
-        "calculuslearning",
-        "dotenv",
-        "dropbtn",
-        "jsonify",
-        "ondelete",
-        "openai",
-        "OPENAI",
-        "personalfinance",
-        "personalfinancelearning",
-        "sqlalchemy",
-        "SQLALCHEMY",
-        "wtforms",
-        "werkzeug"
-    ],
-    "svn.ignoreMissingSvnWarning": true
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:2ac358ed4da178a8b972a0b7235659a49d444a6ebaa0046e25228b083075e124
+size 470
