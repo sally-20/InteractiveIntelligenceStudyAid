@@ -44,12 +44,12 @@
                     </ul>
                 </li>
                 <li class="sidebar-item">
-                    <a href="#" class="colored-icon">
+                    <a href="{{ url_for('profile') }}" class="colored-icon">
                         <i class="fas fa-user"></i> Profile
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="#" class="colored-icon">
+                    <a href="{{ url_for('settings') }}" class="colored-icon">
                         <i class="fas fa-cog"></i> Settings
                     </a>
                 </li>
@@ -304,10 +304,10 @@
         </div>  
         <div id="feedback-container" class="feedback-container">
             <form id="feedback-form">
-                <button id="close-feedback-button" class="close-button">×</button> <!-- Close button -->
+                <button id="close-feedback-button" class="close-button">×</button>
                 <h2>Feedback Form</h2>            
-                <textarea id="feedback-message" rows="4" placeholder="Enter your feedback"></textarea>
-                <button type="submit">Submit</button>
+                <textarea id="feedback-message" name="feedback_message" rows="4" placeholder="Enter your feedback" required></textarea>
+                <button type="submit" onclick="submitFeedback('{{ url_for('submit_feedback') }}')">Submit</button>
             </form>
         </div>      
     </div>
