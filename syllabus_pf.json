@@ -1,0 +1,594 @@
+{
+    "Beginner": {
+        "Unit 1- Basic Financial Literacy": {
+            "Lesson 1- Budgeting Basics": {
+                "Sub Lesson 1- Importance of budgeting": null,
+                "Sub Lesson 2- How to create a simple budget": null,
+                "Sub Lesson 3- Tracking expenses effectively": null
+            },
+            "Lesson 2- Setting Financial Goals": {
+                "Sub Lesson 1- Setting short-term and long-term financial goals": null,
+                "Sub Lesson 2- Developing a savings plan": null,
+                "Sub Lesson 3- Importance of an emergency fund": null
+            },
+            "Lesson 3- Understanding Compound Interest": {
+                "Sub Lesson 1- Explanation of compound interest": null,
+                "Sub Lesson 2- How compound interest affects savings and investments": null,
+                "Sub Lesson 3- Examples illustrating compound interest calculations": null
+            }
+        },
+        "Unit 2- Debt Management": {
+            "Lesson 1- Types of Debts": {
+                "Sub Lesson 1- Different types of debt and their characteristics": null,
+                "Sub Lesson 2- Interest rates and fees associated with debt": null,
+                "Sub Lesson 3- How debt impacts your financial health": null
+            },
+            "Lesson 2- Debt Reduction Strategies": {
+                "Sub Lesson 1- Debt repayment strategies (snowball vs. avalanche)": null,
+                "Sub Lesson 2- Budgeting to pay down debt": null,
+                "Sub Lesson 3- Avoiding common debt pitfalls": null
+            }
+        },
+        "Unit 3- Emergency Fund and Insurance": {
+            "Lesson 1- Building an Emergency Fund": {
+                "Sub Lesson 1- Why emergency funds are crucial": null,
+                "Sub Lesson 2- How to determine the right emergency fund size": null,
+                "Sub Lesson 3- Where to keep your emergency fund": null
+            },
+            "Lesson 2- Basics of Insurance": {
+                "Sub Lesson 1- Types of insurance coverage (health, life, property)": null,
+                "Sub Lesson 2- How insurance protects you financially": null,
+                "Sub Lesson 3- How to choose appropriate insurance policies": null
+            }
+        },
+        "Unit 4- Investment Basics": {
+            "Lesson 1- Intro to Investments": {
+                "Sub Lesson 1- Overview of savings accounts and fixed deposits": null,
+                "Sub Lesson 2- Risk and return associated with these options": null,
+                "Sub Lesson 3- Pros and cons of each option": null
+            },
+            "Lesson 2- Risk and Return Trade-offs": {
+                "Sub Lesson 1- Understanding risk tolerance": null,
+                "Sub Lesson 2- How risk affects investment returns": null,
+                "Sub Lesson 3- Balancing risk and return in your investment portfolio": null
+            }
+        },
+        "Unit 5- Introduction to Taxation": {
+            "Lesson 1- Income Tax Basics": {
+                "Sub Lesson 1- Understanding income tax slabs": null,
+                "Sub Lesson 2- How to calculate income tax": null,
+                "Sub Lesson 3- Filing income tax returns": null
+            },
+            "Lesson 2- Tax-Saving Investments": {
+                "Sub Lesson 1- Explanation of tax-saving investment options (ELSS, PPF, NPS)": null,
+                "Sub Lesson 2- Benefits of investing in tax-saving instruments": null,
+                "Sub Lesson 3- Strategies for tax-efficient investing": null
+            }
+        }
+    },
+    "Intermediate": {
+        "Unit 1- Advanced Budgeting": {
+            "Lesson 1- Building a detailed budget with income and expenses": {
+                "Sub Lesson 1- Identifying sources of income and expenses": null,
+                "Sub Lesson 2- Tracking and categorizing expenses": null,
+                "Sub Lesson 3- Creating a monthly budget spreadsheet": null
+            },
+            "Lesson 2- Allocating funds for savings and investments": {
+                "Sub Lesson 1- Setting savings goals": null,
+                "Sub Lesson 2- Creating an emergency fund": null,
+                "Sub Lesson 3- Investing in Indian financial instruments": null
+            },
+            "Lesson 3- Prioritizing financial goals within the budget": {
+                "Sub Lesson 1- Identifying short-term and long-term goals": null,
+                "Sub Lesson 2- Ranking and allocating funds to goals": null,
+                "Sub Lesson 3- Adjusting goals as financial circumstances change": null
+            }
+        },
+        "Unit 2- Monitoring and Adjusting the Budget": {
+            "Lesson 1- Regular tracking of expenses": {
+                "Sub Lesson 1- Using budgeting apps and tools": null,
+                "Sub Lesson 2- Recording daily expenses": null,
+                "Sub Lesson 3- Analyzing spending patterns": null
+            },
+            "Lesson 2- Making necessary adjustments to the budget": {
+                "Sub Lesson 1- Identifying budget shortfalls": null,
+                "Sub Lesson 2- Cutting discretionary expenses": null,
+                "Sub Lesson 3- Reallocating funds to priority areas": null
+            },
+            "Lesson 3- Handling unexpected financial changes": {
+                "Sub Lesson 1- Dealing with unexpected expenses": null,
+                "Sub Lesson 2- Adapting the budget to income fluctuations": null,
+                "Sub Lesson 3- Building a contingency plan": null
+            }
+        },
+        "Unit 3- In-Depth Exploration of Mutual Funds": {
+            "Lesson 1- Types of mutual funds (equity, debt, hybrid)": {
+                "Sub Lesson 1- Understanding Indian equity mutual funds": null,
+                "Sub Lesson 2- Exploring debt mutual funds in India": null,
+                "Sub Lesson 3- Hybrid funds and their characteristics in the Indian Market": null
+            },
+            "Lesson 2- How to select and invest in mutual funds": {
+                "Sub Lesson 1- Researching Indian mutual fund performance": null,
+                "Sub Lesson 2- Evaluating fund managers and strategies in India": null,
+                "Sub Lesson 3- Making informed investment decisions in the Indian context": null
+            },
+            "Lesson 3- Monitoring and managing mutual fund investments": {
+                "Sub Lesson 1- Tracking Indian mutual fund performance": null,
+                "Sub Lesson 2- Rebalancing the mutual fund portfolio for Indian investors": null,
+                "Sub Lesson 3- Tax implications of mutual fund investments in India": null
+            }
+        },
+        "Unit 4- In-Depth Exploration of Stocks": {
+            "Lesson 1- Stock market basics": {
+                "Sub Lesson 1-  Understanding Indian stock exchanges": null,
+                "Sub Lesson 2- Types of stocks in the Indian market": null,
+                "Sub Lesson 3- How stock prices are determined in India": null
+            },
+            "Lesson 2- Fundamental and technical analysis": {
+                "Sub Lesson 1- Analyzing Indian company financial statements": null,
+                "Sub Lesson 2- Using technical indicators in the Indian stock market": null,
+                "Sub Lesson 3- Combining both approaches for stock analysis in India": null
+            },
+            "Lesson 3- Building and managing a stock portfolio": {
+                "Sub Lesson 1- Constructing a diversified stock portfolio in India": null,
+                "Sub Lesson 2- Rebalancing and reviewing the portfolio for Indian investors": null,
+                "Sub Lesson 3- Strategies for long-term stock investing in India": null
+            }
+        },
+        "Unit 5- In-Depth Exploration of Bonds": {
+            "Lesson 1- Types of bonds (government, corporate)": {
+                "Sub Lesson 1- Indian government bonds and their safety": null,
+                "Sub Lesson 2- Corporate bonds and credit risk in India": null,
+                "Sub Lesson 3- Municipal bonds and tax advantages in the Indian context": null
+            },
+            "Lesson 2- How bonds work and their risk factors": {
+                "Sub Lesson 1- Understanding bond coupon payments in India": null,
+                "Sub Lesson 2- Bond maturity and pricing in the Indian bond market": null,
+                "Sub Lesson 3- Assessing interest rate risk for Indian bond investments": null
+            },
+            "Lesson 3- Strategies for investing in bonds": {
+                "Sub Lesson 1- Building a bond ladder in the Indian market": null,
+                "Sub Lesson 2- Evaluating tax-free bonds and other fixed-income options in India": null,
+                "Sub Lesson 3- Managing bond portfolio risk and returns in India": null
+            }
+        },
+        "Unit 6- In-Depth Exploration of SIPs": {
+            "Lesson 1- Systematic Investment Plan (SIP) explained": {
+                "Sub Lesson 1- Introduction to SIPs in the Indian context": null,
+                "Sub Lesson 2- SIP frequency and investment amounts in India": null,
+                "Sub Lesson 3- SIP vs. lump-sum investments for Indian investors": null
+            },
+            "Lesson 2- Benefits of SIP investing": {
+                "Sub Lesson 1- Rupee cost averaging and its advantages in India": null,
+                "Sub Lesson 2- Discipline and regularity in Indian SIP investments": null,
+                "Sub Lesson 3- SIPs as a tool for long-term wealth creation in India": null
+            },
+            "Lesson 3- SIP portfolio management and rebalancing": {
+                "Sub Lesson 1- Diversifying SIP investments in the Indian market": null,
+                "Sub Lesson 2- Monitoring and adjusting SIP portfolios for Indian investors": null,
+                "Sub Lesson 3- Tax considerations and SIP investment strategies in India": null
+            }
+        },
+        "Unit 7- Diversification and Portfolio Management": {
+            "Lesson 1- Importance of diversifying investments": {
+                "Sub Lesson 1- Portfolio risk reduction through diversification in India": null,
+                "Sub Lesson 2- Asset allocation and diversification strategies in India": null,
+                "Sub Lesson 3- Diversifying across asset classes and sectors in the Indian context": null
+            },
+            "Lesson 2- Constructing a diversified investment portfolio": {
+                "Sub Lesson 1- Building a balanced portfolio for Indian investors": null,
+                "Sub Lesson 2- Asset allocation and investment goals in India": null,
+                "Sub Lesson 3- Incorporating risk tolerance into portfolio construction in India": null
+            },
+            "Lesson 3- Regular portfolio review and adjustments": {
+                "Sub Lesson 1- Periodic evaluation of portfolio performance in India": null,
+                "Sub Lesson 2- Rebalancing and asset reallocation for Indian investors": null,
+                "Sub Lesson 3- Tax-efficient portfolio management strategies in India": null
+            }
+        },
+        "Unit 8- Calculating Retirement Corpus": {
+            "Lesson 1- Estimating retirement expenses": {
+                "Sub Lesson 1- Determining retirement lifestyle and expenses in India": null,
+                "Sub Lesson 2- Accounting for healthcare and inflation in Indian retirement planning": null,
+                "Sub Lesson 3- Goal-setting for retirement savings in India": null
+            },
+            "Lesson 2- Determining the required retirement savings": {
+                "Sub Lesson 1- Retirement corpus calculations for Indian investors": null,
+                "Sub Lesson 2- Retirement planning tools and calculators in India": null,
+                "Sub Lesson 3- Assessing retirement readiness in the Indian context": null
+            },
+            "Lesson 3- Factoring in inflation and life expectancy": {
+                "Sub Lesson 1- Understanding inflation impact on retirement savings in India": null,
+                "Sub Lesson 2- Life expectancy and longevity risk considerations for Indians": null,
+                "Sub Lesson 3- Strategies to combat inflation and ensure long-term security in India": null
+            }
+        },
+        "Unit 9- Planning for Post-Retirement Income": {
+            "Lesson 1- Social Security and pension plans": {
+                "Sub Lesson 1- Overview of Indian social security schemes": null,
+                "Sub Lesson 2- Evaluating government pension plans in India": null,
+                "Sub Lesson 3- Maximizing retirement benefits through Indian social security": null
+            },
+            "Lesson 2- Creating a retirement income strategy": {
+                "Sub Lesson 1- Designing a sustainable post-retirement income plan in India": null,
+                "Sub Lesson 2- Investment options for generating retirement income in India": null,
+                "Sub Lesson 3- Balancing sources of retirement income for Indian retirees": null
+            },
+            "Lesson 3- Managing retirement investments for income": {
+                "Sub Lesson 1- Investment strategies for regular income during retirement in India": null,
+                "Sub Lesson 2- Tax-efficient withdrawal methods for Indian retirees": null,
+                "Sub Lesson 3- Adapting the retirement income plan to changing needs in India": null
+            }
+        },
+        "Unit 10- Retirement Investment Options": {
+            "Lesson 1- Understanding Employee Provident Fund (EPF)": {
+                "Sub Lesson 1- EPF contributions and benefits for Indian employees": null,
+                "Sub Lesson 2- EPF withdrawal rules and considerations in India": null,
+                "Sub Lesson 3- Optimizing EPF for retirement savings in India": null
+            },
+            "Lesson 2- National Pension Scheme (NPS) and its benefits": {
+                "Sub Lesson 1- Exploring NPS as a retirement investment vehicle in India": null,
+                "Sub Lesson 2- Tax advantages and features of NPS for Indian investors": null,
+                "Sub Lesson 3- NPS portfolio allocation and management in India": null
+            },
+            "Lesson 3- Public Provident Fund (PPF) for long-term savings": {
+                "Sub Lesson 1- PPF account features and tax benefits in India": null,
+                "Sub Lesson 2- Maximizing PPF for retirement planning in India": null,
+                "Sub Lesson 3- PPF withdrawal rules and strategies for Indian retirees": null
+            }
+        },
+        "Unit 11- Tax Planning Strategies": {
+            "Lesson 1- Tax planning strategies for individuals": {
+                "Sub Lesson 1- Understanding the Indian income tax structure": null,
+                "Sub Lesson 2- Leveraging tax-saving investments and deductions in India": null,
+                "Sub Lesson 3- Year-end tax planning tactics for Indian taxpayers": null
+            },
+            "Lesson 2- Tax-saving investment options": {
+                "Sub Lesson 1- Popular tax-saving investment instruments in India": null,
+                "Sub Lesson 2- ELSS (Equity-Linked Savings Scheme) and other tax-saving mutual funds in India": null,
+                "Sub Lesson 3- Navigating tax-saving options to minimize tax liability in India": null
+            },
+            "Lesson 3- Utilizing deductions and exemptions": {
+                "Sub Lesson 1- Claiming deductions under Section 80C and other sections in India": null,
+                "Sub Lesson 2- Exemptions and deductions for specific expenses in India": null,
+                "Sub Lesson 3- Compliance and record-keeping for tax deductions in India": null
+            }
+        },
+        "Unit 12- Understanding Tax Deductions and Exemptions": {
+            "Lesson 1- Exploring common tax deductions": {
+                "Sub Lesson 1- Deductions for home loan interest and principal": null,
+                "Sub Lesson 2- Deductions for education loans and medical expenses": null,
+                "Sub Lesson 3- Deductions for donations and contributions": null
+            },
+            "Lesson 2- Identifying eligible exemptions": {
+                "Sub Lesson 1- Exemptions on HRA (House Rent Allowance) and LTA (Leave Travel Allowance)": null,
+                "Sub Lesson 2- Exemptions on capital gains and agricultural income": null,
+                "Sub Lesson 3- Navigating tax exemptions for special cases": null
+            },
+            "Lesson 3- Filing tax returns accurately": {
+                "Sub Lesson 1- Gathering necessary documents and forms": null,
+                "Sub Lesson 2- Filling out income tax return forms": null,
+                "Sub Lesson 3- E-filing and verifying tax returns": null
+            }
+        },
+        "Unit 13- Basics of Property Investment": {
+            "Lesson 1- Pros and cons of real estate investment": {
+                "Sub Lesson 1- Assessing the Indian real estate market for investment": null,
+                "Sub Lesson 2- Risks and rewards of property investment in India": null,
+                "Sub Lesson 3- Diversifying a portfolio with real estate in India": null
+            },
+            "Lesson 2- Property selection criteria": {
+                "Sub Lesson 1- Factors to consider when choosing Indian investment properties": null,
+                "Sub Lesson 2- Location, property type, and market trends in India": null,
+                "Sub Lesson 3- Due diligence and property inspection in Indian real estate": null
+            }
+        },
+        "Unit 14- Home Loans and Mortgage Basics": {
+            "Lesson 1- How home loans work": {
+                "Sub Lesson 1- Understanding the Indian home loan application process": null,
+                "Sub Lesson 2- Types of home loan interest rates in India": null,
+                "Sub Lesson 3- Loan approval and disbursement in the Indian context": null
+            },
+            "Lesson 2- Understanding mortgage terms and interest rates": {
+                "Sub Lesson 1- Interest rate options for Indian home loans": null,
+                "Sub Lesson 2- EMI calculation and amortization schedules in India": null,
+                "Sub Lesson 3- Mortgage refinancing and prepayment in India": null
+            },
+            "Lesson 3- Managing home loan repayments": {
+                "Sub Lesson 1- Strategies for timely EMI payments in India": null,
+                "Sub Lesson 2- Loan foreclosure and settlement in India": null,
+                "Sub Lesson 3- Tax benefits of home loans and EMIs in India": null
+            }
+        },
+        "Unit 15- Rental Income and Property Management": {
+            "Lesson 1- Generating rental income from property": {
+                "Sub Lesson 1- Rent pricing and lease agreements in India": null,
+                "Sub Lesson 2- Tenant screening and property management in India": null,
+                "Sub Lesson 3- Legal considerations for Indian landlords": null
+            },
+            "Lesson 2- Property maintenance and legal considerations": {
+                "Sub Lesson 1- Maintaining and repairing rental properties in India": null,
+                "Sub Lesson 2- Indian laws and regulations for property landlords": null,
+                "Sub Lesson 3- Dealing with disputes and eviction processes in India": null
+            },
+            "Lesson 3- Tax implications of rental income": {
+                "Sub Lesson 1- Reporting rental income and expenses to Indian tax authorities": null,
+                "Sub Lesson 2- Deducting eligible rental property expenses in India": null,
+                "Sub Lesson 3- Capital gains tax on property sales in India": null
+            }
+        }
+    },
+    "Advanced": {
+        "Unit 1- In-Depth Analysis of Market Trends and Strategies": {
+            "Lesson 1- Technical and fundamental analysis": {
+                "Sub Lesson 1- Applying technical analysis to Indian stock markets": null,
+                "Sub Lesson 2- Fundamentals analysis for Indian equities": null,
+                "Sub Lesson 3- Combining technical and fundamental analysis in India": null
+            },
+            "Lesson 2- Market timing strategies": {
+                "Sub Lesson 1- Market timing techniques and indicators in India": null,
+                "Sub Lesson 2- Risk management strategies for Indian investors": null,
+                "Sub Lesson 3- Developing a market timing strategy specific to India": null
+            },
+            "Lesson 3- Risk management techniques": {
+                "Sub Lesson 1- Risk assessment and mitigation for Indian investors": null,
+                "Sub Lesson 2- Hedging strategies in the Indian market": null,
+                "Sub Lesson 3- Building a risk management plan tailored for India": null
+            }
+        },
+        "Unit 2- Options Trading": {
+            "Lesson 1- Understanding options contracts": {
+                "Sub Lesson 1- Options terminology and concepts in the Indian context": null,
+                "Sub Lesson 2- Options trading platforms and resources in India": null,
+                "Sub Lesson 3- Navigating Indian options markets and regulations": null
+            },
+            "Lesson 2- Option strategies (covered calls, puts, spreads)": {
+                "Sub Lesson 1- Implementing covered call strategies in the Indian market": null,
+                "Sub Lesson 2- Using put options for risk management in India": null,
+                "Sub Lesson 3- Exploring option spreads and combinations in India": null
+            },
+            "Lesson 3- Risk and reward in options trading": {
+                "Sub Lesson 1- Risk assessment in Indian options trading": null,
+                "Sub Lesson 2- Calculating option trading costs and returns in India": null,
+                "Sub Lesson 3- Balancing option strategies for Indian investors": null
+            }
+        },
+        "Unit 3- Derivatives": {
+            "Lesson 1- Introduction to derivatives markets": {
+                "Sub Lesson 1- Derivatives instruments available in India": null,
+                "Sub Lesson 2- Understanding futures and options in the Indian context": null,
+                "Sub Lesson 3- Regulations and trading platforms for Indian derivatives": null
+            },
+            "Lesson 2- Futures and options trading": {
+                "Sub Lesson 1- Futures trading strategies for Indian markets": null,
+                "Sub Lesson 2- Hedging techniques with futures and options in India": null,
+                "Sub Lesson 3- Margin requirements and leverage in Indian derivatives trading": null
+            },
+            "Lesson 3- Hedging strategies using derivatives": {
+                "Sub Lesson 1- Hedging currency risk with futures in India": null,
+                "Sub Lesson 2- Interest rate risk management through derivatives in India": null,
+                "Sub Lesson 3- Case studies of effective hedging in Indian business context": null
+            }
+        },
+        "Unit 4- Commodities": {
+            "Lesson 1- Investing in commodities (e.g., gold, oil)": {
+                "Sub Lesson 1- Commodities trading platforms and exchanges in India": null,
+                "Sub Lesson 2- Investing in gold and precious metals in India": null,
+                "Sub Lesson 3- Strategies for trading oil and agricultural commodities in India": null
+            },
+            "Lesson 2- Commodity market dynamics": {
+                "Sub Lesson 1- Understanding supply and demand in Indian commodity markets": null,
+                "Sub Lesson 2- Seasonal trends and market influences in India": null,
+                "Sub Lesson 3- Risk management in Indian commodity investments": null
+            },
+            "Lesson 3- Risks and rewards of commodity investments": {
+                "Sub Lesson 1- Assessing commodity price volatility in India": null,
+                "Sub Lesson 2- Diversification and portfolio allocation with commodities in India": null
+            }
+        },
+        "Unit 5- Creating Wills": {
+            "Lesson 1- Importance of a will": {
+                "Sub Lesson 1- Indian legal framework for wills and estates": null,
+                "Sub Lesson 2- Benefits of creating a will in India": null,
+                "Sub Lesson 3- Role of a will in Indian estate planning": null
+            },
+            "Lesson 2- How to create a legally valid will": {
+                "Sub Lesson 1- Drafting and formalities of a will in India": null,
+                "Sub Lesson 2- Choosing an executor and witnesses in India": null,
+                "Sub Lesson 3- Reviewing and updating a will under Indian law": null
+            },
+            "Lesson 3- Designating beneficiaries and executors": {
+                "Sub Lesson 1- Selecting beneficiaries and heirs in Indian wills": null,
+                "Sub Lesson 2- Executor responsibilities and considerations in India": null,
+                "Sub Lesson 3- Estate distribution and legal aspects in Indian wills": null
+            }
+        },
+        "Unit 6- Establishing Trusts": {
+            "Lesson 1- Types of trusts (revocable, irrevocable)": {
+                "Sub Lesson 1- Understanding trust structures and terminology in India": null,
+                "Sub Lesson 2- Revocable and irrevocable trust benefits and considerations in India": null,
+                "Sub Lesson 3- Naming trustees and beneficiaries for Indian trusts": null
+            },
+            "Lesson 2- Setting up and managing trusts": {
+                "Sub Lesson 1- Trust creation process and documentation in India": null,
+                "Sub Lesson 2- Trustee duties and responsibilities under Indian law": null,
+                "Sub Lesson 3- Updating and modifying trusts in the Indian context": null
+            },
+            "Lesson 3- Benefits of using trusts in estate planning": {
+                "Sub Lesson 1- Asset protection and tax planning advantages of trusts in India": null,
+                "Sub Lesson 2- Specific use cases for trusts in Indian estate planning": null,
+                "Sub Lesson 3- Trusts as tools for succession planning in Indian families": null
+            }
+        },
+        "Unit 7- Estate Plans": {
+            "Lesson 1- Comprehensive estate planning strategies": {
+                "Sub Lesson 1- Crafting a holistic estate plan for Indian individuals and families": null,
+                "Sub Lesson 2- Coordinating wills, trusts, and other estate planning documents in India": null,
+                "Sub Lesson 3- Ensuring a smooth transfer of assets in Indian estate plans": null
+            },
+            "Lesson 2- Minimizing estate taxes": {
+                "Sub Lesson 1- Understanding Indian estate and inheritance tax laws": null,
+                "Sub Lesson 2- Strategies for reducing estate tax liabilities in India": null,
+                "Sub Lesson 3- Gifting and charitable planning in Indian estate tax management": null
+            },
+            "Lesson 3- Ensuring a smooth transfer of assets": {
+                "Sub Lesson 1- Probate and estate administration in India": null,
+                "Sub Lesson 2- Distribution of assets to beneficiaries under Indian law": null,
+                "Sub Lesson 3- Dispute resolution and litigation in Indian estate matters": null
+            }
+        },
+        "Unit 8- Strategies to Protect and Transfer Wealth": {
+            "Lesson 1- Asset protection techniques": {
+                "Sub Lesson 1- Shielding assets from creditors and legal threats in India": null,
+                "Sub Lesson 2- Indian strategies for protecting wealth from unforeseen circumstances": null,
+                "Sub Lesson 3- Offshore trusts and international asset protection for Indian investors": null
+            },
+            "Lesson 2- Gifting strategies": {
+                "Sub Lesson 1- Tax-efficient gift planning for Indian families": null,
+                "Sub Lesson 2- Wealth transfer through intergenerational gifting in India": null,
+                "Sub Lesson 3- Legal considerations and documentation for Indian gift arrangements": null
+            },
+            "Lesson 3- Succession planning for family businesses": {
+                "Sub Lesson 1- Transitioning family-owned businesses in India": null,
+                "Sub Lesson 2- Developing a succession plan and governance structure in India": null,
+                "Sub Lesson 3- Balancing family dynamics and business continuity in India": null
+            }
+        },
+        "Unit 9- Financial Aspects of Starting a Business": {
+            "Lesson 1- Creating a business plan and financial projections": {
+                "Sub Lesson 1- Business plan development and elements in the Indian context": null,
+                "Sub Lesson 2- Financial forecasting and projection methods in India": null,
+                "Sub Lesson 3- Attracting investors and securing funding for Indian startups": null
+            },
+            "Lesson 2- Funding options for startups": {
+                "Sub Lesson 1- Equity financing, angel investors, and venture capital in India": null,
+                "Sub Lesson 2- Debt financing and loans for Indian startup companies": null,
+                "Sub Lesson 3- Crowdfunding and alternative funding sources in India": null
+            },
+            "Lesson 3- Managing cash flow and expenses": {
+                "Sub Lesson 1- Cash flow management strategies for Indian startups": null,
+                "Sub Lesson 2- Cost control and expense optimization in Indian businesses": null,
+                "Sub Lesson 3- Accounting and financial reporting for Indian startups": null
+            }
+        },
+        "Unit 10- Financial Aspects of Running a Business": {
+            "Lesson 1- Business accounting and financial statements": {
+                "Sub Lesson 1- Accounting principles and standards for Indian businesses": null,
+                "Sub Lesson 2- Preparing financial statements and reports in India": null,
+                "Sub Lesson 3- Financial analysis for decision-making in Indian companies": null
+            },
+            "Lesson 2- Budgeting and cost control": {
+                "Sub Lesson 1- Budget creation and monitoring in Indian businesses": null,
+                "Sub Lesson 2- Cost reduction and efficiency measures in Indian companies": null,
+                "Sub Lesson 3- Variance analysis and corrective actions in Indian business budgets": null
+            },
+            "Lesson 3- Business financing and growth strategies": {
+                "Sub Lesson 1- Securing additional funding for expansion in India": null,
+                "Sub Lesson 2- Exploring mergers, acquisitions, and partnerships in India": null,
+                "Sub Lesson 3- Strategies for sustainable growth and market expansion in India": null
+            }
+        },
+        "Unit 11- Tax Implications for Business Owners": {
+            "Lesson 1- Choosing the right business structure (e.g., LLC, corporation)": {
+                "Sub Lesson 1- Business entity selection and registration in India": null,
+                "Sub Lesson 2- Tax implications and liability considerations for Indian business structures": null,
+                "Sub Lesson 3- Conversion and reorganization of business entities in India": null
+            },
+            "Lesson 2- Tax planning for business income": {
+                "Sub Lesson 1- Indian corporate income tax strategies and deductions": null,
+                "Sub Lesson 2- GST and indirect tax considerations for businesses in India": null,
+                "Sub Lesson 3- Transfer pricing and international taxation for Indian companies": null
+            },
+            "Lesson 3- Managing payroll and employee taxes": {
+                "Sub Lesson 1- Payroll processing and compliance in Indian businesses": null,
+                "Sub Lesson 2- Employee benefits and tax implications in India": null,
+                "Sub Lesson 3- Handling tax audits and employee tax reporting in India": null
+            }
+        },
+        "Unit 12- Investment Options Outside India": {
+            "Lesson 1- Exploring international investment markets": {
+                "Sub Lesson 1- Overview of global investment opportunities for Indian investors": null,
+                "Sub Lesson 2- Considerations when investing in foreign stocks and markets": null,
+                "Sub Lesson 3- Currency risk management for Indian international investors": null
+            },
+            "Lesson 2- Currency risk and exchange rates": {
+                "Sub Lesson 1- Impact of currency fluctuations on Indian international investments": null,
+                "Sub Lesson 2- Hedging strategies and currency risk mitigation for Indians": null,
+                "Sub Lesson 3- Currency exposure management in global portfolios for Indian investors": null
+            },
+            "Lesson 3- Considerations for investing in foreign assets": {
+                "Sub Lesson 1- Asset allocation and diversification in international portfolios for Indians": null,
+                "Sub Lesson 2- Regulatory compliance and taxation of foreign investments for Indians": null,
+                "Sub Lesson 3- Evaluating risks and rewards when venturing into global markets for Indian investors": null
+            }
+        },
+        "Unit 13- Managing Taxation for International Investments": {
+            "Lesson 1- Understanding tax treaties and foreign tax credits": {
+                "Sub Lesson 1- Bilateral tax treaties and their significance for Indian investors": null,
+                "Sub Lesson 2- Claiming foreign tax credits and relief for Indian international investments": null,
+                "Sub Lesson 3- Compliance with international tax laws and reporting requirements for Indians": null
+            },
+            "Lesson 2- Reporting foreign income and assets": {
+                "Sub Lesson 1- Indian taxation of foreign income and offshore assets": null,
+                "Sub Lesson 2- Filing tax returns and disclosures for international investments as an Indian": null,
+                "Sub Lesson 3- Avoiding tax evasion risks and penalties for Indian global investors": null
+            },
+            "Lesson 3- Tax-efficient structuring of international investments": {
+                "Sub Lesson 1- Structuring international holdings and entities for Indian investors": null,
+                "Sub Lesson 2- Minimizing withholding tax and capital gains tax on foreign investments for Indians": null,
+                "Sub Lesson 3- Ongoing compliance and tax optimization for Indian international portfolios": null
+            }
+        },
+        "Unit 14- Financial Considerations for Marriage": {
+            "Lesson 1- Budgeting for a wedding": {
+                "Sub Lesson 1- Indian wedding budgeting and cost breakdown": null,
+                "Sub Lesson 2- Financing wedding expenses and managing wedding loans in India": null,
+                "Sub Lesson 3- Wedding savings and investment strategies for Indian couples": null
+            },
+            "Lesson 2- Combining finances as a couple": {
+                "Sub Lesson 1- Joint account management and financial communication in India": null,
+                "Sub Lesson 2- Setting financial goals and aspirations as a couple in India": null,
+                "Sub Lesson 3- Preparing for shared financial responsibilities in Indian marriages": null
+            },
+            "Lesson 3- Long-term financial planning for married life": {
+                "Sub Lesson 1- Discussing financial goals and aspirations as a couple in India": null,
+                "Sub Lesson 2- Creating a joint financial plan and budget for married life in India": null,
+                "Sub Lesson 3- Preparing for financial challenges and life changes as a couple in India": null
+            }
+        },
+        "Unit 15- Financial Considerations for Parenthood": {
+            "Lesson 1- Budgeting for childcare and education": {
+                "Sub Lesson 1- Anticipating childcare expenses and education costs in India": null,
+                "Sub Lesson 2- Saving for children's education and managing childcare expenses in India": null,
+                "Sub Lesson 3- Exploring government schemes and benefits for Indian parents": null
+            },
+            "Lesson 2- Saving for children's future needs": {
+                "Sub Lesson 1- Investment strategies for children's financial goals in India": null,
+                "Sub Lesson 2- Setting up dedicated savings accounts and instruments for Indian children": null,
+                "Sub Lesson 3- Teaching financial literacy and responsibility to Indian kids": null
+            },
+            "Lesson 3- Life insurance and estate planning for parents": {
+                "Sub Lesson 1- Importance of life insurance and protection for Indian parents": null,
+                "Sub Lesson 2- Creating a comprehensive estate plan and will as Indian parents": null,
+                "Sub Lesson 3- Guardianship and financial safeguards for Indian children": null
+            }
+        },
+        "Unit 16- Financial Considerations for Education Planning": {
+            "Lesson 1- Saving for children's education expenses": {
+                "Sub Lesson 1- Indian education cost analysis and goal setting": null,
+                "Sub Lesson 2- Education savings plans and investment vehicles in India": null,
+                "Sub Lesson 3- Tax benefits and incentives for education savings in India": null
+            },
+            "Lesson 2- Exploring education savings plans": {
+                "Sub Lesson 1- Overview of Indian education-focused financial products": null,
+                "Sub Lesson 2- Assessing the suitability of education savings plans for Indian families": null,
+                "Sub Lesson 3- Case studies and practical application of education planning in India": null
+            },
+            "Lesson 3- Maximizing financial aid opportunities": {
+                "Sub Lesson 1- Understanding scholarships and financial aid options in India": null,
+                "Sub Lesson 2- Navigating admission and application processes for Indian students": null,
+                "Sub Lesson 3- Combining scholarships, loans, and savings for higher education in India": null
+            }
+        }
+    }
+}
