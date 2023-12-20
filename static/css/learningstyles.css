@@ -694,6 +694,267 @@ p[sentTime]:hover::after {
     color: #333333 !important;
 }
 
+/* Profile Page Styles */
+.profile-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.profile-header {
+    text-align: center;
+}
+
+.profile-picture {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 20px auto;
+    background-color: #706bdf;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 64px;
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-info {
+    text-align: center;
+}
+
+.profile-info h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.profile-info p {
+    color: #555;
+    font-size: 16px;
+}
+
+.progress-bar-container {
+    margin-top: 30px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #eee;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-bar-inner {
+    height: 100%;
+    background-color: #4CAF50; /* Green color for progress */
+}
+
+.achievements-container {
+    margin-top: 30px;
+}
+
+.achievement {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+}
+
+.achievement img {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+.achievement-text {
+    flex: 1;
+}
+
+.settings-link {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    text-decoration: none;
+    color: #4CAF50;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.settings-link:hover {
+    text-decoration: underline;
+}
+
+/* Settings Page Styles */
+/* Container for the main content */
+.settings-container {
+    width: 100%;
+    max-width: 800px; /* Adjust the maximum width as needed */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.settings-container h1 {
+    font-size: 3em;
+}
+/* Section Titles */
+.notification-preferences h3,
+.privacy-settings h3,
+.change-password h3 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Section Descriptions */
+.notification-preferences p,
+.privacy-settings p,
+.change-password p {
+    font-size: 2em;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+/* Toggle Switch Styles */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #4CAF50;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #4CAF50;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Adjusted Font Size for Toggle Switch */
+.slider:before {
+    font-size: 0.8em;
+}
+
+/* Change Password Form Styles */
+.change-password form {
+    display: flex;
+    flex-direction: column;
+}
+
+.change-password label {
+    font-size: 1.2em;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.change-password input {
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.change-password button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+.change-password button:hover {
+    background-color: #45a049;
+}
+
+/* Hover Effect for Buttons */
+button:hover {
+    opacity: 0.9;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Zebra striping for better readability */
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Hover effect */
+tr:hover {
+    background-color: #f1f1f1;
+}
+
 @media screen and (max-width: 940px) {
     .sidebar-title {
         font-size: 1.2rem; 
@@ -800,5 +1061,38 @@ p[sentTime]:hover::after {
     }
     .main-content{
         order: 1;
+    }
+    .notification-preferences,
+    .privacy-settings,
+    .change-password {
+        margin-bottom: 20px;
+    }
+    .switch,
+    input,
+    .change-password button {
+        width: 100%;
+    }
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+    th {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+    }
+    /* Add data-label attribute for accessibility */
+    td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-right: 10px;
+        font-weight: bold;
+        text-align: right;
     }
 }
