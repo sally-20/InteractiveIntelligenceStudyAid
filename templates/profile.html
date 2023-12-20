@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/learningstyles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='js/learningscript.js') }}" defer></script>
+    <title>Profile</title>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar-left">
+            <ul class="sidebar-menu">
+                <li>
+                    <h2 class="sidebar-title">Study Aid</h2>
+                </li>
+                <li class="sidebar-item">
+                    <a href="{{ url_for('algorithms') }}" class="colored-icon">
+                        <i class="fas fa-graduation-cap"></i> Learn
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="courses-toggle">
+                        <i class="fas fa-book"></i> Courses
+                    </a>
+                    <ul class="course-list hidden">
+                        <li>
+                            <a href="{{ url_for('algorithms') }}">
+                                <i class="fas fa-chart-line"></i> Algorithms
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url_for('personalfinance') }}">
+                                <i class="fas fa-rupee-sign"></i> Personal Finance
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url_for('calculus') }}">
+                                <i class="fas fa-calculator"></i> Calculus
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sidebar-item">
+                    <a href="{{ url_for('profile') }}" class="colored-icon">
+                        <i class="fas fa-user"></i> Profile
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="{{ url_for('settings') }}" class="colored-icon">
+                        <i class="fas fa-cog"></i> Settings
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="{{ url_for('home') }}" class="colored-icon">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <div class="main-content">
+            <div class="profile-container">
+                <div class="profile-header">
+                    <h1>Profile</h1>
+                </div>
+
+                <div class="profile-picture">
+                    {{ user_data.username[0]|upper }}
+                </div>                
+
+                <div class="profile-info">
+                    <h2>{{ user_data.username }}</h2>
+                    <p>Email: {{ user_data.email }}</p>
+                </div>
+
+                <div class="progress-bar-container">
+                    <p><strong>Learning Progress:</strong></p>
+                    <div class="progress-bar">
+                        <div class="progress-bar-inner" style="width: {{ user_data.learning_progress }};"></div>
+                    </div>
+                </div>
+
+                <div class="achievements-container">
+                    <p><strong>Achievements:</strong></p>
+                    <!-- Display achievements dynamically based on user data -->
+                    {% for achievement in user_data.achievements %}
+                        <div class="achievement">
+                            <img src="{{ achievement.icon }}" alt="Achievement Icon">
+                            <div class="achievement-text">
+                                <p>{{ achievement.name }}</p>
+                                <p>{{ achievement.description }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <a href="{{ url_for('settings') }}" class="settings-link">
+                    <i class="fas fa-cog"></i> Settings
+                </a>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Initialize the dynamic username using Flask's Jinja templating
+        const dynamicUsername = "{{ username }}";
+
+        // Use the dynamicUsername variable in your JavaScript logic
+        // For example, you can pass it to your submitFeedback function
+        const feedbackContainer = document.getElementById("feedback-container");
+
+        // Assuming you have a button to trigger the feedback submission
+        const submitButton = document.getElementById("submit-feedback-button");
+
+        submitButton.addEventListener("click", function () {
+            // Validate the feedback message
+            const feedbackMessage = document.getElementById("feedback-message").value.trim();
+            if (feedbackMessage === "") {
+                alert("Please enter your feedback.");
+                return;
+            }
+
+            // Call the submitFeedback function with the necessary parameters
+            submitFeedback('{{ url_for('submit_feedback') }}', dynamicUsername, feedbackContainer);
+        });
+    </script>
+
+</body>
+</html>
