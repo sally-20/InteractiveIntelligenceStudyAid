@@ -266,6 +266,13 @@
                         </div>
                     </div>
                 </section>
+                <script>
+                    {% if lesson_urls is defined %}
+                        const lessonURLs = {{ lesson_urls|tojson|safe }};
+                    {% else %}
+                        const lessonURLs = null;
+                    {% endif %}
+                </script>
             </section>
             </div>
         </main>
