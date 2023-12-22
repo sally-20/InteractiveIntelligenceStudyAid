@@ -82,7 +82,7 @@
                         <div class="four-pointed-star" data-target="dialog-boxalgbeg1"></div>
                         <div class="dialog-box hidden" id="dialog-boxalgbeg1">
                             <div class="dialog-text" data-lesson="algbeglsn1">What are algorithms?</div>
-                            <button class="start-button" data-lesson="algbeglsn1">Start</button>
+                            <button class="start-button" data-lesson="algbeglsn1" data-url="{{ url_for('algorithm_lesson', lesson_name='algbeglsn1') }}">Start</button>
                         </div>
                         <div class="four-pointed-star" data-target="dialog-boxalgbeg2"></div>
                         <div class="dialog-box hidden" id="dialog-boxalgbeg2">
@@ -382,7 +382,7 @@
                         <div class="bolt" data-target="dialog-boxalgadv6"></div>
                         <div class="dialog-box hidden" id="dialog-boxalgadv6">
                             <div class="dialog-text" data-lesson="algadvlsn6">Incorporating Randomness into Algorithms</div>
-                            <button class="start-button" data-lesson="algadvlsn6">Start</button>
+                            <button class="start-button" data-lesson="algadvlsn6" data-url="{{ url_for('algorithm_lesson', lesson_name='algadvlsn6') }}">Start</button>
                         </div>
                         <div class="bolt" data-target="dialog-boxalgadv7"></div>
                         <div class="dialog-box hidden" id="dialog-boxalgadv7">
@@ -633,6 +633,13 @@
                         </div>
                     </div>
                 </section>
+                <script>
+                    {% if lesson_urls is defined %}
+                        const lessonURLs = {{ lesson_urls|tojson|safe }};
+                    {% else %}
+                        const lessonURLs = null;
+                    {% endif %}
+                </script>
             </section>
             </div>
         </main>
