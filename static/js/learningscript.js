@@ -88,96 +88,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Function to navigate to the lesson's content
-    function navigateToLesson(lesson) {
-        // Define URLs for each lesson page
-        const lessonURLs = {
-            algbeglsn1: 'algbeglsn1.html',
-            algbeglsn2: 'algbeglsn2.html', 
-            algbeglsn3: 'algbeglsn3.html', 
-            algbeglsn4: 'algbeglsn4.html', 
-            algbeglsn5: 'algbeglsn5.html', 
-            algbeglsn6: 'algbeglsn.html', 
-            algbeglsn7: 'algbeglsn.html', 
-            algbeglsn8: 'algbeglsn8.html',
-            algbeglsn9: 'algbeglsn9.html',
-            algbeglsn10: 'algbeglsn10.html',
-            algbeglsn11: 'algbeglsn11.html',
-            algbeglsn12: 'algbeglsn12.html',
-            algbeglsn13: 'algbeglsn13.html',
-            algbeglsn14: 'algbeglsn14.html',
-            algbeglsn15: 'algbeglsn15.html',
-            algbeglsn16: 'algbeglsn16.html',
-            algbeglsn17: 'algbeglsn17.html',
-            algbeglsn18: 'algbeglsn18.html',
-            algbeglsn19: 'algbeglsn19.html',
-            algbeglsn20: 'algbeglsn20.html',
-            algitdlsn1: 'algitdlsn1.html',
-            algitdlsn2: 'algitdlsn2.html',
-            algitdlsn3: 'algitdlsn3.html',
-            algitdlsn4: 'algitdlsn4.html',
-            algitdlsn5: 'algitdlsn5.html',
-            algitdlsn6: 'algitdlsn6.html',
-            algitdlsn7: 'algitdlsn7.html',
-            algitdlsn8: 'algitdlsn8.html',
-            algitdlsn9: 'algitdlsn9.html',
-            algitdlsn10: 'algitdlsn10.html',
-            algitdlsn11: 'algitdlsn11.html',
-            algitdlsn12: 'algitdlsn12.html',
-            algitdlsn13: 'algitdlsn13.html',
-            algitdlsn14: 'algitdlsn14.html',
-            algitdlsn15: 'algitdlsn15.html',
-            algitdlsn16: 'algitdlsn16.html',
-            algadvlsn1: 'algadvlsn1.html',
-            algadvlsn2: 'algadvlsn2.html',
-            algadvlsn3: 'algadvlsn3.html',
-            algadvlsn4: 'algadvlsn4.html',
-            algadvlsn5: 'algadvlsn5.html',
-            algadvlsn6: 'algadvlsn6.html',
-            algadvlsn7: 'algadvlsn7.html',
-            algadvlsn8: 'algadvlsn8.html',
-            algadvlsn9: 'algadvlsn9.html',
-            algadvlsn10: 'algadvlsn10.html',
-            algadvlsn11: 'algadvlsn11.html',
-            algadvlsn12: 'algadvlsn12.html',
-            algadvlsn13: 'algadvlsn13.html',
-            algadvlsn14: 'algadvlsn14.html',
-            algadvlsn15: 'algadvlsn15.html',
-            algadvlsn16: 'algadvlsn16.html',
-            algadvlsn17: 'algadvlsn17.html',
-            algadvlsn18: 'algadvlsn18.html',
-            algadvlsn19: 'algadvlsn19.html',
-            algadvlsn20: 'algadvlsn20.html',
-            algadvlsn21: 'algadvlsn21.html',
-            algadvlsn22: 'algadvlsn22.html',
-            algadvlsn23: 'algadvlsn23.html',
-            algadvlsn24: 'algadvlsn24.html',
-            algadvlsn25: 'algadvlsn25.html',
-            algadvlsn26: 'algadvlsn26.html',
-            algadvlsn27: 'algadvlsn27.html',
-            algadvlsn28: 'algadvlsn28.html',
-            algadvlsn29: 'algadvlsn29.html',
-            algadvlsn30: 'algadvlsn30.html',
-            algadvlsn31: 'algadvlsn31.html',
-            algadvlsn32: 'algadvlsn32.html',
-            algadvlsn33: 'algadvlsn33.html',
-            algadvlsn34: 'algadvlsn34.html',
-            algadvlsn35: 'algadvlsn35.html',
-            algadvlsn36: 'algadvlsn36.html',
-            algadvlsn37: 'algadvlsn37.html',
-            algadvlsn38: 'algadvlsn38.html',
-            algadvlsn39: 'algadvlsn39.html',
-            algadvlsn40: 'algadvlsn40.html',
-            algadvlsn41: 'algadvlsn41.html',
-        };
-
-        // Check if the lesson URL exists
-        if (lessonURLs[lesson]) {
-            // Navigate to the lesson's content
-            window.location.href = lessonURLs[lesson];
-        }
-    }
-
     // Add a click event listener to each star
     stars.forEach((star) => {
         star.addEventListener('click', function (event) {
@@ -212,13 +122,15 @@ document.addEventListener('DOMContentLoaded', function () {
         hideAllDialogBoxes();
     });
 
-    const startButtons = document.querySelectorAll('.start-button');
+    var startButtons = document.querySelectorAll('.start-button');
 
-    startButtons.forEach((button) => {
-        button.addEventListener('click', function (event) {
-            event.stopPropagation();
-            const lesson = button.getAttribute('data-lesson');
-            navigateToLesson(lesson);
+    startButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+            // Get the lesson URL from the data-url attribute
+            var lessonURL = button.getAttribute('data-url');
+
+            // Redirect the user to the lesson URL
+            window.location.href = lessonURL;
         });
     });
 
