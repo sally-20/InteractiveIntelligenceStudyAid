@@ -955,6 +955,98 @@ tr:hover {
     background-color: #f1f1f1;
 }
 
+/* Lesson Styles */
+.lesson-main-content {
+    background-color: #f4f4f4;
+    width: 75%;
+    padding: 20px 20px 20px;
+    height: 100%;
+    overflow-y: auto;
+    flex: 0 0 75%;
+    max-width: 75%;
+    box-sizing: border-box;
+    order: 2;
+}
+
+/* Style the main content area */
+.lesson-main-content > div {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Style the heading within the main content */
+.lesson-main-content h1 {
+    color: #333;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.lesson-main-content h2 {
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* Style the paragraphs within the main content */
+.lesson-main-content p {
+    color: #333;
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+/* Style the buttons within the main content */
+.lesson-main-content button {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.lesson-main-content button:hover {
+    background-color: #218838;
+}
+
+/* Style the right sidebar */
+.sidebar-right {
+    width: 10%;
+    background-color: #f8f9fa; /* GitHub's light gray background color */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    order: 3;
+}
+
+.sidebar-right h2 {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.sub-lesson-links {
+    list-style: none;
+    padding: 0;
+}
+
+.sub-lesson-links li {
+    margin-bottom: 10px;
+}
+
+.sub-lesson-links a {
+    color: #0366d6; /* GitHub blue color */
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 1.5;
+    transition: color 0.3s ease;
+}
+
+.sub-lesson-links a:hover {
+    color: #218838;
+}
+
 @media screen and (max-width: 940px) {
     .sidebar-title {
         font-size: 1.2rem; 
@@ -965,6 +1057,15 @@ tr:hover {
     }
     .dialog-box {
         margin: 0.001em auto;
+    }
+    .lesson-main-content {
+        width: 85%;
+        flex: 0 0 85%;
+        max-width: 85%;
+        order: 1;
+    }
+    .sidebar-right {
+        display: none;
     }
 }
 
@@ -1000,6 +1101,15 @@ tr:hover {
     }
     .start-button {
         font-size: 1em;
+    }
+    .lesson-main-content {
+        width: 85%;
+        flex: 0 0 85%;
+        max-width: 85%;
+        order: 1;
+    }
+    .sidebar-right {
+        display: none;
     }
 }
 
@@ -1094,5 +1204,14 @@ tr:hover {
         padding-right: 10px;
         font-weight: bold;
         text-align: right;
+    }
+    .sidebar-right {
+        display: none;
+    }
+    .lesson-main-content {
+        width: 85%;
+        flex: 0 0 85%;
+        max-width: 85%;
+        order: 1;
     }
 }
