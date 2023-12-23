@@ -184,6 +184,10 @@ html, body {
     margin-bottom: 20px;
 }
 
+.dialog-box.completed {
+    border-color: green; 
+}
+
 .start-button {
     background: #007bff;
     color: #fff;
@@ -232,6 +236,10 @@ html, body {
     transform: rotate(45deg) skewX(22.5deg) skewY(22.5deg);
 }
 
+.four-pointed-star.completed {
+    background: #ffd700;
+}
+
 /* Flower container styles */
 .flower {
     display: grid;
@@ -268,6 +276,10 @@ html, body {
     transform: rotate(-45deg);
 } 
 
+.flower_head.completed {
+    background: #ffd700;
+}
+
 /* Bolt Container Styles */
 .bolt-container {
     display: grid;
@@ -292,6 +304,10 @@ html, body {
 @keyframes color-cycle {
     0% {background-color: #C0C0C0}
     100% {background-color: #e6e5e5}
+}
+
+.bolt.completed {
+    background-color: #ffd700;
 }
 
 /* Dropdown Styles */
