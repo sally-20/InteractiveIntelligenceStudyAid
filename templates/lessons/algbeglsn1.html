@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What are algorithms</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/learningstyles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .quiz-container {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+            max-width: 80%;
+            max-height: 80%;
+            overflow-y: auto;
+        }
+        .question-box {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+        }
+        .options-box {
+            display: flex;
+            flex-direction: column;
+        }
+        .option-box {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .option-box.selected {
+            background-color: #3498db;
+            color: white;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 1);
+            z-index: 999;
+            display: none;
+        }
+        .modal-button-container button {
+            width: 10rem;
+            height: 2rem;
+            background-color: #3498db;
+            outline: none;
+            border: 1px solid rgb(252, 242, 241);
+            color: white;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border-radius: 20px;
+            text-align: center;
+            line-height: 2rem;
+            padding: 5px;
+        }
+        .modal-button-container button:hover {
+            background-color: #2980b9;
+        }
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity:1 ;}
+        }
+        @-webkit-keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='js/learningscript.js') }}" defer></script>
+    <script>
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+        const questions = [
+            {
+                question: "What is an algorithm?",
+                options: ["A step-by-step procedure for solving a problem", "A computer hardware component", "A routine for daily tasks", "A series of pictures"],
+                answer: "A step-by-step procedure for solving a problem"
+            },
+            {
+                question: "Which of the following is NOT a characteristic of algorithms?",
+                options: ["Well-defined problem", "Desired result", "Infinite steps", "Finite and effective"],
+                answer: "Infinite steps"
+            },
+            {
+                question: "What is the purpose of an algorithm?",
+                options: ["To create computer hardware", "To solve a problem", "To perform daily routines", "To take pictures"],
+                answer: "To solve a problem"
+            },
+            {
+                question: "What does it mean for an algorithm to be well-defined?",
+                options: ["It has a clear and unambiguous problem statement", "It runs indefinitely", "It provides a desired result", "It consists of a series of steps"],
+                answer: "It has a clear and unambiguous problem statement"
+            },
+            {
+                question: "Which of the following is a characteristic of algorithms?",
+                options: ["Infinite steps", "Ambiguous problem statement", "Desired result", "Indefinite termination"],
+                answer: "Desired result"
+            },
+            {
+                question: "Which real-world example requires sorting?",
+                options: ["Computing a convex hull", "Finding the shortest path", "Organizing a list of names in alphabetical order", "Determining the shape of an object"],
+                answer: "Organizing a list of names in alphabetical order"
+            },
+            {
+                question: "Besides speed, what other measures of efficiency can be considered in real-world settings?",
+                options: ["Memory usage, power consumption, and resources required", "Number of steps and iterations", "Complexity and runtime analysis", "Input and output sizes"],
+                answer: "Memory usage, power consumption, and resources required"
+            },
+            {
+                question: "What is one strength of the array data structure?",
+                options: ["Dynamic size adjustment", "Efficient search and retrieval operations", "Ability to represent hierarchical relationships", "Support for complex data types"],
+                answer: "Efficient search and retrieval operations"
+            },
+            {
+                question: "How are the shortest-path and traveling-salesman problems similar?",
+                options: ["Both involve finding optimal routes", "Both require sorting algorithms", "Both have constant-time access to elements", "Both involve computing a convex hull"],
+                answer: "Both involve finding optimal routes"
+            },
+            {
+                question: "When might a solution that is 'approximately' the best be good enough?",
+                options: ["When solving a sorting problem", "When computing a convex hull", "When finding the shortest path", "When solving a real-world problem"],
+                answer: "When solving a real-world problem"
+            }
+        ];
+
+        const questionsCopy = [...questions];
+        let currentQuestionIndex = 0;
+
+        // Open quiz modal
+        function openQuizModal() {
+            document.getElementById('quiz-container').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        // Close quiz modal
+        function closeQuizModal() {
+            document.getElementById('quiz-container').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+        // Shuffle and display questions
+        function showRandomQuestion() {
+            shuffleArray(questionsCopy);
+            showQuestion(currentQuestionIndex);
+        }
+
+        // Call this function when starting the quiz
+        function startQuiz() {
+            currentQuestionIndex = 0;
+            showRandomQuestion();
+        }
+
+        
+        function showQuestion(index) {
+            const quizBox = document.querySelector('.quiz-container');
+            const currentQuestion = questionsCopy[index];
+
+            // Clear previous content
+            quizBox.innerHTML = '';
+
+            if (currentQuestion) {
+                const questionBox = document.createElement('div');
+                questionBox.classList.add('question-box');
+                questionBox.innerHTML = `
+                    <div class="question">${currentQuestion.question}<br></div>
+                    <div class="options-box">
+                        ${currentQuestion.options.map((option, optionIndex) => `<div class="option-box" data-index="${optionIndex}">${option}</div>`).join('')}
+                    </div>
+                    <div id="result"></div>
+                `;
+
+                // Add event listeners to the options
+                const optionBoxes = questionBox.querySelectorAll('.option-box');
+                optionBoxes.forEach(optionBox => {
+                    optionBox.addEventListener('click', function () {
+                        const selectedOptionIndex = this.getAttribute('data-index');
+                        checkAnswer(selectedOptionIndex, currentQuestion.answer);
+                    });
+                });
+
+                quizBox.appendChild(questionBox);
+
+                // Create a separate container for the button
+                const buttonContainer = document.createElement('div');
+                buttonContainer.classList.add('modal-button-container');
+                buttonContainer.innerHTML = `<button onclick="showNextQuestion()">Next Question</button>`;
+
+                // Append the button container to the quiz box
+                quizBox.appendChild(buttonContainer);
+            } else {
+                quizBox.innerHTML = `
+                    <div class="result">Quiz completed! Thanks for playing.</div>
+                `;
+
+                // Create a separate container for the button
+                const buttonContainer = document.createElement('div');
+                buttonContainer.classList.add('modal-button-container');
+                buttonContainer.innerHTML = `<button onclick="closeQuizModal()">Close Quiz</button>`;
+
+                // Append the button container to the quiz box
+                quizBox.appendChild(buttonContainer);
+            }
+        }
+
+        // Check user's answer and show next question
+        function showNextQuestion() {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < 5) {
+                showRandomQuestion();
+            } else {
+                evaluateAndDisplayResult();
+            }
+        }
+
+        function checkAnswer(selectedOptionIndex, correctAnswer) {
+            const options = document.querySelectorAll('.options-box .option-box');
+            
+            // Remove the 'selected' class from all options
+            options.forEach(option => {
+                option.classList.remove('selected');
+            });
+        
+            // Add the 'selected' class to the clicked option
+            options[selectedOptionIndex].classList.add('selected');
+        
+            // Get the selected option's text
+            const selectedOptionText = options[selectedOptionIndex].innerText;
+        
+            // Check if the selected option is correct
+            const isCorrect = selectedOptionText === correctAnswer;
+        
+            // Update the UI to indicate correctness
+            const resultContainer = document.getElementById('result');
+            resultContainer.innerHTML = isCorrect
+                ? '<p style="color: green;">Correct!</p>'
+                : `<p style="color: red;">Incorrect. The correct answer is: ${correctAnswer}</p>`;
+        
+            // You can add any additional logic here, such as updating scores or progress
+            // ...
+        
+            // For demonstration purposes, let's log the selected option index and correctness
+            console.log('Selected Option Index:', selectedOptionIndex);
+            console.log('Is Correct:', isCorrect);
+        }
+
+        // Evaluate user's performance and display result
+        function evaluateAndDisplayResult() {
+            const resultContainer = document.getElementById('quiz-container');
+
+            let correctAnswersCount = 0;
+            let wrongAnswersCount = 0;
+
+            questionsCopy.forEach((q, index) => {
+                const selectedOption = document.querySelector(`.question-box:nth-child(${index + 1}) .option-box.selected`);
+
+                if (selectedOption) {
+                    if (selectedOption.innerText === q.answer) {
+                        correctAnswersCount++;
+                    } else {
+                        wrongAnswersCount++;
+                    }
+                } else {
+                    wrongAnswersCount++; // Count unanswered questions as wrong
+                }
+            });
+
+            const numberOfQuestions = 5;
+            const score = (correctAnswersCount / numberOfQuestions) * 100;
+
+            resultContainer.innerHTML = `
+                <div class="result">Your Score: ${score.toFixed(2)}%</div>
+                <div class="score-details">
+                    <p>Correct Answers: ${correctAnswersCount}</p>
+                    <p>Wrong Answers: ${wrongAnswersCount}</p>
+                </div>
+                <div class="modal-button-container">
+                    <button onclick="closeQuizModal()">Close Quiz</button>
+                </div>`;
+        }
+
+        // Close warning modal
+        function closeOptionModal() {
+            document.getElementById('option-modal').style.display = "none"
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            startQuiz();
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <aside class="sidebar-left">
+            <ul class="sidebar-menu">
+                <li>
+                    <h2 class="sidebar-title">Study Aid</h2>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="colored-icon">
+                        <i class="fas fa-graduation-cap"></i> Learn
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="courses-toggle">
+                        <i class="fas fa-book"></i> Courses
+                    </a>
+                    <ul class="course-list hidden">
+                        <li>
+                            <a href="{{ url_for('algorithms') }}">
+                                <i class="fas fa-chart-line"></i> Algorithms
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url_for('personalfinance') }}">
+                                <i class="fas fa-rupee-sign"></i> Personal Finance
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url_for('calculus') }}">
+                                <i class="fas fa-calculator"></i> Calculus
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sidebar-item">
+                    <a href="{{ url_for('profile') }}" class="colored-icon">
+                        <i class="fas fa-user"></i> Profile
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="{{ url_for('settings') }}" class="colored-icon">
+                        <i class="fas fa-cog"></i> Settings
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="{{ url_for('home') }}" class="colored-icon">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <main class="lesson-main-content">
+            <h1>What are algorithms</h1>
+            <div id="sublesson1">
+                <h2>Definition and Characteristics</h2>
+                <p>
+                    In this sub-lesson, we will explore the definition and characteristics of algorithms.<br>
+                    <br>
+                    An algorithm is a step-by-step procedure or a set of rules for solving a problem. It is a precise and unambiguous description of how to solve a problem. Algorithms can be found in various aspects of our daily lives, from computer hardware and software to everyday routines and emergency procedures.<br>
+                    <br>
+                    <b>Characteristics of algorithms</b><br>
+                    1. Well-defined problem: Every algorithm starts with a clear and well-defined problem statement. It is important to understand the problem thoroughly before designing an algorithm to solve it.<br>
+                    <br>
+                    2. Series of steps: An algorithm consists of a series of steps or instructions that need to be followed in a specific order. These steps should be precise and unambiguous, leaving no room for interpretation.<br>
+                    <br>
+                    3. Desired result: The purpose of an algorithm is to obtain a desired result or output. The steps in the algorithm should lead to the correct solution for the given problem.<br>
+                    <br>
+                    4. Finite and effective: An algorithm should terminate after a finite number of steps. It should not run indefinitely. Additionally, an algorithm should be effective, meaning it should provide a correct solution within a reasonable amount of time.
+                </p>
+            </div>    
+            <!-- Sub Lesson 2 Content -->
+            <div id="sublesson2">
+                <h2>Real-life Examples</h2>
+                <p>
+                    In this sub-lesson, we will explore real-life examples of algorithms. Algorithms are step-by-step procedures or instructions used to solve problems. They are not limited to computer science but can be found in various aspects of our daily lives. Let's look at some examples:<br>
+                    <br>
+                    1. Sorting: One real-world example that requires sorting is organizing a list of names in alphabetical order. This can be useful when creating a phone directory or arranging a list of students' names.<br>
+                    <br>
+                    2. Convex hull: Another real-world example is computing a convex hull. This is often used in computer graphics to determine the shape of an object or to find the outer boundary of a set of points.<br>
+                    <br>
+                    3. Efficiency measures: In addition to speed, there are other measures of efficiency in real-world settings. For example, we can consider the memory usage, power consumption, or the amount of resources required to execute an algorithm.<br>
+                    <br>
+                    4. Data structures: Data structures are used to organize and store data efficiently. One example is an array, which allows us to store a collection of elements in a contiguous memory block. It has strengths such as constant-time access to elements and limitations like fixed size.<br>
+                    <br>
+                    5. Shortest-path and traveling-salesman problems: These two problems are similar in that they both involve finding optimal routes. The shortest-path problem aims to find the shortest route between two points, while the traveling-salesman problem seeks to find the shortest route that visits a set of cities and returns to the starting point. The main difference is that the traveling-salesman problem requires visiting all cities exactly once.<br>
+                    <br>
+                    Real-world problems often require combining multiple algorithms or techniques to find a complete solution. It is important to consider the sequence of steps and the different aspects of the problem to achieve the desired result.<br>
+                    <br>
+                    Now, let's test your understanding with some multiple-choice questions.
+                </p>
+            </div>
+            <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
+            <div id="quiz-container" class="quiz-container">
+                <div class="modal-button-container">
+                    <button onclick="closeQuizModal()">Close Quiz</button>
+                </div>
+            </div>
+            <div id="overlay" class="overlay"></div>
+        </main>
+        <aside class="sidebar-right">
+            <h2>What are algorithms</h2>
+            <ul class="sub-lesson-links">
+                <li><a href="#sublesson1">Definition and Characteristics</a></li>
+                <li><a href="#sublesson2">Real-life Examples</a></li>
+            </ul>
+        </aside>
+</body>
+
+</html>
