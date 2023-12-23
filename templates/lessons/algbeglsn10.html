@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insertion sort step by step</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/learningstyles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .quiz-container {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+            max-width: 80%;
+            max-height: 80%;
+            overflow-y: auto;
+        }
+        .question-box {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+        }
+        .options-box {
+            display: flex;
+            flex-direction: column;
+        }
+        .option-box {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .option-box.selected {
+            background-color: #3498db;
+            color: white;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 1);
+            z-index: 999;
+            display: none;
+        }
+        .modal-button-container button {
+            width: 10rem;
+            height: 2rem;
+            background-color: #3498db;
+            outline: none;
+            border: 1px solid rgb(252, 242, 241);
+            color: white;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border-radius: 20px;
+            text-align: center;
+            line-height: 2rem;
+            padding: 5px;
+        }
+        .modal-button-container button:hover {
+            background-color: #2980b9;
+        }
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity:1 ;}
+        }
+        @-webkit-keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        .completion-message {
+            color: green; 
+        } 
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='js/learningscript.js') }}" defer></script>
+    <script>
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+        const questions = [
+            {
+                question: "What is the first step in the insertion sort algorithm?",
+                options: ["Compare the first two elements", "Compare the last two elements", "Compare the second and third elements", "Compare the second and last elements"],
+                answer: "Compare the first two elements"
+            },
+            {
+                question: "How does insertion sort divide the input array?",
+                options: ["Into two equal parts", "Into a sorted and an unsorted part", "Into odd and even elements", "Into increasing and decreasing elements"],
+                answer: "Into a sorted and an unsorted part"
+            },
+            {
+                question: "What does insertion sort do with each element in the unsorted part?",
+                options: ["Swaps it with the previous element", "Swaps it with the next element", "Inserts it into the correct position in the sorted part", "Removes it from the array"],
+                answer: "Inserts it into the correct position in the sorted part"
+            },
+            {
+                question: "What is the final step in the insertion sort algorithm?",
+                options: ["Compare the last two elements", "Compare the first two elements", "Compare the second and third elements", "Compare the second and last elements"],
+                answer: "Compare the last two elements"
+            },
+            {
+                question: "When does insertion sort stop comparing an element with the elements in the sorted part?",
+                options: ["When the element is smaller than the previous element", "When the element is greater than the previous element", "When the element is smaller than the next element", "When the element is greater than the next element"],
+                answer: "When the element is greater than the previous element"
+            },
+            {
+                question: "Which sorting algorithm divides the input array into a sorted and an unsorted part?",
+                options: ["Insertion sort", "Bubble sort", "Merge sort", "Quick sort"],
+                answer: "Insertion sort"
+            },
+            {
+                question: "Which sorting algorithm repeatedly swaps adjacent elements that are out of order?",
+                options: ["Insertion sort", "Bubble sort", "Merge sort", "Quick sort"],
+                answer: "Bubble sort"
+            },
+            {
+                question: "Which sorting algorithm is adaptive?",
+                options: ["Insertion sort", "Bubble sort", "Merge sort", "Quick sort"],
+                answer: "Insertion sort"
+            },
+            {
+                question: "What is the worst-case time complexity of insertion sort and bubble sort?",
+                options: ["O(n)", "O(n log n)", "O(n^2)", "O(1)"],
+                answer: "O(n^2)"
+            },
+            {
+                question: "Which sorting algorithm is stable?",
+                options: ["Insertion sort", "Bubble sort", "Merge sort", "Quick sort"],
+                answer: "Insertion sort"
+            }
+        ];
+
+        const questionsCopy = [...questions];
+        let currentQuestionIndex = 0;
+
+        // Open quiz modal
+        function openQuizModal() {
+            document.getElementById('quiz-container').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        // Close quiz modal
+        function closeQuizModal() {
+            document.getElementById('quiz-container').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+        // Shuffle and display questions
+        function showRandomQuestion() {
+            shuffleArray(questionsCopy);
+            showQuestion(currentQuestionIndex);
+        }
+
+        // Call this function when starting the quiz
+        function startQuiz() {
+            currentQuestionIndex = 0;
+            showRandomQuestion();
+        }
+
+        function showQuestion(index) {
+            const quizBox = document.querySelector('.quiz-container');
+            const currentQuestion = questionsCopy[index];
+            // Clear previous content
+            quizBox.innerHTML = '';
+            if (currentQuestion) {
+                const questionBox = document.createElement('div');
+                questionBox.classList.add('question-box');
+                questionBox.innerHTML = `
+                    <div class="question">${currentQuestion.question}<br></div>
+                    <div class="options-box">
+                        ${currentQuestion.options.map((option, optionIndex) => `<div class="option-box" data-index="${optionIndex}">${option}</div>`).join('')}
+                    </div>
+                    <div id="result"></div>
+                `;
+
+                // Add event listeners to the options
+                const optionBoxes = questionBox.querySelectorAll('.option-box');
+                optionBoxes.forEach(optionBox => {
+                    optionBox.addEventListener('click', function () {
+                        const selectedOptionIndex = this.getAttribute('data-index');
+                        checkAnswer(selectedOptionIndex, currentQuestion.answer);
+                    });
+                });
+                quizBox.appendChild(questionBox);
+                // Create a separate container for the button
+                const buttonContainer = document.createElement('div');
+                buttonContainer.classList.add('modal-button-container');
+                buttonContainer.innerHTML = `<button onclick="showNextQuestion()">Next Question</button>`;
+                // Append the button container to the quiz box
+                quizBox.appendChild(buttonContainer);
+            } else {
+                quizBox.innerHTML = `
+                    <div class="result">Quiz completed! Thanks for playing.</div>
+                `;
+                // Create a separate container for the button
+                const buttonContainer = document.createElement('div');
+                buttonContainer.classList.add('modal-button-container');
+                buttonContainer.innerHTML = `<button onclick="closeQuizModal()">Close Quiz</button>`;
+                // Append the button container to the quiz box
+                quizBox.appendChild(buttonContainer);
+            }
+        }
+
+        let score = 0;
+
+        // Check user's answer and show next question
+        function showNextQuestion() {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < 5) {
+                showRandomQuestion();
+            } else {
+                evaluateAndDisplayResult();
+            }
+        }
+
+        function checkAnswer(selectedOptionIndex, correctAnswer) {
+            const options = document.querySelectorAll('.options-box .option-box');
+            
+            // Remove the 'selected' class from all options
+            options.forEach(option => {
+                option.classList.remove('selected');
+            });
+        
+            // Add the 'selected' class to the clicked option
+            options[selectedOptionIndex].classList.add('selected');
+        
+            // Get the selected option's text
+            const selectedOptionText = options[selectedOptionIndex].innerText;
+        
+            // Check if the selected option is correct
+            const isCorrect = selectedOptionText === correctAnswer;
+        
+            // Update the UI to indicate correctness
+            const resultContainer = document.getElementById('result');
+            resultContainer.innerHTML = isCorrect
+                ? '<p style="color: green;">Correct!</p>'
+                : `<p style="color: red;">Incorrect. The correct answer is: ${correctAnswer}</p>`;
+        
+            // Update the score if the answer is correct
+            if (isCorrect) {
+                score++;
+            }
+            
+            // For demonstration purposes, let's log the selected option index and correctness
+            console.log('Selected Option Index:', selectedOptionIndex);
+            console.log('Is Correct:', isCorrect);
+        }
+
+        let quizCompleted = false;
+
+        // Evaluate user's performance and display result
+        function evaluateAndDisplayResult() {
+            const resultContainer = document.getElementById('quiz-container');
+            let correctAnswersCount = 0;
+            let totalQuestions = 5;
+            if (score >= 4) {
+                quizCompleted = true;
+                resultContainer.innerHTML = `
+                <div class="result">Congratulations! You can move on to the next lesson.</div>
+                <div class="score-details">
+                    <p>Your Score <br> ${score} out of ${totalQuestions}</p>
+                </div>
+                <div class="modal-button-container">
+                    <button onclick="closeQuizModal()">Close Quiz</button>
+                </div>`;
+                updateUIOnQuizCompletion();
+                document.getElementById('completion-message').style.display = 'block';
+            } else {
+                resultContainer.innerHTML = `
+                <div class="result">Please review the lesson again and try again later.</div>
+                <div class="score-details">
+                    <p><center>Your Score</center> <br> <center>${score} out of ${totalQuestions}</center></p>
+                </div>
+                <div class="modal-button-container">
+                    <button onclick="closeQuizModal()">Close Quiz</button>
+                </div>`;
+            }
+        }
+
+        function closeQuizModal() {
+            document.getElementById('quiz-container').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+    
+            // Redirect to the Algorithms page
+            window.location.href = "{{ url_for('algorithms') }}";
+        }
+        function updateUIOnQuizCompletion() {
+            // Change the color of the four-pointed star to gold
+            const fourPointedStar = document.querySelector('.four-pointed-star[data-target="dialog-boxalgbeg10"]');
+            if (fourPointedStar) {
+                fourPointedStar.style.backgroundColor = '#ffd700'; // Hex code for gold
+            }
+
+            // Change the dialog box border color to gold and display the completion message
+            const dialogBoxAlgbeg100 = document.getElementById('dialog-boxalgbeg10');
+            if (dialogBoxAlgbeg10) {
+                dialogBoxAlgbeg10.style.borderColor = '#ffd700'; // Hex code for gold
+                const dialogText = dialogBoxAlgbeg10.querySelector('.dialog-text');
+                dialogText.innerText = 'Completed'; // Update the message inside the dialog box
+
+                // Save the completion status in localStorage
+                localStorage.setItem('algbeglsn10Completed', 'true');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            startQuiz();
+            const algbeglsn10Completed = localStorage.getItem('algbeglsn10Completed');
+            if (algbeglsn10Completed === 'true') {
+                updateUIOnQuizCompletion();
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <aside class="sidebar-left">
+            <ul class="sidebar-menu">
+                <li>
+                    <h2 class="sidebar-title">Study Aid</h2>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="colored-icon">
+                        <i class="fas fa-graduation-cap"></i> Learn
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="courses-toggle">
+                        <i class="fas fa-book"></i> Courses
+                    </a>
+                    <ul class="course-list hidden">
+                        <li>
+                            <a href="{{ url_for('algorithms') }}">
+                                <i class="fas fa-chart-line"></i> Algorithms
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url_for('personalfinance') }}">
+                                <i class="fas fa-rupee-sign"></i> Personal Finance
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url_for('calculus') }}">
+                                <i class="fas fa-calculator"></i> Calculus
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sidebar-item">
+                    <a href="{{ url_for('profile') }}" class="colored-icon">
+                        <i class="fas fa-user"></i> Profile
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="{{ url_for('settings') }}" class="colored-icon">
+                        <i class="fas fa-cog"></i> Settings
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="{{ url_for('home') }}" class="colored-icon">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <main class="lesson-main-content">
+            <h1>Insertion sort step by step</h1>
+            <div id="sublesson1">
+                <h2>Insertion sort algorithm details</h2>
+                <p>
+                    In this lesson, we will learn about the insertion sort algorithm, which is a simple and efficient sorting algorithm. Insertion sort works by dividing the input array into a sorted and an unsorted part. It then repeatedly takes an element from the unsorted part and inserts it into the correct position in the sorted part.<br>
+                    <br>
+                    Here are the steps to perform insertion sort:<br>
+                    <br>
+                    1. Start with the second element in the array.<br>
+                    2. Compare the second element with the first element. If the second element is smaller, swap them.<br>
+                    3. Move to the third element and compare it with the elements in the sorted part of the array. Insert the third element into its correct position in the sorted part.<br>
+                    4. Repeat step 3 for all remaining elements in the unsorted part of the array.<br>
+                    <br>
+                    Let's understand the insertion sort algorithm with an example. Consider the array [5, 2, 4, 6, 1, 3].<br>
+                    <br>
+                    Step 1: Start with the second element, which is 2.<br>
+                    - Compare 2 with 5. Since 2 is smaller, swap them. The array becomes [2, 5, 4, 6, 1, 3].<br>
+                    - The sorted part of the array is [2], and the unsorted part is [5, 4, 6, 1, 3].<br>
+                    <br>
+                    Step 2: Move to the third element, which is 4.<br>
+                    - Compare 4 with 5. Since 4 is smaller, swap them. The array becomes [2, 4, 5, 6, 1, 3].<br>
+                    - Compare 4 with 2. Since 4 is greater, stop comparing. The sorted part of the array is [2, 4], and the unsorted part is [5, 6, 1, 3].<br>
+                    <br>
+                    Step 3: Move to the fourth element, which is 6.<br>
+                    - Compare 6 with 5. Since 6 is greater, stop comparing. The sorted part of the array is [2, 4, 5], and the unsorted part is [6, 1, 3].<br>
+                    <br>
+                    Step 4: Move to the fifth element, which is 1.<br>
+                    - Compare 1 with 5. Since 1 is smaller, swap them. The array becomes [2, 4, 1, 5, 6, 3].<br>
+                    - Compare 1 with 4. Since 1 is smaller, swap them. The array becomes [2, 1, 4, 5, 6, 3].<br>
+                    - Compare 1 with 2. Since 1 is smaller, swap them. The array becomes [1, 2, 4, 5, 6, 3].<br>
+                    - Compare 1 with 5. Since 1 is smaller, swap them. The array becomes [1, 2, 4, 1, 6, 3].<br>
+                    - Compare 1 with 4. Since 1 is smaller, swap them. The array becomes [1, 2, 1, 4, 6, 3].<br>
+                    - Compare 1 with 2. Since 1 is smaller, swap them. The array becomes [1, 1, 2, 4, 6, 3].<br>
+                    - Compare 1 with 1. Since they are equal, stop comparing. The sorted part of the array is [1, 1, 2, 4], and the unsorted part is [6, 3].<br>
+                    <br>
+                    Step 5: Move to the sixth element, which is 3.<br>
+                    - Compare 3 with 4. Since 3 is smaller, swap them. The array becomes [1, 1, 2, 3, 6, 4].<br>
+                    - Compare 3 with 2. Since 3 is greater, stop comparing. The sorted part of the array is [1, 1, 2, 3], and the unsorted part is [6, 4].<br>
+                    <br>
+                    Step 6: The array is now sorted.
+                </p>
+            </div>    
+            <!-- Sub Lesson 2 Content -->
+            <div id="sublesson2">
+                <h2>Comparing insertion sort with bubble sort</h2>
+                <p>
+                    In this sub-lesson, we will compare two popular sorting algorithms: insertion sort and bubble sort. Both algorithms are simple and easy to understand, making them suitable for beginners.<br>
+                    <br>
+                    1. Insertion Sort:<br>
+                    - Insertion sort works by dividing the input array into a sorted and an unsorted part.<br>
+                    - It iterates through the unsorted part and compares each element with the elements in the sorted part.<br>
+                    - If an element is smaller, it is shifted to the right until it finds its correct position in the sorted part.<br>
+                    - This process is repeated until the entire array is sorted.<br>
+                    <br>
+                    2. Bubble Sort:<br>
+                    - Bubble sort works by repeatedly swapping adjacent elements that are out of order.<br>
+                    - It starts at the beginning of the array and compares each pair of adjacent elements.<br>
+                    - If the elements are in the wrong order, they are swapped.<br>
+                    - This process is repeated until the entire array is sorted.<br>
+                    <br>
+                    Now let's compare the two algorithms:<br>
+                    <br>
+                    Efficiency:<br>
+                    - Insertion sort has an average and worst-case time complexity of O(n^2).<br>
+                    - Bubble sort also has an average and worst-case time complexity of O(n^2).<br>
+                    - Both algorithms are not efficient for large input sizes.<br>
+                    <br>
+                    Stability:<br>
+                    - Insertion sort is a stable sorting algorithm, meaning that the relative order of equal elements is preserved.<br>
+                    - Bubble sort is also a stable sorting algorithm.<br>
+                    <br>
+                    Adaptability:<br>
+                    - Insertion sort is an adaptive sorting algorithm, meaning that it performs well on partially sorted arrays.<br>
+                    - Bubble sort is not an adaptive sorting algorithm.<br>
+                    <br>
+                    Space Complexity:<br>
+                    - Both algorithms have a space complexity of O(1) since they only require a constant amount of extra space.<br>
+                    <br>
+                    In summary, insertion sort and bubble sort are both simple sorting algorithms with similar time complexities. However, insertion sort is more efficient and adaptive compared to bubble sort.
+                </p>
+            </div>
+            <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
+            <div id="quiz-container" class="quiz-container"></div>
+            <div id="overlay" class="overlay"></div>
+            <div id="completion-message" style="display: none;">
+                <p class="completion-message">Lesson Completed!</p>
+            </div>
+        </main>
+        <aside class="sidebar-right">
+            <h2>Insertion sort step by step</h2>
+            <ul class="sub-lesson-links">
+                <li><a href="#sublesson1">Insertion sort algorithm details</a></li>
+                <li><a href="#sublesson2">Comparing insertion sort with bubble sort</a></li>
+            </ul>
+        </aside>
+</body>
+
+</html>
