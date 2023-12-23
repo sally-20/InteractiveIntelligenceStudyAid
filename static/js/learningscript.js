@@ -88,6 +88,19 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    function updateUIOnQuizCompletion() {
+        const fourPointedStars = document.querySelectorAll('.four-pointed-star');
+        fourPointedStars.forEach(star => {
+            star.style.backgroundColor = '#ffd700';
+        });
+        const dialogBoxes = document.querySelectorAll('.dialog-box');
+        dialogBoxes.forEach(dialogBox => {
+            dialogBox.style.borderColor = '#ffd700';
+            const dialogText = dialogBox.querySelector('.dialog-text');
+            dialogText.innerText = 'Completed';
+        });
+    }
+
     // Add a click event listener to each star
     stars.forEach((star) => {
         star.addEventListener('click', function (event) {
