@@ -78,6 +78,9 @@
             from {opacity: 0;}
             to {opacity: 1;}
         }
+        .completion-message {
+            color: green; 
+        } 
     </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{{ url_for('static', filename='js/learningscript.js') }}" defer></script>
@@ -257,12 +260,15 @@
             console.log('Is Correct:', isCorrect);
         }
 
+        let quizCompleted = false;
+
         // Evaluate user's performance and display result
         function evaluateAndDisplayResult() {
             const resultContainer = document.getElementById('quiz-container');
             let correctAnswersCount = 0;
             let totalQuestions = 5;
             if (score >= 4) {
+                quizCompleted = true;
                 resultContainer.innerHTML = `
                 <div class="result">Congratulations! You can move on to the next lesson.</div>
                 <div class="score-details">
@@ -271,6 +277,8 @@
                 <div class="modal-button-container">
                     <button onclick="closeQuizModal()">Close Quiz</button>
                 </div>`;
+                updateUIOnQuizCompletion();
+                document.getElementById('completion-message').style.display = 'block';
             } else {
                 resultContainer.innerHTML = `
                 <div class="result">Please review the lesson again and try again later.</div>
@@ -290,9 +298,31 @@
             // Redirect to the Algorithms page
             window.location.href = "{{ url_for('algorithms') }}";
         }
+        function updateUIOnQuizCompletion() {
+            // Change the color of the four-pointed star to gold
+            const fourPointedStar = document.querySelector('.four-pointed-star[data-target="dialog-boxalgbeg1"]');
+            if (fourPointedStar) {
+                fourPointedStar.style.backgroundColor = '#ffd700'; // Hex code for gold
+            }
+
+            // Change the dialog box border color to gold and display the completion message
+            const dialogBoxAlgbeg1 = document.getElementById('dialog-boxalgbeg1');
+            if (dialogBoxAlgbeg1) {
+                dialogBoxAlgbeg1.style.borderColor = '#ffd700'; // Hex code for gold
+                const dialogText = dialogBoxAlgbeg1.querySelector('.dialog-text');
+                dialogText.innerText = 'Completed'; // Update the message inside the dialog box
+
+                // Save the completion status in localStorage
+                localStorage.setItem('algbeglsn1Completed', 'true');
+            }
+        }
 
         document.addEventListener('DOMContentLoaded', function () {
             startQuiz();
+            const algbeglsn1Completed = localStorage.getItem('algbeglsn1Completed');
+            if (algbeglsn1Completed === 'true') {
+                updateUIOnQuizCompletion();
+            }
         });
     </script>
 </head>
@@ -391,6 +421,9 @@
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
             <div id="quiz-container" class="quiz-container"></div>
             <div id="overlay" class="overlay"></div>
+            <div id="completion-message" style="display: none;">
+                <p class="completion-message">Lesson Completed!</p>
+            </div>
         </main>
         <aside class="sidebar-right">
             <h2>What are algorithms</h2>
