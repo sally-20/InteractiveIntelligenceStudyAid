@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selection sort explained</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/learningstyles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .quiz-container {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+            max-width: 80%;
+            max-height: 80%;
+            overflow-y: auto;
+        }
+        .question-box {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+        }
+        .options-box {
+            display: flex;
+            flex-direction: column;
+        }
+        .option-box {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .option-box.selected {
+            background-color: #3498db;
+            color: white;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 1);
+            z-index: 999;
+            display: none;
+        }
+        .modal-button-container button {
+            width: 10rem;
+            height: 2rem;
+            background-color: #3498db;
+            outline: none;
+            border: 1px solid rgb(252, 242, 241);
+            color: white;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border-radius: 20px;
+            text-align: center;
+            line-height: 2rem;
+            padding: 5px;
+        }
+        .modal-button-container button:hover {
+            background-color: #2980b9;
+        }
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity:1 ;}
+        }
+        @-webkit-keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        .completion-message {
+            color: green; 
+        } 
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='js/learningscript.js') }}" defer></script>
+    <script>
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+        const questions = [
+            {
+                question: "What is the main idea behind the selection sort algorithm?",
+                options: ["Divide the array into subproblems and solve them recursively.", "Find the minimum element and swap it with the first element of the unsorted part.", "Compare adjacent elements and swap them if they are out of order.", "Divide the array into two halves and merge them in sorted order."],
+                answer: "Find the minimum element and swap it with the first element of the unsorted part."
+            },
+            {
+                question: "What is the time complexity of selection sort?",
+                options: ["O(n)", "O(n log n)", "O(n^2)", "O(log n)"],
+                answer: "O(n^2)"
+            },
+            {
+                question: "Which of the following statements is true about selection sort?",
+                options: ["It is the most efficient sorting algorithm for large datasets.", "It works by repeatedly swapping adjacent elements that are out of order.", "It has a time complexity of O(n log n).", "It is a divide-and-conquer algorithm."],
+                answer: "It works by repeatedly swapping adjacent elements that are out of order."
+            },
+            {
+                question: "What is the main advantage of selection sort over insertion sort?",
+                options: ["Selection sort is faster than insertion sort.", "Selection sort always moves elements n times, while insertion sort could move elements up to n^2 times.", "Selection sort works in place, while insertion sort requires extra space.", "Selection sort is easier to implement than insertion sort."],
+                answer: "Selection sort always moves elements n times, while insertion sort could move elements up to n^2 times."
+            },
+            {
+                question: "Which of the following is NOT a step in the selection sort procedure?",
+                options: ["Find the minimum element in the unsorted part of the array.", "Swap the minimum element with the first element of the unsorted part.", "Move the boundary of the sorted part one element to the right.", "Repeat steps 1-3 until the entire array is sorted."],
+                answer: "Repeat steps 1-3 until the entire array is sorted."
+            },
+            {
+                question: "Which sorting algorithm moves elements n times no matter what?",
+                options: ["Insertion sort", "Selection sort", "Merge sort", "Bubble sort"],
+                answer: "Selection sort"
+            },
+            {
+                question: "Which sorting algorithm has a running time of n log n in all cases?",
+                options: ["Insertion sort", "Selection sort", "Merge sort", "Bubble sort"],
+                answer: "Merge sort"
+            },
+            {
+                question: "Which sorting algorithm requires additional space to make complete copies of the input array?",
+                options: ["Insertion sort", "Selection sort", "Merge sort", "Bubble sort"],
+                answer: "Merge sort"
+            },
+            {
+                question: "If moving an element is time-consuming and the input is not expected to approach the best-case situation, which sorting algorithm might be a better choice?",
+                options: ["Insertion sort", "Selection sort", "Merge sort", "Bubble sort"],
+                answer: "Selection sort"
+            },
+            {
+                question: "Which sorting algorithm works by repeatedly swapping adjacent elements that are out of order?",
+                options: ["Insertion sort", "Selection sort", "Merge sort", "Bubble sort"],
+                answer: "Bubble sort"
+            }
+        ];
+
+        const questionsCopy = [...questions];
+        let currentQuestionIndex = 0;
+
+        // Open quiz modal
+        function openQuizModal() {
+            document.getElementById('quiz-container').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        // Close quiz modal
+        function closeQuizModal() {
+            document.getElementById('quiz-container').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+        // Shuffle and display questions
+        function showRandomQuestion() {
+            shuffleArray(questionsCopy);
+            showQuestion(currentQuestionIndex);
+        }
+
+        // Call this function when starting the quiz
+        function startQuiz() {
+            currentQuestionIndex = 0;
+            showRandomQuestion();
+        }
+
+        function showQuestion(index) {
+            const quizBox = document.querySelector('.quiz-container');
+            const currentQuestion = questionsCopy[index];
+            // Clear previous content
+            quizBox.innerHTML = '';
+            if (currentQuestion) {
+                const questionBox = document.createElement('div');
+                questionBox.classList.add('question-box');
+                questionBox.innerHTML = `
+                    <div class="question">${currentQuestion.question}<br></div>
+                    <div class="options-box">
+                        ${currentQuestion.options.map((option, optionIndex) => `<div class="option-box" data-index="${optionIndex}">${option}</div>`).join('')}
+                    </div>
+                    <div id="result"></div>
+                `;
+
+                // Add event listeners to the options
+                const optionBoxes = questionBox.querySelectorAll('.option-box');
+                optionBoxes.forEach(optionBox => {
+                    optionBox.addEventListener('click', function () {
+                        const selectedOptionIndex = this.getAttribute('data-index');
+                        checkAnswer(selectedOptionIndex, currentQuestion.answer);
+                    });
+                });
+                quizBox.appendChild(questionBox);
+                // Create a separate container for the button
+                const buttonContainer = document.createElement('div');
+                buttonContainer.classList.add('modal-button-container');
+                buttonContainer.innerHTML = `<button onclick="showNextQuestion()">Next Question</button>`;
+                // Append the button container to the quiz box
+                quizBox.appendChild(buttonContainer);
+            } else {
+                quizBox.innerHTML = `
+                    <div class="result">Quiz completed! Thanks for playing.</div>
+                `;
+                // Create a separate container for the button
+                const buttonContainer = document.createElement('div');
+                buttonContainer.classList.add('modal-button-container');
+                buttonContainer.innerHTML = `<button onclick="closeQuizModal()">Close Quiz</button>`;
+                // Append the button container to the quiz box
+                quizBox.appendChild(buttonContainer);
+            }
+        }
+
+        let score = 0;
+
+        // Check user's answer and show next question
+        function showNextQuestion() {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < 5) {
+                showRandomQuestion();
+            } else {
+                evaluateAndDisplayResult();
+            }
+        }
+
+        function checkAnswer(selectedOptionIndex, correctAnswer) {
+            const options = document.querySelectorAll('.options-box .option-box');
+            
+            // Remove the 'selected' class from all options
+            options.forEach(option => {
+                option.classList.remove('selected');
+            });
+        
+            // Add the 'selected' class to the clicked option
+            options[selectedOptionIndex].classList.add('selected');
+        
+            // Get the selected option's text
+            const selectedOptionText = options[selectedOptionIndex].innerText;
+        
+            // Check if the selected option is correct
+            const isCorrect = selectedOptionText === correctAnswer;
+        
+            // Update the UI to indicate correctness
+            const resultContainer = document.getElementById('result');
+            resultContainer.innerHTML = isCorrect
+                ? '<p style="color: green;">Correct!</p>'
+                : `<p style="color: red;">Incorrect. The correct answer is: ${correctAnswer}</p>`;
+        
+            // Update the score if the answer is correct
+            if (isCorrect) {
+                score++;
+            }
+            
+            // For demonstration purposes, let's log the selected option index and correctness
+            console.log('Selected Option Index:', selectedOptionIndex);
+            console.log('Is Correct:', isCorrect);
+        }
+
+        let quizCompleted = false;
+
+        // Evaluate user's performance and display result
+        function evaluateAndDisplayResult() {
+            const resultContainer = document.getElementById('quiz-container');
+            let correctAnswersCount = 0;
+            let totalQuestions = 5;
+            if (score >= 4) {
+                quizCompleted = true;
+                resultContainer.innerHTML = `
+                <div class="result">Congratulations! You can move on to the next lesson.</div>
+                <div class="score-details">
+                    <p>Your Score <br> ${score} out of ${totalQuestions}</p>
+                </div>
+                <div class="modal-button-container">
+                    <button onclick="closeQuizModal()">Close Quiz</button>
+                </div>`;
+                updateUIOnQuizCompletion();
+                document.getElementById('completion-message').style.display = 'block';
+            } else {
+                resultContainer.innerHTML = `
+                <div class="result">Please review the lesson again and try again later.</div>
+                <div class="score-details">
+                    <p><center>Your Score</center> <br> <center>${score} out of ${totalQuestions}</center></p>
+                </div>
+                <div class="modal-button-container">
+                    <button onclick="closeQuizModal()">Close Quiz</button>
+                </div>`;
+            }
+        }
+
+        function closeQuizModal() {
+            document.getElementById('quiz-container').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+    
+            // Redirect to the Algorithms page
+            window.location.href = "{{ url_for('algorithms') }}";
+        }
+        function updateUIOnQuizCompletion() {
+            // Change the color of the four-pointed star to gold
+            const fourPointedStar = document.querySelector('.four-pointed-star[data-target="dialog-boxalgbeg11"]');
+            if (fourPointedStar) {
+                fourPointedStar.style.backgroundColor = '#ffd700'; // Hex code for gold
+            }
+
+            // Change the dialog box border color to gold and display the completion message
+            const dialogBoxAlgbeg11 = document.getElementById('dialog-boxalgbeg11');
+            if (dialogBoxAlgbeg11) {
+                dialogBoxAlgbeg11.style.borderColor = '#ffd700'; // Hex code for gold
+                const dialogText = dialogBoxAlgbeg11.querySelector('.dialog-text');
+                dialogText.innerText = 'Completed'; // Update the message inside the dialog box
+
+                // Save the completion status in localStorage
+                localStorage.setItem('algbeglsn11Completed', 'true');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            startQuiz();
+            const algbeglsn11Completed = localStorage.getItem('algbeglsn11Completed');
+            if (algbeglsn11Completed === 'true') {
+                updateUIOnQuizCompletion();
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <aside class="sidebar-left">
+            <ul class="sidebar-menu">
+                <li>
+                    <h2 class="sidebar-title">Study Aid</h2>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="colored-icon">
+                        <i class="fas fa-graduation-cap"></i> Learn
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="courses-toggle">
+                        <i class="fas fa-book"></i> Courses
+                    </a>
+                    <ul class="course-list hidden">
+                        <li>
+                            <a href="{{ url_for('algorithms') }}">
+                                <i class="fas fa-chart-line"></i> Algorithms
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url_for('personalfinance') }}">
+                                <i class="fas fa-rupee-sign"></i> Personal Finance
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url_for('calculus') }}">
+                                <i class="fas fa-calculator"></i> Calculus
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sidebar-item">
+                    <a href="{{ url_for('profile') }}" class="colored-icon">
+                        <i class="fas fa-user"></i> Profile
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="{{ url_for('settings') }}" class="colored-icon">
+                        <i class="fas fa-cog"></i> Settings
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="{{ url_for('home') }}" class="colored-icon">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <main class="lesson-main-content">
+            <h1>Selection sort explained</h1>
+            <div id="sublesson1">
+                <h2>Selection sort procedure</h2>
+                <p>
+                    In this lesson, we will learn about the selection sort algorithm, which is a simple and intuitive sorting algorithm. Selection sort works by repeatedly finding the minimum element from the unsorted part of the array and swapping it with the first element of the unsorted part. This process is repeated until the entire array is sorted.<br>
+                    <br>
+                    Here is the step-by-step procedure for selection sort:<br>
+                    <br>
+                    1. Find the minimum element in the unsorted part of the array.<br>
+                    2. Swap the minimum element with the first element of the unsorted part.<br>
+                    3. Move the boundary of the sorted part one element to the right.<br>
+                    4. Repeat steps 1-3 until the entire array is sorted.<br>
+                    <br>
+                    Selection sort has a time complexity of O(n^2), where n is the number of elements in the array. It is not the most efficient sorting algorithm for large datasets, but it is easy to understand and implement.
+                </p>
+            </div>    
+            <!-- Sub Lesson 2 Content -->
+            <div id="sublesson2">
+                <h2>Comparing selection sort with other sorting methods</h2>
+                <p>
+                    In this sub-lesson, we will compare selection sort with other sorting methods. Selection sort is a simple and intuitive sorting algorithm that works by repeatedly finding the minimum element from the unsorted part of the array and putting it at the beginning. Let's see how it compares with other sorting methods.<br>
+                    <br>
+                    1. Insertion Sort:<br>
+                    - Insertion sort is another simple sorting algorithm that works by building a sorted portion of the array one element at a time.<br>
+                    - Selection sort has an advantage over insertion sort in terms of the number of element movements. Selection sort always moves elements n times, while insertion sort could move elements up to n^2 times.<br>
+                    - If moving an element is time-consuming and the input is not expected to approach the best-case situation for insertion sort, selection sort might be a better choice.<br>
+                    <br>
+                    2. Merge Sort:<br>
+                    - Merge sort is a divide-and-conquer algorithm that works by dividing the array into smaller subproblems, solving them recursively, and then combining the solutions to get the final sorted array.<br>
+                    - Merge sort has a running time of n log n in all cases, which is better than the worst-case running times of selection sort and insertion sort (n^2).<br>
+                    - However, merge sort has a higher constant factor hidden in the asymptotic notation and requires additional space to make complete copies of the input array.<br>
+                    <br>
+                    Now that we have compared selection sort with insertion sort and merge sort, let's test your understanding with some multiple-choice questions.
+                </p>
+            </div>
+            <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
+            <div id="quiz-container" class="quiz-container"></div>
+            <div id="overlay" class="overlay"></div>
+            <div id="completion-message" style="display: none;">
+                <p class="completion-message">Lesson Completed!</p>
+            </div>
+        </main>
+        <aside class="sidebar-right">
+            <h2>Selection sort explained</h2>
+            <ul class="sub-lesson-links">
+                <li><a href="#sublesson1">Selection sort procedure</a></li>
+                <li><a href="#sublesson2">Comparing selection sort with other sorting methods</a></li>
+            </ul>
+        </aside>
+</body>
+
+</html>
