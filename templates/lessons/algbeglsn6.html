@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working with linked lists</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/learningstyles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .quiz-container {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+            max-width: 80%;
+            max-height: 80%;
+            overflow-y: auto;
+        }
+        .question-box {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+        }
+        .options-box {
+            display: flex;
+            flex-direction: column;
+        }
+        .option-box {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .option-box.selected {
+            background-color: #3498db;
+            color: white;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 1);
+            z-index: 999;
+            display: none;
+        }
+        .modal-button-container button {
+            width: 10rem;
+            height: 2rem;
+            background-color: #3498db;
+            outline: none;
+            border: 1px solid rgb(252, 242, 241);
+            color: white;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border-radius: 20px;
+            text-align: center;
+            line-height: 2rem;
+            padding: 5px;
+        }
+        .modal-button-container button:hover {
+            background-color: #2980b9;
+        }
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity:1 ;}
+        }
+        @-webkit-keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        .completion-message {
+            color: green; 
+        } 
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='js/learningscript.js') }}" defer></script>
+    <script>
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+        const questions = [
+            {
+                question: "What is a singly linked list?",
+                options: ["A data structure that consists of a sequence of nodes", "A data structure that consists of a sequence of values", "A data structure that consists of a sequence of arrays", "A data structure that consists of a sequence of trees"],
+                answer: "A data structure that consists of a sequence of nodes"
+            },
+            {
+                question: "What is the first node in a singly linked list called?",
+                options: ["Middle", "Tail", "Head", "None of the above"],
+                answer: "Head"
+            },
+            {
+                question: "How do we indicate the end of a singly linked list?",
+                options: ["Set the reference of the first node to the last node", "Set the reference of the last node to the first node", "Set the reference of the first node to null", "Set the reference of the last node to null"],
+                answer: "Set the reference of the last node to null"
+            },
+            {
+                question: "How do we traverse a singly linked list?",
+                options: ["Start at the tail node and follow the references to the previous nodes", "Start at the head node and follow the references to the next nodes", "Start at the middle node and follow the references to the adjacent nodes", "None of the above"],
+                answer: "Start at the head node and follow the references to the next nodes"
+            },
+            {
+                question: "What operations can we perform on a singly linked list?",
+                options: ["Inserting a new node, deleting a node, searching for a value, updating a value", "Inserting a new value, deleting a value, searching for a node, updating a node", "Inserting a new array, deleting an array, searching for a value, updating a value", "Inserting a new tree, deleting a tree, searching for a value, updating a value"],
+                answer: "Inserting a new node, deleting a node, searching for a value, updating a value"
+            },
+            {
+                question: "Which operation is used to insert a new element at the beginning of a linked list?",
+                options: ["Insertion at the end", "Insertion at a specific position", "Insertion at the beginning", "Deletion of the first element"],
+                answer: "Insertion at the beginning"
+            },
+            {
+                question: "How do we delete the last element of a linked list?",
+                options: ["Update the head pointer", "Traverse the list until the second last node", "Traverse the list until the last node", "Free the memory occupied by the last node"],
+                answer: "Traverse the list until the second last node"
+            },
+            {
+                question: "What is the time complexity of inserting an element at the end of a linked list?",
+                options: ["O(1)", "O(n)", "O(log n)", "O(n^2)"],
+                answer: "O(n)"
+            },
+            {
+                question: "How do we delete a specific element from a linked list?",
+                options: ["Update the head pointer", "Traverse the list until the second last node", "Traverse the list until the last node", "Traverse the list until we find the element"],
+                answer: "Traverse the list until we find the element"
+            },
+            {
+                question: "What is the time complexity of deleting the first element of a linked list?",
+                options: ["O(1)", "O(n)", "O(log n)", "O(n^2)"],
+                answer: "O(1)"
+            }
+        ];
+
+        const questionsCopy = [...questions];
+        let currentQuestionIndex = 0;
+
+        // Open quiz modal
+        function openQuizModal() {
+            document.getElementById('quiz-container').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        // Close quiz modal
+        function closeQuizModal() {
+            document.getElementById('quiz-container').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+        // Shuffle and display questions
+        function showRandomQuestion() {
+            shuffleArray(questionsCopy);
+            showQuestion(currentQuestionIndex);
+        }
+
+        // Call this function when starting the quiz
+        function startQuiz() {
+            currentQuestionIndex = 0;
+            showRandomQuestion();
+        }
+
+        function showQuestion(index) {
+            const quizBox = document.querySelector('.quiz-container');
+            const currentQuestion = questionsCopy[index];
+            // Clear previous content
+            quizBox.innerHTML = '';
+            if (currentQuestion) {
+                const questionBox = document.createElement('div');
+                questionBox.classList.add('question-box');
+                questionBox.innerHTML = `
+                    <div class="question">${currentQuestion.question}<br></div>
+                    <div class="options-box">
+                        ${currentQuestion.options.map((option, optionIndex) => `<div class="option-box" data-index="${optionIndex}">${option}</div>`).join('')}
+                    </div>
+                    <div id="result"></div>
+                `;
+
+                // Add event listeners to the options
+                const optionBoxes = questionBox.querySelectorAll('.option-box');
+                optionBoxes.forEach(optionBox => {
+                    optionBox.addEventListener('click', function () {
+                        const selectedOptionIndex = this.getAttribute('data-index');
+                        checkAnswer(selectedOptionIndex, currentQuestion.answer);
+                    });
+                });
+                quizBox.appendChild(questionBox);
+                // Create a separate container for the button
+                const buttonContainer = document.createElement('div');
+                buttonContainer.classList.add('modal-button-container');
+                buttonContainer.innerHTML = `<button onclick="showNextQuestion()">Next Question</button>`;
+                // Append the button container to the quiz box
+                quizBox.appendChild(buttonContainer);
+            } else {
+                quizBox.innerHTML = `
+                    <div class="result">Quiz completed! Thanks for playing.</div>
+                `;
+                // Create a separate container for the button
+                const buttonContainer = document.createElement('div');
+                buttonContainer.classList.add('modal-button-container');
+                buttonContainer.innerHTML = `<button onclick="closeQuizModal()">Close Quiz</button>`;
+                // Append the button container to the quiz box
+                quizBox.appendChild(buttonContainer);
+            }
+        }
+
+        let score = 0;
+
+        // Check user's answer and show next question
+        function showNextQuestion() {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < 5) {
+                showRandomQuestion();
+            } else {
+                evaluateAndDisplayResult();
+            }
+        }
+
+        function checkAnswer(selectedOptionIndex, correctAnswer) {
+            const options = document.querySelectorAll('.options-box .option-box');
+            
+            // Remove the 'selected' class from all options
+            options.forEach(option => {
+                option.classList.remove('selected');
+            });
+        
+            // Add the 'selected' class to the clicked option
+            options[selectedOptionIndex].classList.add('selected');
+        
+            // Get the selected option's text
+            const selectedOptionText = options[selectedOptionIndex].innerText;
+        
+            // Check if the selected option is correct
+            const isCorrect = selectedOptionText === correctAnswer;
+        
+            // Update the UI to indicate correctness
+            const resultContainer = document.getElementById('result');
+            resultContainer.innerHTML = isCorrect
+                ? '<p style="color: green;">Correct!</p>'
+                : `<p style="color: red;">Incorrect. The correct answer is: ${correctAnswer}</p>`;
+        
+            // Update the score if the answer is correct
+            if (isCorrect) {
+                score++;
+            }
+            
+            // For demonstration purposes, let's log the selected option index and correctness
+            console.log('Selected Option Index:', selectedOptionIndex);
+            console.log('Is Correct:', isCorrect);
+        }
+
+        let quizCompleted = false;
+
+        // Evaluate user's performance and display result
+        function evaluateAndDisplayResult() {
+            const resultContainer = document.getElementById('quiz-container');
+            let correctAnswersCount = 0;
+            let totalQuestions = 5;
+            if (score >= 4) {
+                quizCompleted = true;
+                resultContainer.innerHTML = `
+                <div class="result">Congratulations! You can move on to the next lesson.</div>
+                <div class="score-details">
+                    <p>Your Score <br> ${score} out of ${totalQuestions}</p>
+                </div>
+                <div class="modal-button-container">
+                    <button onclick="closeQuizModal()">Close Quiz</button>
+                </div>`;
+                updateUIOnQuizCompletion();
+                document.getElementById('completion-message').style.display = 'block';
+            } else {
+                resultContainer.innerHTML = `
+                <div class="result">Please review the lesson again and try again later.</div>
+                <div class="score-details">
+                    <p><center>Your Score</center> <br> <center>${score} out of ${totalQuestions}</center></p>
+                </div>
+                <div class="modal-button-container">
+                    <button onclick="closeQuizModal()">Close Quiz</button>
+                </div>`;
+            }
+        }
+
+        function closeQuizModal() {
+            document.getElementById('quiz-container').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+    
+            // Redirect to the Algorithms page
+            window.location.href = "{{ url_for('algorithms') }}";
+        }
+        function updateUIOnQuizCompletion() {
+            // Change the color of the four-pointed star to gold
+            const fourPointedStar = document.querySelector('.four-pointed-star[data-target="dialog-boxalgbeg6"]');
+            if (fourPointedStar) {
+                fourPointedStar.style.backgroundColor = '#ffd700'; // Hex code for gold
+            }
+
+            // Change the dialog box border color to gold and display the completion message
+            const dialogBoxAlgbeg6 = document.getElementById('dialog-boxalgbeg6');
+            if (dialogBoxAlgbeg6) {
+                dialogBoxAlgbeg6.style.borderColor = '#ffd700'; // Hex code for gold
+                const dialogText = dialogBoxAlgbeg6.querySelector('.dialog-text');
+                dialogText.innerText = 'Completed'; // Update the message inside the dialog box
+
+                // Save the completion status in localStorage
+                localStorage.setItem('algbeglsn6Completed', 'true');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            startQuiz();
+            const algbeglsn6Completed = localStorage.getItem('algbeglsn6Completed');
+            if (algbeglsn6Completed === 'true') {
+                updateUIOnQuizCompletion();
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <aside class="sidebar-left">
+            <ul class="sidebar-menu">
+                <li>
+                    <h2 class="sidebar-title">Study Aid</h2>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="colored-icon">
+                        <i class="fas fa-graduation-cap"></i> Learn
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="courses-toggle">
+                        <i class="fas fa-book"></i> Courses
+                    </a>
+                    <ul class="course-list hidden">
+                        <li>
+                            <a href="{{ url_for('algorithms') }}">
+                                <i class="fas fa-chart-line"></i> Algorithms
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url_for('personalfinance') }}">
+                                <i class="fas fa-rupee-sign"></i> Personal Finance
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url_for('calculus') }}">
+                                <i class="fas fa-calculator"></i> Calculus
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sidebar-item">
+                    <a href="{{ url_for('profile') }}" class="colored-icon">
+                        <i class="fas fa-user"></i> Profile
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="{{ url_for('settings') }}" class="colored-icon">
+                        <i class="fas fa-cog"></i> Settings
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="{{ url_for('home') }}" class="colored-icon">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <main class="lesson-main-content">
+            <h1>Working with linked lists</h1>
+            <div id="sublesson1">
+                <h2>Singly linked lists and their nodes</h2>
+                <p>
+                    In this sub-lesson, we will learn about singly linked lists and their nodes. A singly linked list is a data structure that consists of a sequence of nodes, where each node contains a value and a reference to the next node in the list. The first node in the list is called the head, and the last node is called the tail. The tail node's reference is typically set to null to indicate the end of the list.<br>
+                    <br>
+                    To create a singly linked list, we start with an empty list and add nodes one by one. Each node is created with a value and a reference to the next node. The reference of the last node is set to null.<br>
+                    <br>
+                    To traverse a singly linked list, we start at the head node and follow the references to the next nodes until we reach the end of the list. We can perform various operations on a singly linked list, such as inserting a new node, deleting a node, searching for a value, and updating a value.
+                </p>
+            </div>    
+            <!-- Sub Lesson 2 Content -->
+            <div id="sublesson2">
+                <h2>Insertion and deletion in linked lists</h2>
+                <p>
+                    In this sub-lesson, we will learn about insertion and deletion operations in linked lists. Linked lists are a fundamental data structure that allows us to store and manipulate data in a dynamic manner.<br>
+                    <br>
+                    1. Insertion in Linked Lists:<br>
+                       - Inserting at the beginning: To insert a new element at the beginning of a linked list, we create a new node and make it the new head of the list. We update the next pointer of the new node to point to the current head, and update the head pointer to point to the new node.<br>
+                       - Inserting at the end: To insert a new element at the end of a linked list, we traverse the list until we reach the last node. We create a new node and make it the next node of the last node. We update the next pointer of the new node to NULL.<br>
+                       - Inserting at a specific position: To insert a new element at a specific position in a linked list, we traverse the list until we reach the desired position. We create a new node and make it the next node of the previous node. We update the next pointer of the new node to point to the next node of the previous node.<br>
+                    <br>
+                    2. Deletion in Linked Lists:<br>
+                       - Deleting the first element: To delete the first element of a linked list, we update the head pointer to point to the next node of the current head. We free the memory occupied by the current head.<br>
+                       - Deleting the last element: To delete the last element of a linked list, we traverse the list until we reach the second last node. We update the next pointer of the second last node to NULL and free the memory occupied by the last node.<br>
+                       - Deleting a specific element: To delete a specific element from a linked list, we traverse the list until we find the element. We update the next pointer of the previous node to point to the next node of the current node. We free the memory occupied by the current node.<br>
+                    <br>
+                    Now that we have learned about insertion and deletion operations in linked lists, let's test our understanding with some multiple-choice questions.
+                </p>
+            </div>
+            <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
+            <div id="quiz-container" class="quiz-container"></div>
+            <div id="overlay" class="overlay"></div>
+            <div id="completion-message" style="display: none;">
+                <p class="completion-message">Lesson Completed!</p>
+            </div>
+        </main>
+        <aside class="sidebar-right">
+            <h2>Working with linked lists</h2>
+            <ul class="sub-lesson-links">
+                <li><a href="#sublesson1">Singly linked lists and their nodes</a></li>
+                <li><a href="#sublesson2">Insertion and deletion in linked lists</a></li>
+            </ul>
+        </aside>
+</body>
+
+</html>
