@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Basics of graph theory</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/learningstyles.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
@@ -93,54 +93,54 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What are the two main components of a graph?",
+                options: ["Nodes and edges", "Vertices and weights", "Objects and entities", "Connections and relationships"],
+                answer: "Nodes and edges"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "In a directed graph, the edges have:",
+                options: ["No direction", "Two-way direction", "One-way direction", "Multiple directions"],
+                answer: "One-way direction"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What do weighted edges represent in a graph?",
+                options: ["Relationships between nodes", "Numerical values or weights", "Two-way connections", "Entities in a graph"],
+                answer: "Numerical values or weights"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What are subgraphs used for?",
+                options: ["Assigning weights to edges", "Classifying graphs into types", "Creating connections between nodes", "Analyzing specific parts of a graph"],
+                answer: "Analyzing specific parts of a graph"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which of the following is an example of a subgraph?",
+                options: ["A loop within a graph", "An undirected graph", "A directed graph", "A weighted graph"],
+                answer: "A loop within a graph"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "In an undirected graph, the edges:",
+                options: ["Have a specific direction", "Do not have a specific direction", "Can only be traversed in one direction", "None of the above"],
+                answer: "Do not have a specific direction"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which type of graph is often used to represent friendships or connections between objects?",
+                options: ["Directed graph", "Undirected graph", "Weighted graph", "Mixed graph"],
+                answer: "Undirected graph"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "In a directed graph, the relationship between two vertices is:",
+                options: ["Bidirectional", "Symmetric", "Asymmetric", "None of the above"],
+                answer: "Asymmetric"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which type of graph is used to represent following relationships in social networks?",
+                options: ["Directed graph", "Undirected graph", "Weighted graph", "Mixed graph"],
+                answer: "Directed graph"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the main difference between directed and undirected graphs?",
+                options: ["The type of relationships represented", "The presence of weights on the edges", "The number of vertices in the graph", "The specific direction of the edges"],
+                answer: "The specific direction of the edges"
             }
         ];
 
@@ -379,18 +379,34 @@
             </ul>
         </aside>
         <main class="lesson-main-content">
-            <h1></h1>
+            <h1>Basics of graph theory</h1>
             <div id="sublesson1">
-                <h2></h2>
+                <h2>Graph definition and terminology</h2>
                 <p>
-                    
+                    In this lesson, we will introduce the basics of graph theory, specifically focusing on graph definition and terminology. Graph theory is a branch of mathematics that deals with the study of graphs, which are mathematical structures used to model relationships between objects. Graphs consist of two main components: nodes (also known as vertices) and edges.<br>
+                    <br>
+                    Nodes represent the objects or entities in a graph, while edges represent the relationships or connections between those objects. For example, in a social network, nodes can represent individuals, and edges can represent friendships between them.<br>
+                    <br>
+                    Graphs can be classified into two main types: directed and undirected graphs. In a directed graph, the edges have a specific direction, indicating a one-way relationship between nodes. On the other hand, in an undirected graph, the edges have no direction, indicating a two-way relationship between nodes.<br>
+                    <br>
+                    Graphs can also have weighted edges, where each edge is assigned a numerical value or weight. This weight can represent various properties, such as the distance between two nodes or the cost of traversing an edge.<br>
+                    <br>
+                    Subgraphs are subsets of a larger graph that retain the same structure and properties. They are useful for analyzing specific parts of a graph without considering the entire graph. For example, a subgraph can be created to analyze a loop within a graph or to compare cycles in different graphs.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
-                <h2></h2>
+                <h2>Directed vs. undirected graphs</h2>
                 <p>
-
+                    In this lesson, we will be discussing the basics of graph theory, specifically focusing on the difference between directed and undirected graphs. Graph theory is a branch of mathematics that deals with the study of graphs, which are mathematical structures used to model relationships between objects. A graph consists of two main components: vertices (also known as nodes) and edges.<br>
+                    <br>
+                    An undirected graph is a type of graph where the edges do not have a specific direction. This means that the relationship between two vertices is symmetric, and the edge connecting them can be traversed in both directions. For example, if we have a graph representing a group of friends, an undirected edge between two vertices would indicate that both individuals are friends with each other.<br>
+                    <br>
+                    On the other hand, a directed graph (also known as a digraph) is a type of graph where the edges have a specific direction. This means that the relationship between two vertices is asymmetric, and the edge connecting them can only be traversed in one direction. For example, if we have a graph representing a social media network, a directed edge from vertex A to vertex B would indicate that A follows B, but not necessarily vice versa.<br>
+                    <br>
+                    Directed and undirected graphs have different properties and applications. Undirected graphs are often used to represent relationships that are symmetric, such as friendships or connections between objects. Directed graphs, on the other hand, are used to represent relationships that are asymmetric, such as following relationships in social networks or dependencies between tasks in a project.<br>
+                    <br>
+                    Now that we have a basic understanding of directed and undirected graphs, let's move on to some multiple-choice questions to test our knowledge.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
@@ -401,10 +417,10 @@
             </div>
         </main>
         <aside class="sidebar-right">
-            <h2></h2>
+            <h2>Basics of graph theory</h2>
             <ul class="sub-lesson-links">
-                <li><a href="#sublesson1"></a></li>
-                <li><a href="#sublesson2"></a></li>
+                <li><a href="#sublesson1">Graph definition and terminology</a></li>
+                <li><a href="#sublesson2">Directed vs. undirected graphs</a></li>
             </ul>
         </aside>
 </body>
