@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Differential Equations and Mathematical Modeling</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/learningstyles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .quiz-container {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+            max-width: 80%;
+            max-height: 80%;
+            overflow-y: auto;
+        }
+        .question-box {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+        }
+        .options-box {
+            display: flex;
+            flex-direction: column;
+        }
+        .option-box {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .option-box.selected {
+            background-color: #3498db;
+            color: white;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 1);
+            z-index: 999;
+            display: none;
+        }
+        .modal-button-container button {
+            width: 10rem;
+            height: 2rem;
+            background-color: #3498db;
+            outline: none;
+            border: 1px solid rgb(252, 242, 241);
+            color: white;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border-radius: 20px;
+            text-align: center;
+            line-height: 2rem;
+            padding: 5px;
+        }
+        .modal-button-container button:hover {
+            background-color: #2980b9;
+        }
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity:1 ;}
+        }
+        @-webkit-keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        .completion-message {
+            color: green; 
+        } 
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='js/learningscript.js') }}" defer></script>
+    <script>
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+        const questions = [
+            {
+                question: "Which of the following is an application of differential equations in physics?",
+                options: ["Modeling exponential growth and decay", "Solving algebraic equations", "Analyzing geometric shapes", "Studying historical events"],
+                answer: "Modeling exponential growth and decay"
+            },
+            {
+                question: "What does the differential equation dy/dt = ky represent?",
+                options: ["Linear motion", "Fluid dynamics", "Oscillatory behavior", "Exponential growth or decay"],
+                answer: "Exponential growth or decay"
+            },
+            {
+                question: "Which law of motion can be expressed as a second-order linear differential equation?",
+                options: ["Newton's first law", "Newton's second law", "Newton's third law", "Newton's law of universal gravitation"],
+                answer: "Newton's second law"
+            },
+            {
+                question: "What type of systems can be described using second-order linear differential equations?",
+                options: ["Quantum mechanical systems", "Fluid dynamics systems", "Oscillatory systems", "Exponential growth systems"],
+                answer: "Oscillatory systems"
+            },
+            {
+                question: "In which areas of physics are differential equations commonly used?",
+                options: ["Fluid dynamics, electromagnetism, and quantum mechanics", "Algebra, geometry, and calculus", "History, literature, and art", "Biology, chemistry, and geology"],
+                answer: "Fluid dynamics, electromagnetism, and quantum mechanics"
+            },
+            {
+                question: "What is the purpose of differential equations in modeling dynamic systems?",
+                options: ["To analyze static systems", "To find the derivative of a function", "To solve complex mathematical problems", "To describe the behavior of a system over time"],
+                answer: "To describe the behavior of a system over time"
+            },
+            {
+                question: "Which form of differential equation represents a second-order equation?",
+                options: ["dy/dx = f(x)", "d^2y/dx^2 = f(x)", "d^3y/dx^3 = f(x)", "d^4y/dx^4 = f(x)"],
+                answer: "d^2y/dx^2 = f(x)"
+            },
+            {
+                question: "How do we solve a first-order differential equation of the form dy/dx = f(x)?",
+                options: ["Integrate f(x)", "Differentiate f(x)", "Find the antiderivative of f(x)", "Substitute values of x into f(x)"],
+                answer: "Find the antiderivative of f(x)"
+            },
+            {
+                question: "What is the purpose of modeling in differential equations?",
+                options: ["To make predictions about real-world phenomena", "To find the general solution of a differential equation", "To simplify complex mathematical problems", "To analyze static systems"],
+                answer: "To make predictions about real-world phenomena"
+            },
+            {
+                question: "In which fields are differential equations commonly used for modeling?",
+                options: ["Physics and engineering", "Biology and economics", "Chemistry and computer science", "All of the above"],
+                answer: "All of the above"
+            }
+        ];
+
+        const questionsCopy = [...questions];
+        let currentQuestionIndex = 0;
+
+        // Open quiz modal
+        function openQuizModal() {
+            document.getElementById('quiz-container').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        // Close quiz modal
+        function closeQuizModal() {
+            document.getElementById('quiz-container').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+        // Shuffle and display questions
+        function showRandomQuestion() {
+            shuffleArray(questionsCopy);
+            showQuestion(currentQuestionIndex);
+        }
+
+        // Call this function when starting the quiz
+        function startQuiz() {
+            currentQuestionIndex = 0;
+            showRandomQuestion();
+        }
+
+        function showQuestion(index) {
+            const quizBox = document.querySelector('.quiz-container');
+            const currentQuestion = questionsCopy[index];
+            // Clear previous content
+            quizBox.innerHTML = '';
+            if (currentQuestion) {
+                const questionBox = document.createElement('div');
+                questionBox.classList.add('question-box');
+                questionBox.innerHTML = `
+                    <div class="question">${currentQuestion.question}<br></div>
+                    <div class="options-box">
+                        ${currentQuestion.options.map((option, optionIndex) => `<div class="option-box" data-index="${optionIndex}">${option}</div>`).join('')}
+                    </div>
+                    <div id="result"></div>
+                `;
+
+                // Add event listeners to the options
+                const optionBoxes = questionBox.querySelectorAll('.option-box');
+                optionBoxes.forEach(optionBox => {
+                    optionBox.addEventListener('click', function () {
+                        const selectedOptionIndex = this.getAttribute('data-index');
+                        checkAnswer(selectedOptionIndex, currentQuestion.answer);
+                    });
+                });
+                quizBox.appendChild(questionBox);
+                // Create a separate container for the button
+                const buttonContainer = document.createElement('div');
+                buttonContainer.classList.add('modal-button-container');
+                buttonContainer.innerHTML = `<button onclick="showNextQuestion()">Next Question</button>`;
+                // Append the button container to the quiz box
+                quizBox.appendChild(buttonContainer);
+            } else {
+                quizBox.innerHTML = `
+                    <div class="result">Quiz completed! Thanks for playing.</div>
+                `;
+                // Create a separate container for the button
+                const buttonContainer = document.createElement('div');
+                buttonContainer.classList.add('modal-button-container');
+                buttonContainer.innerHTML = `<button onclick="closeQuizModal()">Close Quiz</button>`;
+                // Append the button container to the quiz box
+                quizBox.appendChild(buttonContainer);
+            }
+        }
+
+        let score = 0;
+
+        // Check user's answer and show next question
+        function showNextQuestion() {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < 5) {
+                showRandomQuestion();
+            } else {
+                evaluateAndDisplayResult();
+            }
+        }
+
+        function checkAnswer(selectedOptionIndex, correctAnswer) {
+            const options = document.querySelectorAll('.options-box .option-box');
+            
+            // Remove the 'selected' class from all options
+            options.forEach(option => {
+                option.classList.remove('selected');
+            });
+        
+            // Add the 'selected' class to the clicked option
+            options[selectedOptionIndex].classList.add('selected');
+        
+            // Get the selected option's text
+            const selectedOptionText = options[selectedOptionIndex].innerText;
+        
+            // Check if the selected option is correct
+            const isCorrect = selectedOptionText === correctAnswer;
+        
+            // Update the UI to indicate correctness
+            const resultContainer = document.getElementById('result');
+            resultContainer.innerHTML = isCorrect
+                ? '<p style="color: green;">Correct!</p>'
+                : `<p style="color: red;">Incorrect. The correct answer is: ${correctAnswer}</p>`;
+        
+            // Update the score if the answer is correct
+            if (isCorrect) {
+                score++;
+            }
+            
+            // For demonstration purposes, let's log the selected option index and correctness
+            console.log('Selected Option Index:', selectedOptionIndex);
+            console.log('Is Correct:', isCorrect);
+        }
+
+        let quizCompleted = false;
+
+        // Evaluate user's performance and display result
+        function evaluateAndDisplayResult() {
+            const resultContainer = document.getElementById('quiz-container');
+            let correctAnswersCount = 0;
+            let totalQuestions = 5;
+            if (score >= 4) {
+                quizCompleted = true;
+                resultContainer.innerHTML = `
+                <div class="result">Congratulations! You can move on to the next lesson.</div>
+                <div class="score-details">
+                    <p>Your Score <br> ${score} out of ${totalQuestions}</p>
+                </div>
+                <div class="modal-button-container">
+                    <button onclick="closeQuizModal()">Close Quiz</button>
+                </div>`;
+                updateUIOnQuizCompletion();
+                document.getElementById('completion-message').style.display = 'block';
+            } else {
+                resultContainer.innerHTML = `
+                <div class="result">Please review the lesson again and try again later.</div>
+                <div class="score-details">
+                    <p><center>Your Score</center> <br> <center>${score} out of ${totalQuestions}</center></p>
+                </div>
+                <div class="modal-button-container">
+                    <button onclick="closeQuizModal()">Close Quiz</button>
+                </div>`;
+            }
+        }
+
+        function closeQuizModal() {
+            document.getElementById('quiz-container').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+    
+            // Redirect to the Calculus page
+            window.location.href = "{{ url_for('calculus') }}";
+        }
+        function updateUIOnQuizCompletion() {
+            // Change the color of the four-pointed star to gold
+            const fourPointedStar = document.querySelector('.four-pointed-star[data-target="dialog-boxcalbeg8"]');
+            if (fourPointedStar) {
+                fourPointedStar.style.backgroundColor = '#ffd700'; // Hex code for gold
+            }
+
+            // Change the dialog box border color to gold and display the completion message
+            const dialogBoxCalbeg8 = document.getElementById('dialog-boxcalbeg8');
+            if (dialogBoxCalbeg8) {
+                dialogBoxCalbeg8.style.borderColor = '#ffd700'; // Hex code for gold
+                const dialogText = dialogBoxCalbeg8.querySelector('.dialog-text');
+                dialogText.innerText = 'Completed'; // Update the message inside the dialog box
+
+                // Save the completion status in localStorage
+                localStorage.setItem('calbeglsn8Completed', 'true');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            startQuiz();
+            const calbeglsn8Completed = localStorage.getItem('calbeglsn8Completed');
+            if (calbeglsn8Completed === 'true') {
+                updateUIOnQuizCompletion();
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <aside class="sidebar-left">
+            <ul class="sidebar-menu">
+                <li>
+                    <h2 class="sidebar-title">Study Aid</h2>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="colored-icon">
+                        <i class="fas fa-graduation-cap"></i> Learn
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="courses-toggle">
+                        <i class="fas fa-book"></i> Courses
+                    </a>
+                    <ul class="course-list hidden">
+                        <li>
+                            <a href="{{ url_for('algorithms') }}">
+                                <i class="fas fa-chart-line"></i> Algorithms
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url_for('personalfinance') }}">
+                                <i class="fas fa-rupee-sign"></i> Personal Finance
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url_for('calculus') }}">
+                                <i class="fas fa-calculator"></i> Calculus
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sidebar-item">
+                    <a href="{{ url_for('profile') }}" class="colored-icon">
+                        <i class="fas fa-user"></i> Profile
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="{{ url_for('settings') }}" class="colored-icon">
+                        <i class="fas fa-cog"></i> Settings
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="{{ url_for('home') }}" class="colored-icon">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <main class="lesson-main-content">
+            <h1>Differential Equations and Mathematical Modeling</h1>
+            <div id="sublesson1">
+                <h2>Applications of differential equations in physics</h2>
+                <p>
+                    In this lesson, we will explore the applications of differential equations in physics. Differential equations are mathematical equations that involve derivatives and are used to model various physical processes. They are an essential tool in understanding and predicting the behavior of physical systems.<br>
+                    <br>
+                    One common application of differential equations in physics is in modeling exponential growth and decay. Many natural processes, such as population growth, radioactive decay, and the charging or discharging of a capacitor, can be described using exponential functions. The differential equation dy/dt = ky, where y represents the quantity being measured and k is a constant, is used to model exponential growth or decay.<br>
+                    <br>
+                    Another important application of differential equations in physics is in describing the motion of objects. Newton's second law of motion, F = ma, can be expressed as a second-order linear differential equation, where F is the force acting on an object, m is its mass, and a is its acceleration. By solving this differential equation, we can determine the position, velocity, and acceleration of an object as a function of time.<br>
+                    <br>
+                    Differential equations are also used to model systems that exhibit oscillatory behavior, such as a mass-spring system or an electrical circuit. These systems can be described using second-order linear differential equations with periodic solutions. By solving these differential equations, we can determine the amplitude, frequency, and phase of the oscillations.<br>
+                    <br>
+                    In addition to these examples, differential equations are used in various other areas of physics, such as fluid dynamics, electromagnetism, and quantum mechanics. They provide a powerful mathematical framework for understanding and analyzing the behavior of physical systems.                     
+                </p>
+            </div>    
+            <!-- Sub Lesson 2 Content -->
+            <div id="sublesson2">
+                <h2>Modeling dynamic systems with differential equations</h2>
+                <p>
+                    In this lesson, we will explore the concept of modeling dynamic systems with differential equations. Differential equations are mathematical equations that involve derivatives and are used to describe how a system changes over time. They are widely used in various fields, including physics, engineering, biology, and economics, to model and understand real-world phenomena.<br>
+                    <br>
+                    To begin, let's understand the basic idea behind differential equations. A differential equation relates a function to its derivatives. It expresses how the rate of change of a quantity depends on the value of the quantity itself. For example, consider the equation dy/dx = f(x), where y is a function of x and f(x) represents the rate of change of y with respect to x. This equation describes how the function y changes as x varies.<br>
+                    <br>
+                    There are different types of differential equations, and in this lesson, we will focus on two specific forms: dy/dx = f(x) and d^2y/dx^2 = f(x). The first form represents a first-order differential equation, where the derivative of y with respect to x is equal to a function of x. The second form represents a second-order differential equation, where the second derivative of y with respect to x is equal to a function of x.<br>
+                    <br>
+                    Now, let's discuss how to solve these differential equations. Solving a differential equation involves finding a function that satisfies the equation. For first-order differential equations of the form dy/dx = f(x), we can often find an antiderivative of f(x) to obtain the general solution. However, for second-order differential equations of the form d^2y/dx^2 = f(x), the solution is more complex and may involve finding particular solutions based on initial conditions.<br>
+                    <br>
+                    In the process of solving differential equations, we often encounter modeling situations. Modeling involves using differential equations to describe and understand real-world phenomena. By formulating a differential equation that represents a dynamic system, we can analyze its behavior and make predictions. This is particularly useful in fields such as physics, where differential equations are used to model the motion of objects, or in biology, where they are used to model population growth.<br>
+                    <br>
+                    To summarize, in this sub-lesson, we have learned about modeling dynamic systems with differential equations. We discussed the basic concept of differential equations, the two forms of differential equations we will focus on, and the process of solving these equations. We also explored the importance of modeling in various fields and how differential equations can be used to describe and understand real-world phenomena.
+                </p>
+            </div>
+            <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
+            <div id="quiz-container" class="quiz-container"></div>
+            <div id="overlay" class="overlay"></div>
+            <div id="completion-message" style="display: none;">
+                <p class="completion-message">Lesson Completed!</p>
+            </div>
+        </main>
+        <aside class="sidebar-right">
+            <h2>Differential Equations and Mathematical Modeling</h2>
+            <ul class="sub-lesson-links">
+                <li><a href="#sublesson1">Applications of differential equations in physics</a></li>
+                <li><a href="#sublesson2">Modeling dynamic systems with differential equations</a></li>
+            </ul>
+        </aside>
+</body>
+
+</html>
