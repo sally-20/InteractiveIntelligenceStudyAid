@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Graph representations - adjacency matrix</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/learningstyles.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
@@ -93,54 +93,49 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the advantage of using adjacency matrices for dense graphs?",
+                options: ["Space efficiency", "Efficient edge lookup", "Inefficiency for dynamic graphs", "Space inefficiency for sparse graphs"],
+                answer: "Space efficiency"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the disadvantage of using adjacency matrices for sparse graphs?",
+                options: ["Space efficiency", "Efficient edge lookup", "Inefficiency for dynamic graphs", "Space inefficiency for sparse graphs"],
+                answer: "Space inefficiency for sparse graphs"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What does the adjacency matrix represent?",
+                options: ["The weights of the edges in a graph", "The distance between vertices in a graph", "The connections between vertices in a graph", "The number of edges with the same pair of endpoints"],
+                answer: "The connections between vertices in a graph"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How is an edge represented in the adjacency matrix?",
+                options: ["-1", "2", "0", "1"],
+                answer: "1"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What are the memory requirements of an adjacency matrix for a graph with n vertices?",
+                options: ["n", "n^2", "n^3", "2^n"],
+                answer: "n^2"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "When is an adjacency matrix memory-intensive?",
+                options: ["For directed graphs", "For weighted graphs", "For dense graphs", "For small graphs"],
+                answer: "For dense graphs"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which graph type is adjacency matrices inefficient for?",
+                options: ["Dense graphs", "Sparse graphs", "Dynamic graphs", "Weighted graphs"],
+                answer: "Sparse graphs"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the time complexity for checking if an edge exists between two vertices in an adjacency matrix?",
+                options: ["O(n^2)", "O(n)", "O(log n)", "O(1)"],
+                answer: "O(1)"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
-            },
-            {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the space complexity of adjacency matrices?",
+                options: ["O(V)", "O(E)", "O(V^2)", "O(E^2)"],
+                answer: "O(V^2)"
             }
         ];
 
@@ -379,18 +374,35 @@
             </ul>
         </aside>
         <main class="lesson-main-content">
-            <h1></h1>
+            <h1>Graph representations - adjacency matrix</h1>
             <div id="sublesson1">
-                <h2></h2>
+                <h2>Adjacency matrix concept</h2>
                 <p>
-                    
+                    In this lesson, we will introduce the concept of adjacency matrix as a way to represent graphs. A graph is a collection of vertices (also known as nodes) and edges that connect these vertices. The adjacency matrix is a square matrix that represents the connections between vertices in a graph.<br>
+                    <br>
+                    The adjacency matrix is a two-dimensional array where the rows and columns represent the vertices of the graph. Each entry in the matrix indicates whether there is an edge between two vertices. If there is an edge between vertex i and vertex j, then the entry A[i][j] is set to 1. Otherwise, it is set to 0.<br>
+                    <br>
+                    The memory requirements of an adjacency matrix depend on the number of vertices in the graph. For a graph with n vertices, the adjacency matrix requires n^2 memory space. This is because the matrix has n rows and n columns, resulting in a total of n^2 entries.<br>
+                    <br>
+                    Using an adjacency matrix has some advantages and disadvantages. One advantage is that it allows for efficient checking of whether there is an edge between two vertices, as it only requires accessing a single entry in the matrix. However, it can be memory-intensive for large graphs, especially if the graph is sparse (has relatively few edges compared to the total number of possible edges).
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
-                <h2></h2>
+                <h2>Pros and cons of using adjacency matrices</h2>
                 <p>
-
+                    In this lesson, we will discuss the pros and cons of using adjacency matrices as a graph representation. An adjacency matrix is a square matrix that represents a graph by indicating the presence or absence of edges between vertices. Let's dive into the advantages and disadvantages of using adjacency matrices.<br>
+                    <br>
+                    Advantages of using adjacency matrices:<br>
+                    1. Space efficiency: Adjacency matrices are space-efficient for dense graphs, where the number of edges is close to the maximum possible number of edges. In such cases, the matrix only requires O(V^2) space, where V is the number of vertices.<br>
+                    2. Efficient edge lookup: Checking if an edge exists between two vertices is efficient in adjacency matrices. It takes constant time O(1) to access the matrix element.<br>
+                    <br>
+                    Disadvantages of using adjacency matrices:<br>
+                    1. Space inefficiency for sparse graphs: If the graph is sparse, meaning it has relatively few edges compared to the maximum possible number of edges, adjacency matrices can be space-inefficient. They require O(V^2) space regardless of the number of edges.<br>
+                    2. Inefficient for dynamic graphs: If the graph is dynamic, meaning edges are frequently added or removed, updating the adjacency matrix can be inefficient. It requires O(V^2) time to update the matrix for each edge addition or removal.<br>
+                    3. Memory consumption: Adjacency matrices consume memory for all possible edges, even if they don't exist in the graph. This can be wasteful for large graphs with many vertices.<br>
+                    <br>
+                    Now that we have discussed the pros and cons of using adjacency matrices, let's move on to the multiple-choice questions.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
@@ -401,10 +413,10 @@
             </div>
         </main>
         <aside class="sidebar-right">
-            <h2></h2>
+            <h2>Graph representations - adjacency matrix</h2>
             <ul class="sub-lesson-links">
-                <li><a href="#sublesson1"></a></li>
-                <li><a href="#sublesson2"></a></li>
+                <li><a href="#sublesson1">Adjacency matrix concept</a></li>
+                <li><a href="#sublesson2">Pros and cons of using adjacency matrices</a></li>
             </ul>
         </aside>
 </body>
