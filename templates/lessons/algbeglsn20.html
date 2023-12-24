@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Graph representations - adjacency list</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/learningstyles.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
@@ -93,54 +93,39 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which of the following is an advantage of using adjacency lists?",
+                options: ["Space efficiency", "Time efficiency", "Easy graph traversals", "All of the above"],
+                answer: "All of the above"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What does the adjacency list structure represent?",
+                options: ["Nodes and edges of a graph", "Only nodes of a graph", "Only edges of a graph", "None of the above"],
+                answer: "Nodes and edges of a graph"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which type of graphs is the adjacency list structure efficient for?",
+                options: ["Dense graphs", "Sparse graphs", "Both dense and sparse graphs", "None of the above"],
+                answer: "Sparse graphs"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What does the adjacency list structure save space on?",
+                options: ["Nodes", "Edges", "Both nodes and edges", "None of the above"],
+                answer: "Both nodes and edges"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "In the adjacency list structure, what does each node's list contain?",
+                options: ["The node itself", "The node's adjacent nodes", "The node's parent nodes", "None of the above"],
+                answer: "The node's adjacent nodes"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which operation is efficient in adjacency lists?",
+                options: ["Finding all the neighbors of a vertex", "Checking if there is an edge between two vertices", "Adding or removing a vertex or an edge", "All of the above"],
+                answer: "All of the above"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
-            },
-            {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
-            },
-            {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
-            },
-            {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Adjacency lists are efficient for which graph traversal algorithms?",
+                options: ["Breadth-first search (BFS)", "Depth-first search (DFS)", "Both BFS and DFS", "None of the above"],
+                answer: "Both BFS and DFS"
             }
         ];
 
@@ -379,18 +364,47 @@
             </ul>
         </aside>
         <main class="lesson-main-content">
-            <h1></h1>
+            <h1>Graph representations - adjacency list</h1>
             <div id="sublesson1">
-                <h2></h2>
+                <h2>Adjacency list structure</h2>
                 <p>
-                    
+                    In this lesson, we will be discussing the adjacency list structure, which is a common way to represent graphs in computer science and algorithms. <br>
+                    <br>
+                    Graphs are a collection of nodes (also known as vertices) and edges that connect these nodes. The adjacency list structure represents a graph by storing a list of nodes and for each node, a list of its adjacent nodes. <br>
+                    <br>
+                    To understand this better, let's consider an example. Suppose we have a graph with 4 nodes: A, B, C, and D. The adjacency list for this graph would look like this:<br>
+                    <br>
+                    A: B, C <br>
+                    B: A, C, D <br>
+                    C: A, B <br>
+                    D: B <br>
+                    <br>
+                    Here, for each node, we have listed its adjacent nodes. For example, node A is adjacent to nodes B and C. Node B is adjacent to nodes A, C, and D. And so on.<br>
+                    <br>
+                    The adjacency list structure is efficient for sparse graphs, which are graphs with relatively fewer edges compared to the number of nodes. It saves space by only storing the necessary information about the connections between nodes. 
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
-                <h2></h2>
+                <h2>Advantages of adjacency lists in certain scenarios</h2>
                 <p>
-
+                    In this lesson, we will discuss the advantages of using adjacency lists in certain scenarios when representing graphs. <br>
+                    <br>
+                    Graphs can be represented using different data structures, and one popular representation is the adjacency list. An adjacency list is a collection of linked lists or arrays, where each element represents a vertex in the graph. Each vertex has a list of its adjacent vertices, which are the vertices that are directly connected to it by an edge.<br>
+                    <br>
+                    There are several advantages of using adjacency lists:<br>
+                    <br>
+                    1. Space Efficiency: Adjacency lists are more space-efficient than other representations, such as adjacency matrices. In an adjacency matrix, a 2D array is used to represent the graph, where each cell represents an edge between two vertices. However, in an adjacency list, only the vertices and their adjacent vertices are stored, resulting in less memory usage.<br>
+                    <br>
+                    2. Efficient Edge Operations: Adjacency lists are efficient for operations that involve edges, such as finding all the neighbors of a vertex or checking if there is an edge between two vertices. In an adjacency list, the adjacent vertices of a vertex are stored in a linked list or an array, allowing for quick access and traversal.<br>
+                    <br>
+                    3. Dynamic Graphs: Adjacency lists are suitable for representing dynamic graphs, where vertices and edges can be added or removed frequently. Adding or removing a vertex or an edge in an adjacency list can be done in constant time, making it efficient for dynamic graph operations.<br>
+                    <br>
+                    4. Sparse Graphs: Adjacency lists are particularly useful for representing sparse graphs, where the number of edges is much smaller than the maximum possible number of edges. In an adjacency list, only the existing edges are stored, resulting in less memory usage compared to an adjacency matrix.<br>
+                    <br>
+                    5. Graph Traversals: Adjacency lists are efficient for graph traversal algorithms, such as breadth-first search (BFS) and depth-first search (DFS). The adjacency list representation allows for easy exploration of adjacent vertices, making these algorithms faster and more efficient.<br>
+                    <br>
+                    Overall, adjacency lists provide a flexible and efficient representation for certain scenarios, such as space-constrained environments, dynamic graphs, and sparse graphs.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
@@ -401,10 +415,10 @@
             </div>
         </main>
         <aside class="sidebar-right">
-            <h2></h2>
+            <h2>Graph representations - adjacency list</h2>
             <ul class="sub-lesson-links">
-                <li><a href="#sublesson1"></a></li>
-                <li><a href="#sublesson2"></a></li>
+                <li><a href="#sublesson1">Adjacency list structure</a></li>
+                <li><a href="#sublesson2">Advantages of adjacency lists in certain scenarios</a></li>
             </ul>
         </aside>
 </body>
