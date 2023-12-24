@@ -98,49 +98,49 @@
                 answer: "Divide, conquer, combine"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which problem involves finding the contiguous subarray with the largest sum?",
+                options: ["Matrix multiplication problem", "Maximum-subarray problem", "Recurrence problem", "Divide and conquer problem"],
+                answer: "Maximum-subarray problem"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the time complexity of Strassen's algorithm for matrix multiplication?",
+                options: ["O(n^3)", "O(n^2)", "O(n^2.81)", "O(n)"],
+                answer: "O(n^2.81)"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What role do recurrences play in divide and conquer algorithms?",
+                options: ["They determine the size of the subproblems.", "They combine the solutions to the subproblems.", "They divide the problem into smaller instances.", "They describe the function in terms of its value on smaller inputs."],
+                answer: "They describe the function in terms of its value on smaller inputs."
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "When is the divide and conquer strategy particularly useful?",
+                options: ["When the problem is small enough to solve directly.", "When the problem is too complex to solve as a whole.", "When the problem involves matrix multiplication.", "When the problem has a recursive case."],
+                answer: "When the problem is too complex to solve as a whole."
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the main difference between top-down and bottom-up recursion?",
+                options: ["Top-down recursion is more computationally efficient.", "Top-down recursion uses trial and error.", "Bottom-up recursion is more explorative.", "Bottom-up recursion starts from the complete solution."],
+                answer: "Bottom-up recursion is more explorative."
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the advantage of the top-down approach?",
+                options: ["It requires less abstraction and training.", "It is more computationally efficient.", "It obtains partial results that are not used later.", "It generates only the necessary subproblems."],
+                answer: "It generates only the necessary subproblems."
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the advantage of the bottom-up approach?",
+                options: ["It requires less abstraction and training.", "It is more computationally efficient.", "It obtains partial results that are not used later.", "It generates only the necessary subproblems."],
+                answer: "It obtains partial results that are not used later."
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which approach better reflects the way we approach problems in everyday life?",
+                options: ["Top-down recursion", "Bottom-up recursion", "Both approaches are equally reflective", "Neither approach reflects everyday problem-solving"],
+                answer: "Bottom-up recursion"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the main challenge in understanding dynamic programming?",
+                options: ["Repeated observations of existing solutions", "Practical exercise", "Transforming algorithms to be more efficient", "The solutions may seem like magic"],
+                answer: "The solutions may seem like magic"
             }
         ];
 
@@ -383,14 +383,48 @@
             <div id="sublesson1">
                 <h2>Divide and conquer</h2>
                 <p>
-                    
+                    In this lesson, we will be covering the topic of divide and conquer as a recursive problem-solving strategy. This strategy involves breaking down a problem into smaller subproblems, solving them recursively, and then combining the solutions to obtain the final solution.<br>
+                    <br>
+                    Divide and conquer consists of three steps:<br>
+                    <br>
+                    1. Divide: The problem is divided into smaller subproblems that are similar to the original problem.<br>
+                    <br>
+                    2. Conquer: The subproblems are solved recursively. If the subproblem sizes are small enough, they can be solved directly.<br>
+                   <br>
+                   3. Combine: The solutions to the subproblems are combined to obtain the solution for the original problem.<br>
+                   <br>
+                   This approach is particularly useful when dealing with complex problems that can be overwhelming to solve as a whole. By breaking them down into smaller, more manageable subproblems, we can tackle them one at a time and then combine the solutions to obtain the overall solution.<br>
+                   <br>
+                   One example of a problem that can be solved using divide and conquer is the maximum-subarray problem. This problem involves finding the contiguous subarray within an array that has the largest sum. By dividing the array into smaller subarrays and recursively solving them, we can determine the maximum subarray.<br>
+                   <br>
+                   Another application of divide and conquer is in matrix multiplication. There are two algorithms we will explore: one that runs in O(n^3) time, which is the straightforward method, and another called Strassen's algorithm, which runs in O(n^2.81) time and is more efficient.<br>
+                   <br>
+                   Recurrences play a crucial role in analyzing the running times of divide and conquer algorithms. They are equations or inequalities that describe a function in terms of its value on smaller inputs. By understanding recurrences, we can characterize the time complexity of these algorithms.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Top-down vs. bottom-up recursion</h2>
                 <p>
-
+                    In this lesson, we will explore the concepts of top-down and bottom-up recursion as problem-solving strategies. These strategies are commonly used in algorithms to break down complex problems into smaller subproblems and find efficient solutions.<br>
+                   <br>
+                   Top-down recursion involves splitting the problem into subproblems, starting from the complete solution. This approach is often used in recursive algorithms. It uses memoization, which is a technique to store the results of subproblems and avoid repeating computations. By generating only the necessary subproblems, the top-down approach is more computationally efficient.<br>
+                   <br>
+                   On the other hand, bottom-up recursion builds an array of partial results that aggregate into a complete solution. It is a more explorative approach that involves trial and error. While it may obtain partial results that are not used later, it better reflects the way we approach problems in everyday life. Bottom-up approaches require less abstraction and training before application.<br>
+                   <br>
+                   Both top-down and bottom-up approaches have their advantages and challenges. They may not be easy to understand at times, especially when using dynamic programming to make algorithms more efficient. Dynamic programming transforms the way we solve problems and requires repeated observations of existing solutions and practical exercise to become proficient.<br>
+                   <br>
+                   To summarize the steps involved in transforming algorithms using dynamic programming:<br>
+                   <br>
+                   1. Create a working solution using brute-force or recursion.<br>
+                   <br>
+                   2. Store the results of subproblems to speed up computations.<br>
+                   <br>
+                   3. Change the way you approach the problem to gain more speed.<br>
+                   <br>
+                   4. Redefine the problem approach in a more efficient way.<br>
+                   <br>
+                   By mastering dynamic programming, you can solve problems that require systematic comparison or computation of solutions.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
