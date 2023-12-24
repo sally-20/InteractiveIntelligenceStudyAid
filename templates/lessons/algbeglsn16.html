@@ -93,54 +93,54 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of the base case in a recursive function?",
+                options: ["To determine when the recursion should stop", "To modify the parameters of the function", "To calculate the factorial of a number", "To avoid stack overflow errors"],
+                answer: "To determine when the recursion should stop"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the recursive case in a recursive function?",
+                options: ["The condition that determines when the recursion should stop", "The part of the function that calls itself with modified parameters", "The termination condition for the function", "The product of all positive integers less than or equal to n"],
+                answer: "The part of the function that calls itself with modified parameters"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What happens if a recursive function does not have a base case?",
+                options: ["It will avoid stack overflow errors", "It will calculate the factorial of a number", "It will keep calling itself indefinitely", "It will modify the parameters of the function"],
+                answer: "It will keep calling itself indefinitely"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of implementing recursion in algorithms?",
+                options: ["To modify the parameters of the function", "To calculate the factorial of a number", "To avoid stack overflow errors", "To solve complex problems"],
+                answer: "To solve complex problems"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the factorial of 0?",
+                options: ["0", "1", "2", "Undefined"],
+                answer: "1"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What are base cases in recursion?",
+                options: ["The most complex cases of the problem", "The cases that lead to an infinite loop", "The cases that require multiple recursive calls", "The simplest cases of the problem that can be solved without recursion"],
+                answer: "The simplest cases of the problem that can be solved without recursion"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of base cases in recursion?",
+                options: ["To handle circular definitions", "To make the recursion more complex", "To ensure that the recursion terminates", "To increase the efficiency of the algorithm"],
+                answer: "To ensure that the recursion terminates"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the role of recursive calls in recursion?",
+                options: ["To make progress towards the base case", "To make the problem more difficult", "To handle circular definitions", "To solve the base cases"],
+                answer: "To make progress towards the base case"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What happens if base cases are not included in recursion?",
+                options: ["The recursion terminates immediately", "The recursion continues indefinitely", "The algorithm becomes more efficient", "The algorithm becomes more complex"],
+                answer: "The recursion continues indefinitely"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How should recursive calls be made in recursion?",
+                options: ["With larger subproblems", "With circular definitions", "With the same problem size", "With smaller subproblems that make progress towards the base case"],
+                answer: "With smaller subproblems that make progress towards the base case"
             }
         ];
 
@@ -384,44 +384,44 @@
                 <h2>Recursive function structure</h2>
                 <p>
                     In this sub-lesson, we will learn about the structure of a recursive function and how it can be implemented in algorithms. Recursion is a powerful technique that allows a function to call itself until a specific condition is met. It is commonly used in solving complex problems and can provide a more intuitive approach to algorithm design.<br>
-                   <br>
-                   A recursive function consists of two main components: the base case and the recursive case. The base case is the condition that determines when the recursion should stop. It acts as the termination condition for the function. The recursive case, on the other hand, is the part of the function that calls itself with modified parameters.<br>
-                   <br>
-                   When implementing recursion in algorithms, it is important to carefully define the base case to avoid infinite loops. Without a proper base case, the function will keep calling itself indefinitely, leading to a stack overflow error.<br>
-                   <br>
-                   To illustrate the structure of a recursive function, let's consider an example of calculating the factorial of a number. The factorial of a non-negative integer n, denoted as n!, is the product of all positive integers less than or equal to n.<br>
-                   <br>
-                   Here is the recursive function to calculate the factorial:<br>
-                   <br>
-                   <pre>
-                       <code>
-                           def factorial(n):
-                               if n == 0:
-                                   return 1
-                               else:
-                                   return n * factorial(n-1)
-        .              </code>
-                   </pre>
-                   In this function, the base case is when n equals 0, where the function returns 1. The recursive case is when n is greater than 0, where the function calls itself with the parameter n-1 and multiplies the result by n.<br>
-                   <br>
-                   By breaking down the problem into smaller subproblems and solving them recursively, we can obtain the desired result.
+                    <br>
+                    A recursive function consists of two main components: the base case and the recursive case. The base case is the condition that determines when the recursion should stop. It acts as the termination condition for the function. The recursive case, on the other hand, is the part of the function that calls itself with modified parameters.<br>
+                    <br>
+                    When implementing recursion in algorithms, it is important to carefully define the base case to avoid infinite loops. Without a proper base case, the function will keep calling itself indefinitely, leading to a stack overflow error.<br>
+                    <br>
+                    To illustrate the structure of a recursive function, let's consider an example of calculating the factorial of a number. The factorial of a non-negative integer n, denoted as n!, is the product of all positive integers less than or equal to n.<br>
+                    <br>
+                    Here is the recursive function to calculate the factorial:<br>
+                    <br>
+                    <pre>
+                        <code>
+                            def factorial(n):
+                                if n == 0:
+                                    return 1
+                                else:
+                                    return n * factorial(n-1)
+                        </code>
+                    </pre>
+                    In this function, the base case is when n equals 0, where the function returns 1. The recursive case is when n is greater than 0, where the function calls itself with the parameter n-1 and multiplies the result by n.<br>
+                    <br>
+                    By breaking down the problem into smaller subproblems and solving them recursively, we can obtain the desired result.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Handling base cases and recursive calls</h2>
                 <p>
-                   In this sub-lesson, we will learn about handling base cases and recursive calls when implementing recursion in algorithms.<br>
-                   <br>
-                   Recursion is a powerful technique used in algorithms to solve problems by breaking them down into smaller, simpler subproblems. When implementing recursion, it is important to handle base cases and make recursive calls that make progress towards the base case.<br>
-                   <br>
-                   Base cases are the simplest cases of the problem that can be solved without recursion. They act as stopping conditions for the recursive calls. Without base cases, the recursion would continue indefinitely, leading to a stack overflow or an infinite loop.<br>
-                   <br>
-                   Making progress is another important aspect of recursion. When making a recursive call, it is crucial to ensure that the problem size is reduced with each call, bringing it closer to the base case. This ensures that the recursion eventually terminates and produces the desired result.<br>
-                   <br>
-                   To implement recursion in algorithms, we need to identify the base cases and the recursive calls. The base cases should be solved directly without recursion, while the recursive calls should be made with smaller subproblems that make progress towards the base case.<br>
-                   <br>
-                   Now, let's move on to the questions.
+                    In this sub-lesson, we will learn about handling base cases and recursive calls when implementing recursion in algorithms.<br>
+                    <br>
+                    Recursion is a powerful technique used in algorithms to solve problems by breaking them down into smaller, simpler subproblems. When implementing recursion, it is important to handle base cases and make recursive calls that make progress towards the base case.<br>
+                    <br>
+                    Base cases are the simplest cases of the problem that can be solved without recursion. They act as stopping conditions for the recursive calls. Without base cases, the recursion would continue indefinitely, leading to a stack overflow or an infinite loop.<br>
+                    <br>
+                    Making progress is another important aspect of recursion. When making a recursive call, it is crucial to ensure that the problem size is reduced with each call, bringing it closer to the base case. This ensures that the recursion eventually terminates and produces the desired result.<br>
+                    <br>
+                    To implement recursion in algorithms, we need to identify the base cases and the recursive calls. The base cases should be solved directly without recursion, while the recursive calls should be made with smaller subproblems that make progress towards the base case.<br>
+                    <br>
+                    Now, let's move on to the questions.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
