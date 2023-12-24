@@ -389,7 +389,22 @@
                    <br>
                    When implementing recursion in algorithms, it is important to carefully define the base case to avoid infinite loops. Without a proper base case, the function will keep calling itself indefinitely, leading to a stack overflow error.<br>
                    <br>
-                   To illustrate the structure of a recursive function, let's consider an example of calculating the factorial of a number. The factorial of a non-negative integer n, denoted as n!, is the product of all positive integers less than or equal to n.
+                   To illustrate the structure of a recursive function, let's consider an example of calculating the factorial of a number. The factorial of a non-negative integer n, denoted as n!, is the product of all positive integers less than or equal to n.<br>
+                   <br>
+                   Here is the recursive function to calculate the factorial:<br>
+                   <br>
+                   <pre>
+                       <code>
+                           def factorial(n):
+                               if n == 0:
+                                   return 1
+                               else:
+                                   return n * factorial(n-1)
+        .              </code>
+                   </pre>
+                   In this function, the base case is when n equals 0, where the function returns 1. The recursive case is when n is greater than 0, where the function calls itself with the parameter n-1 and multiplies the result by n.<br>
+                   <br>
+                   By breaking down the problem into smaller subproblems and solving them recursively, we can obtain the desired result.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
