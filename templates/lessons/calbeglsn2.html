@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Concepts of Differentiation and Integration</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/learningstyles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .quiz-container {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+            max-width: 80%;
+            max-height: 80%;
+            overflow-y: auto;
+        }
+        .question-box {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+        }
+        .options-box {
+            display: flex;
+            flex-direction: column;
+        }
+        .option-box {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .option-box.selected {
+            background-color: #3498db;
+            color: white;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 1);
+            z-index: 999;
+            display: none;
+        }
+        .modal-button-container button {
+            width: 10rem;
+            height: 2rem;
+            background-color: #3498db;
+            outline: none;
+            border: 1px solid rgb(252, 242, 241);
+            color: white;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border-radius: 20px;
+            text-align: center;
+            line-height: 2rem;
+            padding: 5px;
+        }
+        .modal-button-container button:hover {
+            background-color: #2980b9;
+        }
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity:1 ;}
+        }
+        @-webkit-keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        .completion-message {
+            color: green; 
+        } 
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='js/learningscript.js') }}" defer></script>
+    <script>
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+        const questions = [
+            {
+                question: "What is differentiation?",
+                options: ["The process of finding the integral of a function", "The process of finding the derivative of a function", "The process of finding the limit of a function", "The process of finding the average of a function"],
+                answer: "The process of finding the derivative of a function"
+            },
+            {
+                question: "What does the derivative of a function represent?",
+                options: ["The slope of the function at any point", "The area under the curve of the function", "The average value of the function", "The maximum value of the function"],
+                answer: "The slope of the function at any point"
+            },
+            {
+                question: "Which rule is used to find the derivative of a product of two functions?",
+                options: ["Power rule", "Product rule", "Quotient rule", "Chain rule"],
+                answer: "Product rule"
+            },
+            {
+                question: "What are some applications of differentiation?",
+                options: ["Finding the maximum and minimum values of a function", "Analyzing the behavior of functions", "Solving optimization problems", "All of the above"],
+                answer: "All of the above"
+            },
+            {
+                question: "Find the derivative of the function f(x) = 4x^3 - 2x^2 + 5x - 1.",
+                options: ["f'(x) = 12x^2 + 4x + 5", "f'(x) = 12x^2 + 4x - 5", "f'(x) = 12x^2 - 4x + 5", "f'(x) = 12x^2 - 4x - 5"],
+                answer: "f'(x) = 12x^2 - 4x + 5"
+            },
+            {
+                question: "What is integration?",
+                options: ["The reverse process of differentiation", "Finding the rate of change of a function", "Calculating the slope of a curve", "None of the above"],
+                answer: "The reverse process of differentiation"
+            },
+            {
+                question: "What does the symbol ∫ represent?",
+                options: ["Differentiation", "Integration", "Division", "Multiplication"],
+                answer: "Integration"
+            },
+            {
+                question: "What is the result of integration called?",
+                options: ["Derivative", "Integral", "Antiderivative", "Limit"],
+                answer: "Antiderivative"
+            },
+            {
+                question: "What does the definite integral calculate?",
+                options: ["The area under a curve between two points", "The rate of change of a function", "The slope of a curve", "None of the above"],
+                answer: "The area under a curve between two points"
+            },
+            {
+                question: "In which fields is integration used?",
+                options: ["Physics", "Engineering", "Economics", "All of the above"],
+                answer: "All of the above"
+            }
+        ];
+
+        const questionsCopy = [...questions];
+        let currentQuestionIndex = 0;
+
+        // Open quiz modal
+        function openQuizModal() {
+            document.getElementById('quiz-container').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        // Close quiz modal
+        function closeQuizModal() {
+            document.getElementById('quiz-container').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+        // Shuffle and display questions
+        function showRandomQuestion() {
+            shuffleArray(questionsCopy);
+            showQuestion(currentQuestionIndex);
+        }
+
+        // Call this function when starting the quiz
+        function startQuiz() {
+            currentQuestionIndex = 0;
+            showRandomQuestion();
+        }
+
+        function showQuestion(index) {
+            const quizBox = document.querySelector('.quiz-container');
+            const currentQuestion = questionsCopy[index];
+            // Clear previous content
+            quizBox.innerHTML = '';
+            if (currentQuestion) {
+                const questionBox = document.createElement('div');
+                questionBox.classList.add('question-box');
+                questionBox.innerHTML = `
+                    <div class="question">${currentQuestion.question}<br></div>
+                    <div class="options-box">
+                        ${currentQuestion.options.map((option, optionIndex) => `<div class="option-box" data-index="${optionIndex}">${option}</div>`).join('')}
+                    </div>
+                    <div id="result"></div>
+                `;
+
+                // Add event listeners to the options
+                const optionBoxes = questionBox.querySelectorAll('.option-box');
+                optionBoxes.forEach(optionBox => {
+                    optionBox.addEventListener('click', function () {
+                        const selectedOptionIndex = this.getAttribute('data-index');
+                        checkAnswer(selectedOptionIndex, currentQuestion.answer);
+                    });
+                });
+                quizBox.appendChild(questionBox);
+                // Create a separate container for the button
+                const buttonContainer = document.createElement('div');
+                buttonContainer.classList.add('modal-button-container');
+                buttonContainer.innerHTML = `<button onclick="showNextQuestion()">Next Question</button>`;
+                // Append the button container to the quiz box
+                quizBox.appendChild(buttonContainer);
+            } else {
+                quizBox.innerHTML = `
+                    <div class="result">Quiz completed! Thanks for playing.</div>
+                `;
+                // Create a separate container for the button
+                const buttonContainer = document.createElement('div');
+                buttonContainer.classList.add('modal-button-container');
+                buttonContainer.innerHTML = `<button onclick="closeQuizModal()">Close Quiz</button>`;
+                // Append the button container to the quiz box
+                quizBox.appendChild(buttonContainer);
+            }
+        }
+
+        let score = 0;
+
+        // Check user's answer and show next question
+        function showNextQuestion() {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < 5) {
+                showRandomQuestion();
+            } else {
+                evaluateAndDisplayResult();
+            }
+        }
+
+        function checkAnswer(selectedOptionIndex, correctAnswer) {
+            const options = document.querySelectorAll('.options-box .option-box');
+            
+            // Remove the 'selected' class from all options
+            options.forEach(option => {
+                option.classList.remove('selected');
+            });
+        
+            // Add the 'selected' class to the clicked option
+            options[selectedOptionIndex].classList.add('selected');
+        
+            // Get the selected option's text
+            const selectedOptionText = options[selectedOptionIndex].innerText;
+        
+            // Check if the selected option is correct
+            const isCorrect = selectedOptionText === correctAnswer;
+        
+            // Update the UI to indicate correctness
+            const resultContainer = document.getElementById('result');
+            resultContainer.innerHTML = isCorrect
+                ? '<p style="color: green;">Correct!</p>'
+                : `<p style="color: red;">Incorrect. The correct answer is: ${correctAnswer}</p>`;
+        
+            // Update the score if the answer is correct
+            if (isCorrect) {
+                score++;
+            }
+            
+            // For demonstration purposes, let's log the selected option index and correctness
+            console.log('Selected Option Index:', selectedOptionIndex);
+            console.log('Is Correct:', isCorrect);
+        }
+
+        let quizCompleted = false;
+
+        // Evaluate user's performance and display result
+        function evaluateAndDisplayResult() {
+            const resultContainer = document.getElementById('quiz-container');
+            let correctAnswersCount = 0;
+            let totalQuestions = 5;
+            if (score >= 4) {
+                quizCompleted = true;
+                resultContainer.innerHTML = `
+                <div class="result">Congratulations! You can move on to the next lesson.</div>
+                <div class="score-details">
+                    <p>Your Score <br> ${score} out of ${totalQuestions}</p>
+                </div>
+                <div class="modal-button-container">
+                    <button onclick="closeQuizModal()">Close Quiz</button>
+                </div>`;
+                updateUIOnQuizCompletion();
+                document.getElementById('completion-message').style.display = 'block';
+            } else {
+                resultContainer.innerHTML = `
+                <div class="result">Please review the lesson again and try again later.</div>
+                <div class="score-details">
+                    <p><center>Your Score</center> <br> <center>${score} out of ${totalQuestions}</center></p>
+                </div>
+                <div class="modal-button-container">
+                    <button onclick="closeQuizModal()">Close Quiz</button>
+                </div>`;
+            }
+        }
+
+        function closeQuizModal() {
+            document.getElementById('quiz-container').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+    
+            // Redirect to the Calculus page
+            window.location.href = "{{ url_for('calculus') }}";
+        }
+        function updateUIOnQuizCompletion() {
+            // Change the color of the four-pointed star to gold
+            const fourPointedStar = document.querySelector('.four-pointed-star[data-target="dialog-boxcalbeg2"]');
+            if (fourPointedStar) {
+                fourPointedStar.style.backgroundColor = '#ffd700'; // Hex code for gold
+            }
+
+            // Change the dialog box border color to gold and display the completion message
+            const dialogBoxCalbeg2 = document.getElementById('dialog-boxcalbeg2');
+            if (dialogBoxCalbeg2) {
+                dialogBoxCalbeg2.style.borderColor = '#ffd700'; // Hex code for gold
+                const dialogText = dialogBoxCalbeg2.querySelector('.dialog-text');
+                dialogText.innerText = 'Completed'; // Update the message inside the dialog box
+
+                // Save the completion status in localStorage
+                localStorage.setItem('calbeglsn2Completed', 'true');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            startQuiz();
+            const calbeglsn2Completed = localStorage.getItem('calbeglsn2Completed');
+            if (calbeglsn2Completed === 'true') {
+                updateUIOnQuizCompletion();
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <aside class="sidebar-left">
+            <ul class="sidebar-menu">
+                <li>
+                    <h2 class="sidebar-title">Study Aid</h2>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="colored-icon">
+                        <i class="fas fa-graduation-cap"></i> Learn
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="courses-toggle">
+                        <i class="fas fa-book"></i> Courses
+                    </a>
+                    <ul class="course-list hidden">
+                        <li>
+                            <a href="{{ url_for('algorithms') }}">
+                                <i class="fas fa-chart-line"></i> Algorithms
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url_for('personalfinance') }}">
+                                <i class="fas fa-rupee-sign"></i> Personal Finance
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url_for('calculus') }}">
+                                <i class="fas fa-calculator"></i> Calculus
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sidebar-item">
+                    <a href="{{ url_for('profile') }}" class="colored-icon">
+                        <i class="fas fa-user"></i> Profile
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="{{ url_for('settings') }}" class="colored-icon">
+                        <i class="fas fa-cog"></i> Settings
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="{{ url_for('home') }}" class="colored-icon">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <main class="lesson-main-content">
+            <h1>Basic Concepts of Differentiation and Integration</h1>
+            <div id="sublesson1">
+                <h2>Overview of differentiation and its applications</h2>
+                <p>
+                    In this sub-lesson, we will introduce the concept of differentiation and explore its applications. Differentiation is a fundamental concept in calculus that allows us to find the rate at which a function is changing at any given point. It is used to analyze the behavior of functions and solve various problems in mathematics and science.<br>
+                    <br>
+                    1. Definition of Differentiation:<br>
+                    Differentiation is the process of finding the derivative of a function. The derivative of a function represents the rate of change of the function with respect to its independent variable. It gives us information about the slope of the function at any point.<br>
+                    <br>
+                    2. Notation:<br>
+                    The derivative of a function f(x) is denoted by f'(x) or dy/dx. It represents the rate of change of y with respect to x.<br>
+                    <br>
+                    3. Differentiation Rules:<br>
+                    There are several rules that can be used to find the derivative of a function. Some of the basic rules include the power rule, product rule, quotient rule, and chain rule. These rules allow us to differentiate functions of different forms.<br>
+                    <br>
+                    4. Applications of Differentiation:<br>
+                    Differentiation has various applications in mathematics and science. Some of the common applications include finding the maximum and minimum values of a function, determining the concavity of a function, analyzing the behavior of functions, solving optimization problems, and modeling real-world phenomena.<br>
+                    <br>
+                    5. Example Problems:<br>
+                    Let's solve a few example problems to understand how differentiation is applied in different scenarios.<br>
+                    <br>
+                    a) Find the derivative of the function f(x) = 3x^2 + 2x - 1.<br>
+                    b) Determine the maximum and minimum values of the function g(x) = x^3 - 6x^2 + 9x + 2.<br>
+                    c) Use differentiation to find the rate at which the volume of a sphere is changing with respect to its radius.
+                </p>
+            </div>    
+            <!-- Sub Lesson 2 Content -->
+            <div id="sublesson2">
+                <h2>Understanding integration and its significance</h2>
+                <p>
+                    In this sub-lesson, we will explore the concept of integration and its significance in calculus. Integration is a fundamental concept in calculus that allows us to find the area under a curve, calculate the accumulation of quantities, and solve various real-world problems.<br>
+                    <br>
+                    Integration is the reverse process of differentiation. While differentiation helps us find the rate of change of a function, integration helps us find the original function from its rate of change. It is like finding the puzzle pieces that make up the whole picture.<br>
+                    <br>
+                    The integral of a function represents the area under the curve of that function. It is denoted by the symbol ∫ and is followed by the function to be integrated. The result of integration is called the antiderivative or the indefinite integral.<br>
+                    <br>
+                    The definite integral is used to find the exact area under a curve between two points. It is denoted by ∫[a, b] and is followed by the function to be integrated, with the limits of integration a and b.<br>
+                    <br>
+                    Integration has various applications in different fields such as physics, engineering, economics, and biology. It helps us solve problems related to finding the area of irregular shapes, calculating the total distance traveled, determining the average value of a function, and many more.<br>
+                    <br>
+                    Now that we have understood the basic concepts of integration and its significance, let's test our understanding with some multiple-choice questions.
+                </p>
+            </div>
+            <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
+            <div id="quiz-container" class="quiz-container"></div>
+            <div id="overlay" class="overlay"></div>
+            <div id="completion-message" style="display: none;">
+                <p class="completion-message">Lesson Completed!</p>
+            </div>
+        </main>
+        <aside class="sidebar-right">
+            <h2>Basic Concepts of Differentiation and Integration</h2>
+            <ul class="sub-lesson-links">
+                <li><a href="#sublesson1">Overview of differentiation and its applications</a></li>
+                <li><a href="#sublesson2">Understanding integration and its significance</a></li>
+            </ul>
+        </aside>
+</body>
+
+</html>
