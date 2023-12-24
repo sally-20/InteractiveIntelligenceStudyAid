@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Understanding vertices and edges</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/learningstyles.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
@@ -93,49 +93,49 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What are vertices in a graph?",
+                options: ["The relationships between edges", "The connections between vertices", "The fundamental building blocks of a graph", "The labels associated with edges"],
+                answer: "The fundamental building blocks of a graph"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How are vertices typically denoted in a graph?",
+                options: ["By a single letter or number", "By a combination of letters and numbers", "By a sequence of letters", "By a sequence of numbers"],
+                answer: "By a single letter or number"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What do edges represent in a graph?",
+                options: ["The attributes associated with vertices", "The connections between edges", "The relationships between vertices", "The labels associated with vertices"],
+                answer: "The relationships between vertices"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How are directed edges different from undirected edges?",
+                options: ["Directed edges represent one-way relationships, while undirected edges represent two-way relationships", "Directed edges represent two-way relationships, while undirected edges represent one-way relationships", "Directed edges have no direction, while undirected edges have a specific direction", "Directed edges have a specific direction, while undirected edges do not"],
+                answer: "Directed edges have a specific direction, while undirected edges do not"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How are vertices and edges represented in a graph diagram?",
+                options: ["Vertices are represented by lines, and edges are represented by points", "Vertices are represented by circles, and edges are represented by lines", "Vertices are represented by points, and edges are represented by circles", "Vertices and edges are represented by the same symbol"],
+                answer: "Vertices are represented by circles, and edges are represented by lines"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "In which type of graph do edges have a specific direction?",
+                options: ["Directed graph", "Undirected graph", "Weighted graph", "None of the above"],
+                answer: "Directed graph"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What additional property can edges have in a graph?",
+                options: ["Vertices", "Weights", "Relationships", "None of the above"],
+                answer: "Weights"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which application can benefit from analyzing graph edges?",
+                options: ["Social network analysis", "Transportation planning", "Data analysis", "All of the above"],
+                answer: "All of the above"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What do weights represent in graph edges?",
+                options: ["Vertices", "Properties of vertices", "Relationships between vertices", "Strength or importance of the relationship"],
+                answer: "Strength or importance of the relationship"
             },
             {
                 question: "",
@@ -379,18 +379,38 @@
             </ul>
         </aside>
         <main class="lesson-main-content">
-            <h1></h1>
+            <h1>Understanding vertices and edges</h1>
             <div id="sublesson1">
-                <h2></h2>
+                <h2>What are graph vertices?</h2>
                 <p>
-                    
+                    In this lesson, we will be discussing the concept of graph vertices. Graphs are a fundamental concept in computer science and other fields, and understanding vertices is crucial to working with graphs effectively.<br>
+                    <br>
+                    A graph is a collection of vertices and edges. Vertices, also known as nodes, are the fundamental building blocks of a graph. They represent individual entities or objects. For example, in a social network graph, each person would be represented by a vertex.<br>
+                    <br>
+                    Vertices are typically denoted by a single letter or a number. They can have labels or attributes associated with them to provide additional information. For instance, in a graph representing a network of cities, each vertex could have attributes such as the city name, population, or geographic coordinates.<br>
+                    <br>
+                    Edges, on the other hand, represent the relationships or connections between vertices. They connect pairs of vertices and can be directed or undirected. Directed edges have a specific direction, indicating a one-way relationship, while undirected edges have no direction, representing a two-way relationship.<br>
+                    <br>
+                    To visualize a graph, we can use diagrams where vertices are represented by points or circles, and edges are represented by lines connecting the vertices. The endpoints of an edge correspond to the vertices it connects.<br>
+                    <br>
+                    Understanding vertices is essential because they are the entities we manipulate and analyze in graph algorithms. By examining the relationships between vertices through edges, we can gain insights into various real-world problems.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
-                <h2></h2>
+                <h2>What are graph edges?</h2>
                 <p>
-
+                    In this lesson, we will be discussing the concept of graph edges. Graphs are a fundamental concept in computer science and other fields, and understanding their components is crucial. Specifically, we will focus on the edges of a graph.<br>
+                    <br>
+                    A graph consists of vertices (also known as nodes) and edges. Vertices represent the entities or objects in a graph, while edges represent the relationships or connections between these entities. Edges can be thought of as the links that connect the vertices.<br>
+                    <br>
+                    There are two types of graphs: directed and undirected. In an undirected graph, the edges have no specific direction and can be traversed in either direction. On the other hand, in a directed graph, the edges have a specific direction, indicating a one-way relationship between the vertices.<br>
+                    <br>
+                    For example, let's consider a social network graph. The users of the network can be represented as vertices, and the connections between them can be represented as edges. In an undirected graph, the edges would indicate that the users are connected to each other, without any specific direction. In a directed graph, the edges would indicate that one user is following another user, creating a one-way relationship.<br>
+                    <br>
+                    Edges in a graph can also have additional properties, such as weights. These weights can represent the strength or importance of the relationship between the vertices. For example, in a transportation network graph, the edges could have weights representing the distance between two locations.<br>
+                    <br>
+                    Understanding graph edges is essential for various applications, including social network analysis, transportation planning, and data analysis. By analyzing the edges of a graph, we can gain insights into the relationships and connections between the entities represented by the vertices.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
@@ -401,10 +421,10 @@
             </div>
         </main>
         <aside class="sidebar-right">
-            <h2></h2>
+            <h2>Understanding vertices and edges</h2>
             <ul class="sub-lesson-links">
-                <li><a href="#sublesson1"></a></li>
-                <li><a href="#sublesson2"></a></li>
+                <li><a href="#sublesson1">What are graph vertices?</a></li>
+                <li><a href="#sublesson2">What are graph edges?</a></li>
             </ul>
         </aside>
 </body>
