@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Multivariable Calculus and Chain Rule</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/learningstyles.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
@@ -94,8 +94,7 @@
         const questions = [
             {
                 question: "What is the definition of a partial derivative?",
-                options: ["A derivative that measures the rate of change of a function with respect to one variable while holding all other variables constant.", "A derivative that measures the rate of change of a function with respect to all variables simultaneously.", "A derivative that measures the rate of change of a function with respect to all variables simultaneously.", "A derivative that measures the rate of change of a function with respect to one variable while considering other variables.
-"],
+                options: ["A derivative that measures the rate of change of a function with respect to one variable while holding all other variables constant.", "A derivative that measures the rate of change of a function with respect to all variables simultaneously.", "A derivative that measures the rate of change of a function with respect to all variables simultaneously.", "A derivative that measures the rate of change of a function with respect to one variable while considering other variables."],
                 answer: "A derivative that measures the rate of change of a function with respect to one variable while holding all other variables constant."
             },
             {
@@ -110,14 +109,12 @@
             },
             {
                 question: "How do we calculate a partial derivative?",
-                options: ["Differentiate the function with respect to the variable of interest while treating all other variables as constants.", "Differentiate the function with respect to all variables simultaneously.", "Differentiate the function with respect to the variable of interest without considering other variables.", "Differentiate the function with respect to the variable of interest while considering other variables.
-"],
+                options: ["Differentiate the function with respect to the variable of interest while treating all other variables as constants.", "Differentiate the function with respect to all variables simultaneously.", "Differentiate the function with respect to the variable of interest without considering other variables.", "Differentiate the function with respect to the variable of interest while considering other variables."],
                 answer: "Differentiate the function with respect to the variable of interest while treating all other variables as constants."
             },
             {
                 question: "What are some applications of partial derivatives?",
-                options: ["Finding tangent planes to surfaces, optimizing functions of multiple variables, and solving systems of partial differential equations.", " Finding the maximum and minimum values of a function, calculating definite integrals, and solving systems of linear equations.", "Finding the area under a curve, calculating indefinite integrals, and solving systems of ordinary differential equations.", "Finding the slope of a curve, calculating limits, and solving systems of nonlinear equations.
-"],
+                options: ["Finding tangent planes to surfaces, optimizing functions of multiple variables, and solving systems of partial differential equations.", " Finding the maximum and minimum values of a function, calculating definite integrals, and solving systems of linear equations.", "Finding the area under a curve, calculating indefinite integrals, and solving systems of ordinary differential equations.", "Finding the slope of a curve, calculating limits, and solving systems of nonlinear equations."],
                 answer: "Finding tangent planes to surfaces, optimizing functions of multiple variables, and solving systems of partial differential equations."
             },
             {
@@ -383,17 +380,38 @@
         <main class="lesson-main-content">
             <h1>Multivariable Calculus and Chain Rule</h1>
             <div id="sublesson1">
-                <h2>Partial derivatives and their interpretation.
-</h2>
+                <h2>Partial derivatives and their interpretation</h2>
                 <p>
-                    
+                    In this sub-lesson, we will explore the concept of partial derivatives and their interpretation in multivariable calculus. <br>
+                    <br>
+                    Partial derivatives are a way to measure how a function changes with respect to one variable while holding all other variables constant. They are denoted by ∂ (pronounced "partial") followed by the variable with respect to which we are taking the derivative. For example, if we have a function f(x, y), the partial derivative of f with respect to x is written as ∂f/∂x.<br>
+                    <br>
+                    The interpretation of partial derivatives is similar to that of ordinary derivatives. The partial derivative with respect to x measures the rate of change of the function in the x-direction, while the partial derivative with respect to y measures the rate of change in the y-direction. <br>
+                    <br>
+                    To calculate a partial derivative, we treat all other variables as constants and differentiate the function with respect to the variable of interest. For example, to find ∂f/∂x, we differentiate f(x, y) with respect to x while treating y as a constant.<br>
+                    <br>
+                    Partial derivatives can be used to find tangent planes to surfaces, optimize functions of multiple variables, and solve systems of partial differential equations. They are an important tool in many areas of mathematics and science.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
-                <h2></h2>
+                <h2>Total differentials and the multivariable chain rule</h2>
                 <p>
-
+                    In this sub-lesson, we will be discussing total differentials and the multivariable chain rule. These concepts are important in multivariable calculus as they allow us to differentiate functions with multiple variables.<br>
+                    <br>
+                    Total Differentials:<br>
+                    The total differential of a function f(x, y) is given by the equation:<br>
+                    df = (∂f/∂x)dx + (∂f/∂y)dy<br>
+                    <br>
+                    This equation represents the change in the function f due to small changes in x and y. The partial derivatives (∂f/∂x) and (∂f/∂y) represent the rates of change of f with respect to x and y, respectively.<br>
+                    <br>
+                    Multivariable Chain Rule:<br>
+                    The multivariable chain rule allows us to differentiate composite functions with multiple variables. It states that if z = f(x, y) and x = g(t) and y = h(t), then the derivative of z with respect to t is given by:<br>
+                    dz/dt = (∂f/∂x)(dx/dt) + (∂f/∂y)(dy/dt)<br>
+                    <br>
+                    This rule is similar to the chain rule in single-variable calculus, but now we have partial derivatives and multiple variables involved.<br>
+                    <br>
+                    Now, let's move on to the questions.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
@@ -404,10 +422,10 @@
             </div>
         </main>
         <aside class="sidebar-right">
-            <h2></h2>
+            <h2>Multivariable Calculus and Chain Rule</h2>
             <ul class="sub-lesson-links">
-                <li><a href="#sublesson1"></a></li>
-                <li><a href="#sublesson2"></a></li>
+                <li><a href="#sublesson1">Partial derivatives and their interpretation</a></li>
+                <li><a href="#sublesson2">Total differentials and the multivariable chain rule</a></li>
             </ul>
         </aside>
 </body>
