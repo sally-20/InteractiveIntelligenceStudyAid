@@ -93,54 +93,104 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the main idea behind the Quicksort algorithm?",
+                options: [
+                    "Divide the array into two sub-arrays and sort them separately.",
+                    "Compare each element with every other element in the array.",
+                    "Select the smallest element and move it to the beginning of the array.",
+                    "Rearrange the elements in ascending order."
+                ],
+                answer: "Divide the array into two sub-arrays and sort them separately."
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the time complexity of Quicksort in the best case?",
+                options: [
+                    "O(n)",
+                    "O(n^2)",
+                    "O(log n)",
+                    "O(n log n)"
+                ],
+                answer: "O(n log n)"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the time complexity of Quicksort in the worst case?",
+                options: [
+                    "O(n)",
+                    "O(n^2)",
+                    "O(log n)",
+                    "O(n log n)"
+                ],
+                answer: "O(n^2)"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the average time complexity of Quicksort?",
+                options: [
+                    "O(n)",
+                    "O(n^2)",
+                    "O(log n)",
+                    "O(n log n)"
+                ],
+                answer: "O(n log n)"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the role of the pivot element in the Quicksort algorithm?",
+                options: [
+                    "It determines the number of recursive calls.",
+                    "It divides the array into two sub-arrays.",
+                    "It compares each element with every other element.",
+                    "It rearranges the elements in ascending order."
+                ],
+                answer: "It divides the array into two sub-arrays."
+            }
+            {
+                question: "What is the closest pair problem?",
+                options: [
+                    "Finding the pair of points with the maximum distance between them.",
+                    "Finding the pair of points with the minimum distance between them.",
+                    "Finding the pair of points with the maximum difference in their x-coordinates.",
+                    "Finding the pair of points with the minimum difference in their y-coordinates."
+                ],
+                answer: "Finding the pair of points with the minimum distance between them."
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which approach can be used to solve the closest pair problem?",
+                options: [
+                    "Greedy algorithm",
+                    "Dynamic programming",
+                    "Divide and conquer",
+                    "Backtracking"
+                ],
+                answer: "Divide and conquer"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the first step in solving the closest pair problem using divide and conquer?",
+                options: [
+                    "Sort the points by their y-coordinate.",
+                    "Divide the points into two halves.",
+                    "Find the minimum distance between the closest pairs in each half.",
+                    "Sort the points by their x-coordinate."
+                ],
+                answer: "Sort the points by their x-coordinate."
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of sorting the points in the strip by their y-coordinate?",
+                options: [
+                    "To divide the points into two halves.",
+                    "To find the minimum distance between the closest pairs in each half.",
+                    "To compare the distances between each point and its neighboring points.",
+                    "To combine the solutions of the subproblems."
+                ],
+                answer: "To compare the distances between each point and its neighboring points."
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
-            },
-            {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How many neighboring points should be compared for each point in the strip?",
+                options: [
+                    "1",
+                    "3",
+                    "5",
+                    "7"
+                ],
+                answer: "7"
             }
         ];
 
@@ -383,14 +433,37 @@
             <div id="sublesson1">
                 <h2>Quicksort algorithm and its efficiency</h2>
                 <p>
-                    
+                    In this lesson, we will learn about the Quicksort algorithm and its efficiency. Quicksort is a popular sorting algorithm that follows the divide and conquer approach. It works by selecting a pivot element from the array and partitioning the other elements into two sub-arrays, according to whether they are less than or greater than the pivot. The sub-arrays are then recursively sorted.<br>
+                    <br>
+                    The steps of the Quicksort algorithm are as follows:<br>
+                    1. Choose a pivot element from the array.<br>
+                    2. Partition the array into two sub-arrays, one containing elements less than the pivot and the other containing elements greater than the pivot.<br>
+                    3. Recursively apply the Quicksort algorithm to the sub-arrays.<br>
+                    4. Combine the sorted sub-arrays to get the final sorted array.<br>
+                    <br>
+                    The efficiency of the Quicksort algorithm depends on the choice of the pivot element and the partitioning strategy. In the best case, when the pivot divides the array into two equal-sized sub-arrays, the time complexity of Quicksort is O(n log n). In the worst case, when the pivot is either the smallest or largest element, the time complexity can be O(n^2). However, on average, the time complexity of Quicksort is O(n log n), making it one of the fastest sorting algorithms.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Solving the closest pair problem with divide and conquer</h2>
                 <p>
-
+                    In this sub-lesson, we will learn how to solve the closest pair problem using the divide and conquer approach. The closest pair problem involves finding the pair of points in a given set of points that are closest to each other in terms of Euclidean distance.<br>
+                    <br>
+                    To solve this problem, we can use the divide and conquer paradigm. The basic idea is to divide the input into smaller subproblems, solve each subproblem recursively, and then combine the solutions to obtain the solution for the original problem.<br>
+                    <br>
+                    Here's how we can solve the closest pair problem using divide and conquer:<br>
+                    <br>
+                    1. Sort the points by their x-coordinate.<br>
+                    2. Divide the sorted points into two halves.<br>
+                    3. Recursively find the closest pair in each half.<br>
+                    4. Take the minimum distance between the closest pairs found in the two halves.<br>
+                    5. Consider the strip of points that lie within this minimum distance on either side of the dividing line.<br>
+                    6. Sort the points in this strip by their y-coordinate.<br>
+                    7. Iterate through the sorted strip and compare the distances between each point and its 7 neighboring points.<br>
+                    8. Return the pair of points with the minimum distance.<br>
+                    <br>
+                    By following this approach, we can find the closest pair of points in a given set of points efficiently.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
