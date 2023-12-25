@@ -93,54 +93,54 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which of the following operations is used to insert an element into a priority queue?",
+                options: ["MAXIMUM", "EXTRACT-MAX", "INSERT", "INCREASE-KEY"],
+                answer: "INSERT"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of the MAXIMUM operation in a priority queue?",
+                options: ["Returns the element with the smallest key", "Returns the element with the largest key", "Removes and returns the element with the smallest key", "Removes and returns the element with the largest key"],
+                answer: "Returns the element with the largest key"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which data structure is commonly used to implement a priority queue?",
+                options: ["Linked list", "Stack", "Queue", "Heap"],
+                answer: "Heap"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the main property of a max-heap?",
+                options: ["The key of a node is less than or equal to the keys of its children", "The key of a node is greater than or equal to the keys of its children", "The key of a node is equal to the keys of its children", "The key of a node is not related to the keys of its children"],
+                answer: "The key of a node is greater than or equal to the keys of its children"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of the INCREASE-KEY operation in a priority queue?",
+                options: ["Increases the value of an element's key", "Decreases the value of an element's key", "Removes an element from the priority queue", "Returns the element with the largest key"],
+                answer: "Increases the value of an element's key"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the main data structure used in heapsort algorithm?",
+                options: ["Linked list", "Array", "Stack", "Queue"],
+                answer: "Array"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which property should a heap satisfy?",
+                options: ["All nodes have the same value", "The value of each node is greater than its parent's value", "The value of each node is less than its parent's value", "The value of each node is equal to its parent's value"],
+                answer: "The value of each node is greater than its parent's value"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the time complexity of building a heap?",
+                options: ["O(n)", "O(log n)", "O(n^2)", "O(1)"],
+                answer: "O(n)"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the time complexity of heapsort algorithm?",
+                options: ["O(n)", "O(log n)", "O(n^2)", "O(n log n)"],
+                answer: "O(n log n)"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Is heapsort an in-place sorting algorithm?",
+                options: ["Yes", "No"],
+                answer: "Yes"
             }
         ];
 
@@ -383,14 +383,50 @@
             <div id="sublesson1">
                 <h2>Priority queue operations and properties</h2>
                 <p>
-                    
+                    In this sub-lesson, we will be discussing priority queues and their operations and properties. A priority queue is a data structure that maintains a set of elements, each with an associated value called a key. It supports the following operations:<br>
+                    <br>
+                    1. INSERT(S, x): This operation inserts the element x into the set S, which is equivalent to the operation S <- S U {x}.<br>
+                    <br>
+                    2. MAXIMUM(S): This operation returns the element of S with the largest key.<br>
+                    <br>
+                    3. EXTRACT-MAX(S): This operation removes and returns the element of S with the largest key.<br>
+                    <br>
+                    4. INCREASE-KEY(S, x, k): This operation increases the value of element x's key to the new value k, which is assumed to be at least as large as x's current key value.<br>
+                    <br>
+                    These operations allow us to efficiently manage elements based on their priorities. Priority queues can be implemented using various data structures, with one popular implementation being based on heaps.<br>
+                    <br>
+                    A heap is a binary tree-based data structure that satisfies the heap property. In a max-heap, for any node i other than the root, the key of i is greater than or equal to the keys of its children. In a min-heap, the key of i is less than or equal to the keys of its children.<br>
+                    <br>
+                    Heapsort is an efficient sorting algorithm that utilizes the heap data structure. It works by building a max-heap from the input array and repeatedly extracting the maximum element from the heap and placing it at the end of the array. This process results in a sorted array.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Sorting with heapsort algorithm</h2>
                 <p>
-
+                    In this sub-lesson, we will learn about the heapsort algorithm and how it can be used for sorting data. Heapsort is an efficient sorting algorithm that utilizes the heap data structure. Let's dive into the details.<br>
+                    <br>
+                    1. Heaps:<br>
+                    - A heap is a complete binary tree that satisfies the heap property.<br>
+                    - The heap property states that for every node, the value of the node is greater than or equal to the values of its children (in a max-heap) or less than or equal to the values of its children (in a min-heap).<br>
+                    - Heaps can be represented using arrays, where the parent-child relationship is determined by the indices of the array elements.<br>
+                    <br>
+                    2. Building a Heap:<br>
+                    - To sort data using heapsort, we first need to build a heap from the given data.<br>
+                    - We can build a heap in linear time using the "heapify" operation.<br>
+                    - The heapify operation starts from the last non-leaf node and iteratively moves down the tree, ensuring that the heap property is satisfied at each step.<br>
+                    <br>
+                    3. Heapsort Algorithm:<br>
+                    - Once we have built a heap, we can use the heapsort algorithm to sort the data.<br>
+                    - The heapsort algorithm works by repeatedly extracting the maximum (or minimum) element from the heap and placing it at the end of the sorted array.<br>
+                    - After each extraction, we need to restore the heap property by performing the heapify operation on the remaining elements.<br>
+                    <br>
+                    4. Complexity Analysis:<br>
+                    - The time complexity of building a heap is O(n), where n is the number of elements in the data.<br>
+                    - The time complexity of heapsort is O(n log n), which makes it an efficient sorting algorithm.<br>
+                    - Heapsort is an in-place sorting algorithm, meaning it does not require additional memory.<br>
+                    <br>
+                    Now, let's move on to the questions.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
