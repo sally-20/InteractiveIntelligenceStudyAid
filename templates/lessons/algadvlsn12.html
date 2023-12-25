@@ -93,54 +93,79 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is one of the main challenges in processing large data streams?",
+                options: [
+                    "Limited computational power",
+                    "Insufficient storage capacity",
+                    "Slow internet connection",
+                    "Lack of streaming algorithms"
+                ],
+                answer: "Insufficient storage capacity"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which algorithmic tool involves reducing the size of a data stream by selecting a representative subset?",
+                options: ["Sampling", "Hashing", "Sketching", "Filtering"],
+                answer: "Sampling"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Why do streaming algorithms provide approximate results?",
+                options: [
+                    "They prioritize precision over speed",
+                    "They have limited computational complexity",
+                    "They are designed for offline data processing",
+                    "They cannot handle large data streams"
+                ],
+                answer: "They have limited computational complexity"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What does hashing do in the context of streaming algorithms?",
+                options: [
+                    "Reduces the variety of data in a stream",
+                    "Increases the computational complexity",
+                    "Stores the entire data stream in memory",
+                    "Provides exact results for all measurements"
+                ],
+                answer: "Reduces the variety of data in a stream"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which algorithmic tool involves creating a summary of the measure of interest while removing less useful details?",
+                options: ["Sampling", "Hashing", "Sketching", "Filtering"],
+                answer: "Sketching"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is one advantage of using streaming algorithms?",
+                options: [
+                    "They provide exact results",
+                    "They are not scalable",
+                    "They require a large amount of memory",
+                    "They can handle increasing data volumes without sacrificing performance"
+                ],
+                answer: "They can handle increasing data volumes without sacrificing performance"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which memory management technique is used in streaming algorithms?",
+                options: ["Sampling", "Sorting", "Indexing", "Compression"],
+                answer: "Sampling"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Streaming algorithms provide __________ results.",
+                options: ["Approximate", "Exact", "Inconsistent", "Irrelevant"],
+                answer: "Approximate"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Streaming algorithms enable __________ decision making.",
+                options: ["Real-time", "Delayed", "Manual", "Predictive"],
+                answer: "Real-time"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is one characteristic of streaming algorithms in terms of computational complexity?",
+                options: [
+                    "They have high computational complexity",
+                    "They have low computational complexity",
+                    "They have no computational complexity",
+                    "They have unpredictable computational complexity"
+                ],
+                answer: "They have low computational complexity"
             }
         ];
 
@@ -383,14 +408,40 @@
             <div id="sublesson1">
                 <h2>Challenges in streaming data processing</h2>
                 <p>
-                    
+                    In this lesson, we will explore the challenges faced when processing large data streams and the algorithms used to overcome these challenges. Streaming data refers to a continuous flow of data that needs to be processed in real-time. This type of data can be compared to water flowing from a tap - it is constantly coming in and needs to be handled efficiently.<br>
+                    <br>
+                    One of the main challenges in processing large data streams is the sheer volume of data. Traditional methods of storing and analyzing data may not be feasible due to the massive amounts of data involved. Therefore, we need to employ specialized algorithms that can handle streaming data effectively.<br>
+                    <br>
+                    Streaming algorithms are designed to provide approximate results quickly, rather than exact results. This is because processing large data streams in real-time requires algorithms with low computational complexity. These algorithms prioritize speed and efficiency over precision.<br>
+                    <br>
+                    To address the challenges of processing large data streams, we can use several algorithmic tools:<br>
+                    <br>
+                    1. Sampling: This involves reducing the size of the data stream by representing it with a smaller sample. By selecting a representative subset of the data, we can still obtain meaningful insights without processing the entire stream.<br>
+                    <br>
+                    2. Hashing: Hashing is a technique used to reduce the variety of data in a stream to a limited set of simple integer numbers. This simplifies the data and allows for faster processing.<br>
+                    <br>
+                    3. Sketching: Sketching involves creating a summary of the measure we are interested in, while removing less useful details. This summary can be stored in a computer's memory or hard disk, making it easier to work with.<br>
+                    <br>
+                    By using these algorithmic tools, we can process large data streams efficiently and obtain valuable insights in real-time. It is important to note that streaming algorithms provide approximate results, but they are still close enough to be useful for most applications.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Advantages of streaming algorithms</h2>
                 <p>
-
+                    In this sub-lesson, we will explore the advantages of using streaming algorithms to process large data streams. Streaming algorithms are specifically designed to handle data that arrives continuously and in large volumes. Let's dive into the advantages of using these algorithms:<br>
+                    <br>
+                    1. Efficiency: Streaming algorithms are highly efficient in terms of both time and space complexity. They are designed to process data in real-time, making them suitable for applications that require quick responses. These algorithms are optimized to perform calculations on the fly, without the need to store the entire data stream.<br>
+                    <br>
+                    2. Scalability: Streaming algorithms are scalable, meaning they can handle increasing data volumes without sacrificing performance. As the data stream grows, these algorithms can adapt and process the incoming data without any significant impact on their efficiency. This makes them ideal for applications dealing with big data.<br>
+                    <br>
+                    3. Memory Management: Streaming algorithms use limited memory resources to process large data streams. They employ techniques like sampling, hashing, and sketching to reduce the data size and focus on the most relevant information. By efficiently managing memory, streaming algorithms can handle massive data streams without running into memory constraints.<br>
+                    <br>
+                    4. Approximate Results: One key characteristic of streaming algorithms is that they provide approximate results. While they may not give the exact answer, they provide results that are close enough to be useful. This approximation allows for faster processing and reduces the computational complexity of the algorithms.<br>
+                    <br>
+                    5. Real-time Decision Making: Streaming algorithms enable real-time decision making by processing data as it arrives. This is particularly valuable in applications where immediate actions or responses are required. By continuously analyzing the data stream, streaming algorithms can make timely decisions and take appropriate actions.<br>
+                    <br>
+                    Now that we have covered the advantages of streaming algorithms, let's test your understanding with some multiple-choice questions.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
