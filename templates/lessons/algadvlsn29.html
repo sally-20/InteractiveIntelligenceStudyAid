@@ -93,54 +93,54 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which complexity class is defined based on the assumption that certain problems are hard to solve within a specific time bound?",
+                options: ["W[1]", "W[2]", "FPT", "APX"],
+                answer: "FPT"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What does parameterized complexity measure?",
+                options: ["The size of the problem instance", "The running time of algorithms", "The value of the parameter", "The computational difficulty of a problem"],
+                answer: "The size of the problem instance"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which complexity class contains problems that can be solved in time f(k) * n^c, where f(k) is a computable function and c is a constant?",
+                options: ["W[1]", "W[2]", "FPT", "APX"],
+                answer: "FPT"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which complexity class contains problems that can be approximated within a certain factor in polynomial time?",
+                options: ["W[1]", "W[2]", "FPT", "APX"],
+                answer: "APX"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of reductions in fine-grained complexity theory?",
+                options: ["To transform one problem into another", "To establish the hardness of a problem within a specific complexity class", "To analyze the running time of algorithms", "To classify problems based on their computational difficulty"],
+                answer: "To establish the hardness of a problem within a specific complexity class"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What does the class P contain?",
+                options: ["Problems that can be solved in exponential time", "Problems that can be solved in polynomial time", "Problems that can be solved in constant time", "Problems that cannot be solved"],
+                answer: "Problems that can be solved in polynomial time"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How does hardness vary within the class P?",
+                options: ["Hardness is the same for all problems in P", "Hardness depends on the input size of the problem", "Hardness depends on the worst-case running time of algorithms", "Hardness depends on the number of subproblems"],
+                answer: "Hardness depends on the worst-case running time of algorithms"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What does the worst-case running time of an algorithm indicate?",
+                options: ["The best-case running time of the algorithm", "The average running time of the algorithm", "The maximum running time of the algorithm", "The minimum running time of the algorithm"],
+                answer: "The maximum running time of the algorithm"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What aspect of a problem can affect its hardness within P?",
+                options: ["The input size of the problem", "The structure of the problem", "The number of subproblems", "The average running time of algorithms"],
+                answer: "The structure of the problem"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Why is understanding complexity within P important?",
+                options: ["It helps in identifying the limitations of solving problems", "It helps in developing strategies to tackle problems effectively", "It helps in understanding the inherent difficulty of different problems", "All of the above"],
+                answer: "All of the above"
             }
         ];
 
@@ -383,14 +383,40 @@
             <div id="sublesson1">
                 <h2>Defining fine-grained complexity classes</h2>
                 <p>
-                    
+                    In this lesson, we will explore the concept of fine-grained complexity classes. Fine-grained complexity theory focuses on understanding the hardness of problems within polynomial time. It aims to classify problems based on their computational difficulty, taking into account the specific running time of algorithms.<br>
+                    <br>
+                    Fine-grained complexity classes are defined based on the assumption that certain problems are hard to solve within a specific time bound. These classes provide a framework for studying the relationships between different problems and their computational complexity.<br>
+                    <br>
+                    One important concept in fine-grained complexity is the notion of parameterized complexity. Parameterized complexity measures the complexity of a problem with respect to a specific parameter. It allows us to analyze the running time of algorithms in relation to the size of the input and the value of the parameter.<br>
+                    <br>
+                    Fine-grained complexity classes are typically defined using the notion of reductions. A reduction is a way to transform one problem into another in a way that preserves the computational difficulty. By reducing a problem to a known hard problem, we can establish its hardness within a specific fine-grained complexity class.<br>
+                    <br>
+                    Some commonly studied fine-grained complexity classes include:<br>
+                    <br>
+                    1. W[1]: This class contains problems that can be solved in time f(k) * n^c, where f(k) is a computable function and c is a constant. The parameter k represents the size of the problem instance.<br>
+                    <br>
+                    2. W[2]: This class contains problems that can be solved in time f(k) * n^c, where f(k) is a computable function and c is a constant. The parameter k represents the size of the problem instance, and the parameter k' represents the size of a secondary parameter.<br>
+                    <br>
+                    3. FPT: This class contains problems that can be solved in time f(k) * n^c, where f(k) is a computable function and c is a constant. The parameter k represents the size of the problem instance.<br>
+                    <br>
+                    4. XP: This class contains problems that can be solved in time f(k) * n^c, where f(k) is a computable function and c is a constant. The parameter k represents the size of the problem instance, and the parameter p represents the number of allowed parameter values.<br>
+                    <br>
+                    5. APX: This class contains problems that can be approximated within a certain factor in polynomial time.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Understanding complexity within P</h2>
                 <p>
-
+                    In this sub-lesson, we will explore the concept of complexity within the class P. P is a complexity class that contains decision problems that can be solved in polynomial time. However, not all problems within P have the same level of difficulty. Some problems are easier to solve than others, even though they all fall within the polynomial time complexity.<br>
+                    <br>
+                    To understand the fine-grained complexity within P, we need to consider the hardness of individual problems. Hardness refers to the level of difficulty in solving a problem. In the context of P, hardness can vary even within the class itself.<br>
+                    <br>
+                    One way to measure hardness within P is by analyzing the worst-case running time of algorithms that solve the problem. Some problems in P have algorithms with running times that are significantly faster than others. This difference in running time indicates the varying levels of hardness within P.<br>
+                    <br>
+                    Another aspect to consider is the structure of the problem. Some problems in P have inherent structures that make them easier to solve, while others have more complex structures that require more computational resources.<br>
+                    <br>
+                    Understanding the complexity within P is crucial for algorithm designers and researchers. It helps in identifying the limitations and possibilities of solving problems efficiently. By studying the hardness within P, we can gain insights into the inherent difficulty of different problems and develop strategies to tackle them effectively.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
