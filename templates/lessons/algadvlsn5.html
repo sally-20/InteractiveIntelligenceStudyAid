@@ -93,54 +93,104 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What are optimization problems?",
+                options: [
+                    "Problems that are widely believed to be unsolvable",
+                    "Problems that involve finding the best solution from a set of possible solutions",
+                    "Problems that can be solved in polynomial time",
+                    "Problems that have a 2-approximation ratio"
+                ],
+                answer: "Problems that involve finding the best solution from a set of possible solutions"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What are approximation algorithms?",
+                options: [
+                    "Algorithms that provide optimal solutions for optimization problems",
+                    "Algorithms that provide solutions that are close to the optimal solution for optimization problems",
+                    "Algorithms that can solve NP-hard problems in polynomial time",
+                    "Algorithms that have a 2-approximation ratio"
+                ],
+                answer: "Algorithms that provide solutions that are close to the optimal solution for optimization problems"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the approximation ratio?",
+                options: [
+                    "The ratio between the solution provided by the algorithm and the optimal solution",
+                    "The ratio between the time complexity of the algorithm and the optimal solution",
+                    "The ratio between the number of steps taken by the algorithm and the optimal solution",
+                    "The ratio between the space complexity of the algorithm and the optimal solution"
+                ],
+                answer: "The ratio between the solution provided by the algorithm and the optimal solution"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the main difference between greedy algorithms and local search algorithms?",
+                options: [
+                    "Greedy algorithms make locally optimal choices at each step, while local search algorithms iteratively improve a solution",
+                    "Greedy algorithms provide optimal solutions, while local search algorithms provide approximate solutions",
+                    "Greedy algorithms have a 2-approximation ratio, while local search algorithms have a 3-approximation ratio",
+                    "Greedy algorithms run in polynomial time, while local search algorithms run in exponential time"
+                ],
+                answer: "Greedy algorithms make locally optimal choices at each step, while local search algorithms iteratively improve a solution"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Why are approximation algorithms valuable in the context of NP-hard problems?",
+                options: [
+                    "They provide optimal solutions for NP-hard problems",
+                    "They provide solutions that are close to the optimal solution for NP-hard problems",
+                    "They can solve NP-hard problems in polynomial time",
+                    "They have a 2-approximation ratio for NP-hard problems"
+                ],
+                answer: "They provide solutions that are close to the optimal solution for NP-hard problems"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of using approximation algorithms in optimization problems?",
+                options: [
+                    "To find the optimal solution",
+                    "To find near-optimal solutions",
+                    "To reduce the complexity of the problem",
+                    "To improve the efficiency of the algorithm"
+                ],
+                answer: "To find near-optimal solutions"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which of the following is an example of a real-world application of approximation algorithms?",
+                options: [
+                    "Sorting a list of numbers",
+                    "Finding the shortest path in a graph",
+                    "Scheduling tasks on multiple machines",
+                    "Solving a system of linear equations"
+                ],
+                answer: "Scheduling tasks on multiple machines"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the makespan minimization problem?",
+                options: [
+                    "Finding the maximum completion time of a set of tasks",
+                    "Finding the minimum completion time of a set of tasks",
+                    "Finding the maximum number of tasks that can be completed",
+                    "Finding the minimum number of tasks that can be completed"
+                ],
+                answer: "Finding the minimum completion time of a set of tasks"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which of the following is an example of a facility location problem?",
+                options: [
+                    "Finding the shortest path in a graph",
+                    "Determining the optimal locations for warehouses",
+                    "Allocating resources to different projects",
+                    "Clustering data points into groups"
+                ],
+                answer: "Determining the optimal locations for warehouses"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "In which of the following optimization problems are approximation algorithms commonly used?",
+                options: [
+                    "Sorting",
+                    "Graph coloring",
+                    "Traveling salesman problem",
+                    "All of the above"
+                ],
+                answer: "All of the above"
             }
         ];
 
@@ -383,14 +433,32 @@
             <div id="sublesson1">
                 <h2>Solving NP-hard problems efficiently</h2>
                 <p>
-                    
+                    In this lesson, we will explore the topic of solving NP-hard problems efficiently. NP-hard problems are computational problems that are widely believed to be unsolvable by any fast algorithm. However, there are approximation algorithms that can provide near-optimal solutions for these problems. We will focus on the applications of approximation algorithms in optimization problems.<br>
+                    <br>
+                    To understand approximation algorithms, let's first discuss the concept of optimization problems. Optimization problems involve finding the best solution from a set of possible solutions. For example, finding the shortest path between two points in a graph or finding the minimum spanning tree of a graph are optimization problems.<br>
+                    <br>
+                    Now, let's dive into the topic of approximation algorithms. Approximation algorithms are algorithms that provide solutions that are close to the optimal solution for an optimization problem. These algorithms trade off optimality for efficiency. They are designed to run in polynomial time and provide solutions that are within a certain factor of the optimal solution.<br>
+                    <br>
+                    One commonly used factor for approximation algorithms is the approximation ratio. The approximation ratio is the ratio between the solution provided by the algorithm and the optimal solution. For example, if an algorithm provides a solution that is within a factor of 2 of the optimal solution, we say that the algorithm has a 2-approximation ratio.<br>
+                    <br>
+                    There are different types of approximation algorithms, such as greedy algorithms and local search algorithms. Greedy algorithms make locally optimal choices at each step to build a solution, while local search algorithms iteratively improve a solution by making small changes.<br>
+                    <br>
+                    In the context of NP-hard problems, approximation algorithms are valuable because they provide efficient solutions that are close to the optimal solution. While these solutions may not be perfect, they are often sufficient for practical purposes.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Real-world applications of approximation algorithms</h2>
                 <p>
-
+                    In this lesson, we will explore the real-world applications of approximation algorithms in optimization problems. Approximation algorithms are used when finding an optimal solution to a problem is computationally infeasible or too time-consuming. These algorithms provide near-optimal solutions that are often good enough for practical purposes.<br>
+                    <br>
+                    One common application of approximation algorithms is in the field of scheduling. For example, consider the problem of scheduling tasks on multiple machines to minimize the total completion time. This problem is known as the makespan minimization problem and is NP-complete. However, by using approximation algorithms, we can find solutions that are within a certain factor of the optimal solution. These solutions may not be optimal, but they are still efficient and can be used in practice.<br>
+                    <br>
+                    Another application of approximation algorithms is in network design. For instance, consider the problem of finding the minimum spanning tree in a network. This problem is also NP-complete, but approximation algorithms can provide solutions that are within a certain factor of the optimal solution. These solutions can be used to design efficient and cost-effective networks.<br>
+                    <br>
+                    Approximation algorithms are also used in facility location problems. These problems involve determining the optimal locations for facilities such as warehouses or distribution centers. Finding the optimal solution to these problems is often computationally infeasible, but approximation algorithms can provide near-optimal solutions that are practical and efficient.<br>
+                    <br>
+                    In addition to these applications, approximation algorithms are used in various other optimization problems such as clustering, routing, and resource allocation. These algorithms play a crucial role in solving real-world problems where finding an optimal solution is not feasible.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
