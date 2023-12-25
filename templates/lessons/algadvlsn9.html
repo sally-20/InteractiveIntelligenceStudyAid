@@ -93,54 +93,104 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the main challenge in designing algorithms for dynamic environments?",
+                options: [
+                    "Real-time processing",
+                    "Optimality",
+                    "Efficiency",
+                    "Adaptability"
+                ],
+                answer: "Real-time processing"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which algorithmic technique sacrifices optimality for efficiency?",
+                options: [
+                    "Online algorithms",
+                    "Approximation algorithms",
+                    "Heuristic algorithms",
+                    "Incremental algorithms"
+                ],
+                answer: "Approximation algorithms"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What do heuristic algorithms rely on to make decisions?",
+                options: [
+                    "Complete information",
+                    "Partial information",
+                    "Future data",
+                    "Historical data"
+                ],
+                answer: "Partial information"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which algorithm updates the solution incrementally as new data arrives or changes?",
+                options: [
+                    "Online algorithms",
+                    "Approximation algorithms",
+                    "Heuristic algorithms",
+                    "Incremental algorithms"
+                ],
+                answer: "Incremental algorithms"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which algorithmic technique adapts and learns from the changing data?",
+                options: [
+                    "Online algorithms",
+                    "Approximation algorithms",
+                    "Heuristic algorithms",
+                    "Online learning algorithms"
+                ],
+                answer: "Online learning algorithms"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the main characteristic of online algorithms?",
+                options: [
+                    "They have complete knowledge of future data",
+                    "They make decisions based on limited information",
+                    "They are only used in offline applications",
+                    "They are not suitable for real-time applications"
+                ],
+                answer: "They make decisions based on limited information"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which heuristic is commonly used in caching algorithms?",
+                options: [
+                    "Least recently used (LRU)",
+                    "First-in, first-out (FIFO)",
+                    "Random eviction",
+                    "Most frequently used (MFU)"
+                ],
+                answer: "Least recently used (LRU)"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How do online algorithms handle changing data?",
+                options: [
+                    "By maintaining a sliding window of data",
+                    "By making decisions based on limited information",
+                    "By balancing exploration and exploitation",
+                    "All of the above"
+                ],
+                answer: "All of the above"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the trade-off that online algorithms need to balance?",
+                options: [
+                    "Exploration and exploitation",
+                    "Accuracy and efficiency",
+                    "Complexity and simplicity",
+                    "Memory usage and processing power"
+                ],
+                answer: "Exploration and exploitation"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of online algorithms?",
+                options: [
+                    "To handle changing data in real-time applications",
+                    "To make decisions based on complete knowledge of future data",
+                    "To optimize performance in offline applications",
+                    "To minimize the number of cache hits"
+                ],
+                answer: "To handle changing data in real-time applications"
             }
         ];
 
@@ -383,14 +433,46 @@
             <div id="sublesson1">
                 <h2>Challenges in online algorithm design</h2>
                 <p>
-                    
+                    In this lesson, we will explore the challenges in designing algorithms for dynamic environments. A dynamic environment refers to a scenario where the input data is continuously changing or being updated over time. This poses unique challenges for algorithm design as the algorithm needs to adapt and make decisions based on the changing data.<br>
+                    <br>
+                    One of the main challenges in designing algorithms for dynamic environments is the need for real-time or online processing. Traditional algorithms are designed to work on static input data, where all the data is available upfront. However, in dynamic environments, the data is continuously arriving or changing, and the algorithm needs to process it on the fly.<br>
+                    <br>
+                    Another challenge is the trade-off between efficiency and optimality. In dynamic environments, it may not be possible to find the optimal solution due to the changing nature of the data. Instead, algorithms need to make decisions based on partial or incomplete information, aiming for a good or near-optimal solution in real-time.<br>
+                    <br>
+                    Furthermore, algorithms for dynamic environments need to be adaptive and responsive to changes in the input data. They should be able to handle updates or modifications to the data efficiently without recomputing the entire solution from scratch.<br>
+                    <br>
+                    To address these challenges, several algorithmic techniques are used in the design of algorithms for dynamic environments. Some of these techniques include:<br>
+                    <br>
+                    1. Online algorithms: These algorithms make decisions based on the current input data without knowledge of future data. They aim to achieve good performance in real-time without knowing the complete input in advance.<br>
+                    <br>
+                    2. Approximation algorithms: These algorithms provide near-optimal solutions with a guaranteed level of approximation. They sacrifice optimality for efficiency and are well-suited for dynamic environments where finding the optimal solution is computationally expensive or infeasible.<br>
+                    <br>
+                    3. Heuristic algorithms: These algorithms use rules of thumb or intuition to make decisions in real-time. They may not guarantee optimality but can provide good solutions quickly.<br>
+                    <br>
+                    4. Incremental algorithms: These algorithms update the solution incrementally as new data arrives or changes. They avoid recomputing the entire solution and only update the necessary parts, leading to efficient processing in dynamic environments.<br>
+                    <br>
+                    5. Online learning algorithms: These algorithms adapt and learn from the changing data to improve their performance over time. They use techniques from machine learning to make predictions or decisions based on historical data.<br>
+                    <br>
+                    Overall, designing algorithms for dynamic environments requires a careful balance between efficiency, optimality, and adaptability. It involves using specialized techniques that can handle real-time processing, partial information, and changing data.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>How online algorithms adapt to changing data</h2>
                 <p>
-                    
+                    In this lesson, we will explore the topic of algorithms for dynamic environments. Specifically, we will focus on how online algorithms adapt to changing data. <br>
+                    <br>
+                    Online algorithms are designed to handle situations where data is continuously arriving or changing over time. These algorithms make decisions based on the data they have seen so far, without having complete knowledge of the future data. This makes them suitable for real-time applications where decisions need to be made quickly.<br>
+                    <br>
+                    One common example of an online algorithm is the caching algorithm used in web servers. The goal of the caching algorithm is to minimize the number of cache misses, which occur when a requested item is not found in the cache. The algorithm needs to decide which items to keep in the cache and which items to evict when the cache is full. In an online setting, new requests arrive continuously, and the algorithm needs to adapt to changing access patterns.<br>
+                    <br>
+                    To adapt to changing data, online algorithms often use heuristics or approximation techniques. These techniques allow the algorithm to make quick decisions based on limited information. For example, in the caching algorithm, the algorithm may use a least recently used (LRU) heuristic to decide which items to evict from the cache. This heuristic assumes that recently accessed items are more likely to be accessed again in the near future.<br>
+                    <br>
+                    Another approach used by online algorithms is to maintain a sliding window of data. The algorithm only considers the most recent data within the window and discards older data. This allows the algorithm to adapt to changes in the data distribution over time.<br>
+                    <br>
+                    Online algorithms also need to balance the trade-off between exploration and exploitation. Exploration refers to trying out different options to gather information about the data, while exploitation refers to making decisions based on the current knowledge. Finding the right balance is crucial to achieving good performance in dynamic environments.<br>
+                    <br>
+                    Overall, online algorithms provide a powerful tool for handling changing data in real-time applications. By adapting to the data as it arrives, these algorithms can make efficient and effective decisions.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
