@@ -93,54 +93,54 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the Knapsack problem?",
+                options: ["A problem where we have to maximize the total weight of items we can fit into a knapsack.", "A problem where we have to maximize the total value of items we can fit into a knapsack.", "A problem where we have to minimize the total weight of items we can fit into a knapsack.", "A problem where we have to minimize the total value of items we can fit into a knapsack."],
+                answer: "A problem where we have to maximize the total value of items we can fit into a knapsack."
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What are the subproblems in the Knapsack problem?",
+                options: ["Finding the maximum weight that can be obtained by considering a subset of items.", "Finding the maximum value that can be obtained by considering a subset of items.", "Finding the minimum weight that can be obtained by considering a subset of items.", "Finding the minimum value that can be obtained by considering a subset of items."],
+                answer: "Finding the maximum value that can be obtained by considering a subset of items."
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the recurrence relation for the Knapsack problem?",
+                options: ["If the weight of the current item is greater than the remaining capacity, then the maximum value is obtained by excluding the current item.", "If the weight of the current item is less than the remaining capacity, then the maximum value is obtained by excluding the current item.", "If the weight of the current item is greater than the remaining capacity, then the maximum value is obtained by including the current item.", "If the weight of the current item is less than the remaining capacity, then the maximum value is obtained by including the current item."],
+                answer: "If the weight of the current item is greater than the remaining capacity, then the maximum value is obtained by excluding the current item."
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of the dynamic programming table in the Knapsack problem?",
+                options: ["To store the solutions to the subproblems.", "To store the weights of the items.", "To store the values of the items.", "To store the weight capacity of the knapsack."],
+                answer: "To store the solutions to the subproblems."
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How do we find the optimal solution in the Knapsack problem?",
+                options: ["By tracing back through the dynamic programming table.", "By iterating over the items in the knapsack.", "By sorting the items based on their values.", "By selecting the item with the maximum weight."],
+                answer: "By tracing back through the dynamic programming table."
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What does LCS stand for in the context of the Longest Common Subsequence problem?",
+                options: ["Longest Common Sequence", "Longest Common Substring", "Longest Continuous Subsequence", "Longest Consecutive Substring"],
+                answer: "Longest Common Sequence"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which property does the LCS problem exhibit?",
+                options: ["Optimal Substructure", "Overlapping Subproblems", "Greedy Choice Property", "Divide and Conquer"],
+                answer: "Optimal Substructure"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How can we define the LCS of two sequences X and Y in terms of their prefixes?",
+                options: ["LCS(X, Y) = LCS(Xi-1, Yi-1) + last element of X and Y", "LCS(X, Y) = LCS(Xi-1, Y) + last element of X", "LCS(X, Y) = LCS(X, Yi-1) + last element of Y", "LCS(X, Y) = max(LCS(Xi-1, Y), LCS(X, Yi-1))"],
+                answer: "LCS(X, Y) = max(LCS(Xi-1, Y), LCS(X, Yi-1))"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of the dynamic programming table in solving the LCS problem?",
+                options: ["To store the lengths of the LCS for all possible prefixes of X and Y", "To store the LCS of X and Y", "To store the optimal substructure of the LCS problem", "To store the overlapping subproblems of the LCS problem"],
+                answer: "To store the lengths of the LCS for all possible prefixes of X and Y"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How do we reconstruct the LCS after filling the dynamic programming table?",
+                options: ["Backtrack from the top-left corner to the bottom-right corner", "Backtrack from the bottom-right corner to the top-left corner", "Backtrack from the top-right corner to the bottom-left corner", "Backtrack from the bottom-left corner to the top-right corner"],
+                answer: "Backtrack from the bottom-right corner to the top-left corner"
             }
         ];
 
@@ -383,14 +383,57 @@
             <div id="sublesson1">
                 <h2>Knapsack problem and dynamic programming</h2>
                 <p>
-                    
+                    In this lesson, we will explore the application of dynamic programming to solve optimization problems, with a specific focus on the Knapsack problem. The Knapsack problem presents a classic optimization challenge: given a set of items, each with a weight and a value, the objective is to maximize the total value of items that can fit into a knapsack with a predefined weight capacity.<br>
+                    <br>
+                    <strong>Step 1: Define the subproblems</strong><br>
+                    - Break down the problem into smaller subproblems.<br>
+                    - In the Knapsack problem, the subproblems involve determining the maximum value achievable by considering subsets of items with a limited weight capacity.<br>
+                    <br>
+                    <strong>Step 2: Formulate the recurrence relation</strong><br>
+                    - Establish how to combine the solutions to the subproblems to solve the original problem.<br>
+                    - For the Knapsack problem, the recurrence relation is defined as follows:<br>
+                      - If the weight of the current item exceeds the remaining capacity, the maximum value is obtained by excluding the current item.<br>
+                      - Otherwise, the maximum value is the greater of including or excluding the current item.<br>
+                    <br>
+                    <strong>Step 3: Build the dynamic programming table</strong><br>
+                    - Develop a table to store solutions to the subproblems.<br>
+                    - Initialize the table with base cases and progressively fill it using the defined recurrence relation.<br>
+                    <br>
+                    <strong>Step 4: Find the optimal solution</strong><br>
+                    - Trace back through the dynamic programming table to identify the items contributing to the maximum value.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Longest common subsequence problem and its DP solution</h2>
                 <p>
-
+                    In this sub-lesson, we will delve into the Longest Common Subsequence (LCS) problem and explore how to employ Dynamic Programming (DP) to solve it. The LCS problem entails identifying the longest subsequence shared between two given sequences.<br>
+                    <br>
+                    To grasp the intricacies of the problem, let's examine two sequences, X and Y. A subsequence of X is derived by eliminating certain elements from X while maintaining the order of the remaining elements. Similarly, a subsequence of Y is obtained by deleting some elements. The LCS of X and Y is the longest common subsequence that exists in both X and Y.<br>
+                    <br>
+                    To address the LCS problem using DP, we can adopt the following approach:<br>
+                    <br>
+                    <strong>1. Optimal Substructure:</strong><br>
+                    - The LCS problem displays optimal substructure, implying that an optimal solution to the problem comprises optimal solutions to its subproblems.<br>
+                    - We can define the LCS of two sequences X and Y in terms of the LCS of their prefixes.<br>
+                    - Let Xi be the ith prefix of X, and Yi be the ith prefix of Y. If the last elements of X and Y are the same, the LCS of X and Y is the LCS of Xi-1 and Yi-1 plus the last element. Otherwise, the LCS of X and Y is the longer of the LCS of Xi-1 and Y or the LCS of X and Yi-1.<br>
+                    <br>
+                    <strong>2. Dynamic Programming Table:</strong><br>
+                    - A 2D table is employed to store the lengths of the LCS for all possible prefixes of X and Y.<br>
+                    - The table dimensions are (m+1) x (n+1), where m is the length of X, and n is the length of Y.<br>
+                    - The value at position (i, j) in the table signifies the length of the LCS of Xi and Yj.<br>
+                    <br>
+                    <strong>3. Filling the Table:</strong><br>
+                    - Table filling begins from the top-left corner.<br>
+                    - For each position (i, j), if the last elements of Xi and Yj are the same, we increment the value at (i, j) by 1 plus the value at (i-1, j-1).<br>
+                    - Otherwise, we take the maximum of the values at (i-1, j) and (i, j-1) and store it at (i, j).<br>
+                    <br>
+                    <strong>4. Backtracking:</strong><br>
+                    - Once the table is filled, backtracking from the bottom-right corner reconstructs the LCS.<br>
+                    - Starting from the bottom-right corner, if the last elements of Xi and Yj are the same, we add the last element to the LCS and move diagonally to the top-left.<br>
+                    - Otherwise, we move either up or left, depending on which value in the table is greater.<br>
+                    <br>
+                    Now that we have comprehensively explored solving the LCS problem using DP, let's assess our understanding with some multiple-choice questions.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
