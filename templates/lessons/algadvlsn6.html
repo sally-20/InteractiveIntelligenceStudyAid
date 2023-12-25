@@ -93,54 +93,102 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What are some reasons to include randomness in the logic of an algorithm?",
+                options: [
+                    "It makes algorithms work better and provide smarter solutions.",
+                    "It requires more resources, in terms of memory and computations.",
+                    "It creates algorithms that have a centralized output with supervision.",
+                    "None of the above."
+                ],
+                answer: "It makes algorithms work better and provide smarter solutions."
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "When is the median of a list exactly the middle value?",
+                options: [
+                    "When the list has an odd number of elements.",
+                    "When the list has an even number of elements.",
+                    "When the list is sorted in ascending order.",
+                    "None of the above."
+                ],
+                answer: "When the list has an odd number of elements."
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How can randomness help in speeding up sorting algorithms?",
+                options: [
+                    "By finding values in a certain position in the input data.",
+                    "By reducing the number of comparisons required.",
+                    "By increasing the memory usage.",
+                    "None of the above."
+                ],
+                answer: "By reducing the number of comparisons required."
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the role of randomness in local search algorithms?",
+                options: [
+                    "To determine the best direction for the algorithm.",
+                    "To generate distributed outputs with supervision.",
+                    "To improve the performance of the algorithm.",
+                    "None of the above."
+                ],
+                answer: "To improve the performance of the algorithm."
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the advantage of using randomness in algorithms?",
+                options: [
+                    "It makes algorithms work better and provide smarter solutions.",
+                    "It requires fewer resources, in terms of memory and computations.",
+                    "It creates algorithms that have a distributed output with little or no supervision.",
+                    "None of the above."
+                ],
+                answer: "It creates algorithms that have a distributed output with little or no supervision."
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is one of the benefits of using randomized algorithms?",
+                options: [
+                    "Improved worst-case performance",
+                    "Deterministic results",
+                    "Simplicity in design",
+                    "Guaranteed correctness"
+                ],
+                answer: "Simplicity in design"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which of the following is a drawback of randomized algorithms?",
+                options: [
+                    "Reproducible results",
+                    "Reliance on probability",
+                    "Easy analysis",
+                    "Deterministic behavior"
+                ],
+                answer: "Reliance on probability"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Randomized algorithms can provide faster solutions compared to deterministic algorithms in which case?",
+                options: [
+                    "Best-case scenarios",
+                    "Average-case scenarios",
+                    "Worst-case scenarios",
+                    "All cases"
+                ],
+                answer: "Average-case scenarios"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is a challenge in analyzing randomized algorithms?",
+                options: [
+                    "Deterministic behavior",
+                    "Reproducible results",
+                    "Simplicity in design",
+                    "Uncertainty due to randomness"
+                ],
+                answer: "Uncertainty due to randomness"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Randomized algorithms can produce distributed outputs with little or no supervision. True or False?",
+                options: [
+                    "True",
+                    "False"
+                ],
+                answer: "True"
             }
         ];
 
@@ -383,14 +431,32 @@
             <div id="sublesson1">
                 <h2>The role of randomness in algorithms</h2>
                 <p>
-                    
+                    In this lesson, we will explore the role of randomness in algorithms. Randomness can be incorporated into algorithms to improve their performance and provide smarter solutions. It can also help in reducing the resources required, such as memory and computations. Additionally, algorithms that incorporate randomness can generate distributed outputs with little or no supervision.<br>
+                    <br>
+                    Randomness can be particularly useful in situations where it is difficult to determine the best direction for an algorithm to take. For example, in the next chapter, we will learn about local search algorithms, where randomization and probability can be helpful in finding the optimal solution.<br>
+                    <br>
+                    One specific application of randomness in algorithms is in calculating the median of a list. When working with unsorted input lists, finding the median can be challenging. The position of the data in the ordered list is crucial for determining the median. If the list has an odd number of elements, the median is the middle value. If the list has an even number of elements, the median is the average of the pair of middle numbers.<br>
+                    <br>
+                    Randomization can also speed up sorting algorithms. By relying on randomness, algorithms can quickly find values in a certain position in the input data, leading to faster sorting times.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Benefits and drawbacks of randomized algorithms</h2>
                 <p>
-                    
+                    In this lesson, we will explore the benefits and drawbacks of using randomized algorithms in solving computational problems. Randomized algorithms are algorithms that use randomness or probability in their design to achieve certain advantages. Let's dive into the topic and understand the concepts.<br>
+                    <br>
+                    Benefits of Randomized Algorithms:<br>
+                    1. Improved Performance: Randomized algorithms can often provide faster solutions compared to deterministic algorithms. By incorporating randomness, these algorithms can avoid worst-case scenarios and achieve better average-case performance.<br>
+                    2. Simplicity: Randomized algorithms can be simpler to design and implement compared to deterministic algorithms. They often require fewer resources, such as memory and computational power, making them more efficient.<br>
+                    3. Distributed Output: Randomized algorithms can produce distributed outputs with little or no supervision. This property is useful in scenarios where a centralized decision-making process is not feasible or efficient.<br>
+                    <br>
+                    Drawbacks of Randomized Algorithms:<br>
+                    1. Non-deterministic Results: Randomized algorithms produce different results each time they are executed due to the inherent randomness. This can make it challenging to reproduce specific results or debug the algorithm.<br>
+                    2. Reliance on Probability: Randomized algorithms heavily rely on probability theory. If the underlying assumptions about the probability distribution are incorrect, the algorithm's performance may suffer.<br>
+                    3. Difficulty in Analysis: Analyzing the performance and correctness of randomized algorithms can be more complex compared to deterministic algorithms. The randomness introduces additional uncertainty, making it harder to reason about the algorithm's behavior.<br>
+                    <br>
+                    Now that we have covered the benefits and drawbacks of randomized algorithms, let's test your understanding with some multiple-choice questions.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
