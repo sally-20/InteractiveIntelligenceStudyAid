@@ -93,54 +93,79 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which of the following sorting algorithms is highly parallelizable?",
+                options: ["Bubble sort", "Bitonic sort", "Insertion sort", "Quick sort"],
+                answer: "Bitonic sort"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the time complexity of odd-even sort?",
+                options: ["O(n)", "O(n log(n))", "O(n^2)", "O(log^2(n))"],
+                answer: "O(n^2)"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How does merge sort achieve parallelism?",
+                options: [
+                    "By repeatedly comparing and swapping adjacent elements",
+                    "By dividing the input into smaller subproblems and sorting them independently",
+                    "By merging two sorted sequences in a bitonic order",
+                    "By dividing the input into odd and even positions and sorting them separately"
+                ],
+                answer: "By dividing the input into smaller subproblems and sorting them independently"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is one limitation of parallel sorting algorithms?",
+                options: [
+                    "They have a high time complexity",
+                    "They cannot handle large datasets",
+                    "They require a large number of processors",
+                    "They have overhead in dividing and merging data"
+                ],
+                answer: "They have overhead in dividing and merging data"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which sorting algorithm has a time complexity of O(n log(n))?",
+                options: ["Bubble sort", "Insertion sort", "Merge sort", "Quick sort"],
+                answer: "Merge sort"
+            }
+            {
+                question: "Which paradigm is commonly used for efficient graph processing in parallel?",
+                options: ["Divide-and-conquer", "Greedy", "Dynamic programming", "Randomization"],
+                answer: "Divide-and-conquer"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of the parallel breadth-first search (BFS) algorithm?",
+                options: [
+                    "Finding the shortest path between two vertices",
+                    "Detecting cycles in a graph",
+                    "Identifying connected components in a graph",
+                    "Traversing all vertices in a graph"
+                ],
+                answer: "Traversing all vertices in a graph"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What data structure is used in the parallel breadth-first search (BFS) algorithm?",
+                options: ["Stack", "Queue", "Heap", "Linked list"],
+                answer: "Queue"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the goal of the parallel connected components algorithm?",
+                options: [
+                    "Finding the shortest path between two vertices",
+                    "Detecting cycles in a graph",
+                    "Identifying connected components in a graph",
+                    "Traversing all vertices in a graph"
+                ],
+                answer: "Identifying connected components in a graph"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
-            },
-            {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which of the following operations can be performed using parallel graph processing algorithms?",
+                options: [
+                    "Sorting the vertices of a graph",
+                    "Finding the maximum flow in a graph",
+                    "Calculating the minimum spanning tree of a graph",
+                    "All of the above"
+                ],
+                answer: "All of the above"
             }
         ];
 
@@ -383,14 +408,61 @@
             <div id="sublesson1">
                 <h2>Parallelism in sorting algorithms</h2>
                 <p>
-                    
+                    In this sub-lesson, we will explore the concept of parallelism in sorting algorithms. Parallelism refers to the ability to perform multiple tasks simultaneously, which can greatly improve the efficiency of algorithms on parallel computing systems. We will focus on how parallelism can be utilized in sorting algorithms to achieve faster sorting times.<br>
+                    <br>
+                    1. Introduction to Parallel Sorting Algorithms:<br>
+                        - Sorting algorithms are used to arrange elements in a specific order.<br>
+                        - Traditional sorting algorithms, such as bubble sort and insertion sort, are sequential in nature and have a time complexity of O(n^2).<br>
+                        - Parallel sorting algorithms aim to reduce the time complexity by utilizing parallelism.<br>
+                    <br>
+                    2. Types of Parallel Sorting Algorithms:<br>
+                        a. Bitonic Sort:<br>
+                            - Bitonic sort is a comparison-based sorting algorithm that is highly parallelizable.<br>
+                            - It works by repeatedly merging two sorted sequences in a bitonic order.<br>
+                            - The time complexity of bitonic sort is O(log^2(n)).<br>
+                        <br>
+                        b. Odd-Even Sort:<br>
+                            - Odd-even sort is another comparison-based sorting algorithm that can be parallelized.<br>
+                            - It works by repeatedly comparing and swapping adjacent elements in odd and even positions.<br>
+                            - The time complexity of odd-even sort is O(n^2).<br>
+                        <br>
+                        c. Merge Sort:<br>
+                            - Merge sort is a divide-and-conquer algorithm that can be parallelized.<br>
+                            - It works by recursively dividing the input into smaller subproblems, sorting them, and then merging them.<br>
+                            - The time complexity of merge sort is O(n log(n)).<br>
+                        <br>
+                    <br>
+                    3. Achieving Parallelism in Sorting Algorithms:<br>
+                        - Parallelism can be achieved by dividing the input data into smaller chunks and sorting them independently.<br>
+                        - Each chunk can be sorted in parallel by separate threads or processors.<br>
+                        - After sorting, the sorted chunks can be merged to obtain the final sorted result.<br>
+                    <br>
+                    4. Benefits and Limitations of Parallel Sorting Algorithms:<br>
+                        - Parallel sorting algorithms can significantly reduce the sorting time for large datasets.<br>
+                        - However, the overhead of dividing the data and merging the sorted chunks can affect the overall performance.<br>
+                        - The efficiency of parallel sorting algorithms depends on the number of available processors and the size of the input data.<br>
+                    <br>
+                    5. Summary:<br>
+                        - Parallelism can be utilized in sorting algorithms to achieve faster sorting times.<br>
+                        - Bitonic sort, odd-even sort, and merge sort are examples of parallel sorting algorithms.<br>
+                        - Parallelism is achieved by dividing the input data into smaller chunks and sorting them independently.<br>
+                        - The sorted chunks are then merged to obtain the final sorted result.<br>
+                        - Parallel sorting algorithms can reduce sorting time, but the overhead of dividing and merging data should be considered.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Efficient graph processing in parallel</h2>
                 <p>
-
+                    In this sub-lesson, we will explore efficient graph processing in parallel. Graph processing involves performing various operations on graphs, such as traversing, searching, and analyzing. Parallel algorithms allow us to perform these operations simultaneously on multiple processors, which can significantly speed up the processing time.<br>
+                    <br>
+                    To efficiently process graphs in parallel, we can use the divide-and-conquer paradigm. This paradigm involves breaking down the graph processing problem into smaller subproblems and solving them independently on different processors. Once the subproblems are solved, their solutions can be combined to obtain the solution for the original problem.<br>
+                    <br>
+                    One popular algorithm for graph processing in parallel is the parallel breadth-first search (BFS) algorithm. The BFS algorithm starts from a given source vertex and explores all the vertices in the graph in a breadth-first manner. It uses a queue data structure to keep track of the vertices to be visited. In the parallel version of the BFS algorithm, each processor independently explores a subset of vertices, and their results are combined to obtain the final BFS traversal.<br>
+                    <br>
+                    Another efficient graph processing algorithm in parallel is the parallel connected components algorithm. This algorithm aims to identify the connected components in a graph, where a connected component is a set of vertices that are all reachable from each other. The parallel connected components algorithm uses a union-find data structure to efficiently merge the connected components found by different processors.<br>
+                    <br>
+                    Parallel graph processing algorithms can also be used for other graph operations, such as finding the shortest path between two vertices or detecting cycles in a graph. These algorithms leverage the power of parallel processing to perform these operations more quickly than their sequential counterparts.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
