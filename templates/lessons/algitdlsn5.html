@@ -93,54 +93,54 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of Dijkstra's algorithm?",
+                options: ["To find the longest path between two vertices in a graph", "To find the shortest path between two vertices in a graph", "To find all possible paths between two vertices in a graph", "To find the minimum spanning tree of a graph"],
+                answer: "To find the shortest path between two vertices in a graph"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the first step in Dijkstra's algorithm?",
+                options: ["Initialize the distance and visited arrays", "Find the vertex with the minimum distance", "Update the distances of adjacent vertices", "Mark the current vertex as visited"],
+                answer: "Initialize the distance and visited arrays"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How does Dijkstra's algorithm determine the next vertex to visit?",
+                options: ["By selecting the vertex with the maximum distance", "By selecting the vertex with the minimum distance", "By selecting a random vertex", "By selecting the vertex with the maximum number of adjacent vertices"],
+                answer: "By selecting the vertex with the minimum distance"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of the visited array in Dijkstra's algorithm?",
+                options: ["To keep track of the distance from the source vertex to each vertex", "To keep track of which vertices have been visited", "To store the shortest path from the source vertex to each vertex", "To store the adjacency matrix of the graph"],
+                answer: "To keep track of which vertices have been visited"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How can the shortest path be retrieved after running Dijkstra's algorithm?",
+                options: ["By backtracking from the destination vertex to the source vertex using the distance array", "By backtracking from the source vertex to the destination vertex using the distance array", "By selecting the vertex with the minimum distance from the set of unvisited vertices", "By selecting the vertex with the maximum distance from the set of unvisited vertices"],
+                answer: "By backtracking from the destination vertex to the source vertex using the distance array"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the main purpose of the Bellman-Ford algorithm?",
+                options: ["To find the longest path in a graph", "To find the shortest path in a graph", "To detect negative cycles in a graph", "To compute the length of all paths in a graph"],
+                answer: "To find the shortest path in a graph"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How many times does the Bellman-Ford algorithm relax the edges of the graph?",
+                options: ["V-1 times", "V times", "V+1 times", "V/2 times"],
+                answer: "V-1 times"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What does it mean if the Bellman-Ford algorithm can still find a shorter path after V-1 iterations?",
+                options: ["The graph contains a negative cycle", "The graph is not connected", "The algorithm has a bug", "The algorithm has finished running"],
+                answer: "The graph contains a negative cycle"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which of the following is true about the Bellman-Ford algorithm?",
+                options: ["It only works on unweighted graphs", "It has a time complexity of O(n^3)", "It cannot handle negative edge weights", "It is a greedy algorithm"],
+                answer: "It cannot handle negative edge weights"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the advantage of the Bellman-Ford algorithm?",
+                options: ["It can find the shortest path in any graph", "It is faster than other shortest path algorithms", "It can detect negative cycles in a graph", "It works only on connected graphs"],
+                answer: "It can detect negative cycles in a graph"
             }
         ];
 
@@ -383,14 +383,41 @@
             <div id="sublesson1">
                 <h2>Dijkstra's algorithm step by step</h2>
                 <p>
-                    
+                    In this lesson, we will learn about Dijkstra's algorithm, a method employed to find the shortest path between two vertices in a graph. This algorithm finds particular utility in scenarios where determining the most efficient route between two locations is essential, as seen in applications like GPS navigation systems.<br>
+                    <br>
+                    Dijkstra's algorithm operates by managing a set of vertices for which the shortest path from the source vertex has already been determined. The algorithm progresses through several steps, outlined as follows:<br>
+                    <br>
+                    <strong>Step 1: Initialize the distance and visited arrays</strong><br>
+                    - Create an array to store the distance from the source vertex to each vertex in the graph. Set the distance of the source vertex to 0 and the distance of all other vertices to infinity.<br>
+                    - Establish a visited array to track which vertices have been visited. Initially, set all vertices as unvisited.<br>
+                    <br>
+                    <strong>Step 2: Find the vertex with the minimum distance</strong><br>
+                    - Select the vertex with the minimum distance from the set of unvisited vertices. This vertex becomes the current vertex.<br>
+                    <br>
+                    <strong>Step 3: Update the distances of adjacent vertices</strong><br>
+                    - For each adjacent vertex of the current vertex, calculate the distance from the source vertex through the current vertex. If this distance is smaller than the current distance stored for the adjacent vertex, update the distance.<br>
+                    <br>
+                    <strong>Step 4: Mark the current vertex as visited</strong><br>
+                    - Mark the current vertex as visited and remove it from the set of unvisited vertices.<br>
+                    <br>
+                    <strong>Step 5: Repeat steps 2-4 until all vertices have been visited</strong><br>
+                    - Continue with steps 2-4 until all vertices have been visited or until the destination vertex has been visited.<br>
+                    <br>
+                    <strong>Step 6: Retrieve the shortest path</strong><br>
+                    - Once all vertices have been visited, the shortest path from the source vertex to the destination vertex can be retrieved by backtracking from the destination vertex to the source vertex using the distance array.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2></h2>
                 <p>
-
+                    In this lesson, we will learn about the Bellman-Ford algorithm, which is used to find the shortest paths in weighted graphs. The Bellman-Ford algorithm is particularly useful when dealing with graphs that may contain negative edge weights.<br>
+                    <br>
+                    The Bellman-Ford algorithm works by iteratively relaxing the edges of the graph. It starts by initializing the distance to the source vertex as 0 and the distance to all other vertices as infinity. Then, it relaxes each edge in the graph V-1 times, where V is the number of vertices in the graph. During each relaxation, the algorithm updates the distance to each vertex if a shorter path is found.<br>
+                    <br>
+                    One important feature of the Bellman-Ford algorithm is that it can detect negative cycles in the graph. If, after V-1 iterations, the algorithm can still find a shorter path, it means that the graph contains a negative cycle. This is because a negative cycle can keep reducing the distance to a vertex indefinitely.<br>
+                    <br>
+                    Now, let's move on to the questions.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
