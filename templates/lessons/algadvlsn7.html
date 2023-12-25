@@ -93,54 +93,104 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the main advantage of using randomized quicksort?",
+                options: [
+                    "It has a worst-case running time of O(n^2)",
+                    "It has no bad inputs, only bad random numbers",
+                    "It always chooses the largest element as the pivot",
+                    "It guarantees a sorted array in linear time"
+                ],
+                answer: "It has no bad inputs, only bad random numbers"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How does randomized quicksort choose the pivot element?",
+                options: [
+                    "It always selects the first element as the pivot",
+                    "It always selects the last element as the pivot",
+                    "It randomly selects an element from the array as the pivot",
+                    "It uses a fixed pivot element for all partitions"
+                ],
+                answer: "It randomly selects an element from the array as the pivot"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the expected running time of randomized quicksort?",
+                options: [
+                    "O(n)",
+                    "O(n^2)",
+                    "O(log n)",
+                    "O(n log n)"
+                ],
+                answer: "O(n log n)"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the worst-case running time of randomized quicksort?",
+                options: [
+                    "O(n)",
+                    "O(n^2)",
+                    "O(log n)",
+                    "O(n log n)"
+                ],
+                answer: "O(n^2)"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the advantage of using randomized quicksort over non-randomized quicksort?",
+                options: [
+                    "It has a faster average-case running time",
+                    "It has a faster worst-case running time",
+                    "It has no bad inputs, only bad random numbers",
+                    "It guarantees a sorted array in linear time"
+                ],
+                answer: "It has no bad inputs, only bad random numbers"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the main characteristic of Monte Carlo algorithms?",
+                options: [
+                    "They always provide a correct answer",
+                    "They are always fast",
+                    "They use randomness to provide an approximate solution",
+                    "They are used for deterministic problems"
+                ],
+                answer: "They use randomness to provide an approximate solution"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the Solovay-Strassen primality test an example of?",
+                options: [
+                    "Las Vegas algorithm",
+                    "Monte Carlo algorithm",
+                    "Atlantic City algorithm",
+                    "Deterministic algorithm"
+                ],
+                answer: "Monte Carlo algorithm"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How do Monte Carlo algorithms estimate solutions?",
+                options: [
+                    "By running a large number of random trials",
+                    "By using deterministic calculations",
+                    "By providing a definite answer",
+                    "By using analytical methods"
+                ],
+                answer: "By running a large number of random trials"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is one application of Monte Carlo algorithms?",
+                options: [
+                    "Solving deterministic problems",
+                    "Simulations",
+                    "Analytical calculations",
+                    "Determining prime numbers"
+                ],
+                answer: "Simulations"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the main advantage of Monte Carlo algorithms?",
+                options: [
+                    "They always provide a correct answer",
+                    "They are always fast",
+                    "They can estimate solutions to complex problems",
+                    "They use deterministic calculations"
+                ],
+                answer: "They can estimate solutions to complex problems"
             }
         ];
 
@@ -383,14 +433,31 @@
             <div id="sublesson1">
                 <h2>Implementing randomized quicksort</h2>
                 <p>
-                    
+                    In this lesson, we will be discussing the implementation of randomized quicksort. Quick sort is a popular sorting algorithm that works by selecting a pivot element and partitioning the array around the pivot. Randomized quicksort is a variant of quicksort that uses a randomly chosen pivot element, which helps to avoid worst-case scenarios and improve the average-case performance.<br>
+                    <br>
+                    To implement randomized quicksort, we follow these steps:<br>
+                    1. Select a random element from the array as the pivot.<br>
+                    2. Partition the array into two sub-arrays, one with elements smaller than the pivot and the other with elements greater than the pivot.<br>
+                    3. Recursively apply the above steps to the sub-arrays until the entire array is sorted.<br>
+                    <br>
+                    The key idea behind randomized quicksort is to choose a random pivot element, which helps to avoid the worst-case scenario where the largest or smallest element is always chosen as the pivot. By randomly selecting the pivot, we can achieve a more balanced partitioning of the array, leading to better average-case performance.<br>
+                    <br>
+                    Randomized quicksort has an expected running time of O(n log n), which is the same as the non-randomized version. However, the advantage of randomized quicksort is that it has no bad inputs, only bad random numbers. This means that for any input, including already sorted input, the running time is expected to be O(n log n), based on the statistics of random numbers.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Monte Carlo algorithms for estimation</h2>
                 <p>
-
+                    In this lesson, we will explore the concept of Monte Carlo algorithms for estimation. Monte Carlo algorithms are a type of randomized algorithm that use randomness to provide an approximate solution to a problem. These algorithms may not always provide a correct answer, but they are often fast and can be used to estimate solutions to complex problems.<br>
+                    <br>
+                    Monte Carlo algorithms work by running a large number of random trials and using the results to estimate the solution. The more trials we run, the more accurate our estimate will be. However, there is always a small chance that the algorithm may not provide a correct answer.<br>
+                    <br>
+                    One example of a Monte Carlo algorithm is the Solovay-Strassen primality test. This algorithm is used to determine whether a given number is prime or not. Instead of providing a definite answer, the algorithm provides a probabilistic answer. By running multiple trials, we can estimate the probability that the number is prime.<br>
+                    <br>
+                    Another example of a Monte Carlo algorithm is the estimation of pi. By randomly generating points within a square and determining the ratio of points that fall within a circle inscribed in the square, we can estimate the value of pi.<br>
+                    <br>
+                    Monte Carlo algorithms are particularly useful for solving problems that are difficult to solve deterministically or analytically. They provide a way to estimate solutions and can be used in a wide range of applications, including simulations, optimization problems, and statistical analysis.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
