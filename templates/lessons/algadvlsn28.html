@@ -93,54 +93,104 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the main objective of external memory algorithms?",
+                options: [
+                    "To solve algorithmic problems using internal memory",
+                    "To solve algorithmic problems using external memory",
+                    "To reduce the number of block transfers",
+                    "To divide the input set into subsets"
+                ],
+                answer: "To solve algorithmic problems using external memory"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the main idea behind multiway merge-sort?",
+                options: [
+                    "To merge many recursively sorted lists at a time",
+                    "To divide the input set into subsets",
+                    "To reduce the number of levels of recursion",
+                    "To perform block transfers efficiently"
+                ],
+                answer: "To merge many recursively sorted lists at a time"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the stopping criterion for the recursion in multiway merge-sort?",
+                options: [
+                    "n ≤ B",
+                    "n/B ≤ 1",
+                    "d = (M/B) - 1",
+                    "t(n) = 1"
+                ],
+                answer: "n/B ≤ 1"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the closed-form solution for the total number of block transfers in multiway merge-sort?",
+                options: [
+                    "O((n/B)logd(n/B))",
+                    "O(n/B)",
+                    "O(n)",
+                    "O(logd(n/B))"
+                ],
+                answer: "O((n/B)logd(n/B))"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the value of d chosen in multiway merge-sort?",
+                options: [
+                    "Θ(M/B)",
+                    "(M/B) - 1",
+                    "n/B",
+                    "logd(n/B)"
+                ],
+                answer: "(M/B) - 1"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the main idea behind the multiway merge-sort algorithm?",
+                options: [
+                    "Dividing the set into subsets and recursively sorting each subset",
+                    "Merging many recursively sorted lists at a time",
+                    "Reducing the number of levels of recursion",
+                    "All of the above"
+                ],
+                answer: "All of the above"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which data structure is commonly used for efficient searching?",
+                options: [
+                    "Search trees",
+                    "Hash tables",
+                    "Heaps",
+                    "Linked lists"
+                ],
+                answer: "Search trees"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the advantage of using external memory algorithms for graph processing?",
+                options: [
+                    "Efficient processing of large graphs that cannot fit into internal memory",
+                    "Constant-time average case search, insert, and delete operations",
+                    "Reducing the number of block transfers",
+                    "None of the above"
+                ],
+                answer: "Efficient processing of large graphs that cannot fit into internal memory"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How can the number of block transfers be minimized in the multiway merge-sort algorithm?",
+                options: [
+                    "By choosing a large value for d",
+                    "By choosing a small value for d",
+                    "By choosing an appropriate value for d",
+                    "By choosing a value for d randomly"
+                ],
+                answer: "By choosing an appropriate value for d"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which data structure is commonly used to represent graphs?",
+                options: [
+                    "Arrays",
+                    "Linked lists",
+                    "Hash tables",
+                    "Adjacency lists"
+                ],
+                answer: "Adjacency lists"
             }
         ];
 
@@ -383,14 +433,37 @@
             <div id="sublesson1">
                 <h2>Efficient external memory sorting techniques</h2>
                 <p>
-                    
+                    In this lesson, we will explore efficient external memory sorting techniques. External memory algorithms are used when the input sets are too large to fit entirely into internal memory. One classic problem that requires external memory algorithms is sorting.<br>
+                    <br>
+                    One efficient way to sort a set of objects in external memory is through a technique called multiway merge-sort. This technique is a variation of the familiar merge-sort algorithm. The main idea behind multiway merge-sort is to merge many recursively sorted lists at a time, reducing the number of levels of recursion.<br>
+                    <br>
+                    Here is a high-level description of the multiway merge-sort method:<br>
+                    1. Divide the set of objects into d subsets of roughly equal size.<br>
+                    2. Recursively sort each subset.<br>
+                    3. Simultaneously merge all the sorted lists into a sorted representation of the original set.<br>
+                    <br>
+                    The number of block transfers performed by this algorithm can be expressed by the recurrence relation: t(n) = d * t(n/d) + cn/B, where t(n) is the total number of transfers, n is the size of the input set, d is the number of subsets, c is a constant, and B is the block size.<br>
+                    <br>
+                    We can stop the recursion when n ≤ B, as we can perform a single block transfer at this point and sort the set using an efficient internal-memory algorithm. The stopping criterion for t(n) is t(n) = 1 if n/B ≤ 1.<br>
+                    <br>
+                    The closed-form solution for t(n) is O((n/B)logd(n/B)), where d is chosen to be Θ(M/B), and M is the size of the internal memory. By choosing d = (M/B) - 1, we can minimize the number of block transfers performed by the multiway merge-sort algorithm.<br>
+                    <br>
+                    To perform the d-way merge using only O(n/B) block transfers, additional techniques need to be employed. However, the details of these techniques are beyond the scope of this lesson.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Handling external memory data structures for searching and graph processing</h2>
                 <p>
-
+                    In this lesson, we will explore the concept of handling external memory data structures for searching and graph processing. When dealing with large datasets that cannot fit entirely into internal memory, it becomes necessary to use external memory algorithms. These algorithms aim to solve the problem using as few block transfers as possible.<br>
+                    <br>
+                    One common problem that requires external memory algorithms is sorting. We will focus on the multiway merge-sort algorithm, which is an efficient way to sort a large set of objects in external memory. The main idea behind this algorithm is to merge many recursively sorted lists at a time, reducing the number of levels of recursion. By dividing the set into subsets, recursively sorting each subset, and then merging all the sorted lists, we can achieve a sorted representation of the original set. The number of block transfers performed by this algorithm can be minimized by choosing an appropriate value for d, which represents the number of subsets to merge at a time.<br>
+                    <br>
+                    Another important aspect of handling external memory data structures is searching. Hash tables are a commonly used data structure for efficient searching. They allow for constant-time average case search, insert, and delete operations. Understanding the basics of hash tables and their supported operations is essential for handling external memory data structures for searching.<br>
+                    <br>
+                    Graph processing is another area where external memory algorithms are useful. Graphs can be represented using various data structures, such as adjacency lists or adjacency matrices. When dealing with large graphs that cannot fit into internal memory, external memory algorithms can be used to process and analyze the graph efficiently.<br>
+                    <br>
+                    Now that we have covered the basics of handling external memory data structures for searching and graph processing, let's test our understanding with some multiple-choice questions.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
