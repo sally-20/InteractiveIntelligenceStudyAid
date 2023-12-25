@@ -93,54 +93,54 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the main idea behind Breadth-First Search (BFS)?",
+                options: ["Explore the vertices of a graph in layers", "Explore the vertices of a graph in a random order", "Explore the vertices of a graph in reverse order", "Explore the vertices of a graph in decreasing distance from the starting vertex"],
+                answer: "Explore the vertices of a graph in layers"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How does BFS choose which vertices to explore next?",
+                options: ["Randomly", "In increasing order of distance from the starting vertex", "In decreasing order of distance from the starting vertex", "In any order"],
+                answer: "In increasing order of distance from the starting vertex"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What data structure is used to implement BFS?",
+                options: ["Stack", "Queue", "Array", "Linked list"],
+                answer: "Queue"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the time complexity of BFS?",
+                options: ["O(V)", "O(E)", "O(V + E)", "O(V * E)"],
+                answer: "O(V + E)"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is one of the applications of BFS?",
+                options: ["Finding the longest path in a graph", "Finding the minimum spanning tree of a graph", "Finding the maximum flow in a network", "Finding the shortest path between two vertices"],
+                answer: "Finding the shortest path between two vertices"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is one of the main applications of BFS?",
+                options: ["Finding the longest path in a graph", "Finding the shortest path in a graph", "Finding the minimum spanning tree of a graph", "Finding the maximum flow in a graph"],
+                answer: "Finding the shortest path in a graph"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What can BFS be used to detect in a graph?",
+                options: ["Cycles", "Strongly connected components", "Minimum spanning tree", "Maximum flow"],
+                answer: "Cycles"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is a connected component in a graph?",
+                options: ["A subgraph with the maximum number of vertices", "A subgraph with the minimum number of vertices", "A subgraph in which every pair of vertices is connected by a path", "A subgraph in which every pair of vertices is not connected by a path"],
+                answer: "A subgraph in which every pair of vertices is connected by a path"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is one advantage of using BFS for finding the shortest path?",
+                options: ["It guarantees that the longest path will be found first", "It guarantees that the shortest path will be found first", "It guarantees that all paths will be found", "It guarantees that no paths will be found"],
+                answer: "It guarantees that the shortest path will be found first"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is one problem that BFS can be applied to solve?",
+                options: ["Finding the maximum flow in a graph", "Finding the minimum spanning tree of a graph", "Checking bipartiteness of a graph", "Finding the diameter of a tree"],
+                answer: "Checking bipartiteness of a graph"
             }
         ];
 
@@ -383,14 +383,32 @@
             <div id="sublesson1">
                 <h2>BFS principles and traversal</h2>
                 <p>
-                    
+                    In this lesson, we will learn about Breadth-First Search (BFS), which is an important graph algorithm. BFS explores the vertices of a graph in layers, starting from a given vertex. It is used to find the shortest path between two vertices, among other applications.<br>
+                    <br>
+                    BFS works by exploring the vertices in layers. We start with a starting vertex, which is considered as layer 0. Then, we explore the neighbors of the starting vertex, which are considered as layer 1. Next, we explore the neighbors of layer 1 vertices that have not been explored yet, which form layer 2. We continue this process until we have explored all the reachable vertices.<br>
+                    <br>
+                    To implement BFS, we use a queue data structure. We start by enqueueing the starting vertex into the queue. Then, we dequeue a vertex from the queue and explore its neighbors. If a neighbor has not been explored yet, we enqueue it into the queue. We repeat this process until the queue becomes empty.<br>
+                    <br>
+                    BFS can be used to find the shortest path between a starting vertex and all other vertices in the graph. This is done by keeping track of the distance from the starting vertex to each explored vertex. Initially, the distance to the starting vertex is 0, and the distance to all other vertices is infinity. As we explore the vertices, we update their distances accordingly.<br>
+                    <br>
+                    BFS has a time complexity of O(V + E), where V is the number of vertices and E is the number of edges in the graph. This is because we explore each vertex and each edge once.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Applications of BFS in graph problems</h2>
                 <p>
-
+                    In this lesson, we will explore the applications of Breadth-First Search (BFS) in solving graph problems. BFS is a graph traversal algorithm that explores the vertices of a graph in layers, starting from a given vertex. It is a powerful algorithm that can be used in various scenarios.<br>
+                    <br>
+                    One of the main applications of BFS is finding the shortest path between two vertices in an unweighted graph. By exploring the graph layer by layer, BFS guarantees that the shortest path will be found first. This property makes BFS an ideal choice for solving problems that involve finding the shortest path, such as navigation systems or network routing.<br>
+                    <br>
+                    Another application of BFS is in finding connected components in a graph. A connected component is a subgraph in which every pair of vertices is connected by a path. By performing BFS on each unvisited vertex, we can identify all the connected components in a graph. This can be useful in social network analysis or identifying clusters in data.<br>
+                    <br>
+                    BFS can also be used to detect cycles in a graph. By keeping track of the parent of each visited vertex, we can identify if there is a back edge during the traversal. If a back edge is found, it indicates the presence of a cycle in the graph. This can be helpful in detecting dependencies or circular references in a system.<br>
+                    <br>
+                    Furthermore, BFS can be applied to solve problems like finding the diameter of a tree, checking bipartiteness of a graph, or determining if a graph is connected or not.<br>
+                    <br>
+                    Overall, BFS is a versatile algorithm that can be used in a wide range of graph problems. Its ability to explore the graph layer by layer makes it efficient for finding shortest paths, detecting cycles, and identifying connected components.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
