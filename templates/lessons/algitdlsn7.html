@@ -93,54 +93,54 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the requirement for dynamic programming to be applicable to a problem?",
+                options: ["Optimal substructure", "Overlapping subproblems", "Greedy strategy", "Independent subproblems"],
+                answer: "Overlapping subproblems"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What does overlapping subproblems mean in the context of dynamic programming?",
+                options: ["Generating new subproblems at each step", "Solving the same subproblems over and over again", "Storing the solutions to subproblems in a table", "Breaking down a problem into smaller subproblems"],
+                answer: "Solving the same subproblems over and over again"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which of the following is an example of a problem with overlapping subproblems?",
+                options: ["Sorting an array", "Finding the maximum subarray sum", "Finding the shortest path in a graph", "Calculating the Fibonacci sequence"],
+                answer: "Finding the shortest path in a graph"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How does dynamic programming utilize overlapping subproblems?",
+                options: ["By solving each subproblem multiple times", "By storing the solutions to subproblems in a table", "By generating new subproblems at each step", "By breaking down a problem into smaller subproblems"],
+                answer: "By storing the solutions to subproblems in a table"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the benefit of identifying overlapping subproblems in dynamic programming?",
+                options: ["It improves the efficiency of the algorithm", "It ensures the optimal substructure property", "It allows for the use of a greedy strategy", "It guarantees independent subproblems"],
+                answer: "It improves the efficiency of the algorithm"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which property must a problem have for dynamic programming to apply?",
+                options: ["Optimal substructure", "Overlapping subproblems", "Both a and b", "None of the above"],
+                answer: "Both a and b"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What does optimal substructure mean?",
+                options: ["An optimal solution to the problem contains optimal solutions to subproblems", "An optimal solution to the problem contains suboptimal solutions to subproblems", "An optimal solution to the problem does not depend on subproblems", "None of the above"],
+                answer: "An optimal solution to the problem contains optimal solutions to subproblems"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the advantage of identifying overlapping subproblems?",
+                options: ["It allows us to avoid redundant computations", "It allows us to generate new subproblems", "It allows us to solve problems recursively", "None of the above"],
+                answer: "It allows us to avoid redundant computations"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which problem was used as an example to illustrate overlapping subproblems?",
+                options: ["Matrix-chain multiplication problem", "Rod cutting problem", "Both a and b", "None of the above"],
+                answer: "Both a and b"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How can we avoid redundant computations in dynamic programming?",
+                options: ["By storing the solutions to subproblems in a table", "By recomputing the solutions to subproblems every time", "By generating new subproblems", "None of the above"],
+                answer: "By storing the solutions to subproblems in a table"
             }
         ];
 
@@ -383,14 +383,34 @@
             <div id="sublesson1">
                 <h2>Recognizing common subproblems</h2>
                 <p>
-                    
+                    In this lesson, we will focus on identifying overlapping subproblems, which is an important concept in dynamic programming. Overlapping subproblems are a key requirement for dynamic programming to be applicable to a problem. Let's dive into the details.<br>
+                    <br>
+                    Dynamic programming is a technique used to solve optimization problems by breaking them down into smaller subproblems and solving each subproblem only once. The idea is to store the solutions to the subproblems in a table so that they can be looked up when needed, rather than recomputing them.<br>
+                    <br>
+                    One of the requirements for dynamic programming to be applicable is the presence of overlapping subproblems. This means that the recursive algorithm for the problem solves the same subproblems over and over again, rather than generating new subproblems at each step.<br>
+                    <br>
+                    To understand overlapping subproblems, let's consider an example. Suppose we have a problem of finding the shortest path in a graph. The problem can be divided into subproblems of finding the shortest path from a source vertex to each of the other vertices. Now, if we observe closely, we can see that the subproblems overlap because the same subproblem of finding the shortest path from the source vertex to a particular vertex may be encountered multiple times in different paths. This repetition of subproblems is what we call overlapping subproblems.<br>
+                    <br>
+                    By solving each subproblem only once and storing the solution in a table, we can avoid redundant computations and improve the efficiency of the algorithm. This is the essence of dynamic programming.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Examples of problems with overlapping substructures</h2>
                 <p>
-
+                    In this lesson, we will focus on identifying overlapping subproblems in dynamic programming. This is an important concept to understand as it helps us optimize our algorithms by avoiding redundant computations. We will explore examples of problems that exhibit overlapping substructures.<br>
+                    <br>
+                    Dynamic programming is a technique used to solve optimization problems by breaking them down into smaller subproblems and solving them independently. The two key properties that a problem must have for dynamic programming to apply are optimal substructure and overlapping subproblems.<br>
+                    <br>
+                    Optimal substructure means that an optimal solution to the problem contains within it optimal solutions to subproblems. This property allows us to build an optimal solution to the problem from optimal solutions to subproblems. We can identify optimal substructure by showing that a solution to the problem involves making a choice that leads to optimal solutions for subproblems.<br>
+                    <br>
+                    Overlapping subproblems refer to the property that a recursive algorithm for the problem solves the same subproblems over and over again, rather than generating new subproblems. This property allows us to store the solutions to subproblems in a table and look them up when needed, reducing redundant computations.<br>
+                    <br>
+                    To illustrate the concept of overlapping subproblems, let's consider the matrix-chain multiplication problem. In this problem, we want to determine the most efficient way to multiply a chain of matrices. We can break this problem down into subproblems by considering different ways to split the chain and multiply the resulting subchains. When solving these subproblems, we often encounter the same subproblems repeatedly. By storing the solutions to these subproblems in a table, we can avoid recomputing them and improve the efficiency of our algorithm.<br>
+                    <br>
+                    Another example of a problem with overlapping substructures is the rod cutting problem. Here, we want to determine the best way to cut a rod of length n into smaller pieces to maximize its value. We can solve this problem by considering different ways to make the first cut and recursively solving the subproblems of cutting the remaining pieces. Again, we encounter the same subproblems repeatedly, and by storing their solutions, we can avoid redundant computations.<br>
+                    <br>
+                    Identifying overlapping subproblems is crucial in dynamic programming as it allows us to optimize our algorithms and improve their efficiency. By breaking down a problem into smaller subproblems and reusing their solutions, we can avoid unnecessary computations and solve complex problems more efficiently.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
