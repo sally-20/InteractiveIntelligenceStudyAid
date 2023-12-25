@@ -93,54 +93,104 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of Huffman coding?",
+                options: [
+                    "To assign longer codes to frequently occurring data entries",
+                    "To assign shorter codes to frequently occurring data entries",
+                    "To assign equal-length codes to all data entries",
+                    "To compress data without loss of information"
+                ],
+                answer: "To assign shorter codes to frequently occurring data entries"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the first step in Huffman encoding?",
+                options: [
+                    "Building the Huffman tree",
+                    "Assigning codes",
+                    "Calculating frequencies",
+                    "Decoding the encoded data"
+                ],
+                answer: "Calculating frequencies"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What type of coding technique is Huffman coding?",
+                options: [
+                    "Variable-length prefix coding",
+                    "Fixed-length prefix coding",
+                    "Variable-length suffix coding",
+                    "Fixed-length suffix coding"
+                ],
+                answer: "Variable-length prefix coding"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the advantage of Huffman coding?",
+                options: [
+                    "Lossy compression",
+                    "Fixed-length codes",
+                    "Inefficient compression",
+                    "Efficient compression"
+                ],
+                answer: "Efficient compression"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of the Huffman tree in Huffman encoding?",
+                options: [
+                    "To calculate the frequencies of data entries",
+                    "To assign codes to data entries",
+                    "To decode the encoded data",
+                    "To compress the data"
+                ],
+                answer: "To assign codes to data entries"
+            }
+            {
+                question: "What is the purpose of a minimum spanning tree?",
+                options: [
+                    "To find the longest path in a graph",
+                    "To find the most cost-effective way to connect a set of objects",
+                    "To find the shortest path between two locations",
+                    "To compress data efficiently"
+                ],
+                answer: "To find the most cost-effective way to connect a set of objects"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which algorithm is based on the greedy approach and selects the edge with the smallest value?",
+                options: [
+                    "Prim's algorithm",
+                    "Kruskal's algorithm",
+                    "Huffman Coding",
+                    "None of the above"
+                ],
+                answer: "Prim's algorithm"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which algorithm splits an undirected graph in half and selects the edge that connects the two halves with the smallest total weight?",
+                options: [
+                    "Prim's algorithm",
+                    "Kruskal's algorithm",
+                    "Huffman Coding",
+                    "None of the above"
+                ],
+                answer: "Kruskal's algorithm"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the main application of Huffman Coding?",
+                options: [
+                    "Graph analysis",
+                    "Data compression",
+                    "Machine learning",
+                    "Maze game"
+                ],
+                answer: "Data compression"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
-            },
-            {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the key principle of greedy algorithms used in Prim's and Kruskal's algorithms?",
+                options: [
+                    "Selecting the edge with the greatest value",
+                    "Selecting the edge with the smallest value",
+                    "Selecting the edge with the longest length",
+                    "Selecting the edge with the shortest length"
+                ],
+                answer: "Selecting the edge with the smallest value"
             }
         ];
 
@@ -383,14 +433,41 @@
             <div id="sublesson1">
                 <h2>Huffman coding for data compression</h2>
                 <p>
-                    
+                    In this lesson, we will explore the concept of Huffman coding, which is a popular algorithm used for data compression. Huffman coding is based on the principle of assigning shorter codes to more frequently occurring data entries, resulting in efficient compression of data.<br>
+                    <br>
+                    Huffman Encoding:<br>
+                    Huffman encoding is a variable-length prefix coding technique used for data compression. It assigns shorter codes to frequently occurring data entries and longer codes to less frequently occurring data entries. This allows for efficient compression of data by reducing the overall size of the encoded data.<br>
+                    <br>
+                    Steps in Huffman Encoding:<br>
+                    1. Frequency Calculation: The first step in Huffman encoding is to calculate the frequency of each unique data entry in the input stream.<br>
+                    2. Building the Huffman Tree: The next step is to build a Huffman tree using the calculated frequencies. The Huffman tree is a binary tree where each leaf node represents a unique data entry and the path from the root to each leaf node represents the code assigned to that data entry.<br>
+                    3. Assigning Codes: Starting from the root of the Huffman tree, assign a '0' for each left branch and a '1' for each right branch. Traverse the tree to assign codes to each unique data entry.<br>
+                    4. Encoding: Replace each data entry in the input stream with its corresponding Huffman code.<br>
+                    5. Decoding: To decode the encoded data, traverse the Huffman tree using the encoded bits and output the corresponding data entry when reaching a leaf node.<br>
+                    <br>
+                    Advantages of Huffman Coding:<br>
+                    - Efficient Compression: Huffman coding provides efficient compression by assigning shorter codes to frequently occurring data entries.<br>
+                    - Lossless Compression: Huffman coding is a lossless compression technique, which means that the original data can be perfectly reconstructed from the compressed data.<br>
+                    - Variable-Length Codes: Huffman coding allows for variable-length codes, which means that different data entries can have different code lengths, resulting in optimal compression.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Minimum spanning trees - Prim's and Kruskal's algorithms</h2>
                 <p>
-
+                    In this lesson, we will explore the topic of Minimum Spanning Trees (MST) and two popular algorithms used to solve this problem: Prim's algorithm and Kruskal's algorithm. We will also discuss Huffman Coding, which is a famous data compression technique.<br>
+                    <br>
+                    Minimum Spanning Trees:<br>
+                    A minimum spanning tree is a tree that connects all the vertices of a graph with the minimum possible total edge weight. It is used to find the most cost-effective way to connect a set of objects.<br>
+                    <br>
+                    Prim's Algorithm:<br>
+                    Prim's algorithm is a greedy algorithm that starts with an arbitrary vertex and repeatedly adds the cheapest edge that connects a vertex in the tree to a vertex outside the tree. This process continues until all vertices are included in the tree.<br>
+                    <br>
+                    Kruskal's Algorithm:<br>
+                    Kruskal's algorithm is another greedy algorithm that starts with an empty tree and repeatedly adds the cheapest edge that does not create a cycle in the tree. This process continues until all vertices are included in the tree.<br>
+                    <br>
+                    Huffman Coding:<br>
+                    Huffman Coding is a data compression technique that assigns variable-length codes to different characters based on their frequency of occurrence. Characters that occur more frequently are assigned shorter codes, resulting in efficient compression.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
