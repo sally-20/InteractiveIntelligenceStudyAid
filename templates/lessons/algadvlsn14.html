@@ -93,54 +93,99 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the main characteristic of streaming algorithms?",
+                options: [
+                    "They provide exact results",
+                    "They process data in batches",
+                    "They handle data streams efficiently",
+                    "They require high computational complexity"
+                ],
+                answer: "They handle data streams efficiently"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which domain benefits from the use of streaming algorithms for network monitoring?",
+                options: ["Finance", "Healthcare", "Social media", "None of the above"],
+                answer: "None of the above"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is one of the key applications of streaming algorithms in data analytics?",
+                options: [
+                    "Real-time data processing",
+                    "Data storage optimization",
+                    "Exact result computation",
+                    "Long-term data analysis"
+                ],
+                answer: "Real-time data processing"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How do streaming algorithms handle large amounts of data in real-time?",
+                options: [
+                    "By storing all the data in memory",
+                    "By summarizing the important information",
+                    "By discarding irrelevant data",
+                    "By increasing computational complexity"
+                ],
+                answer: "By summarizing the important information"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the advantage of using streaming algorithms in network monitoring?",
+                options: [
+                    "They provide exact results",
+                    "They can handle low-speed data streams",
+                    "They can detect anomalies in real-time",
+                    "They require minimal computational resources"
+                ],
+                answer: "They can detect anomalies in real-time"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the main purpose of streaming algorithms?",
+                options: [
+                    "To provide exact results for all measures of interest",
+                    "To handle large amounts of data that arrive continuously",
+                    "To analyze data streams in real-time",
+                    "To store all data in memory for later analysis"
+                ],  
+                answer: "To analyze data streams in real-time"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which of the following is an application of streaming algorithms in data analytics?",
+                options: [
+                    "Storing all data in memory for later analysis",
+                    "Computing exact statistical measurements",
+                    "Reducing the variety of the stream using hashing",
+                    "Analyzing data streams in real-time"
+                ],
+                answer: "Reducing the variety of the stream using hashing"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is one characteristic of streaming algorithms?",
+                options: [
+                    "They provide exact results for all measures of interest",
+                    "They require complex calculations",
+                    "They prioritize simplicity and low computational complexity",
+                    "They can handle slow data streams effectively"
+                ],
+                answer: "They prioritize simplicity and low computational complexity"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How can streaming algorithms be used in network monitoring?",
+                options: [
+                    "To store all data in memory for later analysis",
+                    "To compute exact statistical measurements",
+                    "To count elements in the stream and distinguish old information from new",
+                    "To analyze data streams offline"
+                ],
+                answer: "To count elements in the stream and distinguish old information from new"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Why do streaming algorithms provide approximate results?",
+                options: [
+                    "Because they prioritize simplicity and low computational complexity",
+                    "Because they can handle slow data streams effectively",
+                    "Because they require complex calculations",
+                    "Because they are designed to handle fast data streams"
+                ],
+                answer: "Because they are designed to handle fast data streams"
             }
         ];
 
@@ -383,14 +428,28 @@
             <div id="sublesson1">
                 <h2>Real-world applications of streaming algorithms</h2>
                 <p>
-                    
+                    In this sub-lesson, we will explore the real-world applications of streaming algorithms. Streaming algorithms are specifically designed to handle data streams, where the data arrives continuously and cannot be stored in its entirety. These algorithms provide approximate results, which are close to the correct answer but not exact. Despite this limitation, streaming algorithms are widely used in various domains due to their efficiency and ability to process large amounts of data in real-time.<br>
+                    <br>
+                    One of the key applications of streaming algorithms is in data analytics. Streaming algorithms can be used to analyze data streams and extract useful insights. For example, they can compute statistical measurements such as mean, minimum, or maximum values from a continuous stream of data. By using sampling, hashing, and sketching techniques, streaming algorithms can reduce the data size and summarize the important information, making it easier to analyze and derive meaningful conclusions.<br>
+                    <br>
+                    Another important application of streaming algorithms is in network monitoring. In network monitoring, it is crucial to analyze network traffic in real-time to detect anomalies, identify patterns, and ensure network security. Streaming algorithms can be used to process network traffic data streams and extract relevant information, such as the number of packets, the frequency of certain events, or the identification of new or old information. By leveraging the simplicity and low computational complexity of streaming algorithms, network monitoring systems can efficiently handle the high-speed data streams and make timely decisions.<br>
+                    <br>
+                    Real-world applications of streaming algorithms are vast and diverse. They are used in recommendation systems to analyze user behavior and provide personalized recommendations. They are employed in financial systems to detect fraudulent transactions and identify patterns of money laundering. Streaming algorithms are also utilized in sensor networks to monitor environmental conditions, analyze sensor data, and make real-time predictions.<br>
+                    <br>
+                    Overall, streaming algorithms have revolutionized the way data is processed and analyzed in various domains. Their ability to handle data streams efficiently and provide approximate results makes them indispensable in real-time data analytics and network monitoring applications.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Monitoring and analyzing data streams in various contexts</h2>
                 <p>
-                    
+                    In this lesson, we will explore the applications of streaming algorithms in data analytics and network monitoring. Specifically, we will focus on monitoring and analyzing data streams in various contexts. Streaming algorithms are essential in handling large amounts of data that arrive continuously, such as data streams or data fire hoses. These algorithms provide approximate results and are designed to be simple and computationally efficient.<br>
+                    <br>
+                    One common application of streaming algorithms is in data analytics. When dealing with data streams, it is important to concentrate on the measures of interest and leave out unnecessary details. For example, you may be interested in statistical measurements like mean, minimum, or maximum. Streaming algorithms can be used to compute these measurements by reducing the stream to a more manageable data size, representing the stream using a shifting data window, or creating a short summary of the measure needed.<br>
+                    <br>
+                    Another application of streaming algorithms is in network monitoring. Monitoring data streams in a network can help detect anomalies, identify patterns, and make real-time decisions. Streaming algorithms can be used to count elements in the stream, distinguish old information from new, or reduce the variety of the stream to a limited set of simple integer numbers using hashing.<br>
+                    <br>
+                    It is important to note that streaming algorithms provide approximate results, as they are designed to handle fast data streams. Algorithms that require too many calculations may miss essential data, which cannot be recovered. Therefore, streaming algorithms prioritize simplicity and low computational complexity.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
