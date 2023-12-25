@@ -93,54 +93,54 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What are the three main steps in the divide and conquer paradigm?",
+                options: ["Divide, conquer, merge", "Divide, conquer, combine", "Divide, conquer, solve", "Divide, merge, combine"],
+                answer: "Divide, conquer, combine"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of the divide step in the divide and conquer approach?",
+                options: ["Solving the subproblems recursively", "Combining the solutions to the subproblems", "Breaking down the problem into smaller subproblems", "None of the above"],
+                answer: "Breaking down the problem into smaller subproblems"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "When is the combine step performed in the divide and conquer approach?",
+                options: ["Before the divide step", "After the conquer step", "After the divide step", "None of the above"],
+                answer: "After the conquer step"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which of the following is NOT a characteristic of the divide and conquer approach?",
+                options: ["Breaking down a problem into smaller subproblems", "Solving the subproblems independently", "Combining the subproblem solutions efficiently", "Solving the subproblems iteratively"],
+                answer: "Solving the subproblems iteratively"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the main advantage of using the divide and conquer approach in algorithm design?",
+                options: ["It reduces the complexity of the original problem", "It allows for efficient problem solving", "It can improve performance and efficiency", "All of the above"],
+                answer: "All of the above"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which algorithmic paradigm breaks down a problem into smaller subproblems and solves them recursively?",
+                options: ["Greedy Algorithm", "Dynamic Programming", "Divide and Conquer", "Brute Force"],
+                answer: "Divide and Conquer"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which algorithmic paradigm makes locally optimal choices at each step to find the global optimum?",
+                options: ["Greedy Algorithm", "Dynamic Programming", "Divide and Conquer", "Brute Force"],
+                answer: "Greedy Algorithm"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which algorithmic paradigm tries all possible solutions to a problem?",
+                options: ["Greedy Algorithm", "Dynamic Programming", "Divide and Conquer", "Brute Force"],
+                answer: "Brute Force"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which algorithmic paradigm explores all possible solutions by incrementally building a solution and undoing choices that lead to dead ends?",
+                options: ["Greedy Algorithm", "Dynamic Programming", "Divide and Conquer", "Backtracking"],
+                answer: "Backtracking"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which algorithmic paradigm uses randomness to solve problems?",
+                options: ["Greedy Algorithm", "Dynamic Programming", "Divide and Conquer", "Randomized Algorithms"],
+                answer: "Randomized Algorithms"
             }
         ];
 
@@ -383,14 +383,54 @@
             <div id="sublesson1">
                 <h2>Understanding the divide and conquer approach</h2>
                 <p>
-                    
+                    In this lesson, we will be exploring the divide and conquer paradigm, which is a fundamental concept in algorithm design. The divide and conquer approach involves breaking down a complex problem into smaller, more manageable subproblems, solving them recursively, and then combining the solutions to obtain the final result. This approach is widely used in various algorithms and can greatly improve efficiency and performance.<br>
+                    <br>
+                    The divide and conquer paradigm consists of three main steps:<br>
+                    1. Divide: The problem is divided into smaller subproblems that are similar to the original problem. This step helps in breaking down the problem into manageable parts.<br>
+                    2. Conquer: The subproblems are solved recursively. If the subproblem size is small enough, it can be solved directly using a straightforward method.<br>
+                    3. Combine: The solutions to the subproblems are combined to obtain the solution for the original problem. This step involves merging or integrating the subproblem solutions.<br>
+                    <br>
+                    The divide and conquer approach is particularly useful when the subproblems can be solved independently and when the combination of subproblem solutions can be done efficiently. It allows for efficient problem solving by reducing the complexity of the original problem.<br>
+                    <br>
+                    Now that we have a basic understanding of the divide and conquer approach, let's move on to the next section where we will explore some examples and applications of this paradigm.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Comparing it to other algorithmic paradigms</h2>
                 <p>
-
+                    In this sub-lesson, we will explore and compare the divide and conquer paradigm with other algorithmic paradigms.<br>
+                    <br>
+                    The <strong>divide and conquer paradigm</strong> is a problem-solving approach that entails breaking down a problem into smaller subproblems, solving them recursively, and then combining the solutions to obtain the final solution. It follows three steps at each level of recursion: divide, conquer, and combine.<br>
+                    <br>
+                    Now, let's compare the divide and conquer paradigm with other algorithmic paradigms:<br>
+                    <br>
+                    <strong>1. Greedy Algorithm:</strong><br>
+                    - Greedy algorithms make locally optimal choices at each step to find the global optimum.<br>
+                    - Unlike divide and conquer, greedy algorithms do not divide the problem into subproblems.<br>
+                    - Greedy algorithms are usually simpler and faster, but they may not always provide the optimal solution.<br>
+                    <br>
+                    <strong>2. Dynamic Programming:</strong><br>
+                    - Dynamic programming breaks down a problem into overlapping subproblems and solves them in a bottom-up manner.<br>
+                    - Unlike divide and conquer, dynamic programming solves subproblems in a specific order and stores their solutions in a table.<br>
+                    - Dynamic programming is useful when the same subproblems are solved multiple times.<br>
+                    <br>
+                    <strong>3. Brute Force:</strong><br>
+                    - Brute force involves trying all possible solutions to a problem.<br>
+                    - Unlike divide and conquer, brute force does not divide the problem into subproblems.<br>
+                    - Brute force is simple but can be very inefficient for large problem sizes.<br>
+                    <br>
+                    <strong>4. Backtracking:</strong><br>
+                    - Backtracking is a trial-and-error approach that explores all possible solutions by incrementally building a solution and undoing choices that lead to dead ends.<br>
+                    - Unlike divide and conquer, backtracking does not divide the problem into subproblems.<br>
+                    - Backtracking is useful for solving problems with constraints or finding all possible solutions.<br>
+                    <br>
+                    <strong>5. Randomized Algorithms:</strong><br>
+                    - Randomized algorithms use randomness to solve problems.<br>
+                    - Unlike divide and conquer, randomized algorithms do not divide the problem into subproblems.<br>
+                    - Randomized algorithms can be faster or more efficient in certain cases, but their results may not always be deterministic.<br>
+                    <br>
+                    In summary, the divide and conquer paradigm is a powerful problem-solving approach that divides a problem into smaller subproblems, solves them recursively, and combines the solutions. It is different from other algorithmic paradigms like greedy algorithms, dynamic programming, brute force, backtracking, and randomized algorithms, each with its own unique characteristics and applications.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
