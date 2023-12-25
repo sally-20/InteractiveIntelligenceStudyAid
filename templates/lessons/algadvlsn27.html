@@ -93,54 +93,104 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the goal of I/O-efficient algorithms?",
+                options: [
+                    "Minimize the number of input/output operations",
+                    "Maximize the number of disk block accesses",
+                    "Minimize the number of internal memory accesses",
+                    "Maximize the number of I/O operations"
+                ],
+                answer: "Minimize the number of input/output operations"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is block transfer in the context of I/O-efficient algorithms?",
+                options: [
+                    "Transferring a block of data between the disk and the internal memory",
+                    "Accessing individual elements within a disk block",
+                    "Transferring a block of data between the internal memory and the CPU cache",
+                    "Accessing individual elements within the internal memory"
+                ],
+                answer: "Transferring a block of data between the disk and the internal memory"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What does the I/O complexity of an algorithm measure?",
+                options: [
+                    "The number of disk block accesses required to process a given input",
+                    "The number of internal memory accesses required to process a given input",
+                    "The number of CPU cache accesses required to process a given input",
+                    "The number of I/O operations required to process a given input"
+                ],
+                answer: "The number of disk block accesses required to process a given input"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the scan and sort paradigm in I/O-efficient algorithms?",
+                options: [
+                    "Scanning the input data sequentially and then sorting the data",
+                    "Scanning the input data randomly and then sorting the data",
+                    "Scanning the input data in reverse order and then sorting the data",
+                    "Scanning the input data in parallel and then sorting the data"
+                ],
+                answer: "Scanning the input data sequentially and then sorting the data"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is multiway merge in the context of I/O-efficient algorithms?",
+                options: [
+                    "Merging multiple sorted sublists efficiently",
+                    "Merging multiple unsorted sublists efficiently",
+                    "Merging multiple sublists using a random order",
+                    "Merging multiple sublists using a parallel approach"
+                ],
+                answer: "Merging multiple sorted sublists efficiently"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the main advantage of cache-oblivious algorithms?",
+                options: [
+                    "They require knowledge of specific cache sizes and block sizes.",
+                    "They perform well on any memory hierarchy.",
+                    "They minimize cache hits.",
+                    "They are only useful for small datasets."
+                ],
+                answer: "They perform well on any memory hierarchy."
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the key idea behind cache-oblivious algorithms?",
+                options: [
+                    "Minimizing cache misses.",
+                    "Maximizing cache hits.",
+                    "Utilizing specific cache sizes and block sizes.",
+                    "Only processing data that fits in the main memory."
+                ],
+                answer: "Minimizing cache misses."
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which principle do cache-oblivious algorithms make use of?",
+                options: [
+                    "Locality of reference and recursive subdivision.",
+                    "Randomization and divide-and-conquer.",
+                    "Dynamic programming and greedy algorithms.",
+                    "Hash tables and search trees."
+                ],
+                answer: "Locality of reference and recursive subdivision."
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Where are cache-oblivious algorithms particularly effective?",
+                options: [
+                    "Main memory operations.",
+                    "Network operations.",
+                    "External memory operations.",
+                    "CPU cache operations."
+                ],
+                answer: "External memory operations."
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is cache obliviousness?",
+                options: [
+                    "The ability to predict cache sizes and block sizes.",
+                    "The tendency of a program to access data close to recently accessed data.",
+                    "The ability to perform operations on data that fits in the main memory.",
+                    "The ability to perform operations on data stored on disk."
+                ],
+                answer: "The tendency of a program to access data close to recently accessed data."
             }
         ];
 
@@ -383,14 +433,39 @@
             <div id="sublesson1">
                 <h2>Principles of I/O-efficient algorithms</h2>
                 <p>
-                    
+                    In this sub-lesson, we will explore the principles of I/O-efficient algorithms. I/O-efficient algorithms are designed to minimize the number of input/output (I/O) operations performed when processing large datasets that cannot fit entirely in memory. These algorithms are particularly useful when dealing with external memory devices such as hard drives or solid-state drives.<br>
+                    <br>
+                    1. Disk Access Model:<br>
+                    To understand I/O-efficient algorithms, we need to first familiarize ourselves with the disk access model. In this model, data is stored on disk blocks, and each disk block can be read or written in a single I/O operation. The goal of I/O-efficient algorithms is to minimize the number of disk block accesses.<br>
+                    <br>
+                    2. Block Transfer:<br>
+                    One important concept in I/O-efficient algorithms is block transfer. Block transfer refers to the process of transferring a block of data between the disk and the internal memory. It is more efficient to transfer a block of data at once rather than accessing individual elements within the block.<br>
+                    <br>
+                    3. I/O Complexity:<br>
+                    The I/O complexity of an algorithm measures the number of disk block accesses required to process a given input. In I/O-efficient algorithms, we aim to minimize the I/O complexity to achieve better performance.<br>
+                    <br>
+                    4. Scan and Sort:<br>
+                    A common technique used in I/O-efficient algorithms is the scan and sort paradigm. This involves scanning the input data in a sequential manner and then sorting the data using an efficient sorting algorithm. By scanning the data sequentially, we can minimize the number of disk block accesses.<br>
+                    <br>
+                    5. Multiway Merge:<br>
+                    Another important technique in I/O-efficient algorithms is multiway merge. When dealing with large datasets, it is often necessary to merge sorted sublists. Multiway merge allows us to merge multiple sorted sublists efficiently, reducing the number of disk block accesses.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Cache-oblivious algorithms for seamless external memory operations</h2>
                 <p>
-
+                    In this sub-lesson, we will explore cache-oblivious algorithms, which are designed to efficiently utilize the cache hierarchy in external memory operations. These algorithms are particularly useful when dealing with large datasets that cannot fit entirely in the main memory.<br>
+                    <br>
+                    Cache-oblivious algorithms are designed to perform well on a wide range of memory hierarchies, without requiring any knowledge of the specific cache sizes or block sizes. They achieve this by recursively dividing the input data into smaller blocks, which are then processed in a way that minimizes cache misses.<br>
+                    <br>
+                    The key idea behind cache-oblivious algorithms is the concept of cache obliviousness. A cache-oblivious algorithm is one that performs well on any memory hierarchy, regardless of the cache sizes or block sizes. This is achieved by recursively dividing the input data into smaller blocks, and performing operations on these blocks in a way that minimizes cache misses.<br>
+                    <br>
+                    Cache-oblivious algorithms make use of two important principles: locality of reference and recursive subdivision. Locality of reference refers to the tendency of a program to access data that is close to data that has been recently accessed. Recursive subdivision involves dividing the input data into smaller blocks, and recursively applying the same algorithm to each block.<br>
+                    <br>
+                    Cache-oblivious algorithms are particularly effective in external memory operations, where the data is stored on disk or other external storage devices. By minimizing cache misses, these algorithms can significantly reduce the amount of data that needs to be transferred between the external storage and the main memory, resulting in improved performance.<br>
+                    <br>
+                    Now that we have learned about cache-oblivious algorithms, let's test our understanding with some multiple-choice questions.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
