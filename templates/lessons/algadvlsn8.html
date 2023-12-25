@@ -93,54 +93,84 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is a characteristic of Monte Carlo algorithms?",
+                options: [
+                    "They always provide a correct answer",
+                    "They are always fast",
+                    "They may not provide a correct answer or even an answer at all",
+                    "They are always both fast and correct"
+                ],
+                answer: "They may not provide a correct answer or even an answer at all"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which algorithm is an example of a Las Vegas algorithm?",
+                options: [
+                    "Solovay-Strassen primality test",
+                    "Quicksort algorithm",
+                    "Atlantic City algorithm",
+                    "None of the above"
+                ],
+                answer: "Quicksort algorithm"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is a characteristic of Las Vegas algorithms?",
+                options: [
+                    "They always provide a correct answer",
+                    "They are always fast",
+                    "They may not provide a correct answer or even an answer at all",
+                    "They are always both fast and correct"
+                ],
+                answer: "They are always fast"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the main difference between Monte Carlo and Las Vegas algorithms?",
+                options: [
+                    "Monte Carlo algorithms are always fast and correct, while Las Vegas algorithms may not provide a correct answer",
+                    "Monte Carlo algorithms may not provide a correct answer, while Las Vegas algorithms are always fast and correct",
+                    "Monte Carlo algorithms always run in polynomial time, while Las Vegas algorithms may not provide a correct answer",
+                    "Monte Carlo algorithms are always correct, while Las Vegas algorithms are always fast"
+                ],
+                answer: "Monte Carlo algorithms may not provide a correct answer, while Las Vegas algorithms are always fast and correct"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What are Atlantic City algorithms known for?",
+                options: [
+                    "Always providing a correct answer",
+                    "Always running in polynomial time",
+                    "Being a combination of both fast and correct",
+                    "Being hard-to-design solutions"
+                ],
+                answer: "Being a combination of both fast and correct"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the main characteristic of Las Vegas algorithms?",
+                options: [
+                    "They always provide a correct answer",
+                    "They are always fast",
+                    "They may not provide a correct answer or even an answer at all",
+                    "They are always both fast and correct"
+                ],
+                answer: "They are always fast"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the main characteristic of Atlantic City algorithms?",
+                options: [
+                    "They always provide a correct answer",
+                    "They are always fast",
+                    "They may not provide a correct answer or even an answer at all",
+                    "They are always both fast and correct"
+                ],
+                answer: "They may not provide a correct answer or even an answer at all"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
-            },
-            {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
-            },
-            {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which type of algorithm is considered a middle ground between Monte Carlo and Las Vegas algorithms?",
+                options: [
+                    "Monte Carlo algorithms",
+                    "Las Vegas algorithms",
+                    "Atlantic City algorithms",
+                    "None of the above"
+                ],
+                answer: "Atlantic City algorithms"
             }
         ];
 
@@ -383,14 +413,28 @@
             <div id="sublesson1">
                 <h2>Monte Carlo vs Las Vegas algorithms</h2>
                 <p>
-                    
+                    In this sub-lesson, we will explore the concepts of Monte Carlo and Las Vegas algorithms. These are two types of randomized algorithms that are commonly used in solving problems. Let's start by understanding the differences between Monte Carlo and Las Vegas algorithms.<br>
+                    <br>
+                    Monte Carlo algorithms are known for their use of randomness. They may not always provide a correct answer or even an answer at all, but these outcomes are rare. The running time of Monte Carlo algorithms is bound by a maximum number of trials. An example of a Monte Carlo algorithm is the Solovay-Strassen primality test.<br>
+                    <br>
+                    On the other hand, Las Vegas algorithms use random inputs or resources to provide the correct problem answer every time. However, obtaining the result may take an uncertain amount of time due to the random procedures involved. An example of a Las Vegas algorithm is the Quicksort algorithm.<br>
+                    <br>
+                    It is important to note that Monte Carlo algorithms are always fast but not always correct, while Las Vegas algorithms are always correct but not always fast. This is why Atlantic City algorithms are considered to be a combination of both. They run in polynomial time and provide a correct problem answer at least 75 percent of the time.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Applications of both types in problem-solving</h2>
                 <p>
-
+                    In this sub-lesson, we will explore the applications of Monte Carlo and Las Vegas algorithms in problem-solving. Both types of algorithms are randomized, but they have different characteristics and uses.<br>
+                    <br>
+                    Monte Carlo algorithms make use of randomness and may not always provide a correct answer or even an answer at all. However, these outcomes are rare. They are often used in situations where the result is uncertain, and a maximum number of trials may be required to obtain a solution. An example of a Monte Carlo algorithm is the Solovay-Strassen primality test.<br>
+                    <br>
+                    On the other hand, Las Vegas algorithms use random inputs or resources to provide the correct problem answer every time. Although obtaining a result may take an uncertain amount of time due to its random procedures, Las Vegas algorithms are always guaranteed to give the correct answer. The Quicksort algorithm is an example of a Las Vegas algorithm.<br>
+                    <br>
+                    These two types of algorithms have different trade-offs. Monte Carlo algorithms are always fast but not always correct, while Las Vegas algorithms are always correct but not always fast. This is where Atlantic City algorithms come into play. Atlantic City algorithms run in polynomial time and provide a correct problem answer at least 75 percent of the time. They are considered a middle ground between Monte Carlo and Las Vegas algorithms, as they are usually both fast and correct.<br>
+                    <br>
+                    Now that we understand the concepts of Monte Carlo and Las Vegas algorithms and their characteristics, let's move on to the applications of these algorithms in problem-solving.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
