@@ -93,54 +93,59 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which data structure is commonly used for solving geometric problems efficiently?",
+                options: ["Quadtree", "Hash table", "Linked list", "Stack"],
+                answer: "Quadtree"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of a kd-tree?",
+                options: ["Indexing spatial data", "Sorting integers", "Storing strings", "Implementing a queue"],
+                answer: "Indexing spatial data"
+            },
+            {   
+                question: "Which data structure is used for partitioning space into convex regions?",
+                options: ["R-tree", "Heap", "AVL tree", "Binary search tree"],
+                answer: "R-tree"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What operations can be efficiently performed using quadtrees?",
+                options: [
+                    "Searching, insertion, and deletion of geometric objects",
+                    "Sorting a list of integers",
+                    "Reversing a linked list",
+                    "Implementing a stack"
+                ],
+                answer: "Searching, insertion, and deletion of geometric objects"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which data structure is useful for finding the nearest neighbor to a given point?",
+                options: ["kd-tree", "Graph", "Queue", "Priority queue"],
+                answer: "kd-tree"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What are geometric data structures designed to store and manipulate?",
+                options: ["Numbers", "Strings", "Geometric objects", "Graphs"],
+                answer: "Geometric objects"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which field commonly uses geometric data structures for tasks like rendering and collision detection?",
+                options: ["Artificial intelligence", "Computer graphics", "Database management", "Network security"],
+                answer: "Computer graphics"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is one of the applications of geometric data structures in robotics?",
+                options: ["Speech recognition", "Image processing", "Path planning", "Data mining"],
+                answer: "Path planning"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which domain commonly uses geometric data structures for spatial indexing and query processing?",
+                options: ["Finance", "Healthcare", "Geographic information systems (GIS)", "E-commerce"],
+                answer: "Geographic information systems (GIS)"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
-            },
-            {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the main advantage of using geometric data structures in solving geometric problems?",
+                options: ["Faster execution time", "Smaller memory usage", "Simpler implementation", "Higher accuracy"],
+                answer: "Faster execution time"
             }
         ];
 
@@ -383,14 +388,32 @@
             <div id="sublesson1">
                 <h2>Solving geometric problems efficiently</h2>
                 <p>
-                    
+                    In this lesson, we will explore the topic of solving geometric problems efficiently using advanced data structures. Geometric problems involve various operations on geometric objects such as points, lines, and polygons. Efficiently solving these problems requires the use of specialized data structures that can handle geometric data effectively.<br>
+                    <br>
+                    One commonly used data structure for geometric problems is the quadtree. A quadtree is a tree-like data structure that partitions a two-dimensional space into smaller regions. Each node in the quadtree represents a region, and the tree is recursively divided into quadrants. This allows for efficient searching, insertion, and deletion of geometric objects within the space.<br>
+                    <br>
+                    Another important data structure for geometric problems is the kd-tree. A kd-tree is a binary tree that partitions a k-dimensional space. It is particularly useful for range searching and nearest neighbor queries. The kd-tree organizes the geometric objects based on their coordinates, allowing for efficient searching and retrieval of objects within a specified range or finding the nearest neighbor to a given point.<br>
+                    <br>
+                    In addition to quadtrees and kd-trees, other advanced data structures like R-trees and BSP trees can also be used for solving geometric problems efficiently. R-trees are used for indexing spatial data, while BSP trees are used for partitioning space into convex regions.<br>
+                    <br>
+                    By using these advanced data structures, we can solve geometric problems efficiently and perform operations like range searching, nearest neighbor queries, and spatial indexing with optimal time complexity.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Use cases in computational geometry and beyond</h2>
                 <p>
-
+                    In this lesson, we will explore the use cases of geometric data structures in computational geometry and beyond. Geometric data structures are specialized data structures that are designed to efficiently store and manipulate geometric objects such as points, lines, and polygons. These data structures are widely used in various fields, including computer graphics, robotics, and geographic information systems.<br>
+                    <br>
+                    One of the key applications of geometric data structures is in solving geometric problems efficiently. These problems often involve performing operations such as point location, intersection detection, and range searching on geometric objects. By using appropriate geometric data structures, we can achieve efficient solutions to these problems.<br>
+                    <br>
+                    One common use case of geometric data structures is in computer graphics. In computer graphics, we often need to perform operations such as rendering, collision detection, and visibility determination. Geometric data structures such as bounding volume hierarchies and spatial partitioning trees can be used to accelerate these operations and improve the overall performance of the graphics system.<br>
+                    <br>
+                    Another important application of geometric data structures is in robotics. In robotics, we often need to perform tasks such as path planning, obstacle avoidance, and sensor-based localization. Geometric data structures such as Voronoi diagrams and visibility graphs can be used to efficiently solve these problems and enable robots to navigate in complex environments.<br>
+                    <br>
+                    Geometric data structures also find applications in geographic information systems (GIS). In GIS, we often need to perform operations such as spatial indexing, spatial query processing, and map overlay. Geometric data structures such as quad trees and R-trees are commonly used to support these operations and enable efficient management and analysis of spatial data.<br>
+                    <br>
+                    Overall, geometric data structures play a crucial role in solving geometric problems efficiently in various domains such as computer graphics, robotics, and GIS. By understanding the use cases of these data structures and their applications, we can leverage their power to solve complex problems in computational geometry and beyond.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
