@@ -93,54 +93,104 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What are strongly connected components in a directed graph?",
+                options: [
+                    "Sets of vertices where every vertex is reachable from every other vertex within the set.",
+                    "Sets of vertices where every vertex is reachable from at least one other vertex within the set.",
+                    "Sets of vertices where every vertex has the same in-degree and out-degree.",
+                    "Sets of vertices where every vertex has the same out-degree."
+                ],
+                answer: "Sets of vertices where every vertex is reachable from every other vertex within the set."
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How many DFS passes are required to discover strongly connected components?",
+                options: [
+                    "One",
+                    "Two",
+                    "Three",
+                    "It depends on the graph"
+                ],
+                answer: "Two"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of computing the finishing times in the first DFS pass?",
+                options: [
+                    "To determine the order in which the second DFS should be performed.",
+                    "To determine the number of strongly connected components.",
+                    "To compute the transpose of the graph.",
+                    "To compute the in-degree and out-degree of each vertex."
+                ],
+                answer: "To determine the order in which the second DFS should be performed."
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the transpose of a directed graph?",
+                options: [
+                    "A graph with all edges reversed in direction.",
+                    "A graph with all edges removed.",
+                    "A graph with all vertices rearranged in alphabetical order.",
+                    "A graph with all vertices marked as visited."
+                ],
+                answer: "A graph with all edges reversed in direction."
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the time complexity of discovering strongly connected components using the DFS algorithm?",
+                options: [
+                    "O(V)",
+                    "O(E)",
+                    "O(V + E)",
+                    "O(V * E)"
+                ],
+                answer: "O(V + E)"
+            }
+            {
+                question: "What is the purpose of topological sorting?",
+                options: [
+                    "To find strongly connected components in a graph",
+                    "To determine the order of events",
+                    "To find cycles in a graph",
+                    "To compute the in-degree of each vertex"
+                ],
+                answer: "To determine the order of events"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How does the topological sorting algorithm work?",
+                options: [
+                    "It repeatedly finds a vertex with in-degree 0 and removes it from the graph",
+                    "It repeatedly finds a vertex with out-degree 0 and removes it from the graph",
+                    "It repeatedly finds a vertex with the highest in-degree and removes it from the graph",
+                    "It repeatedly finds a vertex with the highest out-degree and removes it from the graph"
+                ],
+                answer: "It repeatedly finds a vertex with in-degree 0 and removes it from the graph"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the time complexity of the topological sorting algorithm?",
+                options: [
+                    "O(V)",
+                    "O(E)",
+                    "O(V + E)",
+                    "O(V * E)"
+                ],
+                answer: "O(V + E)"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Can topological sorting be applied to graphs with cycles?",
+                options: [
+                    "Yes, it will produce a valid topological ordering",
+                    "Yes, but it will produce an invalid topological ordering",
+                    "No, the algorithm cannot handle graphs with cycles",
+                    "No, the algorithm will produce an error"
+                ],
+                answer: "No, the algorithm cannot handle graphs with cycles"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
-            },
-            {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What are some applications of topological sorting?",
+                options: [
+                    "Task scheduling",
+                    "Dependency resolution",
+                    "Determining the order of events",
+                    "All of the above"
+                ],
+                answer: "All of the above"
             }
         ];
 
@@ -383,14 +433,32 @@
             <div id="sublesson1">
                 <h2>Discovering strongly connected components</h2>
                 <p>
-                    
+                    In this sub-lesson, we will explore the concept of strongly connected components in a directed graph. Strongly connected components are sets of vertices in a directed graph where every vertex is reachable from every other vertex within the set. This concept is important in various graph algorithms and can help us understand the structure and connectivity of a directed graph.<br>
+                    <br>
+                    To discover strongly connected components, we will use a depth-first search (DFS) algorithm. The algorithm consists of two DFS passes on the graph. Let's go through the steps of the algorithm:<br>
+                    <br>
+                    1. Perform a DFS on the original graph G and compute the finishing times for each vertex. Finishing time is the time when a vertex is marked as finished during the DFS traversal.<br>
+                    <br>
+                    2. Compute the transpose of the graph G, denoted as G^T, by reversing the direction of all edges.<br>
+                    <br>
+                    3. Perform a second DFS on the transpose graph G^T, starting from the vertex with the highest finishing time obtained in step 1. This DFS will explore all vertices in a strongly connected component.<br>
+                    <br>
+                    4. Repeat step 3 for any unvisited vertex in G^T until all vertices have been visited.<br>
+                    <br>
+                    By following these steps, we can identify all strongly connected components in the graph. The finishing times obtained in step 1 help us determine the order in which the second DFS should be performed.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Applying topological sorting</h2>
                 <p>
-
+                    In this sub-lesson, we will explore the application of topological sorting on directed acyclic graphs (DAGs). Topological sorting is a linear ordering of the vertices of a DAG such that for every directed edge (u, v), vertex u comes before vertex v in the ordering. It is a fundamental algorithm used in various applications, such as task scheduling, dependency resolution, and determining the order of events.<br>
+                    <br>
+                    Applying topological sorting involves repeatedly finding a vertex with in-degree 0, outputting it, and removing it and all its outgoing edges from the graph. This process continues until all vertices have been outputted. The algorithm runs in O(V + E) time, where V is the number of vertices and E is the number of edges in the graph.<br>
+                    <br>
+                    One important aspect to consider is that topological sorting can only be applied to directed acyclic graphs. If the graph contains cycles, the algorithm cannot produce a valid topological ordering.<br>
+                    <br>
+                    Now, let's move on to the questions.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
