@@ -93,54 +93,94 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is sketching in streaming algorithms?",
+                options: [
+                    "A method to reduce the size of the data stream",
+                    "A technique to create a short summary of the required measure",
+                    "A way to distinguish old information from new in the stream",
+                    "A process to count the elements in the stream"
+                ],
+                answer: "A technique to create a short summary of the required measure"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is sampling in streaming algorithms?",
+                options: [
+                    "A method to reduce the size of the data stream",
+                    "A technique to create a short summary of the required measure",
+                    "A way to distinguish old information from new in the stream",
+                    "A process to count the elements in the stream"
+                ],
+                answer: "A method to reduce the size of the data stream"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which storage can be used for sketching in streaming algorithms?",
+                options: [
+                    "Computer's main memory",
+                    "Computer's hard disk",
+                    "Both a and b",
+                    "None of the above"
+                ],
+                answer: "Both a and b"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of sampling in streaming algorithms?",
+                options: [
+                    "To reduce computational complexity",
+                    "To obtain precise results",
+                    "To handle large amounts of data",
+                    "To distinguish old information from new in the stream"
+                ],
+                answer: "To handle large amounts of data"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What type of measurements can be performed using sampling in streaming algorithms?",
+                options: [
+                    "Statistical measurements",
+                    "Counting elements in the stream",
+                    "Distinguishing old information from new",
+                    "None of the above"
+                ],
+                answer: "Statistical measurements"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of summarization techniques in streaming algorithms?",
+                options: [
+                    "To process every single data point in a stream",
+                    "To reduce the size of the data stream",
+                    "To increase computational complexity",
+                    "To store all the data points in a stream"
+                ],
+                answer: "To reduce the size of the data stream"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which summarization technique involves representing the entire stream or the most recent observations using a shifting data window?",
+                options: ["Sampling", "Hashing", "Sketching", "Summarization"],
+                answer: "Sampling"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What does hashing do in summarization techniques?",
+                options: [
+                    "Reduces the size of the data stream",
+                    "Assigns a unique hash value to each element in the stream",
+                    "Creates a concise summary of the measure of interest",
+                    "Represents the entire stream using a shifting data window"
+                ],
+                answer: "Assigns a unique hash value to each element in the stream"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which summarization technique creates a compact data structure that represents the essential information of the data stream?",
+                options: ["Sampling", "Hashing", "Sketching", "Summarization"],
+                answer: "Sketching"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the advantage of using summarization techniques in streaming algorithms?",
+                options: [
+                    "They provide precise results",
+                    "They increase computational complexity",
+                    "They allow processing of every single data point in a stream",
+                    "They reduce the computational resources required"
+                ],
+                answer: "They reduce the computational resources required"
             }
         ];
 
@@ -383,14 +423,33 @@
             <div id="sublesson1">
                 <h2>Sketching and sampling methods</h2>
                 <p>
-                    
+                    In this sub-lesson, we will explore the concepts of sketching and sampling methods in streaming algorithms. These techniques are used to reduce the size of the data stream and provide approximate results for various measurements. Let's dive into the details:<br>
+                    <br>
+                    1. Sketching:<br>
+                    Sketching is a method used to create a short summary of the measure we need from the data stream. It involves removing less useful details and retaining the essential information. By leveraging a simple working storage, such as a computer's main memory or hard disk, we can efficiently process the stream. Sketching allows us to handle large amounts of data without requiring excessive computational complexity.<br>
+                    <br>
+                    2. Sampling:<br>
+                    Sampling is another technique used in streaming algorithms to reduce the size of the data stream. It involves representing the entire stream or the most recent observations using a shifting data window. By selecting a subset of the data, we can obtain a more manageable data size while still preserving the characteristics of the original stream. Sampling is particularly useful when we need to perform statistical measurements, such as mean, minimum, or maximum, on the stream.<br>
+                    <br>
+                    By combining sketching and sampling methods, we can effectively process and analyze data streams in real-time. These techniques provide approximate results that are close to the precise answers, but with lower computational complexity.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Summarization techniques for large data streams</h2>
                 <p>
-
+                    In this sub-lesson, we will be discussing summarization techniques for large data streams. As we know, when dealing with streaming data, it is important to focus on the measures of interest and leave out unnecessary details. Summarization techniques help us achieve this by creating a short summary of the measure we need, while removing less useful details. Let's explore three common summarization techniques: sampling, hashing, and sketching.<br>
+                    <br>
+                    1. Sampling:<br>
+                    Sampling is a technique that allows us to reduce the size of the data stream to a more manageable size. It involves representing the entire stream or the most recent observations using a shifting data window. By selecting a subset of the data, we can still obtain meaningful insights without having to process the entire stream. Sampling is particularly useful when the data stream is too large to handle in real-time or when we need to perform computations on a smaller dataset.<br>
+                    <br>
+                    2. Hashing:<br>
+                    Hashing is another summarization technique that helps us reduce the variety of an infinite stream to a limited set of simple integer numbers. It involves applying a hash function to each element of the stream, which assigns a unique hash value to each element. This allows us to group similar elements together and perform computations on these groups instead of individual elements. Hashing is commonly used in scenarios where we need to quickly identify and process similar elements in a data stream.<br>
+                    <br>
+                    3. Sketching:<br>
+                    Sketching is a summarization technique that creates a concise summary of the measure we are interested in, while removing less useful details. It involves creating a compact data structure, known as a sketch, that represents the essential information of the data stream. This approach allows us to leverage a simple working storage, such as a computer's main memory or hard disk, while still obtaining approximate results. Sketching is particularly useful when we need to perform computations on large data streams with limited resources.<br>
+                    <br>
+                    By using these summarization techniques, we can effectively analyze and process large data streams without having to store or process every single data point. These techniques provide approximate results that are close to the precise answer, while significantly reducing computational complexity.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
