@@ -93,54 +93,104 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the A* algorithm used for?",
+                options: [
+                    "Sorting elements in an array",
+                    "Finding the shortest path in a graph",
+                    "Calculating the factorial of a number",
+                    "Searching for an element in a linked list"
+                ],
+                answer: "Finding the shortest path in a graph"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What does the A* algorithm use to estimate the cost of reaching the goal?",
+                options: [
+                    "Heuristic function",
+                    "Greedy algorithm",
+                    "Depth-first search",
+                    "Breadth-first search"
+                ],
+                answer: "Heuristic function"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the difference between the open set and the closed set in the A* algorithm?",
+                options: [
+                    "The open set contains explored nodes, while the closed set contains unexplored nodes.",
+                    "The open set contains unexplored nodes, while the closed set contains explored nodes.",
+                    "The open set contains nodes with high heuristic values, while the closed set contains nodes with low heuristic values.",
+                    "The open set contains nodes with low heuristic values, while the closed set contains nodes with high heuristic values."
+                ],
+                answer: "The open set contains unexplored nodes, while the closed set contains explored nodes."
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "When does the A* algorithm terminate?",
+                options: [
+                    "When it reaches the goal node",
+                    "When the open set becomes empty",
+                    "When it explores all the nodes in the graph",
+                    "When the closed set becomes empty"
+                ],
+                answer: "When the open set becomes empty"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the key property of the heuristic function used in the A* algorithm?",
+                options: [
+                    "It always overestimates the actual cost.",
+                    "It always underestimates the actual cost.",
+                    "It is not required to be admissible.",
+                    "It is not used in the A* algorithm."
+                ],
+                answer: "It always underestimates the actual cost."
+            }
+            {
+                question: "What is the goal of the all-pairs shortest paths problem?",
+                options: [
+                    "To find the longest path between every pair of vertices",
+                    "To find the shortest path between every pair of vertices",
+                    "To find the minimum spanning tree of the graph",
+                    "To find the maximum flow in the graph"
+                ],
+                answer: "To find the shortest path between every pair of vertices"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the main advantage of Johnson's algorithm over other algorithms for the all-pairs shortest paths problem?",
+                options: [
+                    "It has a faster time complexity",
+                    "It can handle negative edge weights",
+                    "It guarantees the shortest path for all pairs of vertices",
+                    "It requires less memory space"
+                ],
+                answer: "It can handle negative edge weights"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the first step in Johnson's algorithm?",
+                options: [
+                    "Add a new vertex to the graph",
+                    "Run Bellman-Ford algorithm",
+                    "Reweight the edges of the graph",
+                    "Run Dijkstra's algorithm"
+                ],
+                answer: "Add a new vertex to the graph"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the time complexity of Johnson's algorithm?",
+                options: [
+                    "O(V^3)",
+                    "O(V^2 log V)",
+                    "O(VE)",
+                    "O(V^2 log V + VE)"
+                ],
+                answer: "O(V^2 log V + VE)"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
-            },
-            {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "When is Johnson's algorithm particularly useful?",
+                options: [
+                    "When the graph is fully connected",
+                    "When the graph contains negative edge weights",
+                    "When the graph is small and dense",
+                    "When the graph has a single source vertex"
+                ],
+                answer: "When the graph contains negative edge weights"
             }
         ];
 
@@ -383,14 +433,36 @@
             <div id="sublesson1">
                 <h2>A* algorithm for heuristic search</h2>
                 <p>
-                    
+                    In this sub-lesson, we will learn about the A* algorithm, which is an advanced shortest path algorithm used for heuristic search. The A* algorithm combines the best features of Dijkstra's algorithm and greedy algorithms to find the shortest path between two nodes in a graph.<br>
+                    <br>
+                    The A* algorithm uses a heuristic function to estimate the cost of reaching the goal from each node. This heuristic function is admissible, meaning it never overestimates the actual cost. The algorithm maintains two sets of nodes: open set and closed set. The open set contains the nodes that are yet to be explored, while the closed set contains the nodes that have already been explored.<br>
+                    <br>
+                    The A* algorithm starts with an initial node and calculates the heuristic value for each node in the open set. It selects the node with the lowest heuristic value and expands it by considering its neighboring nodes. For each neighboring node, the algorithm calculates the cost to reach that node and updates the heuristic value if necessary. The algorithm continues this process until it reaches the goal node or the open set becomes empty.<br>
+                    <br>
+                    The A* algorithm guarantees to find the shortest path if the heuristic function is admissible. It is widely used in various applications such as pathfinding in video games, route planning, and navigation systems.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Johnson's algorithm for all pairs shortest paths</h2>
                 <p>
-
+                    In this sub-lesson, we will explore Johnson's algorithm, which is used to find the shortest paths between all pairs of vertices in a graph. This algorithm is particularly useful for large, sparse graphs.<br>
+                    <br>
+                    To understand Johnson's algorithm, let's first recap the concept of the all-pairs shortest paths problem. Given a directed graph with V vertices and E edges, the goal is to find the shortest path between every pair of vertices. This problem can be solved using various algorithms, such as Floyd-Warshall algorithm and Dijkstra's algorithm. However, these algorithms have limitations when it comes to large graphs.<br>
+                    <br>
+                    Johnson's algorithm overcomes these limitations by introducing a technique called vertex reweighting. The algorithm consists of the following steps:<br>
+                    <br>
+                    1. Step 1: Add a new vertex, called the source vertex, to the graph and connect it to all other vertices with zero-weight edges.<br>
+                    <br>
+                    2. Step 2: Run Bellman-Ford algorithm on the modified graph with the source vertex as the starting point. This step helps to find the shortest paths from the source vertex to all other vertices.<br>
+                    <br>
+                    3. Step 3: Reweight the edges of the original graph using the distances obtained from Step 2. This reweighting ensures that all edge weights are non-negative.<br>
+                    <br>
+                    4. Step 4: Run Dijkstra's algorithm on the reweighted graph for each vertex as the starting point. This step finds the shortest paths between all pairs of vertices.<br>
+                    <br>
+                    5. Step 5: Finally, restore the original weights of the edges by reversing the reweighting process.<br>
+                    <br>
+                    Johnson's algorithm has a time complexity of O(V^2 log V + VE), which makes it efficient for large, sparse graphs. It is particularly useful when the graph contains negative edge weights.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
