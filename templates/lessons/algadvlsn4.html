@@ -93,54 +93,94 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is an approximation ratio?",
+                options: [
+                    "The ratio between the cost of the approximate solution and the cost of the optimal solution",
+                    "The ratio between the cost of the approximate solution and the size of the input",
+                    "The ratio between the cost of the optimal solution and the size of the input",
+                    "The ratio between the cost of the approximate solution and the running time of the algorithm"
+                ],
+                answer: "The ratio between the cost of the approximate solution and the cost of the optimal solution"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How is the approximation ratio defined for a maximization problem?",
+                options: [
+                    "Cost of the approximate solution divided by the cost of the optimal solution",
+                    "Cost of the optimal solution divided by the cost of the approximate solution",
+                    "Cost of the approximate solution multiplied by the cost of the optimal solution",
+                    "Cost of the optimal solution multiplied by the cost of the approximate solution"
+                ],
+                answer: "Cost of the optimal solution divided by the cost of the approximate solution"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How is the approximation ratio defined for a minimization problem?",
+                options: [
+                    "Cost of the approximate solution divided by the cost of the optimal solution",
+                    "Cost of the optimal solution divided by the cost of the approximate solution",
+                    "Cost of the approximate solution multiplied by the cost of the optimal solution",
+                    "Cost of the optimal solution multiplied by the cost of the approximate solution"
+                ],
+                answer: "Cost of the approximate solution divided by the cost of the optimal solution"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What does an approximation ratio of 1 imply?",
+                options: [
+                    "The algorithm produces an optimal solution",
+                    "The algorithm produces a near-optimal solution",
+                    "The algorithm produces a solution worse than optimal",
+                    "The algorithm produces a solution that is much worse than optimal"
+                ],
+                answer: "The algorithm produces an optimal solution"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of approximation algorithms?",
+                options: [
+                    "To find optimal solutions for NP-complete problems",
+                    "To find near-optimal solutions for NP-complete problems",
+                    "To find exact solutions for NP-complete problems",
+                    "To find efficient solutions for NP-complete problems"
+                ],
+                answer: "To find near-optimal solutions for NP-complete problems"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of assessing the quality of approximate solutions?",
+                options: [
+                    "To find the exact optimal solution",
+                    "To determine the efficiency of the algorithm",
+                    "To measure how close the approximate solution is to the optimal solution",
+                    "To analyze the performance guarantees"
+                ],
+                answer: "To measure how close the approximate solution is to the optimal solution"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the relative approximation factor?",
+                options: [
+                    "The ratio between the cost of the approximate solution and the cost of the optimal solution",
+                    "The ratio between the time complexity of the algorithm and the size of the input",
+                    "The ratio between the number of iterations and the number of variables",
+                    "The ratio between the number of comparisons and the number of swaps"
+                ],
+                answer: "The ratio between the cost of the approximate solution and the cost of the optimal solution"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What do we need to prove to analyze the performance guarantees of an approximation algorithm?",
+                options: [
+                    "Upper Bound and Lower Bound",
+                    "Upper Bound and Exact Bound",
+                    "Lower Bound and Exact Bound",
+                    "Lower Bound and Upper Bound"
+                ],
+                answer: "Upper Bound and Lower Bound"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
-            },
-            {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What does the lower bound prove in the context of performance guarantees?",
+                options: [
+                    "The cost of the approximate solution is within a certain factor of the cost of the optimal solution",
+                    "No algorithm can provide a better approximation",
+                    "The algorithm provides a good enough approximation",
+                    "The algorithm is optimal within the given factor"
+                ],
+                answer: "No algorithm can provide a better approximation"
             }
         ];
 
@@ -383,14 +423,40 @@
             <div id="sublesson1">
                 <h2>Understanding approximation ratios</h2>
                 <p>
-                    
+                    In this sub-lesson, we will be discussing the concept of approximation ratios in the context of approximation algorithms. Approximation algorithms are used to find near-optimal solutions for NP-complete problems, which are problems that are difficult to solve optimally in polynomial time. We will focus on understanding the performance guarantees provided by these algorithms through the concept of approximation ratios.<br>
+                    <br>
+                    An approximation ratio measures how close the solution produced by an approximation algorithm is to the optimal solution. It is defined as the ratio between the cost of the approximate solution and the cost of the optimal solution. The cost can be either the maximum possible cost or the minimum possible cost, depending on whether the problem is a maximization or minimization problem.<br>
+                    <br>
+                    For a maximization problem, the approximation ratio is defined as the cost of the approximate solution divided by the cost of the optimal solution. A ratio greater than 1 indicates that the approximate solution is worse than the optimal solution, while a ratio less than or equal to 1 indicates that the approximate solution is near-optimal.<br>
+                    <br>
+                    For a minimization problem, the approximation ratio is defined as the cost of the optimal solution divided by the cost of the approximate solution. A ratio greater than or equal to 1 indicates that the approximate solution is worse than the optimal solution, while a ratio less than 1 indicates that the approximate solution is near-optimal.<br>
+                    <br>
+                    An approximation algorithm is said to have an approximation ratio of α if, for any input of size n, the cost of the approximate solution produced by the algorithm is within a factor of α of the cost of the optimal solution. If an algorithm achieves an approximation ratio of α, it is called an α-approximation algorithm.<br>
+                    <br>
+                    It is important to note that an approximation ratio of 1 implies that the algorithm produces an optimal solution. On the other hand, an approximation algorithm with a large approximation ratio may return a solution that is much worse than optimal.<br>
+                    <br>
+                    In practice, we often have polynomial-time approximation algorithms with small constant approximation ratios for many problems. However, for some problems, the best known polynomial-time approximation algorithms have approximation ratios that grow as functions of the input size.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Assessing the quality of approximate solutions</h2>
                 <p>
-
+                    In this sub-lesson, we will learn about assessing the quality of approximate solutions in the context of approximation algorithms. Approximation algorithms are used to find near-optimal solutions for NP-hard problems. While these solutions may not be exact, they provide a good enough approximation that can be computed efficiently.<br>
+                    <br>
+                    To assess the quality of an approximate solution, we use the concept of performance guarantees. A performance guarantee is a measure of how close the approximate solution is to the optimal solution. There are two common types of performance guarantees:<br>
+                    <br>
+                    1. Approximation Ratio: The approximation ratio is the ratio between the cost of the approximate solution and the cost of the optimal solution. A smaller approximation ratio indicates a better quality approximation. For example, if the approximation ratio is 2, it means that the cost of the approximate solution is at most twice the cost of the optimal solution.<br>
+                    <br>
+                    2. Relative Approximation Factor: The relative approximation factor is the ratio between the cost of the approximate solution and the cost of the optimal solution minus a small factor. A smaller relative approximation factor indicates a better quality approximation. For example, if the relative approximation factor is 1.1, it means that the cost of the approximate solution is at most 10% more than the cost of the optimal solution.<br>
+                    <br>
+                    To analyze the performance guarantees of an approximation algorithm, we need to prove two things:<br>
+                    <br>
+                    1. Upper Bound: We need to show that the cost of the approximate solution is within a certain factor of the cost of the optimal solution. This proves that the algorithm provides a good enough approximation.<br>
+                    <br>
+                    2. Lower Bound: We need to show that no algorithm can provide a better approximation. This proves that the algorithm is optimal within the given factor.<br>
+                    <br>
+                    By analyzing the performance guarantees, we can determine the quality of the approximate solution and make informed decisions about using the algorithm in practice.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
