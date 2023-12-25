@@ -93,54 +93,89 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which of the following statements is true about fine-grained complexity theory?",
+                options: [
+                    "It focuses on problems that are solvable in polynomial time.",
+                    "It deals with the complexity of problems that are believed to be inherently difficult.",
+                    "It only considers problems with exponential running times.",
+                    "It is a subset of NP-completeness."
+                ],
+                answer: "It deals with the complexity of problems that are believed to be inherently difficult."
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the connection between fine-grained complexity and NP-completeness?",
+                options: [
+                    "Fine-grained complexity classes contain only NP-complete problems.",
+                    "Fine-grained complexity classes do not contain any NP-complete problems.",
+                    "Many fine-grained complexity classes contain NP-complete problems.",
+                    "Fine-grained complexity and NP-completeness are unrelated concepts."
+                ],
+                answer: "Many fine-grained complexity classes contain NP-complete problems."
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How can the connection between fine-grained complexity and NP-completeness be established?",
+                options: [
+                    "By analyzing the structure of fine-grained complexity classes.",
+                    "By showing a reduction from an NP-complete problem to a problem in a fine-grained complexity class.",
+                    "By proving that all fine-grained complexity classes contain NP-complete problems.",
+                    "By comparing the running times of fine-grained complexity classes and NP-complete problems."
+                ],
+                answer: "By showing a reduction from an NP-complete problem to a problem in a fine-grained complexity class."
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which of the following is an example of a fine-grained complexity class?",
+                options: ["P", "NP", "Exponential Time Hypothesis (ETH)", "Polynomial Time Hierarchy (PH)"],
+                answer: "Exponential Time Hypothesis (ETH)"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What insights does the connection between fine-grained complexity and NP-completeness provide?",
+                options: [
+                    "It allows us to analyze the complexity of problems when the input size is large but not necessarily exponential.",
+                    "It proves that all fine-grained complexity classes are contained within NP-completeness.",
+                    "It shows that fine-grained complexity is a subset of NP-completeness.",
+                    "It establishes a direct relationship between fine-grained complexity and P vs. NP problem."
+                ],
+                answer: "It allows us to analyze the complexity of problems when the input size is large but not necessarily exponential."
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which technique involves transforming an instance of a known hard problem into an instance of the problem at hand?",
+                options: ["Reductions", "Communication Complexity", "Algebraic Techniques", "Information Theory"],
+                answer: "Reductions"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What does communication complexity measure?",
+                options: [
+                    "The amount of communication required between multiple parties to solve a problem",
+                    "The time complexity of a problem",
+                    "The space complexity of a problem",
+                    "The number of operations required to solve a problem"
+                ],
+                answer: "The amount of communication required between multiple parties to solve a problem"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which technique leverages algebraic properties to establish lower bounds for certain types of problems?",
+                options: ["Reductions", "Communication Complexity", "Algebraic Techniques", "Information Theory"],
+                answer: "Algebraic Techniques"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What does information theory provide tools for?",
+                options: [
+                    "Quantifying the amount of information required to solve a problem",
+                    "Analyzing the time complexity of a problem",
+                    "Analyzing the space complexity of a problem",
+                    "Transforming hard problems into easier ones"
+                ],
+                answer: "Quantifying the amount of information required to solve a problem"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What does fine-grained complexity theory focus on?",
+                options: [
+                    "Studying the complexity of problems within specific parameterized classes",
+                    "Analyzing the communication complexity of problems",
+                    "Applying algebraic techniques to solve hard problems",
+                    "Deriving upper bounds on problem complexity"
+                ],
+                answer: "Studying the complexity of problems within specific parameterized classes"
             }
         ];
 
@@ -383,14 +418,42 @@
             <div id="sublesson1">
                 <h2>Connection between fine-grained complexity and NP-completeness</h2>
                 <p>
-                    
+                    In this lesson, we will explore the connection between fine-grained complexity and NP-completeness. Fine-grained complexity theory focuses on the study of the complexity of problems when the input size is large, but not necessarily exponential. NP-completeness, on the other hand, deals with the complexity of problems that are believed to be inherently difficult.<br>
+                    <br>
+                    Fine-grained complexity theory aims to classify problems based on their running times when the input size is large. It focuses on problems that are not solvable in polynomial time, but may have sub-exponential or even super-polynomial running times. This theory provides a more detailed analysis of the complexity of problems beyond the traditional P vs. NP framework.<br>
+                    <br>
+                    The connection between fine-grained complexity and NP-completeness lies in the fact that many fine-grained complexity classes contain NP-complete problems. This means that if a problem is NP-complete, it is likely to be hard even in the fine-grained complexity sense. However, it is important to note that not all fine-grained complexity classes contain NP-complete problems.<br>
+                    <br>
+                    One way to establish this connection is through reductions. A reduction is a way of transforming one problem into another in such a way that the solution to the second problem can be used to solve the first problem. By showing a reduction from an NP-complete problem to a problem in a fine-grained complexity class, we can establish the hardness of the latter problem.<br>
+                    <br>
+                    Another way to establish the connection is by analyzing the structure of fine-grained complexity classes. Some fine-grained complexity classes, such as the Exponential Time Hypothesis (ETH), assume that certain problems cannot be solved in sub-exponential time. If we can show that an NP-complete problem is contained in such a class, it implies that the problem is hard even in the fine-grained complexity sense.<br>
+                    <br>
+                    Overall, the connection between fine-grained complexity and NP-completeness provides insights into the inherent difficulty of problems beyond the traditional P vs. NP framework. It allows us to analyze the complexity of problems when the input size is large but not necessarily exponential.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Techniques for proving lower bounds and hardness within polynomial time</h2>
                 <p>
-                    
+                    In this sub-lesson, we will explore techniques for proving lower bounds and hardness within polynomial time. This topic is considered advanced and requires a solid understanding of NP-completeness and complexity theory.<br>
+                    <br>
+                    To begin, let's recap some key concepts. NP-completeness refers to a class of computational problems that are believed to be among the most difficult to solve efficiently. These problems have the property that if a polynomial-time algorithm exists for any one of them, then a polynomial-time algorithm exists for all problems in the class.<br>
+                    <br>
+                    Lower bounds, on the other hand, refer to the minimum amount of resources (such as time or space) required to solve a problem. Proving lower bounds is important because it helps us understand the inherent difficulty of a problem and can guide algorithm design.<br>
+                    <br>
+                    Now, let's dive into the techniques for proving lower bounds and hardness within polynomial time:<br>
+                    <br>
+                    1. Reductions: One common technique is to reduce a known hard problem to the problem at hand. This involves transforming an instance of the known hard problem into an instance of the problem we want to prove hardness for. If the reduction can be done in polynomial time, and the known hard problem has a lower bound, then the problem at hand must also have a lower bound.<br>
+                    <br>
+                    2. Communication Complexity: Communication complexity is a measure of the amount of communication required between multiple parties to solve a problem. By analyzing the communication complexity of a problem, we can often establish lower bounds on its complexity.<br>
+                    <br>
+                    3. Algebraic Techniques: Algebraic techniques, such as polynomial interpolation or algebraic circuit lower bounds, can be used to prove lower bounds for certain types of problems. These techniques leverage algebraic properties to establish the inherent difficulty of a problem.<br>
+                    <br>
+                    4. Information Theory: Information theory provides tools for quantifying the amount of information required to solve a problem. By applying information-theoretic techniques, we can derive lower bounds on the complexity of a problem.<br>
+                    <br>
+                    5. Fine-Grained Complexity: Fine-grained complexity theory focuses on studying the complexity of problems within specific parameterized classes. By analyzing the complexity of problems with respect to specific parameters, we can establish lower bounds and hardness results.<br>
+                    <br>
+                    Now that we have covered the main techniques for proving lower bounds and hardness within polynomial time, let's test your understanding with some multiple-choice questions.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
