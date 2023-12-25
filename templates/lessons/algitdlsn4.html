@@ -91,56 +91,57 @@
                 [array[i], array[j]] = [array[j], array[i]];
             }
         }
+        
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What does DFS stand for?",
+                options: ["Depth-First Search", "Breadth-First Search", "Directed First Search", "Depth-First Sort"],
+                answer: "Depth-First Search"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which data structure is commonly used in DFS traversal?",
+                options: ["Stack", "Queue", "Linked List", "Binary Tree"],
+                answer: "Stack"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of backtracking in DFS?",
+                options: ["To find the shortest path", "To undo choices made during traversal", "To optimize the algorithm", "To find all possible solutions"],
+                answer: "To undo choices made during traversal"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "In DFS traversal, which vertex is visited first?",
+                options: ["The starting vertex", "The last visited vertex", "The vertex with the highest degree", "The vertex with the lowest degree"],
+                answer: "The starting vertex"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the main advantage of DFS over BFS (Breadth-First Search)?",
+                options: ["DFS always finds the shortest path", "DFS uses less memory", "DFS is faster for large graphs", "DFS guarantees optimal solutions"],
+                answer: "DFS uses less memory"
+            }
+            {
+                question: "What is the purpose of DFS in graph algorithms?",
+                options: ["To determine the connectivity of a graph", "To detect cycles in a graph", "Both a and b", "None of the above"],
+                answer: "Both a and b"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How can we determine the connectivity of a graph using DFS?",
+                options: ["Start DFS from any vertex and check if all vertices are visited", "Start DFS from the first vertex and check if all vertices are visited", "Start DFS from the last vertex and check if all vertices are visited", "None of the above"],
+                answer: "Start DFS from any vertex and check if all vertices are visited"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How can we detect cycles in a graph using DFS?",
+                options: ["Keep track of visited vertices and their parents", "Keep track of visited vertices and their children", "Keep track of visited vertices and their neighbors", "None of the above"],
+                answer: "Keep track of visited vertices and their parents"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the time complexity of DFS for connectivity and cycle detection?",
+                options: ["O(V)", "O(E)", "O(V + E)", "O(V * E)"],
+                answer: "O(V + E)"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
-            },
-            {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which of the following statements is true?",
+                options: ["If all vertices are visited during DFS, the graph is connected", "If a cycle is detected during DFS, the graph contains a cycle", "Both a and b", "None of the above"],
+                answer: "Both a and b"
             }
         ];
 
@@ -383,14 +384,54 @@
             <div id="sublesson1">
                 <h2>DFS traversal and backtracking</h2>
                 <p>
-                    
+                    In this sub-lesson, we will learn about Depth-First Search (DFS) traversal and backtracking. DFS is a graph traversal algorithm that explores as far as possible along each branch before backtracking. It is commonly used to solve problems such as finding connected components, detecting cycles, and solving mazes.<br>
+                    <br>
+                    <b>DFS Traversal:</b><br>
+                    DFS traversal starts at a given vertex and explores as far as possible along each branch before backtracking. It uses a stack to keep track of the vertices to visit. Here is the step-by-step process for DFS traversal:<br>
+                    <br>
+                    1. Choose a starting vertex and mark it as visited.<br>
+                    2. Push the starting vertex onto the stack.<br>
+                    3. While the stack is not empty, do the following:<br>
+                        a. Pop a vertex from the stack.<br>
+                        b. Visit the popped vertex and mark it as visited.<br>
+                        c. Push all unvisited neighbors of the popped vertex onto the stack.<br>
+                        <br>
+                    <b>Backtracking:</b><br>
+                    Backtracking is a technique used in DFS to undo the choices made during the traversal. It is useful when we need to find multiple solutions or when we want to explore all possible paths in a graph. Backtracking involves keeping track of the visited vertices and undoing the choices made at each step.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Utilizing DFS for connectivity and cycle detection</h2>
                 <p>
-
+                    In this sub-lesson, we explore how Depth-First Search (DFS) can be used to determine the connectivity of a graph and detect cycles within it. DFS is a graph traversal algorithm that starts at a given vertex and explores as far as possible along each branch before backtracking.<br>
+                    <br>
+                    <b>Connectivity</b><br>
+                    To determine the connectivity of a graph using DFS, start the DFS from any vertex and check if all vertices are visited. If all vertices are visited, then the graph is connected. If there are unvisited vertices, then the graph is not connected.<br>
+                    <br>
+                    <b>Cycle Detection</b><br>
+                    To detect cycles in a graph using DFS, keep track of the visited vertices and the parent of each visited vertex. While performing DFS, if an already visited vertex is encountered that is not the parent of the current vertex, then a cycle is present in the graph.<br>
+                    <br>
+                    <b>DFS Algorithm for Connectivity and Cycle Detection</b><br>
+                    <ol>
+                        <li>Initialize all vertices as unvisited.</li>
+                        <li>For each unvisited vertex v, perform DFS(v).</li>
+                        <li>If all vertices are visited, the graph is connected.</li>
+                        <li>If a cycle is detected during DFS, the graph contains a cycle.</li>
+                    </ol>
+                    <b>Example</b><br>
+                    Consider the following graph:<br>
+                    <pre>
+                         1 --- 2
+                        / \   /
+                       3---4-5
+                    </pre>
+                    Performing DFS starting from vertex 1:<br>
+                    <code>1 -> 2 -> 4 -> 3 -> 5</code>
+                    All vertices are visited, so the graph is connected.<br>
+                    Performing DFS starting from vertex 3:<br>
+                    <code>3 -> 1 -> 2 -> 4 -> 5</code>
+                    A cycle is detected (3 -> 1 -> 2 -> 4 -> 3), so the graph contains a cycle.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
