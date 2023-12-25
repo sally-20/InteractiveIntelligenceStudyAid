@@ -93,54 +93,54 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the main idea behind dynamic programming?",
+                options: ["Breaking down problems into smaller subproblems", "Combining results of smaller subproblems", "Constructing optimal solutions", "All of the above"],
+                answer: "All of the above"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the first step in dynamic programming?",
+                options: ["Identifying the subproblems", "Formulating a recurrence relation", "Solving the subproblems in a bottom-up manner", "None of the above"],
+                answer: "Identifying the subproblems"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How does dynamic programming differ from divide-and-conquer?",
+                options: ["Dynamic programming allows for more flexibility in dividing the input into subproblems", "Divide-and-conquer commits to a single way of dividing the input", "Both a and b", "None of the above"],
+                answer: "Both a and b"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of formulating a recurrence relation in dynamic programming?",
+                options: ["To identify the subproblems", "To solve the subproblems in a bottom-up manner", "To express the solution of a subproblem as a function of smaller subproblems", "None of the above"],
+                answer: "To express the solution of a subproblem as a function of smaller subproblems"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the main advantage of dynamic programming?",
+                options: ["It allows for more flexibility in dividing the input into subproblems", "It can solve optimization problems by breaking them down into smaller subproblems", "It is a more structured approach compared to divide-and-conquer", "All of the above"],
+                answer: "It can solve optimization problems by breaking them down into smaller subproblems"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the role of memoization in dynamic programming?",
+                options: ["To avoid redundant computations", "To solve problems in a bottom-up manner", "To store solutions in a table", "To eliminate the need for recursion"],
+                answer: "To avoid redundant computations"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "When do we use memoization in dynamic programming?",
+                options: ["When the problem can be solved iteratively", "When there are overlapping subproblems", "When we want to avoid function calls", "When the problem has optimal substructure"],
+                answer: "When there are overlapping subproblems"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the advantage of tabulation in dynamic programming?",
+                options: ["It avoids redundant computations", "It allows for a top-down approach", "It eliminates the need for recursion", "It solves problems in a bottom-up manner"],
+                answer: "It solves problems in a bottom-up manner"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "When do we use tabulation in dynamic programming?",
+                options: ["When the problem has optimal substructure", "When there are overlapping subproblems", "When we want to avoid function calls", "When the problem can be solved recursively"],
+                answer: "When the problem can be solved recursively"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which approach in dynamic programming is more suitable for problems with overlapping subproblems?",
+                options: ["Memoization", "Tabulation", "Both approaches are equally suitable", "Neither approach is suitable"],
+                answer: "Memoization"
             }
         ];
 
@@ -383,14 +383,30 @@
             <div id="sublesson1">
                 <h2>Dynamic programming fundamentals</h2>
                 <p>
-                    
+                    In this lesson, we will introduce the fundamentals of dynamic programming. Dynamic programming is a powerful algorithmic technique used to solve optimization problems by breaking them down into smaller overlapping subproblems. It is particularly useful when the problem exhibits optimal substructure, meaning that the optimal solution can be constructed from optimal solutions to smaller subproblems.<br>
+                    <br>
+                    Dynamic programming involves two key steps: identifying the subproblems and formulating a recurrence relation. To identify the subproblems, we need to reason about the structure of an optimal solution and identify the different ways it can be constructed from optimal solutions to smaller subproblems. This thought process helps us define the collection of subproblems that need to be solved.<br>
+                    <br>
+                    Once we have identified the subproblems, we can formulate a recurrence relation. The recurrence relation expresses the solution of a subproblem as a function of the solutions of smaller subproblems. This allows us to build up the solution to the original problem by solving the subproblems in a bottom-up manner.<br>
+                    <br>
+                    Dynamic programming can be seen as a more structured approach compared to divide-and-conquer. While both paradigms solve smaller subproblems and combine the results, dynamic programming allows for more flexibility in dividing the input into subproblems. Each recursive call of a dynamic programming algorithm can divide the input in different ways, whereas a typical divide-and-conquer algorithm commits to a single way of dividing the input.<br>
+                    <br>
+                    Overall, dynamic programming is a powerful technique for solving optimization problems by breaking them down into smaller subproblems and using the solutions to these subproblems to construct the optimal solution.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Role of memoization and tabulation</h2>
                 <p>
-
+                    In this lesson, we will explore the role of memoization and tabulation in dynamic programming. As we have learned in the previous lesson, dynamic programming is a technique used to solve optimization problems by breaking them down into smaller overlapping subproblems. It is based on the principles of optimal substructure and overlapping subproblems.<br>
+                    <br>
+                    Memoization is an approach in dynamic programming where we store the solutions to subproblems in a table or cache, so that we can avoid redundant computations. When we encounter a subproblem, we first check if its solution is already stored in the table. If it is, we simply retrieve the solution from the table. If not, we compute the solution and store it in the table for future use. This technique helps us avoid recomputing the same subproblems multiple times, leading to significant efficiency improvements.<br>
+                    <br>
+                    Tabulation, on the other hand, is another approach in dynamic programming where we build a table or array to store the solutions to subproblems in a bottom-up manner. We start by solving the smallest subproblems and gradually build up to the larger problem. Each entry in the table represents the solution to a subproblem, and we use the solutions of smaller subproblems to compute the solution for larger subproblems. This approach eliminates the need for recursion and allows us to solve the problem iteratively.<br>
+                    <br>
+                    Both memoization and tabulation have their advantages and are suitable for different scenarios. Memoization is often used when the recursive structure of the problem is more natural and when we want to maintain a top-down approach. It is particularly useful when there are overlapping subproblems and we want to avoid redundant computations. Tabulation, on the other hand, is useful when the problem can be solved in a bottom-up manner and when we want to avoid the overhead of function calls and recursion.<br>
+                    <br>
+                    By using either memoization or tabulation, we can significantly improve the efficiency of dynamic programming algorithms and solve complex optimization problems more effectively.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
