@@ -93,54 +93,104 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of the Ford-Fulkerson algorithm?",
+                options: [
+                    "To find the minimum flow in a flow network.",
+                    "To find the maximum flow in a flow network.",
+                    "To find the shortest path in a graph.",
+                    "To find the longest path in a graph."
+                ],
+                answer: "To find the maximum flow in a flow network."
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is an augmenting path in the context of the Ford-Fulkerson algorithm?",
+                options: [
+                    "A path from the source to the sink in the original graph.",
+                    "A path from the source to the sink in the residual graph.",
+                    "A path from the source to any vertex in the graph.",
+                    "A path from any vertex to the sink in the graph."
+                ],
+                answer: "A path from the source to the sink in the residual graph."
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of residual graphs in the Ford-Fulkerson algorithm?",
+                options: [
+                    "To represent the original flow network.",
+                    "To represent the flow after each iteration of the algorithm.",
+                    "To represent the changes in flow that can be made to the original graph.",
+                    "To represent the changes in flow that have been made to the original graph."
+                ],
+                answer: "To represent the changes in flow that can be made to the original graph."
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How does the Ford-Fulkerson algorithm increase the flow in each iteration?",
+                options: [
+                    "By finding the shortest path in the residual graph.",
+                    "By finding the longest path in the residual graph.",
+                    "By finding an augmenting path in the residual graph.",
+                    "By finding a cycle in the residual graph."
+                ],
+                answer: "By finding an augmenting path in the residual graph."
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the running time of the Ford-Fulkerson algorithm?",
+                options: [
+                    "Polynomial time.",
+                    "Exponential time.",
+                    "Linear time.",
+                    "Constant time."
+                ],
+                answer: "Polynomial time."
+            }
+            {
+                question: "What is the purpose of the Ford-Fulkerson algorithm?",
+                options: [
+                    "To find the minimum flow in a network",
+                    "To find the maximum flow in a network",
+                    "To find the shortest path in a network",
+                    "To find the longest path in a network"
+                ],
+                answer: "To find the maximum flow in a network"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is an augmenting path?",
+                options: [
+                    "A path from the source to the sink in the original graph",
+                    "A path from the source to the sink in the residual graph",
+                    "A path from any node to any other node in the network",
+                    "A path with the maximum flow capacity in the network"
+                ],
+                answer: "A path from the source to the sink in the residual graph"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the residual capacity of an edge in the residual graph?",
+                options: [
+                    "The maximum flow capacity of the edge",
+                    "The current flow on the edge",
+                    "The difference between the capacity and the current flow on the edge",
+                    "The difference between the capacity and the maximum flow capacity of the edge"
+                ],
+                answer: "The difference between the capacity and the current flow on the edge"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What types of edges are included in the residual graph?",
+                options: [
+                    "Edges with maximum flow capacity",
+                    "Edges with residual capacity greater than 0",
+                    "Edges with residual capacity equal to 0",
+                    "Edges with residual capacity less than 0"
+                ],
+                answer: "Edges with residual capacity greater than 0"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
-            },
-            {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of reverse edges in the residual graph?",
+                options: [
+                    "To increase the flow on a particular edge",
+                    "To decrease the flow on a particular edge",
+                    "To represent the maximum flow capacity of an edge",
+                    "To represent the minimum flow capacity of an edge"
+                ],
+                answer: "To decrease the flow on a particular edge"
             }
         ];
 
@@ -383,14 +433,38 @@
             <div id="sublesson1">
                 <h2>Ford-Fulkerson's algorithm step by step</h2>
                 <p>
-                    
+                    In this lesson, we will learn about the Ford-Fulkerson algorithm and how it is used to solve network flow problems. We will also explore the concept of residual graphs and their role in the algorithm.<br>
+                    <br>
+                    The Ford-Fulkerson algorithm is an iterative method for finding the maximum flow in a flow network. It starts with an initial flow of value 0 and then repeatedly increases the flow by finding augmenting paths in the residual graph. An augmenting path is a path from the source to the sink in the residual graph that allows us to increase the flow.<br>
+                    <br>
+                    To implement the Ford-Fulkerson algorithm, we need to introduce the concept of residual graphs. Given a flow network and a flow, the residual graph consists of edges with capacities that represent how we can change the flow on edges of the original graph. The residual capacity of an edge is equal to the capacity of the edge minus the flow on that edge. The residual graph also contains reverse edges that allow us to decrease the flow on a particular edge.<br>
+                    <br>
+                    The Ford-Fulkerson algorithm can be summarized in the following steps:<br>
+                    1. Initialize the flow to 0.<br>
+                    2. While there exists an augmenting path in the residual graph:<br>
+                        a. Augment the flow along the path.<br>
+                    3. Return the maximum flow.<br>
+                    <br>
+                    The running time of the Ford-Fulkerson algorithm depends on how we find the augmenting path. If we use a breadth-first search to find the path, the algorithm runs in polynomial time. However, if we choose the augmenting path arbitrarily, the algorithm may not terminate or converge to the maximum flow value.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Understanding residual graphs</h2>
                 <p>
-
+                    In this lesson, we will be discussing the Ford-Fulkerson algorithm and its application in solving network flow problems. Specifically, we will focus on understanding residual graphs, which play a crucial role in the Ford-Fulkerson algorithm.<br>
+                    <br>
+                    The Ford-Fulkerson algorithm is used to find the maximum flow in a flow network. It starts with an initial flow of 0 and iteratively increases the flow until no more augmenting paths can be found. An augmenting path is a path from the source to the sink in the residual graph, which represents the remaining capacity for flow improvement.<br>
+                    <br>
+                    To understand residual graphs, let's first define some key terms. A flow network consists of nodes (vertices) and edges, where each edge has a capacity that represents the maximum amount of flow it can carry. The residual capacity of an edge is the difference between its capacity and the current flow on that edge.<br>
+                    <br>
+                    The residual graph, denoted as Gf, is a modified version of the original flow network. It contains edges with residual capacities that represent how the flow can be changed on the edges of the original graph. The residual graph only includes edges that can admit more flow, while edges with maximum flow capacity have a residual capacity of 0 and are not included in the residual graph.<br>
+                    <br>
+                    In addition to the edges from the original graph, the residual graph may also contain reverse edges. These reverse edges allow for the possibility of decreasing the flow on a particular edge. They have a residual capacity equal to the current flow on the corresponding edge in the original graph.<br>
+                    <br>
+                    The Ford-Fulkerson algorithm uses the residual graph to find augmenting paths and increase the flow. It continues to augment the flow until no more augmenting paths exist in the residual graph. At this point, the algorithm terminates, and the flow obtained is the maximum flow in the network.<br>
+                    <br>
+                    Now that we have a basic understanding of residual graphs, let's move on to the questions.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
