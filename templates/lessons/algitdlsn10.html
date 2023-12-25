@@ -93,54 +93,54 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the main approach used by the merge sort algorithm?",
+                options: ["Dynamic programming", "Divide and conquer", "Greedy algorithm", "Backtracking"],
+                answer: "Divide and conquer"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What are the three steps involved in the divide-and-conquer paradigm?",
+                options: ["Divide, conquer, combine", "Sort, merge, combine", "Divide, merge, combine", "Sort, conquer, combine"],
+                answer: "Divide, conquer, combine"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the time complexity of the merge sort algorithm?",
+                options: ["O(n)", "O(n^2)", "O(log n)", "O(n log n)"],
+                answer: "O(n log n)"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the key operation in the merge sort algorithm?",
+                options: ["Sorting the subsequences", "Dividing the sequence", "Combining the subsequences", "Conquering the subproblems"],
+                answer: "Combining the subsequences"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the recursion base case in the merge sort algorithm?",
+                options: ["When the sequence is empty", "When the sequence has only one element", "When the sequence is already sorted", "When the sequence has two elements"],
+                answer: "When the sequence has only one element"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the main idea behind the merge sort algorithm?",
+                options: ["Divide the problem into subproblems and solve them recursively", "Compare and merge the elements of the list", "Break the list into two halves and combine the sorted halves", "None of the above"],
+                answer: "Divide the problem into subproblems and solve them recursively"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the time complexity of the merge operation in merge sort?",
+                options: ["O(1)", "O(n)", "O(log n)", "O(n log n)"],
+                answer: "O(n)"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the time complexity of merge sort?",
+                options: ["O(n)", "O(n^2)", "O(log n)", "O(n log n)"],
+                answer: "O(n log n)"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How does merge sort compare to selection sort and insertion sort in terms of time complexity?",
+                options: ["Merge sort has a better time complexity than selection sort and insertion sort", "Merge sort has a worse time complexity than selection sort and insertion sort", "Merge sort has the same time complexity as selection sort and insertion sort", "It depends on the size of the input list"],
+                answer: "Merge sort has a better time complexity than selection sort and insertion sort"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the size of each subproblem in merge sort?",
+                options: ["n", "n/2", "2n", "log n"],
+                answer: "n/2"
             }
         ];
 
@@ -383,14 +383,40 @@
             <div id="sublesson1">
                 <h2>Merge sort algorithm in detail</h2>
                 <p>
-                    
+                    In this lesson, we will dive into the details of the merge sort algorithm, which is a popular sorting algorithm based on the divide-and-conquer approach. Merge sort is known for its efficiency and stability, making it a great choice for sorting large datasets.<br>
+                    <br>
+                    The merge sort algorithm follows three steps at each level of recursion:<br>
+                    <br>
+                    1. Divide: The original problem, which is to sort a sequence of elements, is divided into two subproblems. Each subproblem deals with a smaller portion of the original sequence.<br>
+                    <br>
+                    2. Conquer: The two subproblems are solved recursively using the merge sort algorithm. This step continues until the subproblems become small enough to be solved directly.<br>
+                    <br>
+                    3. Combine: The solutions to the subproblems are combined to create a sorted solution to the original problem. This is done by merging the two sorted subsequences.<br>
+                    <br>
+                    To understand the merge step in more detail, let's consider an example. Suppose we have two sorted subsequences: A and B. We want to merge them into a single sorted subsequence. We can achieve this by comparing the elements from A and B one by one and placing them in the correct order in a new subsequence.<br>
+                    <br>
+                    Now, let's move on to the implementation of the merge sort algorithm. The algorithm starts by dividing the original sequence into smaller subsequences until each subsequence has only one element. Then, it recursively merges the subsequences, combining them into larger sorted subsequences. This process continues until the entire sequence is sorted.<br>
+                    <br>
+                    One important aspect of the merge sort algorithm is that it has a time complexity of O(n log n), where n is the number of elements in the sequence. This makes it efficient for sorting large datasets.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Analyzing merge sort's time complexity</h2>
                 <p>
-
+                    In this lesson, we will dive deeper into the time complexity analysis of the merge sort algorithm. Merge sort is a sorting algorithm that follows the divide-and-conquer paradigm. It breaks down the problem of sorting a list into smaller subproblems, solves them recursively, and then combines the solutions to obtain the sorted list.<br>
+                    <br>
+                    To analyze the time complexity of merge sort, we need to consider the number of operations performed at each level of recursion. At each level, the list is divided into two halves, and then the merge operation is performed to combine the sorted halves. The merge operation takes linear time, as it compares and merges the elements from the two halves.<br>
+                    <br>
+                    Let's denote the size of the input list as n. At each level of recursion, the list is divided into two halves, so the size of each subproblem is n/2. Since the merge operation takes linear time, the time complexity of the merge step is O(n). Therefore, the total time complexity of merge sort can be expressed as a recurrence relation:<br>
+                    <br>
+                    T(n) = 2T(n/2) + O(n)<br>
+                    <br>
+                    Using the master theorem or the recursion tree method, we can solve this recurrence relation and determine the time complexity of merge sort. The master theorem states that if a recurrence relation is of the form T(n) = aT(n/b) + f(n), where a >= 1, b > 1, and f(n) is an asymptotically positive function, then the time complexity can be determined based on the values of a, b, and f(n).<br>
+                    <br>
+                    In the case of merge sort, a = 2, b = 2, and f(n) = O(n). By applying the master theorem, we find that the time complexity of merge sort is O(n log n). This means that merge sort has a better time complexity compared to other sorting algorithms like selection sort and insertion sort, which have time complexities of O(n^2).<br>
+                    <br>
+                    Now, let's move on to the questions.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
