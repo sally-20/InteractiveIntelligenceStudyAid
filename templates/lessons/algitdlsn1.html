@@ -93,54 +93,54 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the maximum number of children a node can have in a binary tree?",
+                options: ["0", "1", "2", "3"],
+                answer: "2"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which node is at the topmost level of a binary tree?",
+                options: ["Root", "Leaf", "Parent", "Internal Node"],
+                answer: "Root"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the depth of the root node in a binary tree?",
+                options: ["0", "1", "2", "Depends on the height of the tree"],
+                answer: "0"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which type of binary tree has values in the left subtree less than the value of the node and values in the right subtree greater than the value of the node?",
+                options: ["AVL Tree", "Binary Heap", "Red-Black Tree", "Binary Search Tree"],
+                answer: "Binary Search Tree"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the height of a binary tree?",
+                options: ["The number of nodes in the tree", "The number of edges in the longest path from the root to a leaf node", "The number of levels in the tree", "The number of internal nodes in the tree"],
+                answer: "The number of edges in the longest path from the root to a leaf node"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the main goal of AVL trees?",
+                options: ["To maintain balance in the tree", "To maximize the depth of the tree", "To minimize the number of elements in the tree", "To ensure efficient search operations"],
+                answer: "To maintain balance in the tree"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the time complexity of search, insertion, and deletion operations in AVL trees?",
+                options: ["O(NlogN)", "O(logN)", "O(N)", "O(1)"],
+                answer: "O(1)"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the balance condition imposed on each node in an AVL tree?",
+                options: ["The heights of the left and right subtrees must be equal", "The heights of the left and right subtrees can differ by at most 1", "The heights of the left and right subtrees must be at most logN", "The heights of the left and right subtrees can differ by any value"],
+                answer: "The heights of the left and right subtrees can differ by at most 1"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the technique used by AVL trees to maintain balance?",
+                options: ["Hashing", "Sorting", "Rotation", "Recursion"],
+                answer: "Rotation"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the worst-case time complexity of AVL tree operations?",
+                options: ["O(1)", O(N)"", "O(logN)", "O(NlogN)"],
+                answer: "O(logN)"
             }
         ];
 
@@ -383,14 +383,36 @@
             <div id="sublesson1">
                 <h2>Binary tree structure and terminology</h2>
                 <p>
-                    
+                    In this sub-lesson, we will learn about the structure and terminology of binary trees. Binary trees are a type of tree data structure where each node has at most two children, referred to as the left child and the right child. Let's dive into the key concepts and terminology associated with binary trees.<br>
+                    <br>
+                    1. Root: The topmost node of a binary tree is called the root. It is the starting point for traversing the tree.<br>
+                    <br>
+                    2. Parent and Child: Each node in a binary tree can have at most two children. The node that is connected to another node below it is called the parent, and the nodes connected to a parent node are called its children.<br>
+                    <br>
+                    3. Leaf: A leaf node is a node that does not have any children. It is also known as an external node.<br>
+                    <br>
+                    4. Internal Node: An internal node is a node that has at least one child. It is also known as a non-leaf node.<br>
+                    <br>
+                    5. Depth: The depth of a node in a binary tree is the number of edges from the root to that node. The depth of the root node is 0.<br>
+                    <br>
+                    6. Height: The height of a binary tree is the maximum depth of any node in the tree. It represents the length of the longest path from the root to a leaf node.<br>
+                    <br>
+                    7. Binary Search Tree (BST): A binary search tree is a type of binary tree where the values in the left subtree of a node are less than the value of the node, and the values in the right subtree are greater than the value of the node. This property makes searching, insertion, and deletion operations efficient.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>AVL trees for balanced binary search</h2>
                 <p>
-
+                    In this sub-lesson, we will discuss AVL trees, which are a type of balanced binary search tree. AVL trees are named after their inventors, Adelson-Velskii and Landis. The main goal of AVL trees is to maintain balance in the tree, which ensures efficient operations.<br>
+                    <br>
+                    A binary search tree is a data structure that allows for efficient searching, insertion, and deletion of elements. However, if the tree becomes unbalanced, these operations can become inefficient, with a worst-case time complexity of O(N), where N is the number of elements in the tree.<br>
+                    <br>
+                    To maintain balance in an AVL tree, a balance condition is imposed on each node. This condition states that the heights of the left and right subtrees of any node can differ by at most 1. By enforcing this condition, the depth of the tree is guaranteed to be O(logN), where N is the number of elements in the tree.<br>
+                    <br>
+                    To achieve balance, AVL trees use a technique called rotation. A rotation is an operation that changes the structure of the tree while preserving the order of the elements. There are four types of rotations: left rotation, right rotation, left-right rotation, and right-left rotation. These rotations are performed when the balance condition is violated during insertion or deletion operations.<br>
+                    <br>
+                    AVL trees provide efficient search, insertion, and deletion operations with a worst-case time complexity of O(logN). However, maintaining balance requires additional overhead compared to regular binary search trees.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
