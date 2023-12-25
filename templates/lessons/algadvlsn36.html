@@ -93,54 +93,84 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which algorithm is known as the gift wrapping algorithm?",
+                options: ["Graham's scan", "Jarvis's march", "Quickhull", "Divide and conquer"],
+                answer: "Jarvis's march"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the time complexity of Graham's scan and Jarvis's march algorithms?",
+                options: ["O(n)", "O(n^2)", "O(n log n)", "O(n^2 log n)"],
+                answer: "O(n log n)"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the convex hull?",
+                options: [
+                    "The largest polygon that encloses a set of points",
+                    "The smallest polygon that encloses a set of points",
+                    "The polygon formed by connecting all the points",
+                    "The polygon formed by connecting only some of the points"
+                ],
+                answer: "The smallest polygon that encloses a set of points"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How are the points sorted in Graham's scan algorithm?",
+                options: [
+                    "Based on their x-coordinate",
+                    "Based on their y-coordinate",
+                    "Based on their distance from the pivot",
+                    "Based on their angle with respect to the pivot"
+                ],
+                answer: "Based on their angle with respect to the pivot"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which algorithm returns the vertices of the convex hull in counterclockwise order?",
+                options: ["Graham's scan", "Jarvis's march", "Quickhull", "Divide and conquer"],
+                answer: "Graham's scan"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which data structure is commonly used to solve the nearest neighbor search problem?",
+                options: ["kd-tree", "Voronoi diagram", "Convex hull", "Binary search tree"],
+                answer: "kd-tree"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How does a kd-tree partition the points?",
+                options: [
+                    "Based on the average value of the points",
+                    "Based on the maximum value of the points",
+                    "Based on the median value of the points",
+                    "Based on the minimum value of the points"
+                ],
+                answer: "Based on the median value of the points"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of a Voronoi diagram in nearest neighbor search?",
+                options: [
+                    "To divide the points into subsets",
+                    "To find the closest point to the query point",
+                    "To determine the convex hull of the points",
+                    "To visualize the distribution of the points"
+                ],
+                answer: "To find the closest point to the query point"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How does the search process in a kd-tree work?",
+                options: [
+                    "It starts at the root node and recursively traverses the tree",
+                    "It performs a binary search on the sorted points",
+                    "It uses a divide-and-conquer approach to find the nearest neighbor",
+                    "It randomly selects points until the nearest neighbor is found"
+                ],
+                answer: "It starts at the root node and recursively traverses the tree"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the key idea behind the Voronoi diagram approach?",
+                options: [
+                    "Partitioning the plane based on the distance to the query point",
+                    "Sorting the points based on their coordinates",
+                    "Using a binary tree to store the points",
+                    "Iteratively refining the search space until the nearest neighbor is found"
+                ],
+                answer: "Partitioning the plane based on the distance to the query point"
             }
         ];
 
@@ -383,14 +413,42 @@
             <div id="sublesson1">
                 <h2>Algorithms for calculating convex hulls</h2>
                 <p>
-                    
+                    In this lesson, we will learn about algorithms for calculating convex hulls. A convex hull is the smallest convex polygon that encloses a set of points in the plane. It is commonly used in computational geometry for various applications such as collision detection, path planning, and image processing.<br>
+                    <br>
+                    There are several algorithms for calculating convex hulls, but we will focus on two popular ones: Graham's scan and Jarvis's march.<br>
+                    <br>
+                    1. Graham's Scan:<br>
+                        - Graham's scan is an efficient algorithm for computing the convex hull of a set of points.<br>
+                        - The algorithm works by first finding the point with the lowest y-coordinate (or the leftmost point in case of a tie), called the pivot.<br>
+                        - It then sorts the remaining points based on their polar angle with respect to the pivot.<br>
+                        - Starting from the pivot, the algorithm iterates through the sorted points and adds them to the convex hull if they make a left turn.<br>
+                        - If a right turn is encountered, the algorithm removes the previous point from the convex hull.<br>
+                        - Finally, the algorithm returns the vertices of the convex hull in counterclockwise order.<br>
+                        <br>
+                    2. Jarvis's March:<br>
+                        - Jarvis's march, also known as the gift wrapping algorithm, is another algorithm for computing the convex hull.<br>
+                        - The algorithm starts by finding the leftmost point, called the anchor point.<br>
+                        - It then iteratively selects the point with the smallest polar angle with respect to the current point and adds it to the convex hull.<br>
+                        - The algorithm continues until it returns to the anchor point, forming a closed polygon.<br>
+                        <br>
+                    Both Graham's scan and Jarvis's march have time complexities of O(n log n), where n is the number of input points. However, Graham's scan is generally faster in practice.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Nearest neighbor search techniques</h2>
                 <p>
-                    
+                    In this sub-lesson, we will explore the concept of nearest neighbor search techniques. Nearest neighbor search is a fundamental problem in computational geometry, where we want to find the closest point(s) to a given query point in a set of points.<br>
+                    <br>
+                    One common approach to solve the nearest neighbor search problem is by using a data structure called a kd-tree. A kd-tree is a binary tree that partitions the points in a multi-dimensional space. Each node in the tree represents a splitting hyperplane that divides the points into two subsets. The splitting hyperplane is chosen based on the median value of the points along a specific dimension. This allows for efficient search by pruning the search space.<br>
+                    <br>
+                    To perform a nearest neighbor search using a kd-tree, we start at the root node and recursively traverse the tree based on the query point's position relative to the splitting hyperplanes. At each node, we compare the distance between the query point and the current best neighbor. If the distance is smaller, we update the current best neighbor. We then continue the search in the subtree that is closer to the query point.<br>
+                    <br>
+                    Another approach to solve the nearest neighbor search problem is by using a Voronoi diagram. A Voronoi diagram is a partitioning of a plane into regions based on the distance to a set of points. Each region in the Voronoi diagram corresponds to a point, and any point within a region is closer to its corresponding point than to any other point in the set.<br>
+                    <br>
+                    To find the nearest neighbor using a Voronoi diagram, we first locate the region that contains the query point. The corresponding point in that region is a potential nearest neighbor. We then compare the distances between the query point and the potential nearest neighbor, as well as the distances between the query point and the boundaries of the other regions. By considering these distances, we can determine the actual nearest neighbor.<br>
+                    <br>
+                    Now, let's test your understanding with some multiple-choice questions.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
