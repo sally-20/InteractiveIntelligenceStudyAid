@@ -93,54 +93,104 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of zero-knowledge proofs?",
+                options: [
+                    "To reveal secret information",
+                    "To ensure privacy and confidentiality",
+                    "To perform secure multiparty computation",
+                    "To solve computationally hard problems"
+                ],
+                answer: "To ensure privacy and confidentiality"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which cryptographic protocol can benefit from zero-knowledge proofs?",
+                options: [
+                    "Public key encryption",
+                    "Hash functions",
+                    "Secure multiparty computation",
+                    "Digital signatures"
+                ],
+                answer: "Secure multiparty computation"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How do zero-knowledge proofs work?",
+                options: [
+                    "By revealing all information about a statement",
+                    "By performing a series of interactions without revealing additional information",
+                    "By solving computationally hard problems",
+                    "By encrypting the information being exchanged"
+                ],
+                answer: "By performing a series of interactions without revealing additional information"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What mathematical problems are commonly used in zero-knowledge proofs?",
+                options: [
+                    "Addition and subtraction",
+                    "Multiplication and division",
+                    "Discrete logarithm and factorization",
+                    "Prime numbers and modular arithmetic"
+                ],
+                answer: "Discrete logarithm and factorization"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the main benefit of using zero-knowledge proofs in secure multiparty computation?",
+                options: [
+                    "Ensuring the correctness of the computation",
+                    "Minimizing the computational overhead",
+                    "Protecting the privacy of each party's input",
+                    "Enabling efficient communication between parties"
+                ],
+                answer: "Protecting the privacy of each party's input"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of secure multi-party computation (MPC)?",
+                options: [
+                    "To reveal private inputs to all parties",
+                    "To jointly compute a function on private inputs without revealing anything about the inputs",
+                    "To encrypt all inputs before computation",
+                    "To perform computations on public data only"
+                ],
+                answer: "To jointly compute a function on private inputs without revealing anything about the inputs"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is secret sharing?",
+                options: [
+                    "Dividing a secret into shares and distributing them among the parties",
+                    "Sharing a secret with all parties involved",
+                    "Encrypting a secret using a shared key",
+                    "Revealing a secret to all parties involved"
+                ],
+                answer: "Dividing a secret into shares and distributing them among the parties"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of oblivious transfer?",
+                options: [
+                    "To securely transfer a piece of information without revealing anything about the information itself",
+                    "To transfer a piece of information to all parties involved",
+                    "To encrypt a piece of information using a shared key",
+                    "To reveal a piece of information to all parties involved"
+                ],
+                answer: "To securely transfer a piece of information without revealing anything about the information itself"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the main goal of zero-knowledge proofs?",
+                options: [
+                    "To reveal all information about a statement",
+                    "To prove the validity of a statement without revealing any additional information beyond the fact that the statement is true",
+                    "To encrypt a statement using a shared key",
+                    "To reveal the actual value or solution to a problem"
+                ],
+                answer: "To prove the validity of a statement without revealing any additional information beyond the fact that the statement is true"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How can secure computation in multiparty scenarios be achieved?",
+                options: [
+                    "By using secret sharing, secure function evaluation, oblivious transfer, and zero-knowledge proofs",
+                    "By revealing private inputs to all parties involved",
+                    "By encrypting all inputs before computation",
+                    "By performing computations on public data only"
+                ],
+                answer: "By using secret sharing, secure function evaluation, oblivious transfer, and zero-knowledge proofs"
             }
         ];
 
@@ -383,14 +433,34 @@
             <div id="sublesson1">
                 <h2>Zero-knowledge proofs and their applications</h2>
                 <p>
-                    
+                    In this lesson, we will explore the concept of zero-knowledge proofs and their applications in cryptography and secure computation. Zero-knowledge proofs are a powerful cryptographic tool that allows one party, the prover, to convince another party, the verifier, that a statement is true without revealing any additional information about the statement. This concept is particularly useful in scenarios where privacy and confidentiality are paramount.<br>
+                    <br>
+                    Zero-knowledge proofs can be applied to various cryptographic protocols, including secure multiparty computation. Secure multiparty computation refers to a scenario where multiple parties want to jointly compute a function over their private inputs without revealing their inputs to each other. Zero-knowledge proofs can be used to ensure that each party's input remains private throughout the computation.<br>
+                    <br>
+                    To understand zero-knowledge proofs, let's consider an example. Suppose Alice wants to prove to Bob that she knows a secret password without revealing the password itself. They can achieve this using a zero-knowledge proof called the "password knowledge proof." In this proof, Alice can demonstrate to Bob that she knows the password by performing a series of interactions, without actually revealing the password. Bob can then verify the proof without learning anything about the password.<br>
+                    <br>
+                    Zero-knowledge proofs rely on the properties of certain mathematical problems, such as the discrete logarithm problem or the factorization problem. These problems are believed to be computationally hard, meaning that it is difficult to find a solution within a reasonable amount of time. By constructing zero-knowledge proofs based on these problems, we can ensure the security and privacy of the information being exchanged.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Achieving secure computation in multiparty scenarios</h2>
                 <p>
-
+                    In this sub-lesson, we will explore the concept of achieving secure computation in multiparty scenarios. Secure computation refers to the ability to perform computations on sensitive data without revealing any information about the data itself. This is particularly important in scenarios where multiple parties need to collaborate on a computation while keeping their inputs private.<br>
+                    <br>
+                    To achieve secure computation in multiparty scenarios, we can use techniques such as secure multi-party computation (MPC) and zero-knowledge proofs. Secure MPC allows multiple parties to jointly compute a function on their private inputs without revealing anything about their inputs to each other. Zero-knowledge proofs, on the other hand, allow a party to prove the validity of a statement without revealing any additional information beyond the fact that the statement is true.<br>
+                    <br>
+                    To implement secure computation in multiparty scenarios, we need to consider the following concepts:<br>
+                    <br>
+                    1. Secret Sharing: Secret sharing is a technique that allows a secret to be divided into shares, which are distributed among the parties. The secret can only be reconstructed when a sufficient number of shares are combined. This ensures that no single party has access to the complete secret.<br>
+                    <br>
+                    2. Secure Function Evaluation: Secure function evaluation is the process of computing a function on private inputs without revealing any information about the inputs. This can be achieved using cryptographic protocols such as garbled circuits or homomorphic encryption.<br>
+                    <br>
+                    3. Oblivious Transfer: Oblivious transfer is a cryptographic protocol that allows one party to securely transfer a piece of information to another party without learning anything about the information itself. This is useful in scenarios where one party needs to select a value from a set without revealing the selected value to the other party.<br>
+                    <br>
+                    4. Zero-Knowledge Proofs: Zero-knowledge proofs allow a party to prove the validity of a statement without revealing any additional information beyond the fact that the statement is true. This is achieved by demonstrating knowledge of a secret value or a solution to a problem without revealing the actual value or solution.<br>
+                    <br>
+                    By combining these concepts, we can achieve secure computation in multiparty scenarios, ensuring that sensitive data remains private while allowing parties to collaborate on computations.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
