@@ -93,54 +93,53 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the main purpose of Grover's quantum search algorithm?",
+                options: ["Sorting a database", "Searching an unsorted database", "Encrypting data", "Decrypting data"],
+                answer: "Searching an unsorted database"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which concept of quantum computing does Grover's algorithm rely on?",
+                options: ["Quantum entanglement", "Quantum superposition", "Quantum teleportation", "Quantum interference"],
+                answer: "Quantum superposition"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the time complexity of Grover's algorithm?",
+                options: ["O(N)", "O(log N)", "O(N^2)", "O(sqrt(N))"],
+                answer: "O(sqrt(N))"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the role of the quantum oracle in Grover's algorithm?",
+                options: ["It marks the desired item in the database.", "It performs the search operation.", "It measures the qubits.", "It applies the Hadamard transform."],
+                answer: "It marks the desired item in the database."
+            },
+                question: "How does Grover's algorithm achieve amplitude amplification?",
+                options: ["By applying the Hadamard transform", "By applying the quantum oracle", "By applying the diffusion operator", "By repeating steps c and d"],
+                answer: "By repeating steps c and d"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the main purpose of Shor's quantum factoring algorithm?",
+                options: ["Encryption", "Prime number generation", "Factoring large numbers", "Quantum entanglement"],
+                answer: "Factoring large numbers"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which classical algorithm is commonly used for factoring large numbers?",
+                options: ["Shor's algorithm", "Quantum Fourier Transform", "General Number Field Sieve (GNFS)", "Quantum superposition"],
+                answer: "General Number Field Sieve (GNFS)"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the significance of Shor's algorithm for cryptography?",
+                options: ["It enhances the security of encryption schemes.", "It breaks the widely used RSA encryption scheme.", "It introduces quantum entanglement in encryption.", "It generates prime numbers for encryption."],
+                answer: "It breaks the widely used RSA encryption scheme."
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the main advantage of Shor's algorithm over classical factoring algorithms?",
+                options: ["It is exponentially faster.", "It utilizes quantum superposition.", "It relies on the quantum Fourier transform.", "It can factor prime numbers."],
+                answer: "It is exponentially faster."
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
-            },
-            {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How does Shor's algorithm impact number theory?",
+                options: ["It introduces new encryption methods.", "It improves the efficiency of classical factoring algorithms.", "It advances our understanding of prime numbers and factorization.", "It simplifies the process of generating random numbers."],
+                answer: "It advances our understanding of prime numbers and factorization."
             }
         ];
 
@@ -383,14 +382,58 @@
             <div id="sublesson1">
                 <h2>Grover's quantum search algorithm</h2>
                 <p>
-                    
+                    In this sub-lesson, we will explore Grover's quantum search algorithm, which is a powerful algorithm for searching an unsorted database. Grover's algorithm provides a quadratic speedup compared to classical search algorithms.<br>
+                    <br>
+                    1. Introduction to Grover's Algorithm:<br>
+                    Grover's algorithm was developed by Lov Grover in 1996 and is based on the principles of quantum superposition and interference. It can be used to solve the unstructured search problem, where we need to find a specific item in an unsorted database.<br>
+                    <br>
+                    2. Key Concepts:<br>
+                    a. Quantum Superposition: In quantum computing, a qubit can exist in a superposition of states, representing both 0 and 1 simultaneously. This allows for parallel computation.<br>
+                    b. Quantum Oracle: The quantum oracle is a black box that marks the desired item in the database. It flips the phase of the target item, making it distinguishable from the other items.<br>
+                    c. Amplitude Amplification: Grover's algorithm uses amplitude amplification to increase the probability of measuring the desired item. It involves applying a series of operations to amplify the amplitude of the target item.<br>
+                    <br>
+                    3. Steps of Grover's Algorithm:<br>
+                    a. Initialize the qubits: Start with n qubits in the state |0⟩, representing all possible states of the database.<br>
+                    b. Apply Hadamard transform: Apply the Hadamard transform to create a superposition of all possible states.<br>
+                    c. Apply the quantum oracle: Apply the quantum oracle to mark the desired item.<br>
+                    d. Apply the diffusion operator: Apply the diffusion operator to amplify the amplitude of the marked item.<br>
+                    e. Repeat steps c and d: Repeat steps c and d for a certain number of iterations to increase the probability of measuring the desired item.<br>
+                    f. Measure the qubits: Finally, measure the qubits to obtain the solution.<br>
+                    <br>
+                    4. Complexity and Applications:<br>
+                    Grover's algorithm has a time complexity of O(√N), where N is the size of the database. It can be used for a variety of applications, such as searching in databases, solving the satisfiability problem, and solving the graph coloring problem.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Shor's quantum factoring algorithm and implications</h2>
                 <p>
-
+                    In this sub-lesson, we will explore Shor's quantum factoring algorithm and its implications. Shor's algorithm is a quantum algorithm that can efficiently factor large numbers, which has significant implications for cryptography and number theory.<br>
+                    <br>
+                    1. Background:<br>
+                    Before diving into Shor's algorithm, let's briefly review some key concepts:<br>
+                    - Prime numbers: Numbers that are only divisible by 1 and themselves.<br>
+                    - Composite numbers: Numbers that have more than two distinct positive divisors.<br>
+                    - Factorization: The process of finding the prime factors of a composite number.<br>
+                    <br>
+                    2. Classical Factoring Algorithms:<br>
+                    In classical computing, factoring large numbers is a computationally intensive task. The most commonly used classical algorithm for factoring is the General Number Field Sieve (GNFS). However, GNFS becomes exponentially slower as the size of the number to be factored increases.<br>
+                    <br>
+                    3. Shor's Quantum Factoring Algorithm:<br>
+                    Shor's algorithm, developed by Peter Shor in 1994, is a quantum algorithm that can factor large numbers exponentially faster than classical algorithms. It utilizes the principles of quantum superposition and quantum entanglement.<br>
+                    <br>
+                    - Quantum Superposition: In quantum computing, a qubit can exist in a superposition of states, representing both 0 and 1 simultaneously.<br>
+                    - Quantum Entanglement: Two or more qubits can become entangled, meaning their states are correlated and cannot be described independently.<br>
+                    <br>
+                    Shor's algorithm consists of two main steps:<br>
+                    a. Quantum Fourier Transform: This step involves applying a quantum Fourier transform to a superposition of states representing possible factors of the number to be factored.<br>
+                    b. Period Finding: By measuring the output of the quantum Fourier transform, the algorithm can determine the period of a function related to the factors of the number.<br>
+                    <br>
+                    4. Implications:<br>
+                    Shor's algorithm has significant implications for cryptography and number theory:<br>
+                    - Cryptographic Vulnerability: Shor's algorithm can break the widely used RSA encryption scheme, which relies on the difficulty of factoring large numbers.<br>
+                    - Security Concerns: The development of practical quantum computers capable of running Shor's algorithm could render many current encryption methods obsolete.<br>
+                    - Number Theory Advancements: Shor's algorithm has led to advancements in number theory and our understanding of the mathematical properties of prime numbers and factorization.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
