@@ -93,54 +93,104 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is one of the main challenges faced when designing algorithms optimized for external storage devices?",
+                options: [
+                    "Limited capacity of the main memory",
+                    "High cost of I/O operations",
+                    "Slow access times of external storage devices",
+                    "All of the above"
+                ],
+                answer: "High cost of I/O operations"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which technique involves storing frequently accessed data in a smaller, faster memory to reduce the number of I/O operations?",
+                options: [
+                    "Caching",
+                    "Buffering",
+                    "Prefetching",
+                    "None of the above"
+                ],
+                answer: "Caching"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What does buffering involve?",
+                options: [
+                    "Reading or writing data in larger chunks",
+                    "Storing frequently accessed data in a cache",
+                    "Proactively loading data into the main memory",
+                    "None of the above"
+                ],
+                answer: "Reading or writing data in larger chunks"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of prefetching?",
+                options: [
+                    "Minimizing the number of I/O operations",
+                    "Reducing the latency of accessing data",
+                    "Anticipating future data accesses",
+                    "All of the above"
+                ],
+                answer: "All of the above"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which of the following is NOT a challenge faced when designing algorithms optimized for external storage devices?",
+                options: [
+                    "Limited capacity of the main memory",
+                    "High cost of I/O operations",
+                    "Slow access times of external storage devices",
+                    "Limited storage capacity of external storage devices"
+                ],
+                answer: "Limited storage capacity of external storage devices"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which disk scheduling algorithm aims to minimize the seek time?",
+                options: [
+                    "FCFS",
+                    "SSTF",
+                    "SCAN",
+                    "C-SCAN"
+                ],
+                answer: "SSTF"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of external sorting?",
+                options: [
+                    "To sort data that fits entirely in the main memory",
+                    "To sort data that cannot fit entirely in the main memory",
+                    "To sort data using a balanced search tree",
+                    "To sort data using a hashing technique"
+                ],
+                answer: "To sort data that cannot fit entirely in the main memory"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which data structure is commonly used in external memory algorithms for indexing large datasets?",
+                options: [
+                    "AVL tree",
+                    "B-Tree",
+                    "Red-Black tree",
+                    "Binary heap"
+                ],
+                answer: "B-Tree"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of buffering and caching in algorithms?",
+                options: [
+                    "To reduce the number of disk accesses",
+                    "To increase the size of the main memory",
+                    "To speed up the CPU processing",
+                    "To store data permanently"
+                ],
+                answer: "To reduce the number of disk accesses"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How can graph algorithms be optimized for external storage devices?",
+                options: [
+                    "By increasing the number of disk accesses",
+                    "By minimizing the number of disk accesses",
+                    "By using a larger main memory",
+                    "By reducing the size of the graph"
+                ],
+                answer: "By minimizing the number of disk accesses"
             }
         ];
 
@@ -383,14 +433,42 @@
             <div id="sublesson1">
                 <h2>Challenges of external memory and I/O efficiency</h2>
                 <p>
-                    
+                    In this lesson, we will explore the challenges faced when designing algorithms that are optimized for external storage devices. External storage devices, such as hard disks, have slower access times compared to the main memory (RAM) of a computer. This difference in access times introduces several challenges that need to be addressed in order to achieve efficient algorithm performance.<br>
+                    <br>
+                    One of the main challenges is the high cost of I/O operations. Reading or writing data from/to an external storage device is significantly slower compared to accessing data from the main memory. This means that algorithms need to minimize the number of I/O operations in order to achieve good performance. <br>
+                    <br>
+                    Another challenge is the limited capacity of the main memory. Since external storage devices have much larger storage capacities compared to the main memory, algorithms need to efficiently manage the data transfers between the external storage and the main memory. This involves carefully selecting the data to be loaded into the main memory and minimizing the amount of data that needs to be transferred back and forth.<br>
+                    <br>
+                    To address these challenges, algorithms optimized for external storage devices often employ techniques such as caching, buffering, and prefetching. Caching involves storing frequently accessed data in a smaller, faster memory (cache) to reduce the number of I/O operations. Buffering involves reading or writing data in larger chunks to minimize the overhead of individual I/O operations. Prefetching involves anticipating future data accesses and proactively loading the data into the main memory to reduce the latency of accessing the data.<br>
+                    <br>
+                    By carefully managing I/O operations and optimizing data transfers, algorithms can achieve better performance when dealing with large datasets stored in external storage devices.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Techniques for optimizing algorithms for external storage</h2>
                 <p>
-                    
+                    In this sub-lesson, we will explore various techniques for optimizing algorithms when dealing with external storage devices. External storage devices, such as hard drives or solid-state drives, have slower access times compared to the main memory of a computer. Therefore, it is crucial to design algorithms that minimize the number of disk accesses and take advantage of the characteristics of external storage devices.<br>
+                    <br>
+                    1. Disk Scheduling Algorithms:<br>
+                        - Disk scheduling algorithms determine the order in which disk requests are serviced. They aim to minimize the seek time, which is the time taken by the disk arm to move to the requested track. Common disk scheduling algorithms include FCFS (First-Come, First-Served), SSTF (Shortest Seek Time First), SCAN, and C-SCAN.<br>
+                        - By choosing an appropriate disk scheduling algorithm, we can reduce the seek time and improve the overall performance of algorithms that rely heavily on disk accesses.<br>
+                    <br>
+                    2. External Sorting:<br>
+                        - External sorting is a technique used to sort large datasets that cannot fit entirely in the main memory. It involves dividing the dataset into smaller chunks that can fit in memory, sorting each chunk, and then merging the sorted chunks to obtain the final sorted result.<br>
+                        - Popular external sorting algorithms include the merge sort and the replacement selection sort. These algorithms minimize the number of disk accesses by efficiently utilizing the available memory.<br>
+                    <br>
+                    3. B-Trees:<br>
+                        - B-Trees are balanced search trees that are commonly used in external memory algorithms. They are designed to minimize disk accesses by storing multiple keys in each node and maintaining a balanced tree structure.<br>
+                        - B-Trees are particularly useful for indexing large datasets stored on external storage devices. They allow for efficient searching, insertion, and deletion operations with a limited number of disk accesses.<br>
+                    <br>
+                    4. Buffering and Caching:<br>
+                        - Buffering and caching techniques can be employed to reduce the number of disk accesses in algorithms. By temporarily storing frequently accessed data in memory, we can avoid repeated disk reads and writes.<br>
+                        - Buffering involves using a buffer to hold a portion of the data being processed, while caching involves storing recently accessed data in a cache for faster retrieval.<br>
+                    <br>
+                    5. I/O-Efficient Graph Algorithms:<br>
+                        - Graph algorithms, such as breadth-first search and depth-first search, can be optimized for external storage devices by minimizing the number of disk accesses.<br>
+                        - Techniques like graph partitioning, graph compression, and using appropriate data structures can help reduce the I/O (input/output) complexity of graph algorithms.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
