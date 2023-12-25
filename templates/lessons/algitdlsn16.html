@@ -93,54 +93,104 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+            question: "What is the goal of finding the maximum flow in a network?",
+                options: [
+                    "To find the minimum capacity of the edges",
+                    "To find the maximum amount of flow that can be sent from a source to a sink",
+                    "To find the shortest path in the network",
+                    "To find the average capacity of the edges"
+                ],
+                answer: "To find the maximum amount of flow that can be sent from a source to a sink"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is an augmenting path?",
+                options: [
+                    "A path in the network where the flow can be increased",
+                    "A path in the network where the flow is maximum",
+                    "A path in the network where the flow is minimum",
+                    "A path in the network where the capacity is maximum"
+                ],
+                answer: "A path in the network where the flow can be increased"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How does the Ford-Fulkerson algorithm find the maximum flow?",
+                options: [
+                    "By finding the maximum capacity of all the edges",
+                    "By finding the minimum capacity of all the edges",
+                    "By finding the average capacity of all the edges",
+                    "By finding the maximum flow in each edge"
+                ],
+                answer: "By finding the minimum capacity of all the edges"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What happens when there are no more augmenting paths in the network?",
+                options: [
+                    "The algorithm terminates and finds the maximum flow",
+                    "The algorithm continues to find more augmenting paths",
+                    "The algorithm resets the flow to zero",
+                    "The algorithm increases the capacity of the edges"
+                ],
+                answer: "The algorithm terminates and finds the maximum flow"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "When is the Ford-Fulkerson algorithm guaranteed to terminate?",
+                options: [
+                    "When the capacities of the edges are real numbers",
+                    "When the capacities of the edges are integers",
+                    "When the capacities of the edges are negative",
+                    "When the capacities of the edges are zero"
+                ],
+                answer: "When the capacities of the edges are integers"
+            }
+            {
+                question: "What is a flow network?",
+                options: [
+                    "A directed graph with capacity on each edge",
+                    "A graph with undirected edges",
+                    "A graph with no capacity constraints",
+                    "A graph with only one vertex"
+                ],
+                answer: "A directed graph with capacity on each edge"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the maximum flow in a flow network?",
+                options: [
+                    "The maximum amount of flow that can be sent from the source to the sink",
+                    "The total number of edges in the network",
+                    "The sum of capacities of all edges in the network",
+                    "The minimum capacity among all possible cuts"
+                ],
+                answer: "The maximum amount of flow that can be sent from the source to the sink"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is a cut in a flow network?",
+                options: [
+                    "A partition of the vertices into two sets",
+                    "A graph with no edges",
+                    "A graph with only one vertex",
+                    "A graph with undirected edges"
+                ],
+                answer: "A partition of the vertices into two sets"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the minimum cut in a flow network?",
+                options: [
+                    "A cut with the minimum capacity among all possible cuts",
+                    "A cut with the maximum capacity among all possible cuts",
+                    "A cut with no capacity constraints",
+                    "A cut with only one vertex"
+                ],
+                answer: "A cut with the minimum capacity among all possible cuts"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
-            },
-            {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How can we identify the minimum cut in a flow network?",
+                options: [
+                    "By performing a depth-first search on the original graph",
+                    "By performing a breadth-first search on the original graph",
+                    "By performing a depth-first search on the residual graph",
+                    "By performing a breadth-first search on the residual graph"
+                ],
+                answer: "By performing a depth-first search on the residual graph"
             }
         ];
 
@@ -383,14 +433,46 @@
             <div id="sublesson1">
                 <h2>Finding maximum flow in networks</h2>
                 <p>
-                    
+                    In this lesson, we will learn about finding the maximum flow in networks. This is an important concept in network flow algorithms. <br>
+                    <br>
+                    A flow network is a directed graph where each edge has a capacity, which represents the maximum amount of flow that can pass through that edge. The goal is to find the maximum amount of flow that can be sent from a source vertex to a sink vertex in the network.<br>
+                    <br>
+                    To find the maximum flow in a network, we can use the Ford-Fulkerson algorithm. This algorithm starts with an initial flow of zero and repeatedly finds an augmenting path from the source to the sink. An augmenting path is a path in the network where the flow can be increased. 
+                    <br>
+                    The Ford-Fulkerson algorithm works by finding a path from the source to the sink and determining the maximum amount of flow that can be sent along that path. This is done by finding the minimum capacity of all the edges in the path. The flow along the path is then increased by this minimum capacity. <br>
+                    <br>
+                    This process is repeated until there are no more augmenting paths in the network. At this point, we have found the maximum flow in the network. <br>
+                    <br>
+                    It is important to note that the Ford-Fulkerson algorithm may not terminate if the capacities of the edges are real numbers. However, if the capacities are integers, the algorithm is guaranteed to terminate and find the maximum flow.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Identifying the minimum cut</h2>
                 <p>
-
+                    In this lesson, we will discuss the concept of identifying the minimum cut in a network flow algorithm. To understand this, let's first review some key concepts.<br>
+                    <br>
+                    1. Flow Network:<br>
+                    A flow network is a directed graph where each edge has a capacity, which represents the maximum amount of flow that can pass through that edge. It consists of a source vertex 's', a sink vertex 't', and other vertices representing intermediate nodes.<br>
+                    <br>
+                    2. Maximum Flow:<br>
+                    The maximum flow in a flow network is the maximum amount of flow that can be sent from the source to the sink. It is determined by finding a path from the source to the sink with available capacity and incrementally increasing the flow along that path until no more paths can be found.<br>
+                    <br>
+                    3. Cut:<br>
+                    A cut in a flow network is a partition of the vertices into two sets, S and T, such that the source vertex 's' is in set S and the sink vertex 't' is in set T. The capacity of a cut is the sum of the capacities of the edges going from set S to set T.<br>
+                    <br>
+                    4. Minimum Cut:<br>
+                    The minimum cut in a flow network is a cut with the minimum capacity among all possible cuts. It represents the bottleneck in the network and determines the maximum flow that can be achieved.<br>
+                    <br>
+                    Now, let's discuss how to identify the minimum cut in a flow network.<br>
+                    <br>
+                    To identify the minimum cut, we can use the concept of residual graph. A residual graph is a graph that represents the remaining capacity of the edges after the maximum flow has been determined. It is created by subtracting the flow from the capacity of each edge in the original graph.<br>
+                    <br>
+                    To find the minimum cut, we can perform a depth-first search (DFS) or breadth-first search (BFS) on the residual graph starting from the source vertex 's'. We mark all the vertices that are reachable from the source as part of set S, and the remaining vertices as part of set T.<br>
+                    <br>
+                    The minimum cut is then defined by the edges going from set S to set T in the original graph. The capacity of this cut represents the minimum capacity among all possible cuts.<br>
+                    <br>
+                    Now, let's move on to the questions.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
