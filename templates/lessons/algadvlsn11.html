@@ -93,54 +93,104 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which online algorithm is commonly used for caching?",
+                options: [
+                    "First-In-First-Out (FIFO)",
+                    "Least Recently Used (LRU)",
+                    "Round Robin",
+                    "Shortest Job Next (SJN)"
+                ],
+                answer: "Least Recently Used (LRU)"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of load balancing?",
+                options: [
+                    "To store frequently accessed data in a fast-access memory",
+                    "To distribute incoming network traffic across multiple servers",
+                    "To determine the order in which tasks should be executed",
+                    "To minimize the total completion time of jobs"
+                ],
+                answer: "To distribute incoming network traffic across multiple servers"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which online algorithm evenly distributes requests among available servers?",
+                options: [
+                    "First-In-First-Out (FIFO)",
+                    "Least Recently Used (LRU)",
+                    "Round Robin",
+                    "Shortest Job Next (SJN)"
+                ],
+                answer: "Round Robin"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the goal of scheduling?",
+                options: [
+                    "To store frequently accessed data in a fast-access memory",
+                    "To distribute incoming network traffic across multiple servers",
+                    "To determine the order in which tasks should be executed",
+                    "To minimize the total completion time of jobs"
+                ],
+                answer: "To determine the order in which tasks should be executed"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which online algorithm prioritizes the execution of the shortest remaining job first?",
+                options: [
+                    "First-In-First-Out (FIFO)",
+                    "Least Recently Used (LRU)",
+                    "Round Robin",
+                    "Shortest Job Next (SJN)"
+                ],
+                answer: "Shortest Job Next (SJN)"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of caching?",
+                options: [
+                    "To distribute network traffic across multiple servers",
+                    "To store frequently accessed data for faster retrieval",
+                    "To manage the execution of tasks in a system",
+                    "To optimize overall system performance"
+                ],
+                answer: "To store frequently accessed data for faster retrieval"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which factor is considered in load balancing algorithms?",
+                options: [
+                    "Cache hit rates",
+                    "Server capacity",
+                    "Task deadlines",
+                    "Response time"
+                ],
+                answer: "Server capacity"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which scheduling algorithm prioritizes tasks based on their importance?",
+                options: [
+                    "First-Come-First-Serve (FCFS)",
+                    "Shortest Job Next (SJN)",
+                    "Round Robin",
+                    "Priority Scheduling"
+                ],
+                answer: "Priority Scheduling"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of efficient cache eviction policies?",
+                options: [
+                    "To maximize cache hit rates",
+                    "To distribute network traffic",
+                    "To minimize cache misses",
+                    "To optimize overall system performance"
+                ],
+                answer: "To minimize cache misses"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What are the benefits of efficiency gains in caching, load balancing, and scheduling?",
+                options: [
+                    "Improved user experience",
+                    "Reduced response times",
+                    "Better resource utilization",
+                    "All of the above"
+                ],
+                answer: "All of the above"
             }
         ];
 
@@ -383,14 +433,41 @@
             <div id="sublesson1">
                 <h2>Practical applications of online algorithms</h2>
                 <p>
-                    
+                    In this lesson, we will explore the practical applications of online algorithms in the context of caching, load balancing, and scheduling. Online algorithms are designed to make decisions in real-time as new data arrives, without having access to future information. They are commonly used in scenarios where decisions need to be made quickly and efficiently.<br>
+                    <br>
+                    1. Caching:<br>
+                    Caching is a technique used to store frequently accessed data in a fast-access memory, such as a cache, to reduce the time it takes to retrieve the data. Online algorithms can be used to determine which data should be stored in the cache and which data should be evicted when the cache is full. One popular online caching algorithm is the Least Recently Used (LRU) algorithm, which evicts the least recently accessed data from the cache.<br>
+                    <br>
+                    2. Load Balancing:<br>
+                    Load balancing involves distributing incoming network traffic across multiple servers to ensure optimal resource utilization and prevent any single server from becoming overwhelmed. Online algorithms can be used to dynamically allocate incoming requests to different servers based on their current load. One example of an online load balancing algorithm is the Round Robin algorithm, which evenly distributes requests among the available servers.<br>
+                    <br>
+                    3. Scheduling:<br>
+                    Scheduling involves determining the order in which tasks or jobs should be executed to optimize certain criteria, such as minimizing the total completion time or maximizing resource utilization. Online algorithms can be used to make real-time scheduling decisions based on the current state of the system. One example of an online scheduling algorithm is the Shortest Job Next (SJN) algorithm, which prioritizes the execution of the shortest remaining job first.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Efficiency gains in caching, load balancing, and scheduling</h2>
                 <p>
-
+                    In this lesson, we will explore the concept of efficiency gains in caching, load balancing, and scheduling. These techniques are widely used in various applications to optimize the performance of systems and improve overall efficiency.<br>
+                    <br>
+                    1. Caching:<br>
+                    Caching is a technique used to store frequently accessed data in a cache memory, which is faster to access compared to the main memory. By keeping a copy of frequently used data closer to the processor, caching reduces the time required to fetch the data, resulting in improved performance. Caching is commonly used in web browsers, databases, and content delivery networks (CDNs) to speed up data retrieval.<br>
+                    <br>
+                    2. Load Balancing:<br>
+                    Load balancing is the process of distributing incoming network traffic across multiple servers to ensure optimal resource utilization and prevent any single server from being overwhelmed. By evenly distributing the workload, load balancing improves system performance, scalability, and availability. Load balancing algorithms can be based on various factors such as server capacity, response time, or network traffic.<br>
+                    <br>
+                    3. Scheduling:<br>
+                    Scheduling involves managing the execution of tasks or jobs in a system. Efficient scheduling algorithms aim to minimize the waiting time, response time, and overall completion time of tasks. Different scheduling algorithms are used based on the specific requirements of the system. Some common scheduling algorithms include First-Come-First-Serve (FCFS), Shortest Job Next (SJN), Round Robin, and Priority Scheduling.<br>
+                    <br>
+                    4. Efficiency Gains:<br>
+                    Efficiency gains in caching, load balancing, and scheduling can be achieved through various techniques. These include:<br>
+                    <br>
+                    - Caching: Implementing efficient cache eviction policies, such as Least Recently Used (LRU) or Random Replacement, to maximize cache hit rates and minimize cache misses.<br>
+                    - Load Balancing: Using intelligent load balancing algorithms that consider factors like server capacity, network latency, and current load to distribute traffic effectively.<br>
+                    - Scheduling: Employing scheduling algorithms that prioritize tasks based on their importance, deadlines, or resource requirements to optimize overall system performance.<br>
+                    <br>
+                    By applying these techniques, organizations can achieve significant efficiency gains in their systems, leading to improved user experience, reduced response times, and better resource utilization.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
