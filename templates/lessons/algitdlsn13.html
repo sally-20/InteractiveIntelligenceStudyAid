@@ -93,54 +93,104 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the greedy-choice property?",
+                options: [
+                    "Making choices based on future consequences",
+                    "Making locally optimal choices at each step",
+                    "Making choices that lead to a globally optimal solution",
+                    "Making choices that depend on solutions to subproblems"
+                ],
+                answer: "Making locally optimal choices at each step"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is optimal substructure?",
+                options: [
+                    "Breaking down complex problems into smaller subproblems",
+                    "Making choices that appear to be the best at the current moment",
+                    "Constructing an optimal solution from optimal solutions to subproblems",
+                    "Solving subproblems independently"
+                ],
+                answer: "Constructing an optimal solution from optimal solutions to subproblems"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How do we implement the greedy strategy?",
+                options: [
+                    "Make a greedy choice and solve the subproblem",
+                    "Solve the subproblem and then make a greedy choice",
+                    "Make choices based on future consequences",
+                    "Solve subproblems using dynamic programming"
+                ],
+                answer: "Make a greedy choice and solve the subproblem"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How do we analyze greedy algorithms?",
+                options: [
+                    "By examining a globally optimal solution to a subproblem",
+                    "By solving subproblems in a bottom-up manner",
+                    "By considering a wider set of choices",
+                    "By breaking down complex problems into smaller subproblems"
+                ],
+                answer: "By examining a globally optimal solution to a subproblem"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Can all optimization problems be solved using greedy algorithms?",
+                options: [
+                    "Yes, greedy algorithms are always the most efficient solution",
+                    "No, some problems require a more cumbersome dynamic programming solution",
+                    "Yes, greedy algorithms guarantee a globally optimal solution",
+                    "No, greedy algorithms only work for small-sized problems"
+                ],
+                answer: "No, some problems require a more cumbersome dynamic programming solution"
+            }
+            {
+                question: "What is the greedy-choice property?",
+                options: [
+                    "Making globally optimal choices",
+                    "Making locally optimal choices",
+                    "Considering future choices",
+                    "Considering subproblems"
+                ],
+                answer: "Making locally optimal choices"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the second key ingredient of a greedy algorithm?",
+                options: [
+                    "Greedy-choice property",
+                    "Optimal substructure",
+                    "Dynamic programming",
+                    "Memoization"
+                ],
+                answer: "Optimal substructure"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How do we evaluate the effectiveness of a greedy solution?",
+                options: [
+                    "By considering the greedy-choice property and optimal substructure",
+                    "By analyzing the problem and determining the algorithmic approach",
+                    "By solving subproblems in a bottom-up manner",
+                    "By making choices based on future consequences"
+                ],
+                answer: "By considering the greedy-choice property and optimal substructure"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "When are greedy algorithms not the best choice?",
+                options: [
+                    "When the problem has optimal substructure",
+                    "When the problem exhibits the greedy-choice property",
+                    "When a more cumbersome dynamic programming solution is required",
+                    "When the problem can be solved using memoization"
+                ],
+                answer: "When a more cumbersome dynamic programming solution is required"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
-            },
-            {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which of the following is an example of a greedy algorithm?",
+                options: [
+                    "Binary search",
+                    "Quick sort",
+                    "Dijkstra's algorithm",
+                    "Depth-first search"
+                ],
+                answer: "Dijkstra's algorithm"
             }
         ];
 
@@ -383,14 +433,44 @@
             <div id="sublesson1">
                 <h2>Implementing the greedy strategy</h2>
                 <p>
-                    
+                    In this lesson, we will learn about implementing the greedy strategy in solving optimization problems using greedy algorithms. Greedy algorithms are a class of algorithms that make locally optimal choices at each step with the hope of finding a globally optimal solution. We will explore the key concepts of the greedy-choice property and optimal substructure, which are essential for designing and analyzing greedy algorithms.<br>
+                    <br>
+                    1. Greedy-choice property:<br>
+                    The greedy-choice property states that we can assemble a globally optimal solution by making locally optimal (greedy) choices. When faced with a decision, we choose the option that appears to be the best at the current moment, without considering the consequences of future choices or subproblems. This property distinguishes greedy algorithms from dynamic programming, where choices depend on solutions to subproblems.<br>
+                    <br>
+                    2. Optimal substructure:<br>
+                    Optimal substructure is another key ingredient for designing greedy algorithms. It means that an optimal solution to a problem can be constructed from optimal solutions to its subproblems. In other words, if we combine an optimal solution to a subproblem with the greedy choice we have made, we arrive at an optimal solution to the original problem. This property allows us to break down complex problems into smaller subproblems and solve them independently.<br>
+                    <br>
+                    3. Implementing the greedy strategy:<br>
+                    To implement the greedy strategy, we follow a general approach:<br>
+                        a. Make a greedy choice: Select the option that appears to be the best at the current moment.<br>
+                        b. Solve the subproblem: Solve the remaining subproblem that arises after making the greedy choice.<br>
+                        c. Repeat steps a and b until the problem is solved.<br>
+                    <br>
+                    4. Analyzing greedy algorithms:<br>
+                    When designing and analyzing greedy algorithms, we need to prove that the greedy choice at each step leads to a globally optimal solution. This is typically done by examining a globally optimal solution to a subproblem and showing how to modify it to incorporate the greedy choice. It is important to note that not all optimization problems can be solved using greedy algorithms, and sometimes a more cumbersome dynamic programming solution is required.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Evaluating greedy solutions</h2>
                 <p>
-
+                    In this sub-lesson, we will learn how to evaluate greedy solutions in the context of algorithm design. Greedy algorithms are a powerful tool for solving optimization problems, but it is important to understand their limitations and how to assess their effectiveness.<br>
+                    <br>
+                    1. Greedy-choice property:<br>
+                    The first key ingredient of a greedy algorithm is the greedy-choice property. This property states that we can assemble a globally optimal solution by making locally optimal (greedy) choices. In other words, at each step, we choose the option that appears to be the best in the current situation, without considering the consequences of future choices or subproblems.<br>
+                    <br>
+                    2. Optimal substructure:<br>
+                    The second key ingredient is optimal substructure. This property means that an optimal solution to a problem can be constructed from optimal solutions to its subproblems. In the case of greedy algorithms, we demonstrate optimal substructure by showing that, after making a greedy choice, the remaining problem can be solved optimally using the same greedy strategy.<br>
+                    <br>
+                    3. Evaluating greedy solutions:<br>
+                    To evaluate the effectiveness of a greedy solution, we need to consider whether the problem exhibits the greedy-choice property and optimal substructure. If we can demonstrate that these properties hold, then a greedy algorithm is likely to provide an optimal solution. However, it is important to note that not all problems can be solved optimally using a greedy approach.<br>
+                    <br>
+                    4. Limitations of greedy algorithms:<br>
+                    While greedy algorithms can be efficient and provide optimal solutions for certain problems, they are not always the best choice. In some cases, a more cumbersome dynamic programming solution may be required. It is important to analyze the problem and determine whether the greedy-choice property and optimal substructure are present before deciding on the algorithmic approach.<br>
+                    <br>
+                    5. Examples of greedy algorithms:<br>
+                    Some well-known examples of greedy algorithms include Dijkstra's algorithm for finding the shortest path in a graph, Kruskal's algorithm for finding a minimum spanning tree, and the activity-selection problem. These examples demonstrate how the greedy-choice property and optimal substructure can be applied to solve real-world problems.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
