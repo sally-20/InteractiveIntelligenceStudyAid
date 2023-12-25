@@ -93,54 +93,104 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What are approximation algorithms used for?",
+                options: [
+                    "Solving NP-complete problems optimally",
+                    "Finding near-optimal solutions for NP-complete problems",
+                    "Solving small input problems",
+                    "Identifying special cases of NP-complete problems"
+                ],
+                answer: "Finding near-optimal solutions for NP-complete problems"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "When can an algorithm with exponential running time be acceptable?",
+                options: [
+                    "When the problem is NP-complete",
+                    "When the problem has small inputs",
+                    "When the problem has a high approximation ratio",
+                    "When the problem is a special case"
+                ],
+                answer: "When the problem has small inputs"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the approximation ratio?",
+                options: [
+                    "The running time of the algorithm",
+                    "The size of the input",
+                    "The factor by which the cost of the approximate solution is larger than the cost of the optimal solution",
+                    "The factor by which the cost of the approximate solution is smaller than the cost of the optimal solution"
+                ],
+                answer: "The factor by which the cost of the approximate solution is larger than the cost of the optimal solution"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which strategy involves isolating special cases of the problem?",
+                options: [
+                    "Exploiting small inputs",
+                    "Identifying special cases",
+                    "Finding near-optimal solutions",
+                    "None of the above"
+                ],
+                answer: "Identifying special cases"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What does the approximation ratio indicate for a maximization problem?",
+                options: [
+                    "The factor by which the cost of the approximate solution is larger than the cost of the optimal solution",
+                    "The factor by which the cost of the approximate solution is smaller than the cost of the optimal solution",
+                    "The running time of the algorithm",
+                    "The size of the input"
+                ],
+                answer: "The factor by which the cost of the approximate solution is larger than the cost of the optimal solution"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What are approximation algorithms used for?",
+                options: [
+                    "Solving NP-complete problems exactly",
+                    "Finding near-optimal solutions for NP-complete problems",
+                    "Transforming problems into NP-complete problems",
+                    "None of the above"
+                ],
+                answer: "Finding near-optimal solutions for NP-complete problems"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What are the three ways to get around NP-completeness?",
+                options: [
+                    "Exponential running time, polynomial time, near-optimality",
+                    "Small inputs, special cases, near-optimal solutions",
+                    "Exponential running time, special cases, near-optimality",
+                    "Small inputs, polynomial time, near-optimality"
+                ],
+                answer: "Small inputs, special cases, near-optimal solutions"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What does transforming problems for approximation involve?",
+                options: [
+                    "Finding exact solutions for NP-complete problems",
+                    "Simplifying problems for efficient solutions",
+                    "Converting problems into NP-complete problems",
+                    "None of the above"
+                ],
+                answer: "Simplifying problems for efficient solutions"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the goal of approximation algorithms?",
+                options: [
+                    "Finding optimal solutions for NP-complete problems",
+                    "Finding exact solutions for NP-complete problems",
+                    "Finding near-optimal solutions for NP-complete problems",
+                    "None of the above"
+                ],
+                answer: "Finding near-optimal solutions for NP-complete problems"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Why are near-optimal solutions often good enough in practice?",
+                options: [
+                    "They are always better than optimal solutions",
+                    "They are easier to compute than optimal solutions",
+                    "They are faster to compute than optimal solutions",
+                    "They are close enough to optimal solutions for practical purposes"
+                ],
+                answer: "They are close enough to optimal solutions for practical purposes"
             }
         ];
 
@@ -383,14 +433,34 @@
             <div id="sublesson1">
                 <h2>Strategies for designing approximation algorithms</h2>
                 <p>
-                    
+                    In this lesson, we will discuss strategies for designing approximation algorithms. Approximation algorithms are used to find near-optimal solutions for NP-complete problems. These problems are too complex to solve optimally in polynomial time, so we aim to find solutions that are close to the optimal solution.<br>
+                    <br>
+                    There are three main strategies for designing approximation algorithms:<br>
+                    <br>
+                    1. Exploiting small inputs: If the actual inputs of the problem are small, an algorithm with exponential running time may be acceptable. In this case, we can use brute force or exhaustive search to find the optimal solution.<br>
+                    <br>
+                    2. Identifying special cases: Sometimes, we can isolate important special cases of the problem that can be solved in polynomial time. By understanding the structure of these special cases, we can design algorithms that exploit their properties to find near-optimal solutions.<br>
+                    <br>
+                    3. Finding near-optimal solutions: In many cases, finding a near-optimal solution is sufficient for practical purposes. We can design algorithms that provide solutions within a certain factor of the optimal solution. This factor is known as the approximation ratio. The closer the approximation ratio is to 1, the better the algorithm.<br>
+                    <br>
+                    To summarize, when designing approximation algorithms, we can exploit small inputs, identify special cases, or aim for near-optimal solutions. These strategies help us overcome the complexity of NP-complete problems and find solutions that are close to optimal.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Transforming problems for approximation</h2>
                 <p>
-
+                    In this lesson, we will explore the concept of designing approximation algorithms. Specifically, we will focus on transforming problems for approximation. <br>
+                    <br>
+                    Approximation algorithms are used to find near-optimal solutions for NP-complete problems, which are problems that are difficult to solve exactly in polynomial time. We have three ways to get around NP-completeness: <br>
+                    <br>
+                    1. If the inputs are small, an algorithm with exponential running time may be satisfactory.<br>
+                    2. We can isolate important special cases that can be solved in polynomial time.<br>
+                    3. We can develop approaches to find near-optimal solutions in polynomial time.<br>
+                    <br>
+                    Transforming problems for approximation involves finding ways to reframe a problem so that it can be solved using an approximation algorithm. This may involve simplifying the problem or finding a different representation that allows for a more efficient solution.<br>
+                    <br>
+                    By transforming a problem for approximation, we can apply approximation algorithms to find solutions that are close to optimal. While these solutions may not be perfect, they are often good enough in practice.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
