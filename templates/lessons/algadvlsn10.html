@@ -93,54 +93,104 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the main purpose of competitive analysis in the context of online algorithms?",
+                options: [
+                    "To evaluate the performance of online algorithms compared to offline algorithms.",
+                    "To optimize the decisions made by online algorithms.",
+                    "To analyze the best-case scenarios for online algorithms.",
+                    "To determine the lower bounds for online algorithms."
+                ],
+                answer: "To evaluate the performance of online algorithms compared to offline algorithms."
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which type of algorithms have complete information about the entire input in advance?",
+                options: [
+                    "Online algorithms",
+                    "Offline algorithms",
+                    "Competitive algorithms",
+                    "Dynamic algorithms"
+                ],
+                answer: "Offline algorithms"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What does the competitive ratio measure?",
+                options: [
+                    "The cost incurred by the online algorithm.",
+                    "The cost incurred by the offline algorithm.",
+                    "The worst-case ratio of the online algorithm's cost to the offline algorithm's cost.",
+                    "The best-case ratio of the online algorithm's cost to the offline algorithm's cost."
+                ],
+                answer: "The worst-case ratio of the online algorithm's cost to the offline algorithm's cost."
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What does worst-case analysis focus on?",
+                options: [
+                    "Best-case scenarios",
+                    "Average-case scenarios",
+                    "Worst-case scenarios",
+                    "Random scenarios"
+                ],
+                answer: "Worst-case scenarios"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What do lower bounds represent in competitive analysis?",
+                options: [
+                    "The best possible competitive ratio for a given problem.",
+                    "The worst possible competitive ratio for a given problem.",
+                    "The average competitive ratio for a given problem.",
+                    "The optimal competitive ratio for a given problem."
+                ],
+                answer: "The best possible competitive ratio for a given problem."
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of competitive analysis in online algorithms?",
+                options: [
+                    "To evaluate the performance of online algorithms",
+                    "To compare online algorithms to offline algorithms",
+                    "To determine the optimal offline algorithm",
+                    "To calculate the competitive ratio"
+                ],
+                answer: "To evaluate the performance of online algorithms"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the competitive ratio?",
+                options: [
+                    "The ratio between the cost of the online algorithm and the cost of the optimal offline algorithm",
+                    "The ratio between the cost of the online algorithm and the cost of the worst-case input sequence",
+                    "The ratio between the cost of the online algorithm and the cost of the average-case input sequence",
+                    "The ratio between the cost of the online algorithm and the cost of the best-case input sequence"
+                ],
+                answer: "The ratio between the cost of the online algorithm and the cost of the optimal offline algorithm"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How is the competitive ratio calculated?",
+                options: [
+                    "By comparing the cost of the online algorithm to the cost of the worst-case input sequence",
+                    "By comparing the cost of the online algorithm to the cost of the optimal offline algorithm",
+                    "By comparing the cost of the online algorithm to the cost of the average-case input sequence",
+                    "By comparing the cost of the online algorithm to the cost of the best-case input sequence"
+                ],
+                answer: "By comparing the cost of the online algorithm to the cost of the optimal offline algorithm"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the potential function method used for in competitive analysis?",
+                options: [
+                    "To assign a value to each state of the algorithm",
+                    "To measure the progress made towards the optimal offline algorithm",
+                    "To determine the competitive ratio of the online algorithm",
+                    "To construct an adversary strategy"
+                ],
+                answer: "To determine the competitive ratio of the online algorithm"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What does a competitive ratio of 1 mean?",
+                options: [
+                    "The online algorithm is optimal",
+                    "The online algorithm's cost is at most the cost of the optimal offline algorithm",
+                    "The online algorithm's cost is equal to the cost of the worst-case input sequence",
+                    "The online algorithm's cost is equal to the cost of the best-case input sequence"
+                ],
+                answer: "The online algorithm is optimal"
             }
         ];
 
@@ -383,14 +433,36 @@
             <div id="sublesson1">
                 <h2>Competitive analysis principles</h2>
                 <p>
-                    
+                    In this lesson, we will explore the principles of competitive analysis in the context of online algorithms. Competitive analysis is a technique used to evaluate the performance of online algorithms by comparing them to an optimal offline algorithm. It helps us understand how well an online algorithm performs in relation to the best possible solution.<br>
+                    <br>
+                    Competitive analysis principles involve the following key concepts:<br>
+                    <br>
+                    1. Online Algorithms: Online algorithms are designed to make decisions in real-time, without having complete information about future inputs. They are commonly used in scenarios where the input arrives incrementally or dynamically. Online algorithms need to make decisions based on the available information at each step.<br>
+                    <br>
+                    2. Offline Algorithms: Offline algorithms, on the other hand, have complete information about the entire input in advance. They can optimize their decisions based on the entire input. Offline algorithms are used as a benchmark to compare the performance of online algorithms.<br>
+                    <br>
+                    3. Competitive Ratio: The competitive ratio is a measure of how well an online algorithm performs compared to an optimal offline algorithm. It is defined as the worst-case ratio of the cost incurred by the online algorithm to the cost incurred by the offline algorithm. A competitive ratio of c means that the online algorithm's cost is at most c times the cost of the optimal offline algorithm.<br>
+                    <br>
+                    4. Worst-Case Analysis: Competitive analysis focuses on worst-case scenarios to evaluate the performance of online algorithms. It considers the input sequences that lead to the worst possible performance of the online algorithm. By analyzing the worst-case scenarios, we can determine the competitive ratio and understand the algorithm's competitiveness.<br>
+                    <br>
+                    5. Lower Bounds: Lower bounds represent the best possible competitive ratio that any online algorithm can achieve for a given problem. They provide a theoretical limit on the performance of online algorithms. Lower bounds help us understand the inherent difficulty of a problem and guide the development of better algorithms.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Assessing the competitiveness of online algorithms</h2>
                 <p>
-
+                    In this lesson, we will be discussing the topic of assessing the competitiveness of online algorithms. Online algorithms are algorithms that make decisions based on a sequence of inputs, without having knowledge of future inputs. Competitive analysis is a technique used to evaluate the performance of online algorithms by comparing their performance to an optimal offline algorithm that has knowledge of all inputs in advance.<br>
+                    <br>
+                    To assess the competitiveness of online algorithms, we use the concept of competitive ratio. The competitive ratio is the worst-case ratio between the cost of the online algorithm and the cost of the optimal offline algorithm. A competitive ratio of c means that the online algorithm's cost is at most c times the cost of the optimal offline algorithm for any input sequence.<br>
+                    <br>
+                    To calculate the competitive ratio, we consider the worst-case scenario where the input sequence is designed to maximize the cost of the online algorithm. We compare the cost of the online algorithm to the cost of the optimal offline algorithm for this worst-case input sequence.<br>
+                    <br>
+                    There are different methods to analyze the competitiveness of online algorithms. One approach is to use the potential function method. A potential function assigns a value to each state of the algorithm and measures the progress made towards the optimal offline algorithm. By analyzing the potential function, we can determine the competitive ratio of the online algorithm.<br>
+                    <br>
+                    Another approach is the adversary argument, where we construct an adversary that presents inputs to the online algorithm in a way that maximizes its cost. By analyzing the adversary's strategy, we can determine the competitive ratio of the online algorithm.<br>
+                    <br>
+                    It is important to note that a competitive ratio of 1 does not always mean that the online algorithm is optimal. It only means that the online algorithm's cost is at most the cost of the optimal offline algorithm. In some cases, the competitive ratio can be improved by using more sophisticated techniques or heuristics.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
