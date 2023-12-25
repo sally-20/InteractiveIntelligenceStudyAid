@@ -93,54 +93,54 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which encryption technique involves replacing each letter in the plaintext with another letter according to a predetermined substitution rule?",
+                options: ["Public-key cryptography", "Diffie-Hellman key exchange", "Simple substitution cipher", "RSA cryptosystem"],
+                answer: "Simple substitution cipher"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the main advantage of public-key cryptography over symmetric encryption?",
+                options: ["Faster encryption and decryption", "Simpler key management", "Stronger security", "Smaller key size"],
+                answer: "Stronger security"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which encryption algorithm is based on the mathematical properties of large prime numbers?",
+                options: ["Diffie-Hellman key exchange", "RSA cryptosystem", "Digital signatures", "Simple substitution cipher"],
+                answer: "RSA cryptosystem"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of the Diffie-Hellman key exchange?",
+                options: ["Encrypting data", "Decrypting data", "Establishing a shared secret key", "Verifying the authenticity of digital documents"],
+                answer: "Establishing a shared secret key"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the main benefit of using digital signatures?",
+                options: ["Faster encryption and decryption", "Simpler key management", "Non-repudiation", "Smaller key size"],
+                answer: "Non-repudiation"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is encryption?",
+                options: ["The process of converting ciphertext to plaintext", "The process of converting plaintext to ciphertext", "The process of generating cryptographic keys", "The process of verifying the integrity of data"],
+                answer: "The process of converting plaintext to ciphertext"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is decryption?",
+                options: ["The process of converting ciphertext to plaintext", "The process of converting plaintext to ciphertext", "The process of generating cryptographic keys", "The process of verifying the integrity of data"],
+                answer: "The process of converting ciphertext to plaintext"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is a cryptographic key?",
+                options: ["The process of converting ciphertext to plaintext", "The process of converting plaintext to ciphertext", "A piece of information used by encryption and decryption algorithms", "The process of verifying the integrity of data"],
+                answer: "A piece of information used by encryption and decryption algorithms"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What are cryptographic protocols?",
+                options: ["The process of converting ciphertext to plaintext", "The process of converting plaintext to ciphertext", "A set of rules and procedures that govern secure communication", "The process of verifying the integrity of data"],
+                answer: "A set of rules and procedures that govern secure communication"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of encryption in secure communication?",
+                options: ["To convert ciphertext to plaintext", "To convert plaintext to ciphertext", "To generate cryptographic keys", "To verify the integrity of data"],
+                answer: "To convert plaintext to ciphertext"
             }
         ];
 
@@ -383,14 +383,41 @@
             <div id="sublesson1">
                 <h2>Encryption techniques and public-key cryptography</h2>
                 <p>
-                    
+                    In this lesson, we will explore encryption techniques and the concept of public-key cryptography. Encryption is the process of converting plaintext into ciphertext to protect sensitive information during transmission or storage. Decryption is the reverse process of converting ciphertext back into plaintext.<br>
+                    <br>
+                    1. Simple Substitution Ciphers:<br>
+                    One of the earliest encryption techniques is the simple substitution cipher. In this method, each letter in the plaintext is replaced with another letter according to a predetermined substitution rule. An example of a simple substitution cipher is the Caesar cipher, where each letter is shifted a certain number of positions in the alphabet.<br>
+                    <br>
+                    2. Public-Key Cryptography:<br>
+                    Public-key cryptography, also known as asymmetric cryptography, is a modern encryption technique that uses a pair of keys - a public key and a private key. The public key is used for encryption, while the private key is used for decryption. The keys are mathematically related, but it is computationally infeasible to derive the private key from the public key.<br>
+                    <br>
+                    3. RSA Cryptosystem:<br>
+                    The RSA cryptosystem is a widely used public-key encryption algorithm. It is based on the mathematical properties of large prime numbers. In RSA, the public key consists of a modulus and an exponent, while the private key consists of the same modulus and a different exponent. The security of RSA relies on the difficulty of factoring large numbers.<br>
+                    <br>
+                    4. Diffie-Hellman Key Exchange:<br>
+                    The Diffie-Hellman key exchange is a method for two parties to establish a shared secret key over an insecure channel. It is based on the difficulty of the discrete logarithm problem. The key exchange protocol allows the two parties to agree on a shared secret key without ever transmitting the key itself.<br>
+                    <br>
+                    5. Digital Signatures:<br>
+                    Digital signatures are used to verify the authenticity and integrity of digital documents. They are created using the private key of the signer and can be verified using the corresponding public key. Digital signatures provide non-repudiation, meaning that the signer cannot deny having signed the document.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Ensuring secure communication with cryptographic protocols</h2>
                 <p>
-
+                    In this sub-lesson, we will explore the concept of ensuring secure communication with cryptographic protocols. Cryptographic protocols are a set of rules and procedures that govern the secure exchange of information between two parties. These protocols use encryption and decryption algorithms to protect the confidentiality and integrity of the data being transmitted.<br>
+                    <br>
+                    To ensure secure communication, we need to understand the following concepts:<br>
+                    <br>
+                    1. Encryption: Encryption is the process of converting plaintext into ciphertext using an encryption algorithm and a cryptographic key. The ciphertext is the encrypted version of the original message and can only be decrypted back to plaintext using the corresponding decryption algorithm and key.<br>
+                    <br>
+                    2. Decryption: Decryption is the process of converting ciphertext back to plaintext using a decryption algorithm and the correct cryptographic key. Only the intended recipient with the correct key can decrypt the ciphertext and retrieve the original message.<br>
+                    <br>
+                    3. Cryptographic Key: A cryptographic key is a piece of information used by the encryption and decryption algorithms to transform the plaintext into ciphertext and vice versa. The key must be kept secret to ensure the security of the communication.<br>
+                    <br>
+                    4. Cryptographic Protocols: Cryptographic protocols are a set of rules and procedures that govern the secure exchange of information. These protocols define how encryption and decryption algorithms are used, how keys are generated and exchanged, and how the integrity of the data is verified.<br>
+                    <br>
+                    Now that we have covered the basic concepts, let's move on to the multiple-choice questions.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
