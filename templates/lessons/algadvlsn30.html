@@ -93,54 +93,94 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is parameterized complexity?",
+                options: [
+                    "The study of problems with an additional parameter",
+                    "The study of problems with a fixed input size",
+                    "The study of problems with exponential complexity",
+                    "The study of problems with polynomial complexity"
+                ],
+                answer: "The study of problems with an additional parameter"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is fixed-parameter tractability?",
+                options: [
+                    "Solving problems in exponential time",
+                    "Solving problems in polynomial time",
+                    "Solving problems in exponential time with respect to the parameter",
+                    "Solving problems in polynomial time with respect to the parameter"
+                ],
+                answer: "Solving problems in exponential time with respect to the parameter"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is kernelization?",
+                options: [
+                    "Reducing the size of the input while preserving the solution",
+                    "Increasing the size of the input while preserving the solution",
+                    "Transforming the input into a different problem",
+                    "Transforming the solution into a different problem"
+                ],
+                answer: "Reducing the size of the input while preserving the solution"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What are some complexity classes in parameterized complexity?",
+                options: ["FPT, W[1], and XP", "P, NP, and NP-hard", "Exponential and polynomial", "Tractable and intractable"],
+                answer: "FPT, W[1], and XP"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What are the applications of parameterized complexity?",
+                options: [
+                    "Bioinformatics, network analysis, and optimization",
+                    "Artificial intelligence and machine learning",
+                    "Cryptography and data security",
+                    "Graph theory and combinatorial optimization"
+                ],
+                answer: "Bioinformatics, network analysis, and optimization"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the main goal of kernelization?",
+                options: [
+                    "To increase the size of the problem instance",
+                    "To reduce the size of the problem instance while preserving its essential properties",
+                    "To transform the problem instance into a completely different problem",
+                    "To remove all irrelevant information from the problem instance"
+                ],
+                answer: "To reduce the size of the problem instance while preserving its essential properties"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What are the two main steps involved in kernelization?",
+                options: ["Preprocessing and reduction", "Analysis and synthesis", "Sorting and searching", "Encoding and decoding"],
+                answer: "Preprocessing and reduction"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of the reduction step in kernelization?",
+                options: [
+                    "To apply a set of rules to simplify the problem instance",
+                    "To transform the problem instance into a kernel",
+                    "To remove irrelevant information from the problem instance",
+                    "To identify structural properties of the problem"
+                ],
+                answer: "To transform the problem instance into a kernel"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How can kernelization benefit the development of efficient algorithms?",
+                options: [
+                    "By increasing the size of the problem instance",
+                    "By reducing the size of the problem instance",
+                    "By transforming the problem instance into a completely different problem",
+                    "By removing all irrelevant information from the problem instance"
+                ],
+                answer: "By reducing the size of the problem instance while preserving its essential properties"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What can kernelization be used as a preprocessing step for?",
+                options: [
+                    "Sorting algorithms",
+                    "Dynamic programming",
+                    "Graph traversal algorithms",
+                    "Encryption algorithms"
+                ],
+                answer: "Dynamic programming"
             }
         ];
 
@@ -383,14 +423,46 @@
             <div id="sublesson1">
                 <h2>Principles of parameterized complexity</h2>
                 <p>
-                    
+                    In this sub-lesson, we will explore the principles of parameterized complexity. Parameterized complexity is a branch of computational complexity theory that focuses on analyzing the complexity of problems with respect to a parameter. It provides a more fine-grained analysis of problem complexity, taking into account the size of the input as well as the value of the parameter.<br>
+                    <br>
+                    1. Parameterized Complexity:<br>
+                        - Parameterized complexity is concerned with the study of problems that have an additional parameter, in addition to the input size.<br>
+                        - The parameter represents some characteristic of the problem that can be used to measure its complexity.<br>
+                        - By considering the parameter, we can gain insights into the behavior of the problem for different values of the parameter.<br>
+                        <br>
+                    2. Fixed-Parameter Tractability:<br>
+                        - Fixed-parameter tractability (FPT) is a key concept in parameterized complexity.<br>
+                        - A problem is said to be fixed-parameter tractable if it can be solved in time that is exponential in the parameter but polynomial in the input size.<br>
+                        - FPT algorithms provide efficient solutions for problems that are intractable in the general case but become tractable when the parameter is small.<br>
+                        <br>
+                    3. Kernelization:<br>
+                        - Kernelization is a technique used in parameterized complexity to reduce the size of the input while preserving the solution.<br>
+                        - A kernel is a polynomial-time algorithm that transforms an instance of a problem into an equivalent instance with a reduced size.<br>
+                        - The transformed instance is called a kernel and has a size that is bounded by a function of the parameter.<br>
+                        <br>
+                    4. Complexity Classes:<br>
+                        - Parameterized complexity introduces several complexity classes to classify problems based on their parameterized complexity.<br>
+                        - Some commonly used classes include FPT, W[1], and XP.<br>
+                        - These classes provide a hierarchy of problem complexity, allowing us to compare the relative difficulty of different problems.<br>
+                        <br>
+                    5. Applications:<br>
+                        - Parameterized complexity has applications in various fields, including bioinformatics, network analysis, and optimization.<br>
+                        - By analyzing the parameterized complexity of a problem, we can design more efficient algorithms and gain insights into the inherent difficulty of the problem.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Kernelization techniques for tackling complex problems</h2>
                 <p>
-
+                    In this sub-lesson, we will explore the concept of kernelization and how it can be used to tackle complex problems. Kernelization is a technique in parameterized complexity theory that aims to reduce the size of an instance of a problem while preserving its essential properties. This reduction allows for more efficient algorithms to be applied to the problem.<br>
+                    <br>
+                    Kernelization involves two main steps: preprocessing and reduction. In the preprocessing step, we apply a set of rules to simplify the instance of the problem. These rules are designed to remove irrelevant information and reduce the size of the instance. The goal is to transform the instance into a smaller, equivalent instance that still captures the essence of the problem.<br>
+                    <br>
+                    Once the preprocessing step is complete, we move on to the reduction step. In this step, we further simplify the instance by applying a series of reduction rules. These rules transform the instance into a kernel, which is a small, simplified instance that still captures the essential properties of the problem. The reduction rules are carefully designed to preserve the solution structure of the original problem.<br>
+                    <br>
+                    Kernelization has several benefits. First, it allows us to focus on a smaller instance of the problem, which can make it easier to develop efficient algorithms. Second, it can help us identify structural properties of the problem that can be exploited to find solutions. Finally, kernelization can be used as a preprocessing step before applying other algorithmic techniques, such as dynamic programming or branch and bound.<br>
+                    <br>
+                    Now that we have covered the basics of kernelization, let's move on to the multiple-choice questions.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
