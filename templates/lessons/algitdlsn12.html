@@ -93,54 +93,104 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the key ingredient in the greedy approach?",
+                options: [
+                    "Optimal substructure",
+                    "Greedy-choice property",
+                    "Dynamic programming",
+                    "Bottom-up solving"
+                ],
+                answer: "Greedy-choice property"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How do greedy algorithms differ from dynamic programming?",
+                options: [
+                    "Greedy algorithms make choices based on subproblem solutions",
+                    "Dynamic programming makes choices based on the current problem",
+                    "Greedy algorithms solve subproblems in a bottom-up manner",
+                    "Dynamic programming solves subproblems before making the first choice"
+                ],
+                answer: "Greedy algorithms make choices based on subproblem solutions"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the greedy-choice property?",
+                options: [
+                    "Making locally optimal choices at each step",
+                    "Making choices based on future choices",
+                    "Making choices based on subproblem solutions",
+                    "Making choices that lead to a globally optimal solution"
+                ],
+                answer: "Making locally optimal choices at each step"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the key difference between greedy algorithms and dynamic programming?",
+                options: [
+                    "Greedy algorithms solve subproblems before making the first choice",
+                    "Dynamic programming makes choices based on the current problem",
+                    "Greedy algorithms make choices based on subproblem solutions",
+                    "Dynamic programming solves subproblems in a bottom-up manner"
+                ],
+                answer: "Greedy algorithms make choices based on subproblem solutions"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the role of optimal substructure in greedy algorithms?",
+                options: [
+                    "It ensures that locally optimal choices lead to a globally optimal solution",
+                    "It determines the order in which subproblems are solved",
+                    "It guarantees that a solution must be built up from solutions to smaller subproblems",
+                    "It helps in breaking down the problem into smaller subproblems"
+                ],
+                answer: "It ensures that locally optimal choices lead to a globally optimal solution"
+            }
+            {
+                question: "What is the key ingredient in a greedy algorithm?",
+                options: [
+                    "Optimal substructure",
+                    "Dynamic programming",
+                    "Greedy-choice property",
+                    "Local optimization"
+                ],
+                answer: "Greedy-choice property"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How does a greedy algorithm differ from dynamic programming?",
+                options: [
+                    "Greedy algorithms make choices based on subproblem solutions",
+                    "Greedy algorithms solve subproblems before making the first choice",
+                    "Greedy algorithms make choices without considering future choices or subproblem solutions",
+                    "Greedy algorithms solve problems in a bottom-up manner"
+                ],
+                answer: "Greedy algorithms make choices without considering future choices or subproblem solutions"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of the greedy-choice property in a greedy algorithm?",
+                options: [
+                    "To make locally optimal choices",
+                    "To solve subproblems before making the first choice",
+                    "To consider future choices and subproblem solutions",
+                    "To reduce the problem instance to a smaller one"
+                ],
+                answer: "To make locally optimal choices"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How does a greedy algorithm make its first choice?",
+                options: [
+                    "By considering future choices",
+                    "By solving subproblems",
+                    "By making the choice that looks best in the current problem",
+                    "By considering results from subproblems"
+                ],
+                answer: "By making the choice that looks best in the current problem"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
-            },
-            {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What are the two key properties required for a greedy algorithm to solve a problem?",
+                options: [
+                    "Optimal substructure and dynamic programming",
+                    "Greedy-choice property and optimal substructure",
+                    "Local optimization and subproblem solutions",
+                    "Future choices and problem instances"
+                ],
+                answer: "Greedy-choice property and optimal substructure"
             }
         ];
 
@@ -383,14 +433,26 @@
             <div id="sublesson1">
                 <h2>Core principles of the greedy approach</h2>
                 <p>
-                    
+                    In this lesson, we will explore the core principles of the greedy approach in the context of greedy algorithms. Greedy algorithms are a class of algorithms that make locally optimal choices at each step in order to find a globally optimal solution. The key ingredient in the greedy approach is the greedy-choice property, which states that we can assemble a globally optimal solution by making locally optimal (greedy) choices.<br>
+                    <br>
+                    The greedy-choice property sets greedy algorithms apart from dynamic programming. In dynamic programming, we make choices at each step that depend on the solutions to subproblems. This typically leads to solving subproblems in a bottom-up manner, progressing from smaller subproblems to larger ones. On the other hand, greedy algorithms make choices that seem best at the moment and then solve the remaining subproblem. The choice made by a greedy algorithm may depend on previous choices, but it cannot depend on future choices or the solutions to subproblems.<br>
+                    <br>
+                    To determine whether a greedy algorithm will solve a particular optimization problem, we need to establish two key properties: the greedy-choice property and optimal substructure. The greedy-choice property ensures that locally optimal choices lead to a globally optimal solution. Optimal substructure means that an optimal solution to the original problem can be constructed from optimal solutions to its subproblems.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>How to make greedy choices</h2>
                 <p>
-
+                    In this lesson, we will learn about the concept of making greedy choices in greedy algorithms. Greedy algorithms are a class of algorithms that make locally optimal choices at each step in order to find a globally optimal solution. The key ingredient in a greedy algorithm is the greedy-choice property, which states that we can assemble a globally optimal solution by making locally optimal (greedy) choices.<br>
+                    <br>
+                    Unlike dynamic programming, where choices depend on the solutions to subproblems, greedy algorithms make choices based solely on the current problem without considering future choices or subproblem solutions. This means that a greedy algorithm makes its first choice before solving any subproblems. The choice made by a greedy algorithm may depend on previous choices, but it cannot depend on future choices or subproblem solutions.<br>
+                    <br>
+                    To determine whether a greedy algorithm will solve a particular optimization problem, we need to demonstrate two key properties: the greedy-choice property and optimal substructure. The greedy-choice property allows us to make locally optimal choices, while optimal substructure ensures that combining an optimal solution to a subproblem with the greedy choice leads to an optimal solution to the original problem.<br>
+                    <br>
+                    To make greedy choices, we usually consider a set of choices and select the one that seems best at the moment. This choice is made without considering the results from subproblems or future choices. By making greedy choices one after another, a greedy algorithm reduces each given problem instance to a smaller one until a solution is reached.<br>
+                    <br>
+                    Now that we understand how to make greedy choices, let's move on to some practice questions to test our understanding.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
