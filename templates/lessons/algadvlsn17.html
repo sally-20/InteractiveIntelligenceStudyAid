@@ -93,54 +93,94 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the MapReduce paradigm?",
+                options: [
+                    "A programming language for parallel operations",
+                    "A style of computing or a Big Data framework",
+                    "A mathematical function for transforming data",
+                    "A package for executing MapReduce tasks"
+                ],
+                answer: "A style of computing or a Big Data framework"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the map phase in MapReduce?",
+                options: [
+                    "Aggregating and summarizing data",
+                    "Applying a function to each element in an array",
+                    "Combining the results from the map phase",
+                    "Searching for relevant words and phrases"
+                ],
+                answer: "Applying a function to each element in an array"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which of the following tasks can be performed using MapReduce?",
+                options: [
+                    "Creating indexes",
+                    "Counting certain words in a text passage",
+                    "Graph creation and algorithms",
+                    "All of the above"
+                ],
+                answer: "All of the above"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the reduce phase in MapReduce?",
+                options: [
+                    "Applying a function to each element in an array",
+                    "Aggregating and summarizing data",
+                    "Combining the results from the map phase",
+                    "Searching for relevant words and phrases"
+                ],
+                answer: "Aggregating and summarizing data"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which package can be used to perform MapReduce tasks in Python?",
+                options: [
+                    "MrJob",
+                    "Apache Hadoop",
+                    "Elastic MapReduce (EMR)",
+                    "Amazon Web Services"
+                ],
+                answer: "MrJob"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is MapReduce?",
+                options: [
+                    "A style of computing or a Big Data framework",
+                    "A parallel algorithm for text processing",
+                    "A package for cloud-based resources",
+                    "A lambda function in Python"
+                ],
+                answer: "A style of computing or a Big Data framework"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which phase of the MapReduce algorithm applies a function to each element of an array?",
+                options: ["Map phase", "Reduce phase", "Initialization phase", "Transformation phase"],
+                answer: "Map phase"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of using packages like MrJob in MapReduce?",
+                options: [
+                    "To reinvent the wheel for every MapReduce task",
+                    "To perform MapReduce tasks quickly and easily",
+                    "To execute tasks using cloud-based resources",
+                    "To write code for the reduce phase"
+                ],
+                answer: "To perform MapReduce tasks quickly and easily"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the role of the reduce phase in the MapReduce framework?",
+                options: [
+                    "To apply a function to each element of an array",
+                    "To transform elements using a lambda function",
+                    "To combine transformed elements to produce a final result",
+                    "To execute tasks using cloud-based resources"
+                ],
+                answer: "To combine transformed elements to produce a final result"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which programming language is commonly used for implementing algorithms in a MapReduce framework?",
+                options: ["Python", "Java", "C++", "Ruby"],
+                answer: "Java"
             }
         ];
 
@@ -383,14 +423,30 @@
             <div id="sublesson1">
                 <h2>Overview of MapReduce paradigm</h2>
                 <p>
-                    
+                    In this lesson, we will explore the MapReduce paradigm, which is a style of computing or a Big Data framework used for parallel and distributed algorithms. MapReduce allows us to efficiently process large amounts of data by spreading computations across different computers. It is commonly used in applications such as text algorithms, graph creation and algorithms, and data mining.<br>
+                    <br>
+                    MapReduce consists of two main phases: the map phase and the reduce phase. In the map phase, a function is applied to each element in a one-dimensional array, transforming the values and creating an identically shaped array. This phase is similar to functional programming, where computing is treated as a mathematical function. The map function is often used to perform tasks such as splitting text into elements, creating indexes, and searching for relevant words and phrases.<br>
+                    <br>
+                    The reduce phase, on the other hand, combines the results from the map phase and performs further computations to produce the final output. It involves aggregating and summarizing the data to obtain the desired result. The reduce phase is particularly useful for tasks like counting certain words in a text passage.<br>
+                    <br>
+                    To work with MapReduce, there are various packages and frameworks available that simplify the implementation process. For example, MrJob is a package that enables us to perform MapReduce tasks quickly and easily in Python. Additionally, cloud-based resources like Amazon Web Services and Hadoop can be used to execute MapReduce tasks efficiently.<br>
+                    <br>
+                    Overall, the MapReduce paradigm provides a powerful and scalable approach to processing large datasets. By leveraging parallel and distributed algorithms, it allows us to tackle complex tasks in an efficient manner.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Implementing algorithms in a MapReduce framework</h2>
                 <p>
-
+                    In this sub-lesson, we will learn how to implement algorithms in a MapReduce framework. MapReduce is a style of computing or a Big Data framework that allows us to efficiently process large amounts of data by combining different distributed algorithms. It is commonly used in applications such as text processing, graph creation, data mining, and machine learning.<br>
+                    <br>
+                    To implement algorithms in a MapReduce framework, we can use packages like MrJob, which provide a convenient way to perform MapReduce tasks. These packages allow us to quickly and easily write code for MapReduce algorithms without having to reinvent the wheel every time. Additionally, using a package makes it easier to execute the task using cloud-based resources like Amazon Web Services or Hadoop.<br>
+                    <br>
+                    The MapReduce algorithm consists of two phases: the map phase and the reduce phase. In the map phase, we apply a function to each element of a one-dimensional array (list) and obtain a transformed array. This function can be defined using a lambda function in Python. For example, if we have a list of numbers [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], we can use the map function to transform each number into its power equivalent using the lambda function lambda x: x**2.<br>
+                    <br>
+                    After the map phase, the reduce phase combines the transformed elements to produce a final result. The reduce phase is not covered in this sub-lesson but is an important part of the MapReduce framework.<br>
+                    <br>
+                    Now that we have learned the basics of implementing algorithms in a MapReduce framework, let's test our understanding with some multiple-choice questions.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
