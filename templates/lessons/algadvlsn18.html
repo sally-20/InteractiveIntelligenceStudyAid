@@ -93,54 +93,84 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the main purpose of using segment trees?",
+                options: [
+                    "To efficiently perform range queries on arrays",
+                    "To store elements in a binary tree structure",
+                    "To perform sorting operations on arrays",
+                    "To implement hash tables for fast lookups"
+                ],
+                answer: "To efficiently perform range queries on arrays"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How are the array elements represented in a segment tree?",
+                options: ["As internal nodes", "As leaf nodes", "As root nodes", "As children nodes"],
+                answer: "As leaf nodes"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the time complexity of constructing a segment tree?",
+                options: ["O(n)", "O(log n)", "O(n log n)", "O(1)"],
+                answer: "O(n)"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How do we perform a range query on a segment tree?",
+                options: [
+                    "Traverse the tree from root to leaf nodes",
+                    "Traverse the tree from leaf to root nodes",
+                    "Traverse the tree randomly",
+                    "Traverse the tree in a zigzag pattern"
+                ],
+                answer: "Traverse the tree from root to leaf nodes"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the time complexity of range queries on a segment tree?",
+                options: ["O(1)", "O(log n)", "O(n)", "O(n log n)"],
+                answer: "O(log n)"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the main advantage of Fenwick trees?",
+                options: [
+                    "Efficient time complexity for range queries and updates",
+                    "Efficient space complexity for large datasets",
+                    "Ability to handle dynamic arrays",
+                    "Support for parallel processing"
+                ],
+                answer: "Efficient time complexity for range queries and updates"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which problem can be efficiently solved using Fenwick trees?",
+                options: [
+                    "Sorting an array in ascending order",
+                    "Finding the maximum element in an array",
+                    "Calculating the sum of elements in a range",
+                    "Reversing the order of elements in an array"
+                ],
+                answer: "Calculating the sum of elements in a range"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the time complexity for range queries and updates in Fenwick trees?",
+                options: ["O(1)", "O(log n)", "O(n)", "O(n log n)"],
+                answer: "O(log n)"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the inversion count problem?",
+                options: [
+                    "Counting the number of elements in an array",
+                    "Counting the number of pairs of elements in an array that are out of order",
+                    "Counting the number of duplicate elements in an array",
+                    "Counting the number of elements greater than a given threshold in an array"
+                ],
+                answer: "Counting the number of pairs of elements in an array that are out of order"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Apart from range sum queries, what other problems can be solved using Fenwick trees?",
+                options: [
+                    "Finding the maximum element in an array",
+                    "Sorting an array in descending order",
+                    "Finding the kth smallest element in an array",
+                    "Reversing the order of elements in an array"
+                ],
+                answer: "Finding the kth smallest element in an array"
             }
         ];
 
@@ -383,14 +413,32 @@
             <div id="sublesson1">
                 <h2>Understanding segment trees</h2>
                 <p>
-                    
+                    In this lesson, we will explore the concept of segment trees, which are advanced tree structures used for efficient range queries on arrays. Segment trees are particularly useful when we need to perform operations like finding the sum, minimum, maximum, or any other associative operation over a range of elements in an array.<br>
+                    <br>
+                    Segment trees are binary trees that represent the array elements as leaf nodes. Each internal node of the tree represents a range of elements in the array. The root node represents the entire array, and its children represent two equal halves of the array. The tree is constructed in a bottom-up manner, where each internal node stores the result of the operation performed on its children.<br>
+                    <br>
+                    To perform a range query, we traverse the segment tree from the root to the appropriate range nodes based on the query range. At each node, we check if the node's range overlaps with the query range. If it does, we either return the node's stored result or continue traversing to its children until we reach the leaf nodes.<br>
+                    <br>
+                    Segment trees have a time complexity of O(log n) for both construction and range queries, where n is the number of elements in the array. This makes them highly efficient for handling large arrays and frequent range queries.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Applications and advantages of Fenwick trees</h2>
                 <p>
-
+                    In this lesson, we will explore the applications and advantages of Fenwick trees, which are advanced tree structures used in various algorithms and data structures.<br>
+                    <br>
+                    Fenwick trees, also known as Binary Indexed Trees (BIT), are used to efficiently perform range queries and updates on an array of numbers. They are particularly useful when we need to calculate prefix sums or find the sum of a range of elements in an array.<br>
+                    <br>
+                    The main advantage of Fenwick trees is their efficient time complexity for both range queries and updates. The time complexity for both operations is O(log n), where n is the size of the array. This makes Fenwick trees a great choice when dealing with large datasets and frequent updates.<br>
+                    <br>
+                    One of the key applications of Fenwick trees is in solving the range sum query problem. Given an array of numbers, we can use a Fenwick tree to calculate the sum of elements in a given range efficiently. This is achieved by storing cumulative sums at each node of the tree, allowing us to calculate the sum of any range by combining the cumulative sums of appropriate nodes.<br>
+                    <br>
+                    Another application of Fenwick trees is in solving the inversion count problem. Inversion count refers to the number of pairs of elements in an array that are out of order. By using a Fenwick tree, we can efficiently count the number of inversions in an array.<br>
+                    <br>
+                    Fenwick trees can also be used to solve other problems such as finding the kth smallest element in an array, finding the median of a range, and performing range updates efficiently.<br>
+                    <br>
+                    Now that we have learned about the applications and advantages of Fenwick trees, let's test our understanding with some multiple-choice questions.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
