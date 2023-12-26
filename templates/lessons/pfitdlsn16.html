@@ -93,56 +93,156 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is a Systematic Investment Plan (SIP)?",
+                options: [
+                    "Investing a large amount of money in one go",
+                    "Investing a fixed amount regularly at regular intervals",
+                    "Investing in mutual funds only",
+                    "Investing in high-risk assets"
+                ],
+                answer: "Investing a fixed amount regularly at regular intervals"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the benefit of rupee cost averaging in SIPs?",
+                options: [
+                    "It reduces the impact of market volatility",
+                    "It guarantees higher returns",
+                    "It eliminates the need for market timing",
+                    "It allows investors to invest in lump-sum"
+                ],
+                answer: "It reduces the impact of market volatility"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the main difference between SIPs and lump-sum investments?",
+                options: [
+                    "SIPs require market timing, while lump-sum investments do not",
+                    "SIPs offer flexibility, while lump-sum investments do not",
+                    "SIPs involve regular investments, while lump-sum investments involve a one-time investment",
+                    "SIPs carry higher risk, while lump-sum investments carry lower risk"
+                ],
+                answer: "SIPs involve regular investments, while lump-sum investments involve a one-time investment"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which investment strategy is suitable for investors with a significant amount of money available for investment?",
+                options: [
+                    "SIPs",
+                    "Lump-sum investments",
+                    "Both SIPs and lump-sum investments",
+                    "None of the above"
+                ],
+                answer: "Lump-sum investments"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
-            },
-            {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
-            },
-            {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
-            },
-            {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
-            },
-            {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
-            },
-            {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the benefit of SIPs in terms of risk management?",
+                options: [
+                    "They spread investments over a period of time",
+                    "They allow investors to invest in high-risk assets",
+                    "They eliminate the need for market timing",
+                    "They guarantee higher returns"
+                ],
+                answer: "They spread investments over a period of time"
             }
-        ];
+            {
+                question: "What is the most common frequency for SIP investments?",
+                options: [
+                    "Weekly",
+                    "Monthly",
+                    "Quarterly",
+                    "Yearly"
+                ],
+                answer: "Monthly"
+            },
+            {
+                question: "What is the minimum investment amount for SIPs in India?",
+                options: [
+                    "Rs. 100",
+                    "Rs. 500",
+                    "Rs. 1,000",
+                    "Rs. 5,000"
+                ],
+                answer: "Rs. 500"
+            },
+            {
+                question: "What is the strategy used in SIPs to reduce the impact of market volatility?",
+                options: [
+                    "Rupee Cost Averaging",
+                    "Dollar Cost Averaging",
+                    "Rupee Value Averaging",
+                    "Dollar Value Averaging"
+                ],
+                answer: "Rupee Cost Averaging"
+            },
+            {
+                question: "What tool can investors use to determine the monthly investment amount for their desired goal?",
+                options: [
+                    "SIP Calculator",
+                    "Mutual Fund Calculator",
+                    "Investment Planner",
+                    "Financial Advisor"
+                ],
+                answer: "SIP Calculator"
+            },
+            {
+                question: "Which of the following is NOT a benefit of SIPs?",
+                options: [
+                    "Disciplined Investing",
+                    "Flexibility in investment amounts",
+                    "Guaranteed returns",
+                    "Power of Compounding"
+                ],
+                answer: "Guaranteed returns"
+            }
+            {
+                question: "What is a Systematic Investment Plan (SIP)?",
+                options: [
+                    "Investing a large amount of money in one go",
+                    "Investing a fixed amount regularly at regular intervals",
+                    "Investing in mutual funds only",
+                    "Investing in high-risk assets"
+                ],
+                answer: "Investing a fixed amount regularly at regular intervals"
+            },
+            {
+                question: "What is the benefit of rupee cost averaging in SIPs?",
+                options: [
+                    "It reduces the impact of market volatility",
+                    "It guarantees higher returns",
+                    "It eliminates the need for market timing",
+                    "It allows investors to invest in lump-sum"
+                ],
+                answer: "It reduces the impact of market volatility"
+            },
+            {
+                question: "What is the main difference between SIPs and lump-sum investments?",
+                options: [
+                    "SIPs require market timing, while lump-sum investments do not",
+                    "SIPs offer flexibility, while lump-sum investments do not",
+                    "SIPs involve regular investments, while lump-sum investments involve a one-time investment",
+                    "SIPs carry higher risk, while lump-sum investments carry lower risk"
+                ],
+                answer: "SIPs involve regular investments, while lump-sum investments involve a one-time investment"
+            },
+            {
+                question: "Which investment strategy is suitable for investors with a significant amount of money available for investment?",
+                options: [
+                    "SIPs",
+                    "Lump-sum investments",
+                    "Both SIPs and lump-sum investments",
+                    "None of the above"
+                ],
+                answer: "Lump-sum investments"
+            },
+            {
+                question: "What is the benefit of SIPs in terms of risk management?",
+                options: [
+                    "They spread investments over a period of time",
+                    "They allow investors to invest in high-risk assets",
+                    "They eliminate the need for market timing",
+                    "They guarantee higher returns"
+                ],
+                answer: "They spread investments over a period of time"
+            }
+        ];        
 
         const questionsCopy = [...questions];
         let currentQuestionIndex = 0;
@@ -382,21 +482,76 @@
             <div id="sublesson1">
                 <h2>Introduction to SIPs in the Indian context</h2>
                 <p>
-                    
+                    In this lesson, we will explore the concept of Systematic Investment Plans (SIPs) in the Indian context. <br>
+                    SIPs are a popular investment strategy that allows individuals to invest a fixed amount of money at regular intervals in mutual funds. <br>
+                    Let's dive into the details of SIPs.<br>
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>SIP frequency and investment amounts in India</h2>
                 <p>
-
+                    In this lesson, we will explore the frequency and investment amounts for Systematic Investment Plans (SIPs) in India. SIPs are a popular investment option that allows individuals to invest a fixed amount regularly in mutual funds. Let's dive into the details.<br>
+                    <br>
+                    1. SIP Frequency:<br>
+                    SIPs offer flexibility in terms of frequency. Investors can choose to invest on a monthly, quarterly, or even weekly basis. However, the most common and recommended frequency is monthly. Investing monthly allows for better averaging of investment costs and reduces the impact of market volatility.<br>
+                    <br>
+                    2. Investment Amounts:<br>
+                    When it comes to investment amounts, SIPs offer a wide range of options. Investors can start with as little as Rs. 500 per month and go up to any amount they are comfortable with. There is no upper limit on the investment amount for SIPs.<br>
+                    <br>
+                    3. Rupee Cost Averaging:<br>
+                    One of the key benefits of SIPs is rupee cost averaging. This strategy involves investing a fixed rupee amount at regular intervals, regardless of the market conditions. When the market is down, more units are purchased, and when the market is up, fewer units are purchased. This helps in reducing the impact of market volatility and allows investors to benefit from market fluctuations over the long term.<br>
+                    <br>
+                    4. SIP Calculator:<br>
+                    To determine the investment amount for a desired goal, investors can use an SIP calculator. This tool takes into account factors like the investment duration, expected returns, and the desired goal amount to calculate the monthly investment required. It helps investors plan their investments effectively and achieve their financial goals.<br>
+                    <br>
+                    5. Benefits of SIPs:<br>
+                    - Disciplined Investing: SIPs promote regular and disciplined investing, which is essential for long-term wealth creation.<br>
+                    - Flexibility: Investors can increase or decrease their SIP amount as per their financial situation.<br>
+                    - Power of Compounding: SIPs allow investors to benefit from the power of compounding over time, leading to significant wealth accumulation.
                 </p>
             </div>
             <!-- Sub Lesson 3 Content -->
             <div id="sublesson3">
                 <h2>SIP vs lump-sum investments for Indian investors</h2>
                 <p>
-
+                    In this lesson, we will explore the differences between Systematic Investment Plans (SIPs) and lump-sum investments for Indian investors. Both SIPs and lump-sum investments are popular investment strategies, but they have distinct characteristics and benefits.<br>
+                    <br>
+                    1. Systematic Investment Plan (SIP):<br>
+                    - SIP is an investment strategy where investors regularly invest a fixed amount of money at regular intervals, typically monthly.<br>
+                    - It allows investors to invest in mutual funds or other investment products in a disciplined manner.<br>
+                    - SIPs are suitable for investors who want to invest small amounts regularly and benefit from the power of compounding.<br>
+                    - SIPs help in rupee cost averaging, where investors buy more units when the market is down and fewer units when the market is up.<br>
+                    - This strategy reduces the impact of market volatility on investments.<br>
+                    <br>
+                    2. Lump-sum Investments:<br>
+                    - Lump-sum investments involve investing a large amount of money in one go.<br>
+                    - It is suitable for investors who have a significant amount of money available for investment.<br>
+                    - Lump-sum investments provide the opportunity to benefit from market movements and potentially earn higher returns.<br>
+                    - However, they also expose investors to the risk of investing at the wrong time, especially if the market is at a peak.<br>
+                    <br>
+                    SIP vs. Lump-sum Investments:<br>
+                    1. Risk Management:<br>
+                    - SIPs help in managing risk by spreading investments over a period of time, reducing the impact of market volatility.<br>
+                    - Lump-sum investments carry higher risk as the entire investment is exposed to market movements at a specific point in time.<br>
+                    <br>
+                    2. Rupee Cost Averaging:<br>
+                    - SIPs use rupee cost averaging to buy more units when the market is down and fewer units when the market is up.<br>
+                    - Lump-sum investments do not benefit from rupee cost averaging.<br>
+                    <br>
+                    3. Market Timing:<br>
+                    - SIPs eliminate the need for market timing as investments are made regularly, regardless of market conditions.<br>
+                    - Lump-sum investments require investors to time the market correctly to maximize returns.<br>
+                    <br>
+                    4. Investment Discipline:<br>
+                    - SIPs promote investment discipline as investors commit to investing a fixed amount regularly.<br>
+                    - Lump-sum investments may lack the discipline of regular investments.<br>
+                    <br>
+                    5. Flexibility:<br>
+                    - SIPs offer flexibility as investors can start, stop, or modify their investments at any time.<br>
+                    - Lump-sum investments are less flexible as the entire amount is invested at once.<br>
+                    <br>
+                    Overall, SIPs are suitable for investors who want to invest small amounts regularly and benefit from rupee cost averaging and risk management. Lump-sum investments are suitable for investors with a significant amount of money available for investment and who are confident in their market timing abilities.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
