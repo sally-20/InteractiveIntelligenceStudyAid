@@ -92,7 +92,157 @@
             }
         }
         const questions = [
-            
+            {
+                question: "What is the strike price in options trading?",
+                options: [
+                    "The price at which the option is bought or sold",
+                    "The price at which the underlying asset can be bought or sold",
+                    "The price at which the option expires",
+                    "The price at which the premium is determined"
+                ],
+                answer: "The price at which the underlying asset can be bought or sold"
+            },
+            {
+                question: "What does it mean when an option is in-the-money?",
+                options: [
+                    "The option has no intrinsic value",
+                    "The option can be exercised at a profit",
+                    "The option can be exercised at a loss",
+                    "The option has expired"
+                ],
+                answer: "The option can be exercised at a profit"
+            },
+            {
+                question: "Who is the option writer?",
+                options: [
+                    "The buyer of the option",
+                    "The seller of the option",
+                    "The holder of the option",
+                    "The exchange where options are traded"
+                ],
+                answer: "The seller of the option"
+            },
+            {
+                question: "What is the premium in options trading?",
+                options: [
+                    "The price paid by the buyer of the option to the seller",
+                    "The price at which the underlying asset is bought or sold",
+                    "The price at which the option expires",
+                    "The price at which the option can be exercised"
+                ],
+                answer: "The price paid by the buyer of the option to the seller"
+            },
+            {
+                question: "What is an at-the-money option?",
+                options: [
+                    "An option that has no intrinsic value",
+                    "An option that can be exercised at a profit",
+                    "An option that can be exercised at a loss",
+                    "An option that has expired"
+                ],
+                answer: "An option that has no intrinsic value"
+            },
+        ];const optionsTradingIndiaQuestions = [
+            {
+                question: "Which of the following is a popular stock exchange in India that offers options trading facilities?",
+                options: [
+                    "National Stock Exchange (NSE)",
+                    "Bombay Stock Exchange (BSE)",
+                    "Both a) and b)",
+                    "None of the above"
+                ],
+                answer: "Both a) and b)"
+            },
+            {
+                question: "Which of the following is an online broker in India that offers options trading services?",
+                options: [
+                    "Zerodha",
+                    "Upstox",
+                    "ICICI Direct",
+                    "All of the above"
+                ],
+                answer: "All of the above"
+            },
+            {
+                question: "Which of the following is a popular mobile trading app in India?",
+                options: [
+                    "Zerodha Kite",
+                    "Upstox Pro",
+                    "ICICI Direct Mobile",
+                    "All of the above"
+                ],
+                answer: "All of the above"
+            },
+            {
+                question: "Which of the following is not an educational resource for options trading in India?",
+                options: [
+                    "NSE Academy",
+                    "BSE Institute",
+                    "HDFC Bank",
+                    "Online trading communities"
+                ],
+                answer: "HDFC Bank"
+            },
+            {
+                question: "What factors should options traders consider when selecting a trading platform?",
+                options: [
+                    "Trading style",
+                    "Pricing",
+                    "Market data reliability",
+                    "All of the above"
+                ],
+                answer: "All of the above"
+            },
+            {
+                question: "What is the main purpose of options trading in India?",
+                options: [
+                    "Speculate on price movements",
+                    "Generate income",
+                    "Hedge positions",
+                    "All of the above"
+                ],
+                answer: "All of the above"
+            },
+            {
+                question: "Which regulatory authority oversees the Indian options markets?",
+                options: [
+                    "RBI",
+                    "SEBI",
+                    "NSE",
+                    "BSE"
+                ],
+                answer: "SEBI"
+            },
+            {
+                question: "What are the two types of options contracts?",
+                options: [
+                    "Call and put",
+                    "Buy and sell",
+                    "Long and short",
+                    "High and low"
+                ],
+                answer: "Call and put"
+            },
+            {
+                question: "What are margin requirements in options trading?",
+                options: [
+                    "The funds required to initiate and maintain options positions",
+                    "The maximum number of options contracts an individual can hold",
+                    "The price at which the underlying asset can be bought or sold",
+                    "The regulatory authority that oversees options trading"
+                ],
+                answer: "The funds required to initiate and maintain options positions"
+            },
+            {
+                question: "Why are position limits imposed in options trading?",
+                options: [
+                    "To ensure fair and transparent trading practices",
+                    "To prevent excessive speculation and market manipulation",
+                    "To protect investor interests",
+                    "To maintain market integrity"
+                ],
+                answer: "To prevent excessive speculation and market manipulation"
+            }
         ];
 
         const questionsCopy = [...questions];
@@ -333,21 +483,72 @@
             <div id="sublesson1">
                 <h2>Options terminology and concepts in the Indian context</h2>
                 <p>
+                    In this sub-lesson, we will explore the terminology and concepts related to options trading in the Indian context. Options trading is a popular investment strategy that allows investors to speculate on the price movement of underlying assets without actually owning them. Let's dive into the key concepts:<br>
                     <br>
+                    1. Call Option: A call option gives the holder the right, but not the obligation, to buy a specific quantity of an underlying asset at a predetermined price (strike price) within a specified period of time (expiration date). In the Indian context, call options are typically traded on stock exchanges.<br>
+                    <br>
+                    2. Put Option: A put option gives the holder the right, but not the obligation, to sell a specific quantity of an underlying asset at a predetermined price (strike price) within a specified period of time (expiration date). Put options are also traded on stock exchanges in India.<br>
+                    <br>
+                    3. Strike Price: The strike price is the price at which the underlying asset can be bought or sold when exercising an option. It is predetermined at the time of entering into the option contract and remains fixed throughout the contract period.<br>
+                    <br>
+                    4. Expiration Date: The expiration date is the last date on which the option can be exercised. After this date, the option becomes worthless and expires. In India, options contracts typically have monthly expiration dates.<br>
+                    <br>
+                    5. Premium: The premium is the price paid by the buyer of the option to the seller. It represents the cost of acquiring the right to buy or sell the underlying asset. The premium is determined by various factors such as the current price of the underlying asset, the strike price, the time remaining until expiration, and market volatility.<br>
+                    <br>
+                    6. In-the-Money: An option is said to be in-the-money when the current price of the underlying asset is favorable for exercising the option. For a call option, it means the market price is higher than the strike price. For a put option, it means the market price is lower than the strike price.<br>
+                    <br>
+                    7. Out-of-the-Money: An option is said to be out-of-the-money when the current price of the underlying asset is not favorable for exercising the option. For a call option, it means the market price is lower than the strike price. For a put option, it means the market price is higher than the strike price.<br>
+                    <br>
+                    8. At-the-Money: An option is said to be at-the-money when the current price of the underlying asset is equal to the strike price. In this case, the option has no intrinsic value and its value is solely based on time value.<br>
+                    <br>
+                    9. Option Writer: The option writer is the seller of the option who receives the premium from the buyer. The option writer is obligated to fulfill the terms of the option contract if the buyer decides to exercise the option.<br>
+                    <br>
+                    10. Option Buyer: The option buyer is the holder of the option who pays the premium to the option writer. The option buyer has the right, but not the obligation, to exercise the option.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Options trading platforms and resources in India</h2>
                 <p>
+                    In this sub-lesson, we will explore options trading platforms and resources available in India. Options trading can be done through various platforms, both online and offline. Let's take a look at some popular options trading platforms in India:<br>
                     <br>
+                    1. National Stock Exchange (NSE): NSE is one of the leading stock exchanges in India and offers a robust platform for options trading. It provides a wide range of options contracts on various underlying assets such as stocks, indices, and commodities. NSE also provides real-time market data, research reports, and educational resources to help traders make informed decisions.<br>
+                    <br>
+                    2. Bombay Stock Exchange (BSE): BSE is another major stock exchange in India that offers options trading facilities. Similar to NSE, BSE provides a variety of options contracts and access to market data and research reports. Traders can trade options on BSE through their registered brokers.<br>
+                    <br>
+                    3. Online Brokers: Several online brokers in India offer options trading services. These brokers provide user-friendly online platforms that allow traders to buy and sell options contracts. Some popular online brokers in India include Zerodha, Upstox, and ICICI Direct. These platforms often provide additional features such as real-time market data, charting tools, and educational resources.<br>
+                    <br>
+                    4. Mobile Trading Apps: Many brokers also offer mobile trading apps that allow traders to trade options on the go. These apps provide a convenient and accessible way to monitor the market, place trades, and manage options positions. Some popular mobile trading apps in India include Zerodha Kite, Upstox Pro, and ICICI Direct Mobile.<br>
+                    <br>
+                    5. Educational Resources: In addition to trading platforms, there are various educational resources available in India to learn about options trading. These resources include online courses, webinars, books, and articles. Some popular educational platforms in India include NSE Academy, BSE Institute, and various online trading communities.<br>
+                    <br>
+                    It is important for options traders to choose a platform that suits their trading style, offers competitive pricing, and provides reliable market data. Traders should also consider factors such as customer support, ease of use, and security when selecting a trading platform.
                 </p>
             </div>
             <!-- Sub Lesson 3 Content -->
             <div id="sublesson3">
                 <h2>Navigating Indian options markets and regulations</h2>
                 <p>
+                    In this sub-lesson, we will explore the Indian options markets and the regulations that govern them. Options trading in India has gained popularity in recent years, providing investors with opportunities to hedge their positions, speculate on price movements, and generate income. Let's dive into the key concepts and regulations you need to understand when navigating the Indian options markets.<br>
                     <br>
+                    1. Understanding Options Contracts:<br>
+                    Options contracts in India are similar to those in other countries, with some specific characteristics. An options contract gives the buyer the right, but not the obligation, to buy or sell an underlying asset at a predetermined price (strike price) within a specified period (expiry date). There are two types of options contracts: call options and put options.<br>
+                    <br>
+                    - Call Options: A call option gives the buyer the right to buy the underlying asset at the strike price before the expiry date. If the buyer exercises the option, the seller (writer) is obligated to sell the asset at the agreed price.<br>
+                    <br>
+                    - Put Options: A put option gives the buyer the right to sell the underlying asset at the strike price before the expiry date. If the buyer exercises the option, the seller (writer) is obligated to buy the asset at the agreed price.<br>
+                    <br>
+                    2. Indian Options Markets:<br>
+                    The Indian options markets operate on recognized stock exchanges, such as the National Stock Exchange (NSE) and the Bombay Stock Exchange (BSE). These exchanges provide a platform for trading options contracts on various underlying assets, including stocks, indices, and commodities.<br>
+                    <br>
+                    3. Regulatory Framework:<br>
+                    The Securities and Exchange Board of India (SEBI) is the regulatory authority that oversees the Indian options markets. SEBI ensures fair and transparent trading practices, protects investor interests, and maintains market integrity. It sets rules and regulations for options trading, including margin requirements, position limits, and disclosure norms.<br>
+                    <br>
+                    4. Margin Requirements:<br>
+                    Margin requirements are the funds that traders need to deposit with their brokers to initiate and maintain options positions. SEBI sets margin requirements to ensure that traders have sufficient funds to cover potential losses. Margin requirements vary based on factors such as the underlying asset, volatility, and the trader's risk profile.<br>
+                    <br>
+                    5. Position Limits:<br>
+                    SEBI imposes position limits to prevent excessive speculation and market manipulation. Position limits restrict the maximum number of options contracts an individual or entity can hold for a specific underlying asset. These limits help maintain market stability and prevent concentration of positions in the hands of a few traders.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
