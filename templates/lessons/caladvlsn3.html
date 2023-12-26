@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convergence and Divergence of Series</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/learningstyles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .quiz-container {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+            max-width: 80%;
+            max-height: 80%;
+            overflow-y: auto;
+        }
+        .question-box {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+        }
+        .options-box {
+            display: flex;
+            flex-direction: column;
+        }
+        .option-box {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .option-box.selected {
+            background-color: #3498db;
+            color: white;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 1);
+            z-index: 999;
+            display: none;
+        }
+        .modal-button-container button {
+            width: 10rem;
+            height: 2rem;
+            background-color: #3498db;
+            outline: none;
+            border: 1px solid rgb(252, 242, 241);
+            color: white;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border-radius: 20px;
+            text-align: center;
+            line-height: 2rem;
+            padding: 5px;
+        }
+        .modal-button-container button:hover {
+            background-color: #2980b9;
+        }
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity:1 ;}
+        }
+        @-webkit-keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        .completion-message {
+            color: green; 
+        } 
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='js/learningscript.js') }}" defer></script>
+    <script>
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+        const questions = [
+            {
+                question: "Which test can be used to determine the convergence or divergence of an alternating series?",
+                options: [
+                    "Divergence Test",
+                    "Comparison Test",
+                    "Alternating Series Test",
+                    "Ratio Test"
+                ],
+                answer: "Alternating Series Test"
+            },
+            {
+                question: "What are the conditions that need to be satisfied for an alternating series to converge?",
+                options: [
+                    "The terms must decrease in absolute value and approach zero.",
+                    "The terms must increase in absolute value and approach zero.",
+                    "The terms must decrease in absolute value and approach infinity.",
+                    "The terms must increase in absolute value and approach infinity."
+                ],
+                answer: "The terms must decrease in absolute value and approach zero."
+            },
+            {
+                question: "Which test can be used to compare the convergence or divergence of a series to that of a known series?",
+                options: [
+                    "Divergence Test",
+                    "Comparison Test",
+                    "Alternating Series Test",
+                    "Ratio Test"
+                ],
+                answer: "Comparison Test"
+            },
+            {
+                question: "Which test can be used to determine the convergence or divergence of a series by comparing it to a geometric series?",
+                options: [
+                    "Divergence Test",
+                    "Comparison Test",
+                    "Alternating Series Test",
+                    "Ratio Test"
+                ],
+                answer: "Ratio Test"
+            },
+            {
+                question: "Which test can be used to determine the convergence or divergence of a series by taking the limit of the ratio of consecutive terms?",
+                options: [
+                    "Divergence Test",
+                    "Comparison Test",
+                    "Alternating Series Test",
+                    "Ratio Test"
+                ],
+                answer: "Ratio Test"
+            },
+            {
+                question: "What is a power series?",
+                options: [
+                    "A series that involves raising a variable to different powers",
+                    "A series that involves adding consecutive numbers",
+                    "A series that involves multiplying consecutive numbers",
+                    "A series that involves dividing consecutive numbers"
+                ],
+                answer: "A series that involves raising a variable to different powers"
+            },
+            {
+                question: "What does Taylor's theorem state?",
+                options: [
+                    "Any function can be represented as a power series",
+                    "Any function can be approximated by a power series",
+                    "Any function can be integrated using a power series",
+                    "Any function can be differentiated using a power series"
+                ],
+                answer: "Any function can be approximated by a power series"
+            },
+            {
+                question: "What determines the convergence of a power series?",
+                options: [
+                    "The choice of c in the series",
+                    "The values of a0, a1, a2, ...",
+                    "The values of x for which the series converges",
+                    "The number of terms in the series"
+                ],
+                answer: "The values of x for which the series converges"
+            },
+            {
+                question: "What is the interval of convergence?",
+                options: [
+                    "The set of all x-values for which the series diverges",
+                    "The set of all x-values for which the series converges",
+                    "The set of all x-values for which the series is undefined",
+                    "The set of all x-values for which the series is equal to zero"
+                ],
+                answer: "The set of all x-values for which the series converges"
+            },
+            {
+                question: "How is the Taylor series expansion of a function obtained?",
+                options: [
+                    "By taking the derivatives of the function at a specific point",
+                    "By integrating the function over a specific interval",
+                    "By multiplying the function by a power series",
+                    "By dividing the function by a power series"
+                ],
+                answer: "By taking the derivatives of the function at a specific point"
+            }
+        ];
+
+        const questionsCopy = [...questions];
+        let currentQuestionIndex = 0;
+
+        // Open quiz modal
+        function openQuizModal() {
+            document.getElementById('quiz-container').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        // Close quiz modal
+        function closeQuizModal() {
+            document.getElementById('quiz-container').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+        // Shuffle and display questions
+        function showRandomQuestion() {
+            shuffleArray(questionsCopy);
+            showQuestion(currentQuestionIndex);
+        }
+
+        // Call this function when starting the quiz
+        function startQuiz() {
+            currentQuestionIndex = 0;
+            showRandomQuestion();
+        }
+
+        function showQuestion(index) {
+            const quizBox = document.querySelector('.quiz-container');
+            const currentQuestion = questionsCopy[index];
+            // Clear previous content
+            quizBox.innerHTML = '';
+            if (currentQuestion) {
+                const questionBox = document.createElement('div');
+                questionBox.classList.add('question-box');
+                questionBox.innerHTML = `
+                    <div class="question">${currentQuestion.question}<br></div>
+                    <div class="options-box">
+                        ${currentQuestion.options.map((option, optionIndex) => `<div class="option-box" data-index="${optionIndex}">${option}</div>`).join('')}
+                    </div>
+                    <div id="result"></div>
+                `;
+
+                // Add event listeners to the options
+                const optionBoxes = questionBox.querySelectorAll('.option-box');
+                optionBoxes.forEach(optionBox => {
+                    optionBox.addEventListener('click', function () {
+                        const selectedOptionIndex = this.getAttribute('data-index');
+                        checkAnswer(selectedOptionIndex, currentQuestion.answer);
+                    });
+                });
+                quizBox.appendChild(questionBox);
+                // Create a separate container for the button
+                const buttonContainer = document.createElement('div');
+                buttonContainer.classList.add('modal-button-container');
+                buttonContainer.innerHTML = `<button onclick="showNextQuestion()">Next Question</button>`;
+                // Append the button container to the quiz box
+                quizBox.appendChild(buttonContainer);
+            } else {
+                quizBox.innerHTML = `
+                    <div class="result">Quiz completed! Thanks for playing.</div>
+                `;
+                // Create a separate container for the button
+                const buttonContainer = document.createElement('div');
+                buttonContainer.classList.add('modal-button-container');
+                buttonContainer.innerHTML = `<button onclick="closeQuizModal()">Close Quiz</button>`;
+                // Append the button container to the quiz box
+                quizBox.appendChild(buttonContainer);
+            }
+        }
+
+        let score = 0;
+
+        // Check user's answer and show next question
+        function showNextQuestion() {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < 5) {
+                showRandomQuestion();
+            } else {
+                evaluateAndDisplayResult();
+            }
+        }
+
+        function checkAnswer(selectedOptionIndex, correctAnswer) {
+            const options = document.querySelectorAll('.options-box .option-box');
+            
+            // Remove the 'selected' class from all options
+            options.forEach(option => {
+                option.classList.remove('selected');
+            });
+        
+            // Add the 'selected' class to the clicked option
+            options[selectedOptionIndex].classList.add('selected');
+        
+            // Get the selected option's text
+            const selectedOptionText = options[selectedOptionIndex].innerText;
+        
+            // Check if the selected option is correct
+            const isCorrect = selectedOptionText === correctAnswer;
+        
+            // Update the UI to indicate correctness
+            const resultContainer = document.getElementById('result');
+            resultContainer.innerHTML = isCorrect
+                ? '<p style="color: green;">Correct!</p>'
+                : `<p style="color: red;">Incorrect. The correct answer is: ${correctAnswer}</p>`;
+        
+            // Update the score if the answer is correct
+            if (isCorrect) {
+                score++;
+            }
+            
+            // For demonstration purposes, let's log the selected option index and correctness
+            console.log('Selected Option Index:', selectedOptionIndex);
+            console.log('Is Correct:', isCorrect);
+        }
+
+        let quizCompleted = false;
+
+        // Evaluate user's performance and display result
+        function evaluateAndDisplayResult() {
+            const resultContainer = document.getElementById('quiz-container');
+            let correctAnswersCount = 0;
+            let totalQuestions = 5;
+            if (score >= 4) {
+                quizCompleted = true;
+                resultContainer.innerHTML = `
+                <div class="result">Congratulations! You can move on to the next lesson.</div>
+                <div class="score-details">
+                    <p>Your Score <br> ${score} out of ${totalQuestions}</p>
+                </div>
+                <div class="modal-button-container">
+                    <button onclick="closeQuizModal()">Close Quiz</button>
+                </div>`;
+                updateUIOnQuizCompletion();
+                document.getElementById('completion-message').style.display = 'block';
+            } else {
+                resultContainer.innerHTML = `
+                <div class="result">Please review the lesson again and try again later.</div>
+                <div class="score-details">
+                    <p><center>Your Score</center> <br> <center>${score} out of ${totalQuestions}</center></p>
+                </div>
+                <div class="modal-button-container">
+                    <button onclick="closeQuizModal()">Close Quiz</button>
+                </div>`;
+            }
+        }
+
+        function closeQuizModal() {
+            document.getElementById('quiz-container').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+    
+            // Redirect to the Calculus page
+            window.location.href = "{{ url_for('calculus') }}";
+        }
+        function updateUIOnQuizCompletion() {
+            // Change the color of the flash to gold
+            const flash = document.querySelector('.bolt[data-target="dialog-boxcaladv3"]');
+            if (flash) {
+                flash.style.backgroundColor = '#ffd700'; // Hex code for gold
+
+            // Change the dialog box border color to gold and display the completion message
+            const dialogBoxCaladv3 = document.getElementById('dialog-boxcaladv3');
+            if (dialogBoxCaladv3) {
+                dialogBoxCaladv3.style.borderColor = '#ffd700'; // Hex code for gold
+                const dialogText = dialogBoxCaladv3.querySelector('.dialog-text');
+                dialogText.innerText = 'Completed'; // Update the message inside the dialog box
+
+                // Save the completion status in localStorage
+                localStorage.setItem('caladvlsn3Completed', 'true');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            startQuiz();
+            const caladvlsn3Completed = localStorage.getItem('caladvlsn3Completed');
+            if (caladvlsn3Completed === 'true') {
+                updateUIOnQuizCompletion();
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <aside class="sidebar-left">
+            <ul class="sidebar-menu">
+                <li>
+                    <h2 class="sidebar-title">Study Aid</h2>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="colored-icon">
+                        <i class="fas fa-graduation-cap"></i> Learn
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="courses-toggle">
+                        <i class="fas fa-book"></i> Courses
+                    </a>
+                    <ul class="course-list hidden">
+                        <li>
+                            <a href="{{ url_for('algorithms') }}">
+                                <i class="fas fa-chart-line"></i> Algorithms
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url_for('personalfinance') }}">
+                                <i class="fas fa-rupee-sign"></i> Personal Finance
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url_for('calculus') }}">
+                                <i class="fas fa-calculator"></i> Calculus
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sidebar-item">
+                    <a href="{{ url_for('profile') }}" class="colored-icon">
+                        <i class="fas fa-user"></i> Profile
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="{{ url_for('settings') }}" class="colored-icon">
+                        <i class="fas fa-cog"></i> Settings
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="{{ url_for('home') }}" class="colored-icon">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <main class="lesson-main-content">
+            <h1>Convergence and Divergence of Series</h1>
+            <div id="sublesson1">
+                <h2>Alternating series and convergence tests</h2>
+                <p>
+                    In this lesson, we will be discussing the convergence and divergence of series, specifically focusing on alternating series and convergence tests.<br>
+                    <br>
+                    An alternating series is a series in which the terms alternate in sign, meaning that each term is either positive or negative. The general form of an alternating series is:<br>
+                    <br>
+                    S = a1 - a2 + a3 - a4 + ...<br>
+                    <br>
+                    To determine whether an alternating series converges or diverges, we can use the Alternating Series Test. The Alternating Series Test states that if the terms of an alternating series decrease in absolute value and approach zero, then the series converges.<br>
+                    <br>
+                    To apply the Alternating Series Test, we need to check two conditions:<br>
+                    1. The terms of the series must decrease in absolute value.<br>
+                    2. The limit of the terms as n approaches infinity must be zero.<br>
+                    <br>
+                    If both conditions are satisfied, then the series converges. If either condition fails, then the series diverges.<br>
+                    <br>
+                    In addition to the Alternating Series Test, there are other convergence tests that can be used to determine the convergence or divergence of series. Some of the commonly used tests include:<br>
+                    - Divergence Test<br>
+                    - Comparison Test<br>
+                    - Limit Comparison Test<br>
+                    - Ratio Test<br>
+                    - Root Test<br>
+                    <br>
+                    These tests provide different criteria for determining convergence or divergence based on the behavior of the terms in the series.
+                </p>
+            </div>    
+            <!-- Sub Lesson 2 Content -->
+            <div id="sublesson2">
+                <h2>Power series and Taylor's theorem</h2>
+                <p>
+                    In this sub-lesson, we will be discussing power series and Taylor's theorem. Power series are a type of infinite series that involve raising a variable to different powers. They are often used to represent functions as an infinite sum of terms. Taylor's theorem, on the other hand, provides a way to approximate functions using power series.<br>
+                    <br>
+                    A power series is defined as:<br>
+                    <br>
+                    f(x) = a0 + a1(x - c) + a2(x - c)^2 + a3(x - c)^3 + ...<br>
+                    <br>
+                    where a0, a1, a2, ... are constants and c is a fixed number. The terms (x - c)^n are called the powers of the series. The power series can be centered at any value of c, and the choice of c determines the behavior of the series.<br>
+                    <br>
+                    The convergence of a power series depends on the values of x for which the series converges. The series may converge for some values of x and diverge for others. The interval of convergence is the set of all x-values for which the series converges.<br>
+                    <br>
+                    Taylor's theorem states that any function that is infinitely differentiable can be approximated by a power series. The Taylor series expansion of a function f(x) centered at c is given by:<br>
+                    <br>
+                    f(x) = f(c) + f'(c)(x - c) + f''(c)(x - c)^2/2! + f'''(c)(x - c)^3/3! + ...<br>
+                    <br>
+                    The terms in the Taylor series expansion are obtained by taking the derivatives of the function at the center c and evaluating them at that point. The more terms we include in the series, the better the approximation of the function.<br>
+                    <br>
+                    Now, let's move on to the questions.
+                </p>
+            </div>
+            <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
+            <div id="quiz-container" class="quiz-container"></div>
+            <div id="overlay" class="overlay"></div>
+            <div id="completion-message" style="display: none;">
+                <p class="completion-message">Lesson Completed!</p>
+            </div>
+        </main>
+        <aside class="sidebar-right">
+            <h2>Convergence and Divergence of Series</h2>
+            <ul class="sub-lesson-links">
+                <li><a href="#sublesson1">Alternating series and convergence tests</a></li>
+                <li><a href="#sublesson2">Power series and Taylor's theorem</a></li>
+            </ul>
+        </aside>
+</body>
+
+</html>
