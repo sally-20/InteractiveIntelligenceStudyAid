@@ -91,57 +91,163 @@
                 [array[i], array[j]] = [array[j], array[i]];
             }
         }
-        const questions = [
+        const questions = [const questionsEmergencyFund = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of an emergency fund?",
+                options: [
+                    "To invest money for future growth",
+                    "To cover regular monthly expenses",
+                    "To provide financial security during unexpected situations",
+                    "To pay off existing debts"
+                ],
+                answer: "To provide financial security during unexpected situations"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Why is quick access to money important during emergencies?",
+                options: [
+                    "To avoid financial instability",
+                    "To prevent unnecessary debt",
+                    "To reduce stress and delays",
+                    "To invest in profitable opportunities"
+                ],
+                answer: "To reduce stress and delays"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is one of the benefits of having an emergency fund?",
+                options: [
+                    "Increased monthly income",
+                    "Reduced insurance premiums",
+                    "Peace of mind",
+                    "Higher credit score"
+                ],
+                answer: "Peace of mind"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What can happen if you don't have an emergency fund?",
+                options: [
+                    "You may have to rely on credit cards or loans during emergencies",
+                    "You may lose your job",
+                    "You may experience unexpected expenses",
+                    "You may have to pay higher taxes"
+                ],
+                answer: "You may have to rely on credit cards or loans during emergencies"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
-            },
-            {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
-            },
-            {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
-            },
-            {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
-            },
-            {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
-            },
-            {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What does an emergency fund help you maintain?",
+                options: [
+                    "Financial stability",
+                    "High credit card debt",
+                    "Low monthly expenses",
+                    "A large investment portfolio"
+                ],
+                answer: "Financial stability"
             }
+        ];
+        
+        const questionsEmergencyFundSize = [
+            {
+                question: "What factors should you consider when determining the size of your emergency fund?",
+                options: [
+                    "Monthly expenses, income stability, financial obligations, risk tolerance, access to credit",
+                    "Monthly expenses, investment opportunities, financial goals, risk tolerance, access to credit",
+                    "Monthly expenses, income stability, financial obligations, risk tolerance, credit score",
+                    "Monthly expenses, income stability, financial goals, risk tolerance, credit score"
+                ],
+                answer: "Monthly expenses, income stability, financial obligations, risk tolerance, access to credit"
+            },
+            {
+                question: "Why is it important to assess your monthly expenses when determining the size of your emergency fund?",
+                options: [
+                    "Monthly expenses help you evaluate your risk tolerance",
+                    "Monthly expenses help you determine your financial goals",
+                    "Monthly expenses help you understand how much you need to cover your basic needs",
+                    "Monthly expenses help you assess your access to credit options"
+                ],
+                answer: "Monthly expenses help you understand how much you need to cover your basic needs"
+            },
+            {
+                question: "What does risk tolerance refer to when determining the size of your emergency fund?",
+                options: [
+                    "Your willingness to take on financial risks",
+                    "Your ability to handle unexpected expenses",
+                    "Your access to credit options",
+                    "Your monthly income stability"
+                ],
+                answer: "Your willingness to take on financial risks"
+            },
+            {
+                question: "How long should your emergency fund be able to cover your essential expenses?",
+                options: [
+                    "1 to 2 months",
+                    "3 to 6 months",
+                    "6 to 12 months",
+                    "12 to 24 months"
+                ],
+                answer: "3 to 6 months"
+            },
+            {
+                question: "What is the purpose of gradually increasing the amount you set aside for your emergency fund?",
+                options: [
+                    "To ensure you have enough money for immediate emergencies",
+                    "To maximize your investment opportunities",
+                    "To reach your desired emergency fund size over time",
+                    "To minimize your monthly expenses"
+                ],
+                answer: "To reach your desired emergency fund size over time"
+            }
+        ];
+        
+        const questionsEmergencyFundImportance = [
+            {
+                question: "What is the purpose of an emergency fund?",
+                options: [
+                    "To use for everyday expenses",
+                    "To invest in the stock market",
+                    "To cover unexpected expenses",
+                    "To buy luxury items"
+                ],
+                answer: "To cover unexpected expenses"
+            },
+            {
+                question: "How much money should you keep in your emergency fund?",
+                options: [
+                    "A small amount",
+                    "A large amount",
+                    "An amount that gives you peace of mind",
+                    "An amount equal to your monthly income"
+                ],
+                answer: "An amount that gives you peace of mind"
+            },
+            {
+                question: "Where should you keep your emergency fund?",
+                options: [
+                    "In a checking account",
+                    "In a savings account",
+                    "In a piggy bank",
+                    "In a shoebox under your bed"
+                ],
+                answer: "In a savings account"
+            },
+            {
+                question: "What is an emergency?",
+                options: [
+                    "A planned expense",
+                    "An unexpected situation requiring money",
+                    "A job promotion",
+                    "A vacation"
+                ],
+                answer: "An unexpected situation requiring money"
+            },
+            {
+                question: "Why is it important to have an emergency fund?",
+                options: [
+                    "To invest in the stock market",
+                    "To buy luxury items",
+                    "To cover unexpected expenses",
+                    "To go on vacation"
+                ],
+                answer: "To cover unexpected expenses"
+            }       
         ];
 
         const questionsCopy = [...questions];
@@ -383,21 +489,49 @@
             <div id="sublesson1">
                 <h2>Why emergency funds are crucial</h2>
                 <p>
-                    
+                    In this lesson, we will discuss the importance of building an emergency fund. An emergency fund is a sum of money set aside specifically for unexpected situations that require immediate financial attention. It acts as a safety net, providing you with peace of mind and financial security during times of crisis.<br>
+                    <br>
+                    Why are emergency funds crucial?<br>
+                    <br>
+                    1. Uncertainties and Unexpected Surprises: Life is full of uncertainties, and unexpected events can occur at any time. These events may include accidents, sudden job loss, or unexpected expenses. Having an emergency fund ensures that you are prepared to handle these situations without facing financial hardship.<br>
+                    <br>
+                    2. Quick Access to Money: During emergencies, time is of the essence. You need to be able to access your funds quickly and easily. By having an emergency fund, you can avoid the stress and delays associated with trying to gather funds at the last minute.<br>
+                    <br>
+                    3. Protecting Your Financial Stability: Without an emergency fund, you may be forced to rely on credit cards, loans, or borrowing money from friends and family during emergencies. This can lead to debt and financial instability. An emergency fund helps you maintain your financial stability and avoid unnecessary debt.<br>
+                    <br>
+                    4. Peace of Mind: Knowing that you have a financial cushion in case of emergencies provides peace of mind. It allows you to focus on other aspects of your life without constantly worrying about unexpected expenses.                    
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>How to determine the right emergency fund size</h2>
                 <p>
-
+                    In this lesson, we will discuss how to determine the right size for your emergency fund. An emergency fund is a crucial component of personal finance as it provides a safety net for unexpected expenses or financial hardships. By having an adequate emergency fund, you can avoid going into debt or facing financial stress during difficult times.<br>
+                    <br>
+                    Determining the right size for your emergency fund depends on several factors. Here are some key considerations:<br>
+                    <br>
+                    1. Assess your monthly expenses: Start by calculating your average monthly expenses. This includes essential expenses such as rent/mortgage, utilities, groceries, transportation, and insurance. It's important to have a clear understanding of how much you need to cover your basic needs each month.<br>
+                    <br>
+                    2. Evaluate your income stability: Consider the stability of your income source. If you have a stable job with a steady income, you may need a smaller emergency fund compared to someone with a more unpredictable income. Assess the likelihood of facing a financial setback and adjust your emergency fund size accordingly.<br>
+                    <br>
+                    3. Consider your financial obligations: Take into account any financial obligations you have, such as loan repayments or dependents. These factors can impact the size of your emergency fund. If you have significant financial responsibilities, you may need a larger emergency fund to ensure you can meet your obligations during an emergency.<br>
+                    <br>
+                    4. Assess your risk tolerance: Your risk tolerance plays a role in determining the size of your emergency fund. If you prefer a higher level of financial security, you may opt for a larger emergency fund. On the other hand, if you are comfortable taking on more risk, you may choose a smaller emergency fund.<br>
+                    <br>
+                    5. Evaluate your access to credit: Consider your access to credit options such as credit cards or lines of credit. If you have easy access to credit, you may be able to rely on it during emergencies and have a smaller emergency fund. However, it's important to remember that relying solely on credit can lead to debt accumulation and high interest payments.<br>
+                    <br>
+                    Once you have considered these factors, you can determine the right size for your emergency fund. A common guideline is to aim for 3 to 6 months' worth of living expenses. This means that your emergency fund should be able to cover your essential expenses for a period of 3 to 6 months in case of a financial emergency.<br>
+                    <br>
+                    Remember, building an emergency fund takes time and discipline. Start by setting aside a small portion of your income each month and gradually increase the amount until you reach your desired emergency fund size.
                 </p>
             </div>
             <!-- Sub Lesson 3 Content -->
             <div id="sublesson3">
                 <h2>Where to keep your emergency fund</h2>
                 <p>
-                    
+                    In this lesson, we will discuss the importance of building an emergency fund and where to keep it. <br>
+                    An emergency fund is a sum of money set aside to cover unexpected expenses or financial emergencies. <br>
+                    It acts as a safety net and provides financial security in times of need.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
