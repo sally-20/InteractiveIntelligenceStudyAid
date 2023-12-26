@@ -93,54 +93,79 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which type of improper integral has one or both of the limits of integration approaching infinity or negative infinity?",
+                options: ["Type 1", "Type 2", "Type 3", "Type 4"],
+                answer: "Type 1"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which convergence test compares the integrand to a known function with a convergent improper integral?",
+                options: ["Comparison Test", "Limit Comparison Test", "Alternating Series Test", "Absolute Convergence Test"],
+                answer: "Limit Comparison Test"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which convergence test involves taking the limit of the ratio of consecutive terms of the integrand?",
+                options: ["Comparison Test", "Limit Comparison Test", "Alternating Series Test", "Ratio Test"],
+                answer: "Ratio Test"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "If the absolute value of the integrand has a convergent improper integral, then the improper integral of the integrand also converges. This statement is known as the:",
+                options: ["Comparison Test", "Limit Comparison Test", "Alternating Series Test", "Absolute Convergence Test"],
+                answer: "Absolute Convergence Test"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "If lim(x→∞) |f(x+1)/f(x)| = L, where L is a finite positive number, then the improper integral of f(x) converges. This statement is known as the:",
+                options: ["Comparison Test", "Limit Comparison Test", "Alternating Series Test", "Ratio Test"],
+                answer: "Ratio Test"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of a probability density function (PDF)?",
+                options: [
+                    "To calculate the mean of a random variable",
+                    "To find the probability of a random variable falling within a certain range",
+                    "To estimate population parameters",
+                    "To perform hypothesis testing"
+                ],  
+                answer: "To find the probability of a random variable falling within a certain range"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What does a cumulative distribution function (CDF) represent?",
+                options: [
+                    "The average value of a random variable",
+                    "The spread or dispersion of a random variable",
+                    "The probability that a random variable takes on a specific value",
+                    "The probability that a random variable is less than or equal to a given value"
+                ],
+                answer: "The probability that a random variable is less than or equal to a given value"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How can the expected value of a random variable be calculated?",
+                options: [
+                    "By integrating the PDF over its entire range",
+                    "By calculating the mean of the random variable",
+                    "By finding the probability of the random variable falling within a certain range",
+                    "By estimating population parameters"
+                ],
+                answer: "By integrating the PDF over its entire range"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What does the variance of a random variable measure?",
+                options: [
+                    "The average value of the random variable",
+                    "The spread or dispersion of the random variable around its mean",
+                    "The probability that the random variable takes on a specific value",
+                    "The probability that the random variable is less than or equal to a given value"
+                ],
+                answer: "The spread or dispersion of the random variable around its mean"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "In statistics, integration can be used for:",
+                options: [
+                    "Calculating confidence intervals",
+                    "Performing hypothesis testing",
+                    "Estimating population parameters",
+                    "All of the above"
+                ],
+                answer: "All of the above"
             }
         ];
 
@@ -382,14 +407,74 @@
             <div id="sublesson1">
                 <h2>Improper integrals and convergence tests</h2>
                 <p>
-                    
+                    In this sub-lesson, we will explore the concept of improper integrals and convergence tests. Improper integrals are integrals where one or both of the limits of integration are infinite or the integrand is unbounded. These types of integrals require special techniques to evaluate.<br>
+                    <br>
+                    1. Definition of an Improper Integral:<br>
+                        - An improper integral is defined as the limit of a definite integral as one or both of the limits of integration approach infinity or negative infinity.<br>
+                        - If the limit exists, the improper integral is said to converge. If the limit does not exist, the improper integral is said to diverge.<br>
+                        <br>
+                    <br>
+                    2. Types of Improper Integrals:<br>
+                        a. Type 1: Infinite Limits of Integration<br>
+                        - In this case, one or both of the limits of integration are infinite.<br>
+                        - To evaluate the improper integral, we take the limit as the limits of integration approach infinity or negative infinity.<br>
+                        - Example: ∫[a, ∞] f(x) dx or ∫[-∞, b] f(x) dx<br>
+                        <br>
+                        b. Type 2: Discontinuous Integrand<br>
+                        - In this case, the integrand has a discontinuity within the interval of integration.<br>
+                        - To evaluate the improper integral, we split the integral into two parts at the point of discontinuity and take the limit as the limits of integration approach the point of discontinuity.<br>
+                        - Example: ∫[a, b] f(x) dx, where f(x) is discontinuous at c within the interval [a, b]<br>
+                        <br>
+                        c. Type 3: Vertical Asymptote<br>
+                        - In this case, the integrand has a vertical asymptote within the interval of integration.<br>
+                        - To evaluate the improper integral, we split the integral into two parts at the vertical asymptote and take the limit as the limits of integration approach the vertical asymptote.<br>
+                        - Example: ∫[a, b] f(x) dx, where f(x) has a vertical asymptote at c within the interval [a, b]<br>
+                        <br>
+                    <br>
+                    3. Convergence Tests for Improper Integrals:<br>
+                        a. Comparison Test:<br>
+                        - If 0 ≤ f(x) ≤ g(x) for all x ≥ a, where g(x) is a known function with a convergent improper integral, then the improper integral of f(x) also converges.<br>
+                        - Example: If ∫[1, ∞] g(x) dx converges and 0 ≤ f(x) ≤ g(x) for all x ≥ 1, then ∫[1, ∞] f(x) dx also converges.<br>
+                        <br>
+                        b. Limit Comparison Test:<br>
+                        - If lim(x→∞) f(x)/g(x) = L, where L is a finite positive number, and g(x) is a known function with a convergent improper integral, then the improper integral of f(x) also converges.<br>
+                        - Example: If lim(x→∞) f(x)/g(x) = L and ∫[1, ∞] g(x) dx converges, then ∫[1, ∞] f(x) dx also converges.<br>
+                        <br>
+                        c. Alternating Series Test:<br>
+                        - If f(x) is an alternating function and satisfies the conditions of the Alternating Series Test, then the improper integral of f(x) converges.<br>
+                        - Example: If f(x) = (-1)^n g(x), where g(x) is a positive function that decreases as x increases, then ∫[1, ∞] f(x) dx converges.<br>
+                        <br>
+                        d. Absolute Convergence Test:<br>
+                        - If the absolute value of the integrand, |f(x)|, has a convergent improper integral, then the improper integral of f(x) also converges.<br>
+                        - Example: If ∫[1, ∞] |f(x)| dx converges, then ∫[1, ∞] f(x) dx also converges.<br>
+                        <br>
+                        e. Ratio Test:<br>
+                        - If lim(x→∞) |f(x+1)/f(x)| = L, where L is a finite positive number, then the improper integral of f(x) converges.<br>
+                        - Example: If lim(x→∞) |f(x+1)/f(x)| = L, then ∫[1, ∞] f(x) dx converges.<br>
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Applications of integration in statistics and probability</h2>
                 <p>
-
+                    In this sub-lesson, we will explore how integration can be applied in the fields of statistics and probability. Integration is a powerful tool that allows us to calculate probabilities, find expected values, and analyze data. Let's dive into some key concepts and techniques.<br>
+                    <br>
+                    1. Probability Density Functions (PDFs):<br>
+                    A probability density function (PDF) is a function that describes the likelihood of a random variable taking on a particular value. It is often represented by a continuous curve. To find the probability of a random variable falling within a certain range, we can use integration. By integrating the PDF over the desired range, we can calculate the probability.<br>
+                    <br>
+                    2. Cumulative Distribution Functions (CDFs):<br>
+                    A cumulative distribution function (CDF) is a function that gives the probability that a random variable takes on a value less than or equal to a given value. The CDF is the integral of the PDF. By integrating the PDF from negative infinity to a specific value, we can find the probability of the random variable being less than or equal to that value.<br>
+                    <br>
+                    3. Expected Value:<br>
+                    The expected value of a random variable is a measure of its central tendency. It represents the average value we would expect to obtain if we repeated the experiment many times. In the context of integration, the expected value can be calculated by integrating the product of the random variable and its PDF over its entire range.<br>
+                    <br>
+                    4. Mean and Variance:<br>
+                    The mean of a random variable is the expected value of that variable. It represents the average value of the variable. The variance measures the spread or dispersion of the random variable around its mean. Both the mean and variance can be calculated using integration.<br>
+                    <br>
+                    5. Applications in Statistics:<br>
+                    Integration is widely used in statistics to analyze data and make inferences. For example, we can use integration to calculate confidence intervals, perform hypothesis testing, and estimate population parameters.<br>
+                    <br>
+                    Now that we have covered the key concepts, let's test your understanding with some multiple-choice questions.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
