@@ -91,56 +91,107 @@
                 [array[i], array[j]] = [array[j], array[i]];
             }
         }
-        const questions = [
+        const questions = [const questionsTaxSaving = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which tax-saving investment option primarily invests in equity or equity-related instruments?",
+                options: ["ELSS", "PPF", "NPS", "None of the above"],
+                answer: "ELSS"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the lock-in period for ELSS?",
+                options: ["1 year", "3 years", "5 years", "10 years"],
+                answer: "3 years"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which tax-saving investment option offers tax-free interest?",
+                options: ["ELSS", "PPF", "NPS", "None of the above"],
+                answer: "PPF"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the additional deduction limit under Section 80CCD(1B) for NPS?",
+                options: ["Rs. 50,000", "Rs. 1.5 lakh", "Rs. 2 lakh", "No additional deduction"],
+                answer: "Rs. 50,000"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which tax-saving investment option provides flexibility in asset allocation?",
+                options: ["ELSS", "PPF", "NPS", "All of the above"],
+                answer: "NPS"
+            }
+        ];
+        
+        const questionsTaxSaving2 = [
+            {
+                question: "What is one of the main benefits of investing in tax-saving instruments?",
+                options: ["Higher returns", "Tax deductions", "Diversification", "Financial discipline"],
+                answer: "Tax deductions"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which of the following is a characteristic of tax-saving instruments?",
+                options: ["Short lock-in period", "Low returns", "Limited investment options", "Tax deductions"],
+                answer: "Tax deductions"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Investing in tax-saving instruments helps individuals in:",
+                options: [
+                    "Reducing their taxable income",
+                    "Increasing their tax liability",
+                    "Avoiding long-term savings",
+                    "Decreasing their returns"
+                ],
+                answer: "Reducing their taxable income"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What does diversification mean in the context of tax-saving instruments?",
+                options: [
+                    "Investing in a single asset class",
+                    "Spreading investments across different instruments",
+                    "Investing in high-risk options",
+                    "Avoiding tax deductions"
+                ],
+                answer: "Spreading investments across different instruments"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Investing in tax-saving instruments promotes:",
+                options: ["Financial discipline", "Higher taxes", "Short-term savings", "Limited investment options"],
+                answer: "Financial discipline"
+            }
+        ];
+        
+        const questionsTaxSaving3 = [
+            {
+                question: "Which strategy for tax-efficient investing involves spreading investments across different asset classes?",
+                options: ["Utilizing tax-advantaged accounts", "Diversifying investments", "Tax-loss harvesting", "Holding investments for the long term"],
+                answer: "Diversifying investments"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of tax-loss harvesting?",
+                options: [
+                    "To delay paying taxes on investment gains",
+                    "To reduce overall tax liability",
+                    "To minimize taxable distributions",
+                    "To take advantage of different tax treatments"
+                ],
+                answer: "To reduce overall tax liability"
+            },
+            {
+                question: "Which type of funds are specifically designed to be tax-efficient?",
+                options: ["Mutual funds and ETFs", "Tax-advantaged funds", "High-turnover funds", "Growth funds"],
+                answer: "Mutual funds and ETFs"
+            },
+            {
+                question: "What is the minimum holding period for an investment to be considered long-term?",
+                options: ["6 months", "1 year", "3 years", "5 years"],
+                answer: "1 year"
+            },
+            {
+                question: "What is the wash-sale rule?",
+                options: [
+                    "Selling investments that have declined in value",
+                    "Holding investments for the long term",
+                    "Repurchasing the same investment within 30 days of selling it for a loss",
+                    "Minimizing taxable distributions"
+                ],
+                answer: "Repurchasing the same investment within 30 days of selling it for a loss"
             }
         ];
 
@@ -383,21 +434,59 @@
             <div id="sublesson1">
                 <h2>Explanation of tax-saving investment options (ELSS, PPF, NPS)</h2>
                 <p>
-                    
+                    In this sub-lesson, we will discuss three tax-saving investment options: ELSS, PPF, and NPS. These options can help individuals reduce their tax liability while also providing opportunities for wealth creation. Let's dive into each option in detail:<br>
+                    <br>
+                    1. ELSS (Equity Linked Saving Scheme):<br>
+                    - ELSS is a type of mutual fund that invests primarily in equity or equity-related instruments.<br>
+                    - It offers tax benefits under Section 80C of the Income Tax Act, allowing individuals to claim deductions on investments up to Rs. 1.5 lakh.<br>
+                    - ELSS has a lock-in period of 3 years, which means investors cannot redeem their investments before the completion of this period.<br>
+                    - It has the potential to generate higher returns compared to other tax-saving options, but it also carries higher market risks.<br>
+                    <br>
+                    2. PPF (Public Provident Fund):<br>
+                    - PPF is a long-term savings scheme offered by the government of India.<br>
+                    - It offers tax benefits under Section 80C, with investments up to Rs. 1.5 lakh eligible for deductions.<br>
+                    - PPF has a lock-in period of 15 years, but partial withdrawals are allowed after the completion of 5 years.<br>
+                    - The interest earned on PPF is tax-free, and the investment is backed by the government, making it a safe option for conservative investors.<br>
+                    <br>
+                    3. NPS (National Pension System):<br>
+                    - NPS is a voluntary retirement savings scheme regulated by the Pension Fund Regulatory and Development Authority (PFRDA).<br>
+                    - It offers tax benefits under Section 80CCD(1B), allowing individuals to claim an additional deduction of up to Rs. 50,000 over and above the limit of Rs. 1.5 lakh under Section 80C.<br>
+                    - NPS has a long-term investment horizon, as the funds are locked in until retirement age.<br>
+                    - It provides flexibility in asset allocation, allowing investors to choose between equity, corporate bonds, and government securities.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Benefits of investing in tax-saving instruments</h2>
                 <p>
-                    
+                    In this sub-lesson, we will explore the benefits of investing in tax-saving instruments. Tax-saving instruments are investment options that provide tax benefits to individuals. By investing in these instruments, individuals can reduce their taxable income and save on taxes. Let's look at some of the benefits of investing in tax-saving instruments:<br>
+                    <br>
+                    1. Tax deductions: One of the main benefits of investing in tax-saving instruments is that they offer tax deductions. This means that the amount invested in these instruments can be deducted from the individual's taxable income. As a result, the individual's overall tax liability decreases.<br>
+                    <br>
+                    2. Long-term savings: Many tax-saving instruments have a lock-in period, which means that the invested amount cannot be withdrawn for a certain period of time. This encourages individuals to save for the long term and helps in building a corpus for future financial goals.<br>
+                    <br>
+                    3. Higher returns: Some tax-saving instruments, such as certain types of mutual funds or fixed deposits, offer higher returns compared to traditional savings options. This allows individuals to not only save on taxes but also earn higher returns on their investments.<br>
+                    <br>
+                    4. Diversification: Investing in tax-saving instruments allows individuals to diversify their investment portfolio. By spreading their investments across different instruments, individuals can reduce the risk associated with investing in a single asset class.<br>
+                    <br>
+                    5. Financial discipline: Investing in tax-saving instruments requires individuals to plan their finances and allocate a certain amount towards investments. This promotes financial discipline and helps individuals in achieving their long-term financial goals.
                 </p>
             </div>
             <!-- Sub Lesson 3 Content -->
             <div id="sublesson3">
                 <h2>Strategies for tax-efficient investing</h2>
                 <p>
-                    
+                    In this sub-lesson, we will discuss strategies for tax-efficient investing. Tax-efficient investing refers to making investment decisions that minimize the impact of taxes on your investment returns. By implementing these strategies, you can potentially increase your after-tax returns and keep more of your investment gains.<br>
+                    <br>
+                    1. Diversify your investments: One strategy for tax-efficient investing is to diversify your investments across different asset classes, such as stocks, bonds, and real estate. By spreading your investments, you can take advantage of different tax treatments for each asset class. For example, dividends from stocks may be taxed at a lower rate than interest income from bonds.<br>
+                    <br>
+                    2. Utilize tax-advantaged accounts: Another strategy is to make use of tax-advantaged accounts, such as individual retirement accounts (IRAs) and 401(k) plans. Contributions to these accounts are often tax-deductible, and the earnings grow tax-deferred until withdrawal. By investing in these accounts, you can delay paying taxes on your investment gains, potentially allowing them to grow more over time.<br>
+                    <br>
+                    3. Consider tax-efficient funds: Some mutual funds and exchange-traded funds (ETFs) are specifically designed to be tax-efficient. These funds aim to minimize taxable distributions by focusing on low turnover and tax-efficient investment strategies. Investing in these funds can help reduce the amount of taxable income generated by your investments.<br>
+                    <br>
+                    4. Tax-loss harvesting: Tax-loss harvesting involves selling investments that have declined in value to offset capital gains from other investments. By realizing losses, you can reduce your overall tax liability. However, it's important to be mindful of the wash-sale rule, which prohibits repurchasing the same or substantially identical investment within 30 days of selling it for a loss.<br>
+                    <br>
+                    5. Hold investments for the long term: Holding investments for the long term can also be a tax-efficient strategy. When you sell an investment that you've held for more than one year, any gains are considered long-term capital gains, which are generally taxed at a lower rate than short-term capital gains. By taking a long-term approach to investing, you can potentially reduce your tax burden.                    
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
