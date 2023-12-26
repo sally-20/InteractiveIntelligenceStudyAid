@@ -93,54 +93,99 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which of the following is the general form of a triple integral?",
+                options: [
+                    "∫∫∫ f(x, y, z) dV",
+                    "∫∫ f(x, y) dA",
+                    "∫ f(x) dx",
+                    "∫∫∫ f(x, y) dV"
+                ],
+                answer: "∫∫∫ f(x, y, z) dV"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What does the function f(x, y, z) equal when calculating the volume of a region?",
+                options: ["1", "x + y + z", "x^2 + y^2 + z^2", "x*y*z"],
+                answer: "1"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How can the limits of integration for a triple integral be determined?",
+                options: [
+                    "By the boundaries of the region being integrated over",
+                    "By randomly choosing values for each variable",
+                    "By using spherical coordinates",
+                    "By using cylindrical coordinates"
+                ],
+                answer: "By the boundaries of the region being integrated over"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the volume of a region defined by a ≤ x ≤ b, c ≤ y ≤ d, and p ≤ z ≤ q?",
+                options: [
+                    "∫∫∫ 1 dV",
+                    "∫∫ 1 dA",
+                    "∫ 1 dx",
+                    "∫∫∫ f(x, y, z) dV"
+                ],
+                answer: "∫∫∫ 1 dV"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How can a triple integral be evaluated?",
+                options: [
+                    "By changing the order of integration",
+                    "By using appropriate coordinate systems",
+                    "By using techniques for double integrals",
+                    "All of the above"
+                ],
+                answer: "All of the above"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of volume calculations in physics and engineering?",
+                options: [
+                    "To determine the weight of an object",
+                    "To analyze fluid flow",
+                    "To calculate the surface area of an object",
+                    "To measure the temperature of a substance"
+                ],
+                answer: "To analyze fluid flow"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which step is NOT involved in applying integration for volume calculations?",
+                options: [
+                    "Identifying the region or object",
+                    "Setting up the integral",
+                    "Evaluating the integral",
+                    "Differentiating the integrand"
+                ],
+                answer: "Differentiating the integrand"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What does integration allow us to do in volume calculations?",
+                options: [
+                    "Sum up infinitesimally small volumes",
+                    "Calculate the area of a two-dimensional shape",
+                    "Determine the density of a substance",
+                    "Measure the velocity of a fluid"
+                ],
+                answer: "Sum up infinitesimally small volumes"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How can volume calculations be useful in engineering?",
+                options: [
+                    "Designing structures",
+                    "Analyzing the behavior of physical systems",
+                    "Making decisions based on calculated volumes",
+                    "All of the above"
+                ],
+                answer: "All of the above"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the final step in volume calculations?",
+                options: [
+                    "Identifying the region or object",
+                    "Setting up the integral",
+                    "Evaluating the integral",
+                    "Interpreting the result"
+                ],
+                answer: "Interpreting the result"
             }
         ];
 
@@ -382,14 +427,48 @@
             <div id="sublesson1">
                 <h2>Triple integrals for volume calculations</h2>
                 <p>
-                    
+                    In this lesson, we will learn about triple integrals and how they can be used to calculate volumes in a multivariable context. <br>
+                    <br>
+                    Triple integrals are an extension of double integrals, which are used to calculate areas in two-dimensional space. Just as a double integral is an iterated integral, a triple integral is an iterated integral of a function over a three-dimensional region.<br>
+                    <br>
+                    To set up a triple integral, we need to define the limits of integration for each variable. These limits are determined by the boundaries of the region we are integrating over. <br>
+                    <br>
+                    The general form of a triple integral is:<br>
+                    <br>
+                    ∫∫∫ f(x, y, z) dV<br>
+                    <br>
+                    where f(x, y, z) is the function being integrated and dV represents an infinitesimal volume element. <br>
+                    <br>
+                    To calculate the volume of a three-dimensional region, we can set up a triple integral where the function f(x, y, z) is equal to 1. This means that we are integrating the constant function 1 over the region, which gives us the volume.<br>
+                    <br>
+                    For example, let's say we have a region R defined by the inequalities a ≤ x ≤ b, c ≤ y ≤ d, and p ≤ z ≤ q. The volume of this region can be calculated using the triple integral:<br>
+                    <br>
+                    V = ∫∫∫ 1 dV
+                    <br>
+                    where the limits of integration are a ≤ x ≤ b, c ≤ y ≤ d, and p ≤ z ≤ q.<br>
+                    <br>
+                    To evaluate a triple integral, we can use the same techniques as for double integrals, such as changing the order of integration or using appropriate coordinate systems like cylindrical or spherical coordinates.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Applications in physics and engineering</h2>
                 <p>
-
+                    In this sub-lesson, we will explore the applications of volume calculations in physics and engineering. Volume calculations are essential in these fields as they help us determine the amount of space occupied by an object or substance. This information is crucial for various purposes, such as designing structures, analyzing fluid flow, and understanding the behavior of physical systems.<br>
+                    <br>
+                    To calculate volumes in a multivariable context, we can use integration techniques. Integration allows us to sum up infinitesimally small volumes to obtain the total volume of an object or substance. In physics and engineering, we often encounter situations where the shape of the object or substance is not simple, such as irregular solids or fluid flow through complex geometries. Integration provides a powerful tool to handle such situations.<br>
+                    <br>
+                    To apply integration for volume calculations, we need to consider the following steps:<br>
+                    <br>
+                    1. Identify the region or object: Determine the boundaries or constraints that define the region or object for which you want to calculate the volume. This could be a solid object or a region in space.<br>
+                    <br>
+                    2. Set up the integral: Express the volume as an integral by considering infinitesimally small volume elements. This involves determining the limits of integration and the integrand that represents the volume element.<br>
+                    <br>
+                    3. Evaluate the integral: Use appropriate integration techniques to evaluate the integral and obtain the volume.<br>
+                    <br>
+                    4. Interpret the result: Once you have calculated the volume, interpret the result in the context of the problem. This could involve comparing volumes, analyzing the behavior of physical systems, or making design decisions based on the calculated volume.<br>
+                    <br>
+                    Now that we have covered the main concepts of volume calculations in a multivariable context, let's move on to the multiple-choice questions.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
