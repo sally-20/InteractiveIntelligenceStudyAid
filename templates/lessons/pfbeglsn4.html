@@ -93,54 +93,154 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which type of debt is considered an unsecured installment loan?",
+                options: [
+                    "Credit cards",
+                    "Student loans",
+                    "Auto loans",
+                    "Home loans"
+                ],
+                answer: "Student loans"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "When does repayment of student loans usually start?",
+                options: [
+                    "Immediately after graduation",
+                    "One year after graduation",
+                    "Six months after graduation",
+                    "Two years after graduation"
+                ],
+                answer: "Six months after graduation"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the recommended credit card utilization ratio?",
+                options: [
+                    "50% or less",
+                    "30% or less",
+                    "70% or less",
+                    "100%"
+                ],
+                answer: "30% or less"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How can federal student loans be obtained?",
+                options: [
+                    "Completing the FAFSA",
+                    "Applying directly to private lenders",
+                    "Having a high credit score",
+                    "Providing collateral to the lender"
+                ],
+                answer: "Completing the FAFSA"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which type of debt helps increase earning potential?",
+                options: [
+                    "Auto loans",
+                    "Credit cards",
+                    "Home loans",
+                    "Student loans"
+                ],
+                answer: "Student loans"
+            }
+            {
+                question: "What is the additional amount charged by lenders for borrowing money?",
+                options: [
+                    "Principal",
+                    "Interest",
+                    "Fees",
+                    "Collateral"
+                ],
+                answer: "Interest"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which type of interest rate remains the same throughout the loan term?",
+                options: [
+                    "Fixed interest rate",
+                    "Adjustable interest rate",
+                    "Variable interest rate",
+                    "Prime interest rate"
+                ],
+                answer: "Fixed interest rate"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What can cause the interest rate on an adjustable rate debt to change?",
+                options: [
+                    "Borrower's creditworthiness",
+                    "Loan term",
+                    "Changes in the benchmark rate",
+                    "Origination fees"
+                ],
+                answer: "Changes in the benchmark rate"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which of the following is an example of a fee associated with debt?",
+                options: [
+                    "Principal",
+                    "Interest",
+                    "Late payment fee",
+                    "Collateral"
+                ],
+                answer: "Late payment fee"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of origination fees?",
+                options: [
+                    "To increase the interest rate",
+                    "To cover administrative costs",
+                    "To reduce the loan term",
+                    "To provide collateral"
+                ],
+                answer: "To cover administrative costs"
+            }
+            {
+                question: "What is the difference between good debt and bad debt?",
+                options: [
+                    "Good debt increases your net worth, while bad debt decreases it.",
+                    "Good debt is borrowed for investments, while bad debt is borrowed for personal expenses.",
+                    "Good debt has a lower interest rate, while bad debt has a higher interest rate.",
+                    "Good debt is repaid in installments, while bad debt is repaid in a lump sum."
+                ],
+                answer: "Good debt increases your net worth, while bad debt decreases it."
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How can debt impact your credit score?",
+                options: [
+                    "Debt has no impact on your credit score.",
+                    "Having delinquent accounts can positively impact your credit score.",
+                    "Paying off credit card balances in full and on time can positively impact your credit score.",
+                    "High credit card balances have no impact on your credit score."
+                ],
+                answer: "Paying off credit card balances in full and on time can positively impact your credit score."
+            },
+            {
+                question: "What is the debt-to-income ratio?",
+                options: [
+                    "The ratio of your monthly debt payments to your monthly income.",
+                    "The ratio of your total debt to your total income.",
+                    "The ratio of your credit card debt to your income.",
+                    "The ratio of your student loan debt to your income."
+                ],
+                answer: "The ratio of your monthly debt payments to your monthly income."
+            },
+            {
+                question: "How can debt impact your financial stability?",
+                options: [
+                    "Debt has no impact on your financial stability.",
+                    "Debt can lead to financial stress and instability if payments are unmanageable.",
+                    "Debt can improve your financial stability by increasing your credit score.",
+                    "Debt has no impact on your ability to achieve financial goals."
+                ],
+                answer: "Debt can lead to financial stress and instability if payments are unmanageable."
+            },
+            {
+                question: "Why is it important to consider the long-term implications of debt?",
+                options: [
+                    "Debt has no long-term implications.",
+                    "Debt can limit your ability to achieve long-term financial goals.",
+                    "Debt can increase your net worth in the long run.",
+                    "Debt has no impact on your ability to save for retirement."
+                ],
+                answer: "Debt can limit your ability to achieve long-term financial goals."
             }
         ];
 
@@ -227,7 +327,7 @@
             }
         }
 
-        function checkAnswer(selectedOptionIndex, correctAnswer) {
+        function checkAnswer(selectedOptionIndex, answer) {
             const options = document.querySelectorAll('.options-box .option-box');
             
             // Remove the 'selected' class from all options
@@ -242,13 +342,13 @@
             const selectedOptionText = options[selectedOptionIndex].innerText;
         
             // Check if the selected option is correct
-            const isCorrect = selectedOptionText === correctAnswer;
+            const isCorrect = selectedOptionText === answer;
         
             // Update the UI to indicate correctness
             const resultContainer = document.getElementById('result');
             resultContainer.innerHTML = isCorrect
                 ? '<p style="color: green;">Correct!</p>'
-                : `<p style="color: red;">Incorrect. The correct answer is: ${correctAnswer}</p>`;
+                : `<p style="color: red;">Incorrect. The correct answer is: ${answer}</p>`;
         
             // Update the score if the answer is correct
             if (isCorrect) {
@@ -265,10 +365,155 @@
         // Evaluate user's performance and display result
         function evaluateAndDisplayResult() {
             const resultContainer = document.getElementById('quiz-container');
-            let correctAnswersCount = 0;
+            let answersCount = 0;
             let totalQuestions = 5;
             if (score >= 4) {
-                quizCompleted = true;
+                const questionsCopy = [...questions];
+                let currentQuestionIndex = 0;
+        
+                // Open quiz modal
+                function openQuizModal() {
+                    document.getElementById('quiz-container').style.display = 'block';
+                    document.getElementById('overlay').style.display = 'block';
+                }
+        
+                // Close quiz modal
+                function closeQuizModal() {
+                    document.getElementById('quiz-container').style.display = 'none';
+                    document.getElementById('overlay').style.display = 'none';
+                }
+        
+                // Shuffle and display questions
+                function showRandomQuestion() {
+                    shuffleArray(questionsCopy);
+                    showQuestion(currentQuestionIndex);
+                }
+        
+                // Call this function when starting the quiz
+                function startQuiz() {
+                    currentQuestionIndex = 0;
+                    showRandomQuestion();
+                }
+        
+                function showQuestion(index) {
+                    const quizBox = document.querySelector('.quiz-container');
+                    const currentQuestion = questionsCopy[index];
+                    // Clear previous content
+                    quizBox.innerHTML = '';
+                    if (currentQuestion) {
+                        const questionBox = document.createElement('div');
+                        questionBox.classList.add('question-box');
+                        questionBox.innerHTML = `
+                            <div class="question">${currentQuestion.question}<br></div>
+                            <div class="options-box">
+                                ${currentQuestion.options.map((option, optionIndex) => `<div class="option-box" data-index="${optionIndex}">${option}</div>`).join('')}
+                            </div>
+                            <div id="result"></div>
+                        `;
+        
+                        // Add event listeners to the options
+                        const optionBoxes = questionBox.querySelectorAll('.option-box');
+                        optionBoxes.forEach(optionBox => {
+                            optionBox.addEventListener('click', function () {
+                                const selectedOptionIndex = this.getAttribute('data-index');
+                                checkAnswer(selectedOptionIndex, currentQuestion.answer);
+                            });
+                        });
+                        quizBox.appendChild(questionBox);
+                        // Create a separate container for the button
+                        const buttonContainer = document.createElement('div');
+                        buttonContainer.classList.add('modal-button-container');
+                        buttonContainer.innerHTML = `<button onclick="showNextQuestion()">Next Question</button>`;
+                        // Append the button container to the quiz box
+                        quizBox.appendChild(buttonContainer);
+                    } else {
+                        quizBox.innerHTML = `
+                            <div class="result">Quiz completed! Thanks for playing.</div>
+                        `;
+                        // Create a separate container for the button
+                        const buttonContainer = document.createElement('div');
+                        buttonContainer.classList.add('modal-button-container');
+                        buttonContainer.innerHTML = `<button onclick="closeQuizModal()">Close Quiz</button>`;
+                        // Append the button container to the quiz box
+                        quizBox.appendChild(buttonContainer);
+                    }
+                }
+        
+                let score = 0;
+        
+                // Check user's answer and show next question
+                function showNextQuestion() {
+                    currentQuestionIndex++;
+                    if (currentQuestionIndex < 5) {
+                        showRandomQuestion();
+                    } else {
+                        evaluateAndDisplayResult();
+                    }
+                }
+        
+                function checkAnswer(selectedOptionIndex, correctAnswer) {
+                    const options = document.querySelectorAll('.options-box .option-box');
+                    
+                    // Remove the 'selected' class from all options
+                    options.forEach(option => {
+                        option.classList.remove('selected');
+                    });
+                
+                    // Add the 'selected' class to the clicked option
+                    options[selectedOptionIndex].classList.add('selected');
+                
+                    // Get the selected option's text
+                    const selectedOptionText = options[selectedOptionIndex].innerText;
+                
+                    // Check if the selected option is correct
+                    const isCorrect = selectedOptionText === correctAnswer;
+                
+                    // Update the UI to indicate correctness
+                    const resultContainer = document.getElementById('result');
+                    resultContainer.innerHTML = isCorrect
+                        ? '<p style="color: green;">Correct!</p>'
+                        : `<p style="color: red;">Incorrect. The correct answer is: ${correctAnswer}</p>`;
+                
+                    // Update the score if the answer is correct
+                    if (isCorrect) {
+                        score++;
+                    }
+                    
+                    // For demonstration purposes, let's log the selected option index and correctness
+                    console.log('Selected Option Index:', selectedOptionIndex);
+                    console.log('Is Correct:', isCorrect);
+                }
+        
+                let quizCompleted = false;
+        
+                // Evaluate user's performance and display result
+                function evaluateAndDisplayResult() {
+                    const resultContainer = document.getElementById('quiz-container');
+                    let correctAnswersCount = 0;
+                    let totalQuestions = 5;
+                    if (score >= 4) {
+                        quizCompleted = true;
+                        resultContainer.innerHTML = `
+                        <div class="result">Congratulations! You can move on to the next lesson.</div>
+                        <div class="score-details">
+                            <p>Your Score <br> ${score} out of ${totalQuestions}</p>
+                        </div>
+                        <div class="modal-button-container">
+                            <button onclick="closeQuizModal()">Close Quiz</button>
+                        </div>`;
+                        updateUIOnQuizCompletion();
+                        document.getElementById('completion-message').style.display = 'block';
+                    } else {
+                        resultContainer.innerHTML = `
+                        <div class="result">Please review the lesson again and try again later.</div>
+                        <div class="score-details">
+                            <p><center>Your Score</center> <br> <center>${score} out of ${totalQuestions}</center></p>
+                        </div>
+                        <div class="modal-button-container">
+                            <button onclick="closeQuizModal()">Close Quiz</button>
+                        </div>`;
+                    }
+                }        quizCompleted = true;
                 resultContainer.innerHTML = `
                 <div class="result">Congratulations! You can move on to the next lesson.</div>
                 <div class="score-details">
@@ -383,21 +628,62 @@
             <div id="sublesson1">
                 <h2>Different types of debt and their characteristics</h2>
                 <p>
-                    
+                    In this lesson, we will explore the different types of debt and their characteristics. Debt is money that you borrow with the intention of paying it back. There are various types of debt that individuals, companies, corporations, and even countries can acquire. Understanding these types of debt is crucial for effective debt management. Let's dive into the details:<br>
+                    <br>
+                    1. Student Loans:<br>
+                    - Student loan debt is money borrowed for higher education expenses such as tuition, textbooks, and living expenses.<br>
+                    - It is considered an unsecured installment loan, meaning you don't need to provide collateral to the lender.<br>
+                    - Repayment of student loans typically starts six months after graduation, during a grace period.<br>
+                    - Student loans can be obtained from the U.S. Department of Education (federal loans) or private lenders.<br>
+                    - Federal loans require completing the Free Application for Federal Student Aid (FAFSA), while private loans are based on credit score and history.<br>
+                    <br>
+                    2. Credit Cards:<br>
+                    - Credit card debt is money borrowed through a line of credit provided by a financial institution or company.<br>
+                    - It is also considered unsecured debt.<br>
+                    - Credit card debt is typically repaid on a monthly basis, with interest accumulating on the borrowed amount.<br>
+                    - It is important to pay off credit card balances on time and in full to avoid additional interest charges.<br>
+                    - Credit card utilization ratio, which is the amount of total available credit used, should be kept at 30% or less.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Interest rates and fees associated with debt</h2>
                 <p>
-
+                    In this sub-lesson, we will discuss interest rates and fees associated with different types of debts. Understanding these concepts is crucial for effective debt management. Let's dive in!<br>
+                    <br>
+                    1. Interest Rates:<br>
+                    Interest rates are the additional amount of money charged by lenders for borrowing money. It is essentially the cost of borrowing. The interest rate is usually expressed as a percentage and can vary depending on the type of debt and the borrower's creditworthiness. Higher interest rates mean higher costs for borrowing money.<br>
+                    <br>
+                    2. Fixed Interest Rate:<br>
+                    A fixed interest rate remains the same throughout the loan term. This means that the interest rate does not change, providing stability and predictability in monthly payments. Fixed interest rates are commonly found in mortgages and some student loans.<br>
+                    <br>
+                    3. Adjustable Interest Rate:<br>
+                    An adjustable interest rate, also known as a variable interest rate, can change over time. The interest rate is usually tied to a benchmark, such as the prime rate or the Treasury bill rate. Changes in the benchmark rate can cause the interest rate on the debt to increase or decrease. Adjustable interest rates are commonly found in credit cards and some mortgages.<br>
+                    <br>
+                    4. Fees:<br>
+                    In addition to interest rates, some debts may also have associated fees. These fees can include origination fees, late payment fees, balance transfer fees, and annual fees. It's important to be aware of these fees as they can add to the overall cost of borrowing.                    
                 </p>
             </div>
             <!-- Sub Lesson 3 Content -->
             <div id="sublesson3">
                 <h2>How debt impacts your financial health</h2>
                 <p>
-                    
+                    In this lesson, we will explore how different types of debt can impact your financial health. Debt is money that you borrow with the intention of paying it back. There are various types of debt, and each type can have different effects on your financial well-being.<br>
+                    <br>
+                    1. Good Debt vs. Bad Debt:<br>
+                    Debt can be categorized as either good debt or bad debt. Good debt is when you borrow money for investments that have the potential to increase your net worth or improve your financial situation. For example, student loans are considered good debt because they help you obtain a higher education, which can lead to better job opportunities and higher income. On the other hand, bad debt is when you borrow money for things that do not contribute to your financial growth, such as credit card debt or auto loans.<br>
+                    <br>
+                    2. Impact on Credit Score:<br>
+                    Your credit score is a numerical representation of your creditworthiness. Different types of debt can affect your credit score in different ways. For example, having a good payment history and paying off your credit card balances in full and on time can positively impact your credit score. On the other hand, having delinquent accounts or high credit card balances can negatively affect your credit score.<br>
+                    <br>
+                    3. Financial Stability:<br>
+                    Debt can also impact your overall financial stability. If you have too much debt or are struggling to make your debt payments, it can lead to financial stress and instability. It is important to manage your debt responsibly and ensure that your debt payments are manageable within your budget.<br>
+                    <br>
+                    4. Debt-to-Income Ratio:<br>
+                    Your debt-to-income ratio is a measure of how much debt you have compared to your income. It is calculated by dividing your total monthly debt payments by your monthly income. A high debt-to-income ratio can indicate that you are carrying too much debt and may have difficulty making your debt payments. Lenders often consider this ratio when determining your creditworthiness.<br>
+                    <br>
+                    5. Long-Term Financial Goals:<br>
+                    Lastly, debt can impact your ability to achieve your long-term financial goals. If you have a significant amount of debt, it may limit your ability to save for retirement, buy a house, or pursue other financial goals. It is important to consider the long-term implications of taking on debt and to manage your debt in a way that aligns with your financial goals.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
