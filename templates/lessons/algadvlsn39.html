@@ -93,54 +93,59 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which approach for proving lower bounds involves reducing a known computationally hard problem to the problem of interest?",
+                options: ["Information Theory", "Reductions", "Communication Complexity", "Algebraic Techniques"],
+                answer: "Reductions"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which approach analyzes the amount of communication required between different parts of a distributed system?",
+                options: ["Information Theory", "Reductions", "Communication Complexity", "Algebraic Techniques"],
+                answer: "Communication Complexity"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which approach involves analyzing the algebraic structure of a problem to determine the minimum number of operations required to solve it?",
+                options: ["Information Theory", "Reductions", "Communication Complexity", "Algebraic Techniques"],
+                answer: "Algebraic Techniques"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which approach uses randomized algorithms to establish lower bounds on computational complexity?",
+                options: ["Information Theory", "Reductions", "Communication Complexity", "Randomized Algorithms"],
+                answer: "Randomized Algorithms"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which approach involves analyzing the amount of information required to represent the input and output of a problem?",
+                options: ["Information Theory", "Reductions", "Communication Complexity", "Algebraic Techniques"],
+                answer: "Information Theory"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Lower bounds help us determine the ________ required to solve a problem.",
+                options: [
+                    "maximum amount of resources",
+                    "minimum amount of resources",
+                    "average amount of resources",
+                    "unlimited amount of resources"
+                ],
+                answer: "minimum amount of resources"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which technique involves transforming one problem into another to prove a lower bound?",
+                options: ["Reduction", "Adversary arguments", "Information theory", "None of the above"],
+                answer: "Reduction"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Lower bounds have a significant impact on ________.",
+                options: ["algorithm design", "problem formulation", "approximation algorithms", "all of the above"],
+                answer: "all of the above"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "If a problem has a proven lower bound that matches the best-known algorithm, we can conclude that ________.",
+                options: ["further improvements are unlikely", "the problem is unsolvable", "the lower bound is incorrect", "the problem is easy to solve"],
+                answer: "further improvements are unlikely"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Lower bounds inspire the development of ________.",
+                options: ["new algorithmic techniques", "exact solutions", "inefficient algorithms", "none of the above"],
+                answer: "new algorithmic techniques"
             }
         ];
 
@@ -383,14 +388,37 @@
             <div id="sublesson1">
                 <h2>Approaches for demonstrating limits on computational efficiency</h2>
                 <p>
-                    
+                    In this sub-lesson, we will explore different approaches for demonstrating limits on computational efficiency. These approaches help us understand the inherent difficulty of solving certain problems and provide insights into the lower bounds of algorithmic performance.<br>
+                    <br>
+                    1. Reductions:<br>
+                    One approach for proving lower bounds is through reductions. We can reduce a known computationally hard problem to the problem we are interested in. If we can show that the known problem is hard to solve, then it implies that our problem is also hard to solve. This technique is often used to prove that a problem is NP-hard.<br>
+                    <br>
+                    2. Information Theory:<br>
+                    Information theory provides another approach for proving lower bounds. By analyzing the amount of information required to represent the input and output of a problem, we can determine the minimum number of operations needed to solve it. This approach helps us understand the fundamental limits of computation.<br>
+                    <br>
+                    3. Communication Complexity:<br>
+                    Communication complexity is a measure of the amount of communication required between different parts of a distributed system. By studying the communication complexity of a problem, we can gain insights into its computational complexity. Lower bounds on communication complexity can provide lower bounds on the running time of algorithms.<br>
+                    <br>
+                    4. Algebraic Techniques:<br>
+                    Algebraic techniques, such as polynomial interpolation and algebraic circuit complexity, can be used to prove lower bounds. These techniques involve analyzing the algebraic structure of a problem and determining the minimum number of operations required to solve it.<br>
+                    <br>
+                    5. Randomized Algorithms:<br>
+                    Randomized algorithms can also be used to prove lower bounds. By showing that a problem cannot be solved with high probability using a certain amount of randomness, we can establish lower bounds on its computational complexity.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Lower bounds and their impact on algorithm design</h2>
                 <p>
-                    
+                    In this sub-lesson, we will explore the concept of lower bounds and how they impact algorithm design. Lower bounds provide a way to determine the minimum amount of resources (such as time or space) required to solve a problem. They help us understand the inherent difficulty of a problem and guide us in designing efficient algorithms.<br>
+                    <br>
+                    Lower bounds are typically proven using techniques such as reduction, adversary arguments, or information theory. Reduction involves transforming one problem into another to show that if the second problem can be solved efficiently, then the first problem can also be solved efficiently. Adversary arguments involve constructing an adversary that tries to make the algorithm perform as poorly as possible. Information theory uses concepts from entropy and communication complexity to analyze the amount of information required to solve a problem.<br>
+                    <br>
+                    Lower bounds have a significant impact on algorithm design. They help us identify problems that are inherently difficult and cannot be solved efficiently. Lower bounds also guide us in setting realistic expectations for algorithm performance. If a problem has a proven lower bound that matches the best known algorithm, we know that further improvements are unlikely.<br>
+                    <br>
+                    Lower bounds also inspire the development of new algorithmic techniques. For example, if a problem has a lower bound that matches the best known algorithm, we may explore alternative problem formulations or relaxations to find more efficient solutions. Lower bounds also motivate the study of approximation algorithms, which provide near-optimal solutions for problems that are difficult to solve exactly.<br>
+                    <br>
+                    Overall, understanding lower bounds is crucial for algorithm designers. It helps us make informed decisions about algorithm design, set realistic expectations, and explore new algorithmic techniques.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
