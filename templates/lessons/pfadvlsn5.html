@@ -92,7 +92,156 @@
             }
         }
         const questions = [
-            
+            {
+                question: "What is a covered call strategy?",
+                options: [
+                    "Buying a call option on a stock",
+                    "Selling a call option on a stock",
+                    "Buying a put option on a stock",
+                    "Selling a put option on a stock"
+                ],
+                answer: "Selling a call option on a stock"
+            },
+            {
+                question: "In a covered call strategy, the strike price of the call option should be:",
+                options: [
+                    "Lower than the current market price of the stock",
+                    "Higher than the current market price of the stock",
+                    "Equal to the current market price of the stock",
+                    "Unrelated to the current market price of the stock"
+                ],
+                answer: "Higher than the current market price of the stock"
+            },
+            {
+                question: "What is the purpose of implementing a covered call strategy?",
+                options: [
+                    "To generate income from the premiums received",
+                    "To protect against a decline in the stock price",
+                    "To speculate on the future price movement of the stock",
+                    "To hedge against currency fluctuations"
+                ],
+                answer: "To generate income from the premiums received"
+            },
+            {
+                question: "What happens if the stock price rises above the strike price in a covered call strategy?",
+                options: [
+                    "The call option expires worthless",
+                    "The investor is required to sell the stock at the strike price",
+                    "The investor can repeat the strategy by selling another call option",
+                    "The investor can buy back the call option at a higher price"
+                ],
+                answer: "The investor is required to sell the stock at the strike price"
+            },
+            {
+                question: "What are the risks associated with implementing covered call strategies?",
+                options: [
+                    "Missing out on potential gains if the stock price rises significantly",
+                    "Experiencing losses if the stock price falls",
+                    "Both a) and b)",
+                    "None of the above"
+                ],
+                answer: "Both a) and b)"
+            },
+            {
+                question: "What is a put option?",
+                options: [
+                    "A financial derivative that gives the holder the right to buy an underlying asset",
+                    "A financial derivative that gives the holder the right to sell an underlying asset",
+                    "A financial derivative that gives the holder the right to exchange an underlying asset",
+                    "A financial derivative that gives the holder the right to borrow an underlying asset"
+                ],
+                answer: "A financial derivative that gives the holder the right to sell an underlying asset"
+            },
+            {
+                question: "How can put options be used for risk management?",
+                options: [
+                    "To protect against a decline in the value of an underlying asset",
+                    "To speculate on the increase in the value of an underlying asset",
+                    "To hedge against currency fluctuations",
+                    "To generate income through option premiums"
+                ],
+                answer: "To protect against a decline in the value of an underlying asset"
+            },
+            {
+                question: "What is a covered put strategy?",
+                options: [
+                    "Selling a put option without owning the underlying asset",
+                    "Buying a put option without owning the underlying asset",
+                    "Selling a put option while simultaneously owning the underlying asset",
+                    "Buying a put option while simultaneously owning the underlying asset"
+                ],
+                answer: "Selling a put option while simultaneously owning the underlying asset"
+            },
+            {
+                question: "What is a protective put strategy?",
+                options: [
+                    "Buying a put option without owning the underlying asset",
+                    "Selling a put option without owning the underlying asset",
+                    "Buying a put option while simultaneously owning the underlying asset",
+                    "Selling a put option while simultaneously owning the underlying asset"
+                ],
+                answer: "Buying a put option while simultaneously owning the underlying asset"
+            },
+            {
+                question: "What is a put spread strategy?",
+                options: [
+                    "Buying multiple put options with different strike prices",
+                    "Selling multiple put options with different strike prices",
+                    "Buying a put option and selling a call option with the same strike price",
+                    "Selling a put option and buying a call option with the same strike price"
+                ],
+                answer: "Buying multiple put options with different strike prices"
+            },
+            {
+                question: "What is a bull spread?",
+                options: [
+                    "A strategy used when an investor expects the price of an underlying asset to increase",
+                    "A strategy used when an investor expects the price of an underlying asset to decrease",
+                    "A strategy used when an investor expects the price of an underlying asset to remain stable",
+                    "A combination of a bull spread and a bear spread"
+                ],
+                answer: "A strategy used when an investor expects the price of an underlying asset to increase"
+            },
+            {
+                question: "What is a bear spread?",
+                options: [
+                    "A strategy used when an investor expects the price of an underlying asset to increase",
+                    "A strategy used when an investor expects the price of an underlying asset to decrease",
+                    "A strategy used when an investor expects the price of an underlying asset to remain stable",
+                    "A combination of a bull spread and a bear spread"
+                ],
+                answer: "A strategy used when an investor expects the price of an underlying asset to decrease"
+            },
+            {
+                question: "What is a butterfly spread?",
+                options: [
+                    "A strategy used when an investor expects the price of an underlying asset to increase",
+                    "A strategy used when an investor expects the price of an underlying asset to decrease",
+                    "A neutral strategy used when an investor expects the price of an underlying asset to remain relatively stable",
+                    "A combination of a bull spread and a bear spread"
+                ],
+                answer: "A neutral strategy used when an investor expects the price of an underlying asset to remain relatively stable"
+            },
+            {
+                question: "What is an iron condor?",
+                options: [
+                    "A strategy used when an investor expects the price of an underlying asset to increase",
+                    "A strategy used when an investor expects the price of an underlying asset to decrease",
+                    "A neutral strategy used when an investor expects the price of an underlying asset to remain relatively stable",
+                    "A combination of a bull spread and a bear spread"
+                ],
+                answer: "A combination of a bull spread and a bear spread"
+            },
+            {
+                question: "What is a calendar spread?",
+                options: [
+                    "A strategy used when an investor expects the price of an underlying asset to increase",
+                    "A strategy used when an investor expects the price of an underlying asset to decrease",
+                    "A strategy used when an investor expects the price of an underlying asset to remain stable",
+                    "A strategy used when an investor expects the price of an underlying asset to remain stable in the short term, but increase or decrease in the long term"
+                ],
+                answer: "A strategy used when an investor expects the price of an underlying asset to remain stable in the short term, but increase or decrease in the long term"
+            }
         ];
 
         const questionsCopy = [...questions];
@@ -333,21 +482,51 @@
             <div id="sublesson1">
                 <h2>Implementing covered call strategies in the Indian market</h2>
                 <p>
+                    In this sub-lesson, we will learn about implementing covered call strategies in the Indian market. Covered call is an option strategy where an investor holds a long position in a stock and sells a call option on the same stock. This strategy is used to generate income from the premiums received from selling the call option.<br>
                     <br>
+                    To implement a covered call strategy in the Indian market, follow these steps:<br>
+                    <br>
+                    1. Choose a stock: Select a stock that you already own or are interested in buying. It is important to choose a stock that is stable and has a moderate level of volatility.<br>
+                    <br>
+                    2. Determine the strike price: Decide on the strike price at which you will sell the call option. The strike price should be higher than the current market price of the stock.<br>
+                    <br>
+                    3. Sell the call option: Contact your broker or use an online trading platform to sell the call option. Make sure to specify the strike price and the expiration date of the option.<br>
+                    <br>
+                    4. Receive the premium: Once the call option is sold, you will receive a premium from the buyer of the option. This premium is your income from the covered call strategy.<br>
+                    <br>
+                    5. Monitor the position: Keep track of the stock price and the performance of the call option. If the stock price remains below the strike price, the option will expire worthless and you can repeat the strategy by selling another call option. If the stock price rises above the strike price, you may be required to sell your stock at the strike price.<br>
+                    <br>
+                    It is important to note that implementing covered call strategies in the Indian market involves risks. If the stock price rises significantly, you may miss out on potential gains. Additionally, if the stock price falls, you may experience losses on your stock position.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Using put options for risk management in India</h2>
                 <p>
-                    <br>
+                    In this sub-lesson, we will explore the use of put options for risk management in the context of options trading in India. <br>
+                    Put options are a type of financial derivative that give the holder the right, but not the obligation, to sell an underlying asset at a predetermined price within a specified time period.<br>
                 </p>
             </div>
             <!-- Sub Lesson 3 Content -->
             <div id="sublesson3">
                 <h2>Exploring option spreads and combinations in India</h2>
                 <p>
+                    In this sub-lesson, we will explore option spreads and combinations in the context of options trading in India. Option spreads involve the simultaneous purchase and sale of options with different strike prices or expiration dates. These strategies can be used to manage risk, enhance returns, or take advantage of specific market conditions.<br>
                     <br>
+                    1. Bull Spread:<br>
+                    A bull spread is a strategy used when an investor expects the price of an underlying asset to increase. It involves buying a call option with a lower strike price and selling a call option with a higher strike price. The premium received from selling the higher strike call helps offset the cost of buying the lower strike call. This strategy limits both the potential profit and loss.<br>
+                    <br>
+                    2. Bear Spread:<br>
+                    A bear spread is the opposite of a bull spread. It is used when an investor expects the price of an underlying asset to decrease. It involves buying a put option with a higher strike price and selling a put option with a lower strike price. The premium received from selling the lower strike put helps offset the cost of buying the higher strike put. This strategy also limits both the potential profit and loss.<br>
+                    <br>
+                    3. Butterfly Spread:<br>
+                    A butterfly spread is a neutral strategy used when an investor expects the price of an underlying asset to remain relatively stable. It involves buying two options with the same strike price and selling two options with different strike prices. The profit potential is limited, but the risk is also limited.<br>
+                    <br>
+                    4. Iron Condor:<br>
+                    An iron condor is a combination of a bull spread and a bear spread. It is used when an investor expects the price of an underlying asset to remain within a certain range. It involves buying a call option with a higher strike price, selling a call option with a lower strike price, buying a put option with a lower strike price, and selling a put option with a higher strike price. This strategy allows for a wider range of profit potential, but also carries more risk.<br>
+                    <br>
+                    5. Calendar Spread:<br>
+                    A calendar spread is a strategy used when an investor expects the price of an underlying asset to remain relatively stable in the short term, but increase or decrease in the long term. It involves buying an option with a longer expiration date and selling an option with a shorter expiration date. This strategy takes advantage of the time decay of options.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
