@@ -91,57 +91,163 @@
                 [array[i], array[j]] = [array[j], array[i]];
             }
         }
-        const questions = [
+        const questions = [const questionsCompoundInterest = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is compound interest?",
+                options: [
+                    "Interest earned on your initial investment only",
+                    "Interest earned on both your initial investment and any interest that has already been earned",
+                    "Interest earned on your initial investment and any future investments",
+                    "Interest earned on your initial investment and any future withdrawals"
+                ],
+                answer: "Interest earned on both your initial investment and any interest that has already been earned"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How does compound interest grow over time?",
+                options: [
+                    "It stays the same each year",
+                    "It decreases each year",
+                    "It increases each year",
+                    "It fluctuates randomly each year"
+                ],
+                answer: "It increases each year"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Why is it important to start investing early?",
+                options: [
+                    "To earn more interest in the first few years",
+                    "To take advantage of compound interest over a longer period of time",
+                    "To avoid paying taxes on your investments",
+                    "To have more money to spend in retirement"
+                ],
+                answer: "To take advantage of compound interest over a longer period of time"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What happens to the interest you earn each year in compound interest?",
+                options: [
+                    "It is added to your initial investment",
+                    "It is subtracted from your initial investment",
+                    "It is reinvested and earns more interest",
+                    "It is paid out as cash"
+                ],
+                answer: "It is reinvested and earns more interest"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
-            },
-            {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
-            },
-            {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
-            },
-            {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
-            },
-            {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
-            },
-            {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How does compound interest affect the growth of your investment?",
+                options: [
+                    "It slows down the growth of your investment",
+                    "It has no effect on the growth of your investment",
+                    "It speeds up the growth of your investment",
+                    "It stops the growth of your investment after a certain point"
+                ],
+                answer: "It speeds up the growth of your investment"
             }
+        ];
+        
+        const questionsCompoundInterest2 = [
+            {
+                question: "What is compound interest?",
+                options: [
+                    "Interest earned only on the initial amount invested",
+                    "Interest earned on the accumulated interest from previous periods",
+                    "Interest earned at a fixed rate over time",
+                    "Interest earned on simple interest accounts"
+                ],
+                answer: "Interest earned on both the initial amount and the accumulated interest"
+            },
+            {
+                question: "How does compound interest grow over time?",
+                options: [
+                    "Linearly",
+                    "Exponentially",
+                    "Logarithmically",
+                    "Constantly"
+                ],
+                answer: "Exponentially"
+            },
+            {
+                question: "What happens to the interest earned in the second year of a compound interest investment?",
+                options: [
+                    "It remains the same as the first year",
+                    "It decreases compared to the first year",
+                    "It increases compared to the first year",
+                    "It is not affected by compound interest"
+                ],
+                answer: "It increases compared to the first year"
+            },
+            {
+                question: "How does compound interest affect long-term investments?",
+                options: [
+                    "It has no impact on long-term investments",
+                    "It slows down the growth of long-term investments",
+                    "It speeds up the growth of long-term investments",
+                    "It only affects short-term investments"
+                ],
+                answer: "It speeds up the growth of long-term investments"
+            },
+            {
+                question: "Why is compound interest important for savings accounts?",
+                options: [
+                    "It allows for higher interest rates",
+                    "It helps to reduce taxes on savings",
+                    "It helps savings grow faster over time",
+                    "It guarantees a fixed return on savings"
+                ],
+                answer: "It helps savings grow faster over time"
+            }
+        ];
+        
+        const questionsCompoundInterest3 = [
+            {
+                question: "What is compound interest?",
+                options: [
+                    "Interest earned on the initial amount of money invested",
+                    "Interest earned on both the initial amount and the accumulated interest",
+                    "Interest earned only on the accumulated interest",
+                    "Interest earned on the principal amount only"
+                ],
+                answer: "Interest earned on both the initial amount and the accumulated interest"
+            },
+            {
+                question: "How does compound interest work?",
+                options: [
+                    "It grows your money at a fixed rate over time",
+                    "It allows your money to earn interest on top of interest",
+                    "It decreases the value of your investment over time",
+                    "It is the same as simple interest"
+                ],
+                answer: "It allows your money to earn interest on top of interest"
+            },
+            {
+                question: "What happens to your investment with compound interest over time?",
+                options: [
+                    "It stays the same",
+                    "It decreases",
+                    "It grows at a constant rate",
+                    "It grows exponentially"
+                ],
+                answer: "It grows exponentially"
+            },
+            {
+                question: "How can compound interest benefit long-term investors?",
+                options: [
+                    "It allows them to earn interest on the principal amount only",
+                    "It helps them earn a fixed rate of return over time",
+                    "It allows their investment to grow exponentially",
+                    "It decreases the value of their investment over time"
+                ],
+                answer: "It allows their investment to grow exponentially"
+            },
+            {
+                question: "What is the key to taking advantage of compound interest?",
+                options: [
+                    "Starting early and allowing your money to grow over time",
+                    "Investing a large amount of money initially",
+                    "Withdrawing your investment after a short period of time",
+                    "Investing in high-risk assets"
+                ],
+                answer: "Starting early and allowing your money to grow over time"
+            }            
         ];
 
         const questionsCopy = [...questions];
@@ -383,21 +489,43 @@
             <div id="sublesson1">
                 <h2>Explanation of compound interest</h2>
                 <p>
-                    
+                    In this lesson, we will be discussing the concept of compound interest. Compound interest is a powerful tool that can help you grow your wealth over time. It is the interest that you earn on both your initial investment and any interest that has already been earned.<br>
+                    <br>
+                    Let's start with a simple example. Imagine you have $1,000 and you invest it at an annual interest rate of 10%. After the first year, you would earn $100 in interest, bringing your total to $1,100. Now, in the second year, you would earn interest not only on your initial $1,000 but also on the additional $100 that you earned in the first year. This means that you would earn $110 in interest, bringing your total to $1,210. As you can see, the interest you earn keeps growing each year because it is being applied to a larger amount of money.<br>
+                    <br>
+                    Compound interest works like a snowball effect. The more time you give it, the bigger it gets. This is why it is important to start investing early and let your money grow over a long period of time. Over time, compound interest can turn a small investment into a significant amount of money.                    
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>How compound interest affects savings and investments</h2>
                 <p>
-
+                    In this sub-lesson, we will be discussing how compound interest affects savings and investments. Compound interest is a powerful concept that can greatly impact your financial growth over time. Let's dive into the details.<br>
+                    <br>
+                    Compound interest is the interest that is earned not only on the initial amount of money invested or saved but also on the accumulated interest from previous periods. This means that as time goes on, the interest you earn starts to compound and grow exponentially.<br>
+                    <br>
+                    To understand how compound interest works, let's consider an example. Suppose you have $1,000 and you invest it at an annual interest rate of 10%. After the first year, you would earn $100 in interest, making your total investment $1,100. In the second year, you would earn 10% interest on $1,100, which is $110. So, your total investment would become $1,210. As you can see, the interest you earn in the second year is not just based on the initial $1,000 but also on the interest earned in the first year. This compounding effect continues to grow over time.<br>
+                    <br>
+                    The power of compound interest becomes even more evident when you consider long-term investments. Let's say you invest $1,000 at a 10% interest rate and leave it untouched for 40 years. At the end of those 40 years, your initial investment would have grown to more than $45,000! This is because the interest keeps compounding year after year, allowing your money to grow exponentially.<br>
+                    <br>
+                    Compound interest can also be applied to savings accounts. When you save money in an account that earns compound interest, your savings will grow faster compared to a simple interest account. This is why it's important to take advantage of compound interest when saving for long-term goals like retirement.                    
                 </p>
             </div>
             <!-- Sub Lesson 3 Content -->
             <div id="sublesson3">
                 <h2>Examples illustrating compound interest calculations</h2>
                 <p>
-                    
+                    In this lesson, we will be discussing compound interest and how it can help you grow your wealth over time. Compound interest is a powerful concept that can make your money work for you. Let's dive in!<br>
+                    <br>
+                    Compound interest is the interest that you earn on both the initial amount of money you invest or save, as well as the interest that accumulates over time. It's like a snowball effect, where your money grows exponentially.<br>
+                    <br>
+                    To understand compound interest, let's look at an example. Let's say you have $1,000 and you invest it at an annual interest rate of 10%. After the first year, you would earn $100 in interest, making your total investment $1,100. But here's where compound interest comes into play. In the second year, you would earn 10% interest on the new total of $1,100, which is $110. So now, your total investment would be $1,210. This process continues, with your money earning interest on top of interest, and your investment grows even faster.<br>
+                    <br>
+                    Now, let's see how compound interest can make a significant impact over a longer period of time. If you were to invest that initial $1,000 for 40 years at a 10% interest rate, your investment would grow to over $45,000! That's the power of compound interest.<br>
+                    <br>
+                    Compound interest is a key component of long-term investing. By starting early and allowing your money to grow over time, you can take advantage of the exponential growth that compound interest offers.<br>
+                    <br>
+                    Now that you understand the concept of compound interest, let's test your knowledge with some multiple-choice questions.                    
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
