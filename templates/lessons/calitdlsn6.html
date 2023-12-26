@@ -93,54 +93,104 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which type of system involves linear equations?",
+                options: [
+                    "Linear systems of differential equations",
+                    "Nonlinear systems of differential equations",
+                    "Both linear and nonlinear systems",
+                    "None of the above"
+                ],
+                answer: "Linear systems of differential equations"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the general form of a linear system of differential equations?",
+                options: [
+                    "dx/dt = f1(x, y, ..., z)",
+                    "dx/dt = a11x + a12y + ... + a1nx",
+                    "dx/dt = x^2 + y^2",
+                    "None of the above"
+                ],
+                answer: "dx/dt = a11x + a12y + ... + a1nx"
+            },
+            {   
+                question: "Which type of system is typically easier to solve?",
+                options: [
+                    "Linear systems of differential equations",
+                    "Nonlinear systems of differential equations",
+                    "Both linear and nonlinear systems",
+                    "None of the above"
+                ],
+                answer: "Linear systems of differential equations"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What methods can be used to solve linear systems of differential equations?",
+                options: [
+                    "Matrix methods",
+                    "Eigenvalues and eigenvectors",
+                    "Laplace transforms",
+                    "All of the above"
+                ],
+                answer: "All of the above"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which type of system may require numerical methods or approximation techniques for solution?",
+                options: [
+                    "Linear systems of differential equations",
+                    "Nonlinear systems of differential equations",
+                    "Both linear and nonlinear systems",
+                    "None of the above"
+                ],
+                answer: "Nonlinear systems of differential equations"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Sturm-Liouville theory is used to solve which type of differential equations?",
+                options: [
+                    "First-order linear differential equations",
+                    "Second-order linear differential equations",
+                    "Nonlinear differential equations",
+                    "Partial differential equations"
+                ],
+                answer: "Second-order linear differential equations"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is a Sturm-Liouville operator?",
+                options: [
+                    "A differential operator associated with a Sturm-Liouville equation",
+                    "A differential operator associated with a first-order linear differential equation",
+                    "A differential operator associated with a nonlinear differential equation",
+                    "A differential operator associated with a partial differential equation"
+                ],
+                answer: "A differential operator associated with a Sturm-Liouville equation"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What are the eigenvalues in Sturm-Liouville theory?",
+                options: [
+                    "Constants that satisfy the Sturm-Liouville equation",
+                    "Constants that satisfy the boundary conditions",
+                    "Constants that satisfy the weight function",
+                    "Constants that satisfy the differential equation"
+                ],
+                answer: "Constants that satisfy the Sturm-Liouville equation"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What are boundary value problems?",
+                options: [
+                    "Problems that involve finding eigenvalues and eigenfunctions",
+                    "Problems that involve imposing additional conditions on the eigenfunctions at the endpoints of the interval",
+                    "Problems that involve solving Sturm-Liouville equations",
+                    "Problems that involve solving first-order linear differential equations"
+                ],
+                answer: "Problems that involve imposing additional conditions on the eigenfunctions at the endpoints of the interval"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
-            },
-            {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How do we solve a boundary value problem using Sturm-Liouville theory?",
+                options: [
+                    "Determine the eigenvalues and eigenfunctions",
+                    "Apply the boundary conditions to the eigenfunctions",
+                    "Solve the Sturm-Liouville equation",
+                    "Construct the general solution using the eigenvalues and eigenfunctions"
+                ],
+                answer: "Construct the general solution using the eigenvalues and eigenfunctions"
             }
         ];
 
@@ -382,14 +432,61 @@
             <div id="sublesson1">
                 <h2>Linear and nonlinear systems of differential equations</h2>
                 <p>
-                    
+                    In this sub-lesson, we will explore linear and nonlinear systems of differential equations. A system of differential equations consists of multiple equations that involve derivatives of one or more unknown functions. These systems can be classified as linear or nonlinear based on the nature of the equations.<br>
+                    <br>
+                    1. Linear Systems of Differential Equations:<br>
+                    A linear system of differential equations is one in which the unknown functions and their derivatives appear linearly. The general form of a linear system of differential equations is:<br>
+                    <br>
+                    dx/dt = a11x + a12y + ... + a1nx<br>
+                    dy/dt = a21x + a22y + ... + a2ny<br>
+                    ...<br>
+                    dz/dt = an1x + an2y + ... + annz<br>
+                    <br>
+                    Here, x, y, ..., z are the unknown functions, t is the independent variable, and a11, a12, ..., ann are constants.<br>
+                    <br>
+                    To solve a linear system of differential equations, we can use methods such as matrix methods, eigenvalues and eigenvectors, or Laplace transforms. The solutions to linear systems are typically easier to find compared to nonlinear systems.<br>
+                    <br>
+                    2. Nonlinear Systems of Differential Equations:<br>
+                    A nonlinear system of differential equations is one in which the unknown functions and their derivatives appear nonlinearly. The general form of a nonlinear system of differential equations is:<br>
+                    <br>
+                    dx/dt = f1(x, y, ..., z)<br>
+                    dy/dt = f2(x, y, ..., z)<br>
+                    ...<br>
+                    dz/dt = fn(x, y, ..., z)<br>
+                    <br>
+                    Here, f1, f2, ..., fn are nonlinear functions of the unknown functions x, y, ..., z.<br>
+                    <br>
+                    Solving nonlinear systems of differential equations can be more challenging and often requires numerical methods or approximation techniques. Analytical solutions may not always be possible.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Sturm-Liouville theory and boundary value problems</h2>
                 <p>
-
+                    In this sub-lesson, we will explore Sturm-Liouville theory and boundary value problems. Sturm-Liouville theory is a powerful mathematical tool used to solve second-order linear differential equations with boundary conditions. It provides a systematic approach to finding eigenvalues and eigenfunctions of these equations.<br>
+                    <br>
+                    To understand Sturm-Liouville theory, we need to first understand the concept of a Sturm-Liouville operator. A Sturm-Liouville operator is a differential operator of the form:<br>
+                    <br>
+                    L(y) = -(p(x)y')' + q(x)y<br>
+                    <br>
+                    where p(x) and q(x) are continuous functions defined on a given interval [a, b]. The Sturm-Liouville operator is associated with a Sturm-Liouville equation of the form:<br>
+                    <br>
+                    L(y) + λw(x)y = 0<br>
+                    <br>
+                    where λ is a constant called an eigenvalue and w(x) is a weight function defined on the same interval [a, b].<br>
+                    <br>
+                    The Sturm-Liouville theory states that for a given Sturm-Liouville operator L, there exists a countable set of eigenvalues λ_1, λ_2, λ_3, ... and corresponding eigenfunctions y_1(x), y_2(x), y_3(x), ... that satisfy the Sturm-Liouville equation and certain boundary conditions.<br>
+                    <br>
+                    Boundary value problems arise when we impose additional conditions on the eigenfunctions at the endpoints of the interval [a, b]. These conditions can be of different types, such as Dirichlet boundary conditions, Neumann boundary conditions, or mixed boundary conditions.<br>
+                    <br>
+                    To solve a boundary value problem using Sturm-Liouville theory, we follow these steps:<br>
+                    1. Determine the Sturm-Liouville operator L for the given differential equation.<br>
+                    2. Find the eigenvalues λ_n and eigenfunctions y_n(x) by solving the Sturm-Liouville equation L(y) + λw(x)y = 0.<br>
+                    3. Apply the boundary conditions to determine the specific values of the eigenvalues and eigenfunctions that satisfy the problem.<br>
+                    <br>
+                    Once we have the eigenvalues and eigenfunctions, we can use them to construct the general solution of the boundary value problem.<br>
+                    <br>
+                    Now, let's move on to the multiple-choice questions.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
