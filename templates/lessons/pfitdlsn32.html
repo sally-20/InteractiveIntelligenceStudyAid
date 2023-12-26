@@ -93,56 +93,81 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which tax-saving investment option has the shortest lock-in period?",
+                options: ["PPF", "NSC", "ELSS", "Tax-saving FD"],
+                answer: "ELSS"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which tax-saving investment option offers a tax deduction on the amount invested and the interest earned?",
+                options: ["PPF", "NSC", "ELSS", "NPS"],
+                answer: "PPF"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which tax-saving investment option is specifically designed for retirement savings?",
+                options: ["PPF", "NSC", "ELSS", "NPS"],
+                answer: "NPS"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which tax-saving investment option has a maturity period of 5 or 10 years?",
+                options: ["PPF", "NSC", "ELSS", "Tax-saving FD"],
+                answer: "NSC"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
-            },
-            {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
-            },
-            {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
-            },
-            {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
-            },
-            {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
-            },
-            {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which tax-saving investment option allows partial withdrawals after the 7th year?",
+                options: ["PPF", "NSC", "ELSS", "NPS"],
+                answer: "PPF"
             }
-        ];
+            {
+                question: "Which section of the Income Tax Act provides tax benefits for ELSS and other tax-saving mutual funds?",
+                options: ["Section 80D", "Section 80G", "Section 80C", "Section 80E"],
+                answer: "Section 80C"
+            },
+            {
+                question: "What is the lock-in period for ELSS?",
+                options: ["1 year", "2 years", "3 years", "5 years"],
+                answer: "3 years"
+            },
+            {
+                question: "Which type of investors are ELSS funds suitable for?",
+                options: ["Risk-averse investors", "Short-term investors", "Long-term investors", "Conservative investors"],
+                answer: "Long-term investors"
+            },
+            {
+                question: "Apart from equity, what other type of instruments do tax-saving mutual funds invest in?",
+                options: ["Debt instruments", "Real estate", "Gold", "Fixed deposits"],
+                answer: "Debt instruments"
+            },
+            {
+                question: "What is the main advantage of investing in tax-saving mutual funds?",
+                options: ["Guaranteed returns", "High liquidity", "Tax benefits", "Low risk"],
+                answer: "Tax benefits"
+            }
+            {
+                question: "Which tax-saving investment option has a lock-in period of 15 years?",
+                options: ["Public Provident Fund (PPF)", "National Savings Certificate (NSC)", "Equity-Linked Savings Scheme (ELSS)", "Tax-saving Fixed Deposits (FD)"],
+                answer: "Public Provident Fund (PPF)"
+            },
+            {
+                question: "Which tax-saving investment option primarily invests in equities?",
+                options: ["Public Provident Fund (PPF)", "National Savings Certificate (NSC)", "Equity-Linked Savings Scheme (ELSS)", "Tax-saving Fixed Deposits (FD)"],
+                answer: "Equity-Linked Savings Scheme (ELSS)"
+            },
+            {
+                question: "Which tax-saving investment option is specifically designed for retirement planning?",
+                options: ["Public Provident Fund (PPF)", "National Savings Certificate (NSC)", "Equity-Linked Savings Scheme (ELSS)", "National Pension Scheme (NPS)"],
+                answer: "National Pension Scheme (NPS)"
+            },
+            {
+                question: "Which tax-saving investment option offers tax benefits on both contributions and withdrawals?",
+                options: ["Public Provident Fund (PPF)", "National Savings Certificate (NSC)", "Equity-Linked Savings Scheme (ELSS)", "National Pension Scheme (NPS)"],
+                answer: "National Pension Scheme (NPS)"
+            },
+            {
+                question: "Which tax-saving investment option has the potential to provide higher returns but also carries higher market risks?",
+                options: ["Public Provident Fund (PPF)", "National Savings Certificate (NSC)", "Equity-Linked Savings Scheme (ELSS)", "Tax-saving Fixed Deposits (FD)"],
+                answer: "Equity-Linked Savings Scheme (ELSS)"
+            }
+        ];        
 
         const questionsCopy = [...questions];
         let currentQuestionIndex = 0;
@@ -382,21 +407,83 @@
             <div id="sublesson1">
                 <h2>Popular tax-saving investment instruments in India</h2>
                 <p>
-                    
+                    In this lesson, we will discuss some popular tax-saving investment instruments in India. These instruments are specifically designed to help individuals reduce their tax liability while also providing opportunities for wealth creation. Let's explore these options:<br>
+                    <br>
+                    1. Public Provident Fund (PPF):<br>
+                    - PPF is a long-term investment scheme offered by the government of India.<br>
+                    - It offers a tax deduction on the amount invested (up to a specified limit) under Section 80C of the Income Tax Act.<br>
+                    - The interest earned and the maturity amount are also tax-free.<br>
+                    - PPF has a lock-in period of 15 years, but partial withdrawals are allowed after the 7th year.<br>
+                    <br>
+                    2. National Savings Certificate (NSC):<br>
+                    - NSC is a fixed-income investment scheme offered by the government.<br>
+                    - It provides a tax deduction on the amount invested (up to a specified limit) under Section 80C.<br>
+                    - The interest earned is taxable, but it is reinvested and qualifies for a tax deduction under Section 80C.<br>
+                    - NSC has a maturity period of 5 or 10 years, depending on the variant chosen.<br>
+                    <br>
+                    3. Equity-Linked Savings Scheme (ELSS):<br>
+                    - ELSS is a type of mutual fund that invests primarily in equities.<br>
+                    - It offers a tax deduction on the amount invested (up to a specified limit) under Section 80C.<br>
+                    - ELSS has a lock-in period of 3 years, which is the shortest among all tax-saving investment options.<br>
+                    - The returns from ELSS are subject to long-term capital gains tax.<br>
+                    <br>
+                    4. Tax-saving Fixed Deposits (FD):<br>
+                    - Many banks offer tax-saving FDs that come with a lock-in period of 5 years.<br>
+                    - The amount invested in tax-saving FDs qualifies for a tax deduction under Section 80C.<br>
+                    - The interest earned is taxable as per the individual's income tax slab.<br>
+                    <br>
+                    5. National Pension System (NPS):<br>
+                    - NPS is a retirement savings scheme regulated by the Pension Fund Regulatory and Development Authority (PFRDA).<br>
+                    - It offers a tax deduction on the amount invested (up to a specified limit) under Section 80CCD(1B).<br>
+                    - NPS has a lock-in period until retirement, but partial withdrawals are allowed under certain conditions.<br>
+                    - At maturity, a portion of the corpus can be withdrawn tax-free, while the remaining amount is used to purchase an annuity.<br>
+                    <br>
+                    These are some of the popular tax-saving investment options in India. It is important to consider your financial goals, risk appetite, and investment horizon before choosing the right option for you.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>ELSS (Equity-Linked Savings Scheme) and other tax-saving mutual funds in India</h2>
                 <p>
-
+                    In this sub-lesson, we will discuss ELSS (Equity-Linked Savings Scheme) and other tax-saving mutual funds in India. These investment options provide individuals with an opportunity to save taxes while also earning potential returns.<br>
+                    <br>
+                    1. ELSS (Equity-Linked Savings Scheme):<br>
+                    - ELSS is a type of mutual fund that offers tax benefits under Section 80C of the Income Tax Act.<br>
+                    - It invests a major portion of its assets in equity and equity-related instruments.<br>
+                    - ELSS has a lock-in period of 3 years, which means you cannot redeem your investment before the completion of 3 years.<br>
+                    - The returns from ELSS are market-linked and can vary based on the performance of the underlying assets.<br>
+                    - ELSS is suitable for individuals with a higher risk appetite and a long-term investment horizon.<br>
+                    <br>
+                    2. Other tax-saving mutual funds:<br>
+                    - Apart from ELSS, there are other mutual funds that also offer tax benefits under Section 80C.<br>
+                    - These funds invest in a mix of equity and debt instruments, providing a balanced approach to tax-saving investments.<br>
+                    - The lock-in period for these funds is usually 3 years, similar to ELSS.<br>
+                    - The returns from these funds are also market-linked and can vary based on the performance of the underlying assets.<br>
+                    - These funds are suitable for individuals who prefer a balanced approach to tax-saving investments and have a moderate risk appetite.
                 </p>
             </div>
             <!-- Sub Lesson 3 Content -->
             <div id="sublesson3">
                 <h2>Navigating tax-saving options to minimize tax liability in India</h2>
                 <p>
-
+                    In this sub-lesson, we will explore various tax-saving investment options available in India that can help minimize your tax liability. These options are specifically designed to provide tax benefits to individuals and encourage them to invest in specific sectors. By investing in these options, you can not only save taxes but also grow your wealth over time.<br>
+                    <br>
+                    1. Public Provident Fund (PPF):<br>
+                    The PPF is a long-term investment option that offers tax benefits under Section 80C of the Income Tax Act. It has a lock-in period of 15 years and provides a fixed rate of interest. The contributions made to the PPF account are eligible for tax deduction, and the interest earned is tax-free.<br>
+                    <br>
+                    2. National Savings Certificate (NSC):<br>
+                    The NSC is a fixed-income investment option that also offers tax benefits under Section 80C. It has a lock-in period of 5 years and provides a fixed rate of interest. The interest earned is taxable, but it can be reinvested to avail tax benefits.<br>
+                    <br>
+                    3. Equity-Linked Savings Scheme (ELSS):<br>
+                    ELSS is a mutual fund scheme that invests primarily in equities. It offers tax benefits under Section 80C and has a lock-in period of 3 years. ELSS has the potential to provide higher returns compared to traditional tax-saving options, but it also carries higher market risks.<br>
+                    <br>
+                    4. Tax-saving Fixed Deposits (FD):<br>
+                    Many banks offer tax-saving FDs that come with a lock-in period of 5 years. The interest earned on these FDs is taxable. However, the principal amount invested is eligible for tax deduction under Section 80C.<br>
+                    <br>
+                    5. National Pension Scheme (NPS):<br>
+                    NPS is a retirement-focused investment option that offers tax benefits under Section 80CCD. It allows individuals to contribute towards their retirement and provides tax benefits on both contributions and withdrawals. NPS offers a choice of investment options, including equity, corporate bonds, and government securities.<br>
+                    <br>
+                    Now that you are familiar with these tax-saving investment options, let's test your knowledge with some multiple-choice questions.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
