@@ -93,55 +93,65 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is implicit differentiation?",
+                options: [
+                    "Differentiating an equation explicitly expressed in terms of a single variable.",
+                    "Differentiating an equation that relates multiple variables together.",
+                    "Differentiating an equation using the chain rule.",
+                    "Differentiating an equation with respect to a constant."
+                ],
+                answer: "Differentiating an equation that relates multiple variables together."
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which rule is used to differentiate a variable that is not explicitly expressed in terms of another variable?",
+                options: ["Product rule", "Quotient rule", "Chain rule", "Power rule"],
+                answer: "Chain rule"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "In implicit differentiation, what do we keep constant while differentiating a variable?",
+                options: ["The variable itself", "The derivative of the variable", "The other variables", "The constant terms in the equation"],
+                answer: "The other variables"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of using the chain rule in implicit differentiation?",
+                options: [
+                    "To differentiate a variable with respect to a constant",
+                    "To differentiate a variable with respect to another variable",
+                    "To differentiate a variable with respect to itself",
+                    "To differentiate a variable with respect to a constant term"
+                ],
+                answer: "To differentiate a variable with respect to another variable"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Can implicit differentiation be applied to equations with any number of variables?",
+                options: ["Yes", "No"],
+                answer: "Yes"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "A rectangular box is being filled with water at a rate of 5 cubic feet per minute. The dimensions of the box are changing such that the length is increasing at a rate of 2 feet per minute, the width is decreasing at a rate of 1 foot per minute, and the height is constant. What is the rate of change of the height when the length is 10 feet, the width is 5 feet, and the height is 8 feet?",
+                options: ["-1/2 ft/min", "1/2 ft/min", "-2 ft/min", "2 ft/min"],
+                answer: "-1/2 ft/min"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "A spherical balloon is being inflated at a rate of 10 cubic inches per minute. The radius of the balloon is increasing at a rate of 2 inches per minute. At what rate is the surface area of the balloon increasing when the radius is 5 inches?",
+                options: ["20π in²/min", "40π in²/min", "50π in²/min", "100π in²/min"],
+                answer: "40π in²/min"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "A cone-shaped sand pile is being formed with sand pouring in at a rate of 3 cubic feet per minute. The height of the pile is increasing at a rate of 2 feet per minute, and the radius of the base is increasing at a rate of 1 foot per minute. At what rate is the volume of the pile increasing when the height is 10 feet and the radius is 4 feet?",
+                options: ["12π ft³/min", "24π ft³/min", "36π ft³/min", "48π ft³/min"],
+                answer: "36π ft³/min"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "A cylindrical tank is being filled with water at a rate of 10 cubic meters per minute. The radius of the tank is increasing at a rate of 1 meter per minute, and the height of the tank is increasing at a rate of 2 meters per minute. At what rate is the water level rising when the radius is 5 meters and the height is 10 meters?",
+                options: ["1/2 m/min", "1 m/min", "2 m/min", "4 m/min"],
+                answer: "4 m/min"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
-            }
+                question: "A rocket is launched vertically from the ground. At a certain instant, the rocket is 1000 meters above the ground and rising at a rate of 50 meters per second. A camera is located 500 meters away from the launch site. At what rate is the camera's angle of elevation changing when the rocket is 2000 meters above the ground?",
+                options: ["0.02 radians/second", "0.04 radians/second", "0.06 radians/second", "0.08 radians/second"],
+                answer: "0.02 radians/second"
+            }   
         ];
 
         const questionsCopy = [...questions];
@@ -382,14 +392,50 @@
             <div id="sublesson1">
                 <h2>Implicit differentiation in multiple variables</h2>
                 <p>
-                    
+                    In this sub-lesson, we will explore the concept of implicit differentiation in multiple variables. Implicit differentiation is a technique used to find the derivative of an equation that is not explicitly expressed in terms of a single variable. Instead, the equation relates multiple variables together.<br>
+                    <br>
+                    To begin, let's consider a simple example. Suppose we have an equation in two variables, x and y, given by:<br>
+                    <br>
+                    F(x, y) = 0<br>
+                    <br>
+                    To find the derivative of y with respect to x, we can differentiate both sides of the equation with respect to x. However, since y is not explicitly expressed in terms of x, we need to use the chain rule to differentiate y with respect to x. The chain rule states that if z = f(g(x)), then dz/dx = f'(g(x)) * g'(x).<br>
+                    <br>
+                    Applying the chain rule to our equation, we have:<br>
+                    <br>
+                    dF/dx = dF/dx + dF/dy * dy/dx = 0<br>
+                    <br>
+                    Now, let's consider a more complex example involving three variables, x, y, and z. Suppose we have the equation:<br>
+                    <br>
+                    G(x, y, z) = 0<br>
+                    <br>
+                    To find the derivative of z with respect to x, we can differentiate both sides of the equation with respect to x. Again, we need to use the chain rule to differentiate z with respect to x. Applying the chain rule, we have:<br>
+                    <br>
+                    dG/dx = dG/dx + dG/dy * dy/dx + dG/dz * dz/dx = 0<br>
+                    <br>
+                    This process can be extended to equations with any number of variables. The key idea is to differentiate each variable with respect to the variable of interest, while keeping the other variables constant.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Applications of related rates in three dimensions</h2>
                 <p>
-
+                    In this sub-lesson, we will explore the applications of related rates in three dimensions. Related rates problems involve finding the rate of change of one quantity with respect to another, when both quantities are changing. In three dimensions, we will consider problems that involve rates of change in three variables.<br>
+                    <br>
+                    To solve related rates problems in three dimensions, we will follow a similar strategy as in two dimensions. Here are the steps:<br>
+                    <br>
+                    Step 1: Assign letters to all quantities that vary with time and any others that seem relevant to the problem. Give a definition for each letter.<br>
+                    <br>
+                    Step 2: Identify the rates of change that are known and the rate of change that is to be found. Interpret each rate as a derivative.<br>
+                    <br>
+                    Step 3: Find an equation that relates the variables whose rates of change were identified in Step 2. To do this, it will often be helpful to draw an appropriately labeled figure that illustrates the relationship.<br>
+                    <br>
+                    Step 4: Differentiate both sides of the equation obtained in Step 3 with respect to time to produce a relationship between the known rates of change and the unknown rate of change.<br>
+                    <br>
+                    Step 5: After completing Step 4, substitute all known values for the rates of change and the variables, and then solve for the unknown rate of change.<br>
+                    <br>
+                    It is important to note that in Step 5, we should perform the differentiation before substituting numerical values to avoid errors.<br>
+                    <br>
+                    Now, let's move on to some practice problems to solidify our understanding.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
