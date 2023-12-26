@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Fourier Series and Transforms</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/learningstyles.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
@@ -93,54 +93,104 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What does the convergence of a Fourier series refer to?",
+                options: [
+                    "How well the series approximates the original function",
+                    "How many terms are in the series",
+                    "How fast the series converges",
+                    "None of the above"
+                ],
+                answer: "How well the series approximates the original function"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which conditions must be satisfied for a function to have a convergent Fourier series?",
+                options: [
+                    "Piecewise continuity and a finite number of maxima and minima within each period",
+                    "Continuity and a finite number of jump discontinuities within each period",
+                    "Piecewise continuity and a finite number of jump discontinuities within each period",
+                    "None of the above"
+                ],
+                answer: "Piecewise continuity and a finite number of jump discontinuities within each period"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What happens if a function has a jump discontinuity or an infinite number of maxima and minima within each period?",
+                options: [
+                    "The Fourier series converges to the original function",
+                    "The Fourier series converges to a different function",
+                    "The Fourier series does not converge",
+                    "None of the above"
+                ],
+                answer: "The Fourier series does not converge"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What are the Dirichlet conditions for the convergence of a Fourier series?",
+                options: [
+                    "Continuity and a finite number of jump discontinuities within each period",
+                    "Piecewise continuity and a finite number of maxima and minima within each period",
+                    "Piecewise continuity and a finite number of jump discontinuities within each period",
+                    "None of the above"
+                ],
+                answer: "Piecewise continuity and a finite number of jump discontinuities within each period"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "When does the Fourier series of a function converge to the original function?",
+                options: [
+                    "At every point where the function is continuous",
+                    "At every point where the function has a jump discontinuity",
+                    "At every point where the function has a maximum or minimum",
+                    "None of the above"
+                ],
+                answer: "At every point where the function is continuous"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of a Fourier transform?",
+                options: [
+                    "To decompose a function into sinusoidal components",
+                    "To analyze the frequency components of a function",
+                    "To manipulate signals in signal processing",
+                    "All of the above"
+                ],
+                answer: "All of the above"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which field does not use Fourier transforms?",
+                options: [
+                    "Signal processing",
+                    "Image processing",
+                    "Quantum mechanics",
+                    "Linear algebra"
+                ],
+                answer: "Linear algebra"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What can Fourier transforms be used for in image processing?",
+                options: [
+                    "Enhancing image features",
+                    "Removing noise from images",
+                    "Compressing images",
+                    "All of the above"
+                ],
+                answer: "All of the above"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How are Fourier transforms used in communication systems?",
+                options: [
+                    "Modulating and demodulating signals",
+                    "Encoding and decoding information",
+                    "Performing channel equalization",
+                    "All of the above"
+                ],
+                answer: "All of the above"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What can Fourier transforms be used for in data analysis?",
+                options: [
+                    "Identifying periodic patterns in data",
+                    "Detecting anomalies in data",
+                    "Performing spectral analysis",
+                    "All of the above"
+                ],
+                answer: "All of the above"
             }
         ];
 
@@ -300,26 +350,26 @@
         }
         function updateUIOnQuizCompletion() {
             // Change the color of the flash to gold
-            const flash = document.querySelector('.bolt[data-target="dialog-boxcalitd1"]');
+            const flash = document.querySelector('.bolt[data-target="dialog-boxcaladv1"]');
             if (flash) {
                 flash.style.backgroundColor = '#ffd700'; // Hex code for gold
 
             // Change the dialog box border color to gold and display the completion message
-            const dialogBoxCalitd1 = document.getElementById('dialog-boxcalitd1');
-            if (dialogBoxCalitd1) {
-                dialogBoxCalitd1.style.borderColor = '#ffd700'; // Hex code for gold
-                const dialogText = dialogBoxCalitd1.querySelector('.dialog-text');
+            const dialogBoxCaladv1 = document.getElementById('dialog-boxcaladv1');
+            if (dialogBoxCaladv1) {
+                dialogBoxCaladv1.style.borderColor = '#ffd700'; // Hex code for gold
+                const dialogText = dialogBoxCaladv1.querySelector('.dialog-text');
                 dialogText.innerText = 'Completed'; // Update the message inside the dialog box
 
                 // Save the completion status in localStorage
-                localStorage.setItem('calitdlsn1Completed', 'true');
+                localStorage.setItem('caladvlsn1Completed', 'true');
             }
         }
 
         document.addEventListener('DOMContentLoaded', function () {
             startQuiz();
-            const calitdlsn1Completed = localStorage.getItem('calitdlsn1Completed');
-            if (calitdlsn1Completed === 'true') {
+            const caladvlsn1Completed = localStorage.getItem('caladvlsn1Completed');
+            if (caladvlsn1Completed === 'true') {
                 updateUIOnQuizCompletion();
             }
         });
@@ -378,18 +428,58 @@
             </ul>
         </aside>
         <main class="lesson-main-content">
-            <h1></h1>
+            <h1>Fourier Series and Transforms</h1>
             <div id="sublesson1">
-                <h2></h2>
+                <h2>Convergence of Fourier series</h2>
                 <p>
-                    
+                    In this sub-lesson, we will discuss the convergence of Fourier series. Fourier series is a way to represent a periodic function as a sum of sine and cosine functions. The convergence of Fourier series refers to how well the series approximates the original function.<br>
+                    <br>
+                    The Fourier series of a function f(x) with period 2π is given by:<br>
+                    <br>
+                    f(x) = a0 + Σ(an*cos(nx) + bn*sin(nx))<br>
+                    <br>
+                    where a0, an, and bn are the Fourier coefficients.<br>
+                    <br>
+                    The convergence of the Fourier series depends on the properties of the function f(x). If f(x) is a piecewise continuous function with a finite number of discontinuities and a finite number of maxima and minima within each period, then the Fourier series converges to f(x) at every point where f(x) is continuous.<br>
+                    <br>
+                    However, if f(x) has a jump discontinuity or an infinite number of maxima and minima within each period, the Fourier series may converge to a different function or may not converge at all.<br>
+                    <br>
+                    To determine the convergence of a Fourier series, we can use the Dirichlet conditions. The Dirichlet conditions state that for a function f(x) to have a convergent Fourier series:<br>
+                    <br>
+                    1. f(x) must be piecewise continuous on the interval [-π, π].<br>
+                    2. f(x) must have a finite number of maxima and minima within each period.<br>
+                    3. f(x) must have a finite number of jump discontinuities within each period.<br>
+                    <br>
+                    If these conditions are satisfied, then the Fourier series of f(x) converges to f(x) at every point where f(x) is continuous.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
-                <h2></h2>
+                <h2>Fourier transforms and applications</h2>
                 <p>
-
+                    In this sub-lesson, we will explore Fourier transforms and their applications. Fourier transforms are mathematical tools that allow us to decompose a function into a sum of sinusoidal functions. This decomposition is useful in various fields, including signal processing, image processing, and quantum mechanics.<br>
+                    <br>
+                    The Fourier transform of a function f(x) is given by the equation:<br>
+                    <br>
+                    F(k) = ∫[f(x) * e^(-2πikx)] dx<br>
+                    <br>
+                    Here, F(k) represents the Fourier transform of f(x), and k is the frequency variable. The integral is taken over the entire range of x.<br>
+                    <br>
+                    The Fourier transform allows us to analyze the frequency components present in a function. By decomposing a function into its frequency components, we can gain insights into its behavior and properties.<br>
+                    <br>
+                    Applications of Fourier transforms include:<br>
+                    <br>
+                    1. Signal Processing: Fourier transforms are used to analyze and manipulate signals in various applications, such as audio and image processing. By decomposing a signal into its frequency components, we can apply filters, remove noise, and extract useful information.<br>
+                    <br>
+                    2. Image Processing: Fourier transforms are used to analyze and manipulate images. By decomposing an image into its frequency components, we can enhance certain features, remove noise, and compress the image.<br>
+                    <br>
+                    3. Quantum Mechanics: Fourier transforms are used in quantum mechanics to describe the wave-like nature of particles. The wave function of a particle can be represented as a superposition of sinusoidal functions, which can be obtained using Fourier transforms.<br>
+                    <br>
+                    4. Communication Systems: Fourier transforms are used in communication systems to analyze and process signals. By decomposing a signal into its frequency components, we can modulate and demodulate signals, encode and decode information, and perform channel equalization.<br>
+                    <br>
+                    5. Data Analysis: Fourier transforms are used in data analysis to analyze and extract patterns from data. By decomposing a dataset into its frequency components, we can identify periodic patterns, detect anomalies, and perform spectral analysis.<br>
+                    <br>
+                    Now that we have learned about Fourier transforms and their applications, let's test our understanding with some multiple-choice questions.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
@@ -400,10 +490,10 @@
             </div>
         </main>
         <aside class="sidebar-right">
-            <h2></h2>
+            <h2>Fourier Series and Transforms</h2>
             <ul class="sub-lesson-links">
-                <li><a href="#sublesson1"></a></li>
-                <li><a href="#sublesson2"></a></li>
+                <li><a href="#sublesson1">Convergence of Fourier series</a></li>
+                <li><a href="#sublesson2">Fourier transforms and applications</a></li>
             </ul>
         </aside>
 </body>
