@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laplace Transform and Applications</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/learningstyles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .quiz-container {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+            max-width: 80%;
+            max-height: 80%;
+            overflow-y: auto;
+        }
+        .question-box {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+        }
+        .options-box {
+            display: flex;
+            flex-direction: column;
+        }
+        .option-box {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .option-box.selected {
+            background-color: #3498db;
+            color: white;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 1);
+            z-index: 999;
+            display: none;
+        }
+        .modal-button-container button {
+            width: 10rem;
+            height: 2rem;
+            background-color: #3498db;
+            outline: none;
+            border: 1px solid rgb(252, 242, 241);
+            color: white;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border-radius: 20px;
+            text-align: center;
+            line-height: 2rem;
+            padding: 5px;
+        }
+        .modal-button-container button:hover {
+            background-color: #2980b9;
+        }
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity:1 ;}
+        }
+        @-webkit-keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        .completion-message {
+            color: green; 
+        } 
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='js/learningscript.js') }}" defer></script>
+    <script>
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+        const questions = [
+            {
+                question: "Which property of Laplace transforms allows us to shift a function in the time domain?",
+                options: [
+                    "Linearity Property",
+                    "Shifting Property",
+                    "Differentiation Property",
+                    "Integration Property"
+                ],
+                answer: "Shifting Property"
+            },
+            {
+                question: "What is the Laplace transform of the derivative of a function f(t)?",
+                options: [
+                    "s*F(s)",
+                    "F(s)/s",
+                    "e^(-as)*F(s)",
+                    "None of the above"
+                ],
+                answer: "s*F(s)"
+            },
+            {
+                question: "Which property of Laplace transforms allows us to convert a linear combination of functions into a linear combination of their individual transforms?",
+                options: [
+                    "Linearity Property",
+                    "Shifting Property",
+                    "Differentiation Property",
+                    "Integration Property"
+                ],
+                answer: "Linearity Property"
+            },
+            {
+                question: "How can we invert a Laplace transform to obtain the original function?",
+                options: [
+                    "By using partial fraction decomposition",
+                    "By using the inverse Laplace transform table",
+                    "By summing the inverse transforms of individual terms",
+                    "All of the above"
+                ],
+                answer: "All of the above"
+            },
+            {
+                question: "What is the Laplace transform of the integral of a function f(t)?",
+                options: [
+                    "s*F(s)",
+                    "F(s)/s",
+                    "e^(-as)*F(s)",
+                    "None of the above"
+                ],
+                answer: "F(s)/s"
+            }
+            {
+                question: "The Laplace Transform is a mathematical operation that transforms a function of time into a function of _______.",
+                options: [
+                    "frequency",
+                    "voltage",
+                    "current",
+                    "resistance"
+                ],
+                answer: "frequency"
+            },
+            {
+                question: "The transfer function in control theory represents the relationship between the _______ and _______ of a system.",
+                options: [
+                    "input, output",
+                    "voltage, current",
+                    "resistance, capacitance",
+                    "frequency, time"
+                ],
+                answer: "input, output"
+            },
+            {
+                question: "The frequency response of a system describes how the system responds to different _______ of input signals.",
+                options: [
+                    "amplitudes",
+                    "frequencies",
+                    "time intervals",
+                    "resistances"
+                ],
+                answer: "frequencies"
+            },
+            {
+                question: "A Bode plot consists of two plots: the magnitude plot and the _______ plot.",
+                options: [
+                    "voltage",
+                    "current",
+                    "phase",
+                    "resistance"
+                ],
+                answer: "phase"
+            },
+            {
+                question: "The Laplace Transform is used in circuit analysis to analyze the behavior of _______ circuits.",
+                options: [
+                    "mechanical",
+                    "electrical",
+                    "chemical",
+                    "biological"
+                ],
+                answer: "electrical"
+            }
+        ];
+
+        const questionsCopy = [...questions];
+        let currentQuestionIndex = 0;
+
+        // Open quiz modal
+        function openQuizModal() {
+            document.getElementById('quiz-container').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        // Close quiz modal
+        function closeQuizModal() {
+            document.getElementById('quiz-container').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+        // Shuffle and display questions
+        function showRandomQuestion() {
+            shuffleArray(questionsCopy);
+            showQuestion(currentQuestionIndex);
+        }
+
+        // Call this function when starting the quiz
+        function startQuiz() {
+            currentQuestionIndex = 0;
+            showRandomQuestion();
+        }
+
+        function showQuestion(index) {
+            const quizBox = document.querySelector('.quiz-container');
+            const currentQuestion = questionsCopy[index];
+            // Clear previous content
+            quizBox.innerHTML = '';
+            if (currentQuestion) {
+                const questionBox = document.createElement('div');
+                questionBox.classList.add('question-box');
+                questionBox.innerHTML = `
+                    <div class="question">${currentQuestion.question}<br></div>
+                    <div class="options-box">
+                        ${currentQuestion.options.map((option, optionIndex) => `<div class="option-box" data-index="${optionIndex}">${option}</div>`).join('')}
+                    </div>
+                    <div id="result"></div>
+                `;
+
+                // Add event listeners to the options
+                const optionBoxes = questionBox.querySelectorAll('.option-box');
+                optionBoxes.forEach(optionBox => {
+                    optionBox.addEventListener('click', function () {
+                        const selectedOptionIndex = this.getAttribute('data-index');
+                        checkAnswer(selectedOptionIndex, currentQuestion.answer);
+                    });
+                });
+                quizBox.appendChild(questionBox);
+                // Create a separate container for the button
+                const buttonContainer = document.createElement('div');
+                buttonContainer.classList.add('modal-button-container');
+                buttonContainer.innerHTML = `<button onclick="showNextQuestion()">Next Question</button>`;
+                // Append the button container to the quiz box
+                quizBox.appendChild(buttonContainer);
+            } else {
+                quizBox.innerHTML = `
+                    <div class="result">Quiz completed! Thanks for playing.</div>
+                `;
+                // Create a separate container for the button
+                const buttonContainer = document.createElement('div');
+                buttonContainer.classList.add('modal-button-container');
+                buttonContainer.innerHTML = `<button onclick="closeQuizModal()">Close Quiz</button>`;
+                // Append the button container to the quiz box
+                quizBox.appendChild(buttonContainer);
+            }
+        }
+
+        let score = 0;
+
+        // Check user's answer and show next question
+        function showNextQuestion() {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < 5) {
+                showRandomQuestion();
+            } else {
+                evaluateAndDisplayResult();
+            }
+        }
+
+        function checkAnswer(selectedOptionIndex, correctAnswer) {
+            const options = document.querySelectorAll('.options-box .option-box');
+            
+            // Remove the 'selected' class from all options
+            options.forEach(option => {
+                option.classList.remove('selected');
+            });
+        
+            // Add the 'selected' class to the clicked option
+            options[selectedOptionIndex].classList.add('selected');
+        
+            // Get the selected option's text
+            const selectedOptionText = options[selectedOptionIndex].innerText;
+        
+            // Check if the selected option is correct
+            const isCorrect = selectedOptionText === correctAnswer;
+        
+            // Update the UI to indicate correctness
+            const resultContainer = document.getElementById('result');
+            resultContainer.innerHTML = isCorrect
+                ? '<p style="color: green;">Correct!</p>'
+                : `<p style="color: red;">Incorrect. The correct answer is: ${correctAnswer}</p>`;
+        
+            // Update the score if the answer is correct
+            if (isCorrect) {
+                score++;
+            }
+            
+            // For demonstration purposes, let's log the selected option index and correctness
+            console.log('Selected Option Index:', selectedOptionIndex);
+            console.log('Is Correct:', isCorrect);
+        }
+
+        let quizCompleted = false;
+
+        // Evaluate user's performance and display result
+        function evaluateAndDisplayResult() {
+            const resultContainer = document.getElementById('quiz-container');
+            let correctAnswersCount = 0;
+            let totalQuestions = 5;
+            if (score >= 4) {
+                quizCompleted = true;
+                resultContainer.innerHTML = `
+                <div class="result">Congratulations! You can move on to the next lesson.</div>
+                <div class="score-details">
+                    <p>Your Score <br> ${score} out of ${totalQuestions}</p>
+                </div>
+                <div class="modal-button-container">
+                    <button onclick="closeQuizModal()">Close Quiz</button>
+                </div>`;
+                updateUIOnQuizCompletion();
+                document.getElementById('completion-message').style.display = 'block';
+            } else {
+                resultContainer.innerHTML = `
+                <div class="result">Please review the lesson again and try again later.</div>
+                <div class="score-details">
+                    <p><center>Your Score</center> <br> <center>${score} out of ${totalQuestions}</center></p>
+                </div>
+                <div class="modal-button-container">
+                    <button onclick="closeQuizModal()">Close Quiz</button>
+                </div>`;
+            }
+        }
+
+        function closeQuizModal() {
+            document.getElementById('quiz-container').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+    
+            // Redirect to the Calculus page
+            window.location.href = "{{ url_for('calculus') }}";
+        }
+        function updateUIOnQuizCompletion() {
+            // Change the color of the flash to gold
+            const flash = document.querySelector('.bolt[data-target="dialog-boxcaladv7"]');
+            if (flash) {
+                flash.style.backgroundColor = '#ffd700'; // Hex code for gold
+
+            // Change the dialog box border color to gold and display the completion message
+            const dialogBoxCaladv7 = document.getElementById('dialog-boxcaladv7');
+            if (dialogBoxCaladv7) {
+                dialogBoxCaladv7.style.borderColor = '#ffd700'; // Hex code for gold
+                const dialogText = dialogBoxCaladv7.querySelector('.dialog-text');
+                dialogText.innerText = 'Completed'; // Update the message inside the dialog box
+
+                // Save the completion status in localStorage
+                localStorage.setItem('caladvlsn7Completed', 'true');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            startQuiz();
+            const caladvlsn7Completed = localStorage.getItem('caladvlsn7Completed');
+            if (caladvlsn7Completed === 'true') {
+                updateUIOnQuizCompletion();
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <aside class="sidebar-left">
+            <ul class="sidebar-menu">
+                <li>
+                    <h2 class="sidebar-title">Study Aid</h2>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="colored-icon">
+                        <i class="fas fa-graduation-cap"></i> Learn
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="courses-toggle">
+                        <i class="fas fa-book"></i> Courses
+                    </a>
+                    <ul class="course-list hidden">
+                        <li>
+                            <a href="{{ url_for('algorithms') }}">
+                                <i class="fas fa-chart-line"></i> Algorithms
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url_for('personalfinance') }}">
+                                <i class="fas fa-rupee-sign"></i> Personal Finance
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url_for('calculus') }}">
+                                <i class="fas fa-calculator"></i> Calculus
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sidebar-item">
+                    <a href="{{ url_for('profile') }}" class="colored-icon">
+                        <i class="fas fa-user"></i> Profile
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="{{ url_for('settings') }}" class="colored-icon">
+                        <i class="fas fa-cog"></i> Settings
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="{{ url_for('home') }}" class="colored-icon">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <main class="lesson-main-content">
+            <h1>Laplace Transform and Applications</h1>
+            <div id="sublesson1">
+                <h2>Laplace transform properties and inversion</h2>
+                <p>
+                    In this sub-lesson, we will explore the properties of Laplace transforms and learn how to invert them. Laplace transforms are a powerful tool in solving differential equations and initial value problems. They allow us to convert a differential equation into an algebraic equation, making the problem easier to solve.<br>
+                    <br>
+                    1. Linearity Property:<br>
+                    The Laplace transform has a linearity property, which states that the transform of a linear combination of functions is equal to the linear combination of their individual transforms. Mathematically, if F(s) is the Laplace transform of f(t) and G(s) is the Laplace transform of g(t), then the Laplace transform of a*f(t) + b*g(t) is equal to a*F(s) + b*G(s).<br>
+                    <br>
+                    2. Shifting Property:<br>
+                    The Laplace transform also has a shifting property, which allows us to shift a function in the time domain by multiplying its transform by e^(-as). Mathematically, if F(s) is the Laplace transform of f(t), then the Laplace transform of f(t-a) is equal to e^(-as)*F(s).<br>
+                    <br>
+                    3. Differentiation Property:<br>
+                    The Laplace transform has a differentiation property, which states that the transform of the derivative of a function is equal to the product of the Laplace transform of the function and the Laplace variable s. Mathematically, if F(s) is the Laplace transform of f(t), then the Laplace transform of f'(t) is equal to s*F(s).<br>
+                    <br>
+                    4. Integration Property:<br>
+                    The Laplace transform also has an integration property, which states that the transform of the integral of a function is equal to the product of the Laplace transform of the function and 1/s. Mathematically, if F(s) is the Laplace transform of f(t), then the Laplace transform of ∫[0 to t] f(u) du is equal to F(s)/s.<br>
+                    <br>
+                    5. Inversion Property:<br>
+                    To invert a Laplace transform and obtain the original function, we can use partial fraction decomposition and the inverse Laplace transform table. The inverse Laplace transform of a function F(s) is denoted as L^(-1){F(s)} and is equal to the sum of the inverse transforms of its individual terms.                    
+                </p>
+            </div>    
+            <!-- Sub Lesson 2 Content -->
+            <div id="sublesson2">
+                <h2>Applications in control theory and circuit analysis</h2>
+                <p>
+                    In this sub-lesson, we will explore the applications of Laplace Transform in control theory and circuit analysis. The Laplace Transform is a powerful mathematical tool that allows us to solve differential equations in the frequency domain. It is particularly useful in analyzing and designing control systems and circuits.<br>
+                    <br>
+                    Control theory deals with the study of systems and their behavior. It involves the use of mathematical models to describe the dynamics of a system and the design of controllers to achieve desired system performance. The Laplace Transform provides a convenient way to analyze the behavior of control systems by transforming the differential equations governing the system into algebraic equations in the frequency domain.<br>
+                    <br>
+                    Circuit analysis, on the other hand, focuses on the study of electrical circuits and their behavior. The Laplace Transform can be used to analyze circuits by transforming the circuit equations into the frequency domain. This allows us to easily determine the response of the circuit to different input signals and design circuits with desired characteristics.<br>
+                    <br>
+                    Now, let's look at some key concepts related to Laplace Transform and its applications in control theory and circuit analysis:<br>
+                    <br>
+                    1. Laplace Transform: The Laplace Transform is a mathematical operation that transforms a function of time into a function of complex frequency. It is defined as follows:<br>
+                    <br>
+                    F(s) = L{f(t)} = ∫[0 to ∞] e^(-st) f(t) dt<br>
+                    <br>
+                    where F(s) is the Laplace Transform of f(t), s is the complex frequency parameter, and f(t) is the function of time.<br>
+                    <br>
+                    2. Transfer Function: In control theory, the transfer function is a mathematical representation of the relationship between the input and output of a system. It is obtained by taking the Laplace Transform of the system's differential equations. The transfer function provides valuable information about the system's stability, frequency response, and transient response.<br>
+                    <br>
+                    3. Frequency Response: The frequency response of a system describes how the system responds to different frequencies of input signals. It is obtained by evaluating the transfer function at different complex frequencies. The frequency response provides insights into the system's gain, phase shift, and resonance characteristics.<br>
+                    <br>
+                    4. Bode Plot: A Bode plot is a graphical representation of the frequency response of a system. It consists of two plots: the magnitude plot and the phase plot. The magnitude plot shows the gain of the system as a function of frequency, while the phase plot shows the phase shift of the system as a function of frequency. Bode plots are commonly used in control system design and analysis.<br>
+                    <br>
+                    5. Circuit Analysis: In circuit analysis, the Laplace Transform is used to analyze the behavior of electrical circuits. By transforming the circuit equations into the frequency domain, we can determine the response of the circuit to different input signals, such as step, impulse, and sinusoidal signals. This allows us to design circuits with desired characteristics, such as filters, amplifiers, and oscillators.<br>
+                    <br>
+                    Now that we have covered the key concepts, let's test our understanding with some multiple-choice questions.                    
+                </p>
+            </div>
+            <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
+            <div id="quiz-container" class="quiz-container"></div>
+            <div id="overlay" class="overlay"></div>
+            <div id="completion-message" style="display: none;">
+                <p class="completion-message">Lesson Completed!</p>
+            </div>
+        </main>
+        <aside class="sidebar-right">
+            <h2>Laplace Transform and Applications</h2>
+            <ul class="sub-lesson-links">
+                <li><a href="#sublesson1">Laplace transform properties and inversion</a></li>
+                <li><a href="#sublesson2">Applications in control theory and circuit analysis</a></li>
+            </ul>
+        </aside>
+</body>
+
+</html>
