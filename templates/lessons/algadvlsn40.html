@@ -93,54 +93,84 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What are interactive proof systems?",
+                options: [
+                    "Systems used to verify computations with high probability",
+                    "Systems used to encrypt data",
+                    "Systems used to simulate complex circuits",
+                    "Systems used to analyze the complexity of algorithms"
+                ],
+                answer: "Systems used to verify computations with high probability"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which complexity class is closely related to interactive proof systems?",
+                options: ["P", "NP", "co-NP", "EXPTIME"],
+                answer: "NP"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What are Arthur-Merlin games?",
+                options: [
+                    "Games played by Arthur and Merlin",
+                    "Games used to analyze the complexity of algorithms",
+                    "Games where Merlin provides a proof to Arthur",
+                    "Games used to encrypt data"
+                ], 
+                answer: "Games where Merlin provides a proof to Arthur"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What do interactive proof systems have connections to?",
+                options: ["Cryptography", "Circuit complexity", "Artificial intelligence", "All of the above"],
+                answer: "Circuit complexity"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What are the applications of interactive proof systems?",
+                options: [
+                    "Analyzing the complexity of computational problems",
+                    "Designing efficient algorithms",
+                    "Proving the security of cryptographic protocols",
+                    "All of the above"
+                ],
+                answer: "All of the above"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which concept allows a prover and a verifier to interact in order to determine the correctness of a statement?",
+                options: ["Circuit complexity", "Interactive proofs", "Zero-knowledge proofs", "Hardness amplification"],
+                answer: "Interactive proofs"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the relationship between interactive proofs and circuit complexity?",
+                options: [
+                    "Interactive proofs can be used to solve any computational problem.",
+                    "Interactive proofs are more powerful than circuit complexity.",
+                    "Any language that can be decided by a polynomial-time verifier with access to an NP oracle can also be decided by a polynomial-size circuit.",
+                    "Circuit complexity is a measure of the resources required to compute a function using a circuit."
+                ],
+                answer: "Any language that can be decided by a polynomial-time verifier with access to an NP oracle can also be decided by a polynomial-size circuit."
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which concept allows a prover to convince a verifier of the truth of a statement without revealing any additional information beyond the fact that the statement is true?",
+                options: ["Circuit lower bounds", "Complexity classes", "Zero-knowledge proofs", "Hardness amplification"],
+                answer: "Zero-knowledge proofs"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of hardness amplification?",
+                options: [
+                    "To increase the hardness of a computational problem",
+                    "To decrease the hardness of a computational problem",
+                    "To transform a problem that is moderately hard to solve into a problem that is exponentially hard to solve",
+                    "To design efficient algorithms"
+                ],
+                answer: "To increase the hardness of a computational problem"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What do complexity classes provide a framework for?",
+                options: [
+                    "Classifying problems based on their computational difficulty",
+                    "Classifying problems based on their size or depth",
+                    "Classifying problems based on their resources required to compute a function using a circuit",
+                    "Classifying problems based on their inherent difficulty"
+                ],
+                answer: "Classifying problems based on their computational difficulty"
             }
         ];
 
@@ -383,14 +413,61 @@
             <div id="sublesson1">
                 <h2>Interactive proof systems and their role in complexity theory</h2>
                 <p>
-                    
+                    In this lesson, we will explore the concept of interactive proof systems and their role in complexity theory. Interactive proof systems are a powerful tool used to verify the correctness of computations in a probabilistic manner. They play a crucial role in understanding the complexity of computational problems.<br>
+                    <br>
+                    1. Interactive Proof Systems:<br>
+                    - An interactive proof system consists of two parties: the prover and the verifier.<br>
+                    - The prover aims to convince the verifier that a certain statement is true.<br>
+                    - The verifier interacts with the prover by asking questions and receiving answers.<br>
+                    - The goal of the verifier is to determine the truthfulness of the statement with high probability.<br>
+                    <br>
+                    2. Complexity Classes:<br>
+                    - Interactive proof systems are closely related to complexity classes, such as NP and co-NP.<br>
+                    - NP (nondeterministic polynomial time) consists of decision problems that can be verified in polynomial time.<br>
+                    - co-NP consists of decision problems for which the negation of the problem can be verified in polynomial time.<br>
+                    <br>
+                    3. Arthur-Merlin Games:<br>
+                    - Arthur-Merlin games are a type of interactive proof system where the prover is powerful and the verifier is limited.<br>
+                    - In an Arthur-Merlin game, Merlin (the prover) provides a proof to Arthur (the verifier) who then checks the proof.<br>
+                    - The goal is for Arthur to accept the proof with high probability if the statement is true.<br>
+                    <br>
+                    4. Connections to Circuit Complexity:<br>
+                    - Interactive proof systems have connections to circuit complexity, which studies the complexity of Boolean circuits.<br>
+                    - The complexity of a circuit is determined by the number of gates and the depth of the circuit.<br>
+                    - Interactive proof systems can be used to prove lower bounds on the size and depth of circuits required to solve certain problems.<br>
+                    <br>
+                    5. Applications:<br>
+                    - Interactive proof systems have applications in various areas, including cryptography, complexity theory, and artificial intelligence.<br>
+                    - They are used to prove the security of cryptographic protocols, analyze the complexity of computational problems, and design efficient algorithms.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Connections to circuit complexity and advanced theoretical concepts</h2>
                 <p>
-                    
+                    In this sub-lesson, we will explore the connections between interactive proofs and circuit complexity, as well as some advanced theoretical concepts related to these topics.<br>
+                    <br>
+                    1. Interactive Proofs:<br>
+                    Interactive proofs are a powerful tool in complexity theory that allow a prover and a verifier to interact in order to determine the correctness of a statement. The prover tries to convince the verifier that the statement is true, while the verifier tries to ensure that the prover is not cheating. This concept is particularly useful in situations where it is difficult to directly verify the correctness of a statement.<br>
+                    <br>
+                    2. Circuit Complexity:<br>
+                    Circuit complexity is a measure of the resources required to compute a function using a circuit. It is closely related to the concept of computational complexity, which studies the resources required to solve a computational problem. Circuit complexity provides insights into the efficiency of algorithms and the inherent difficulty of computational problems.<br>
+                    <br>
+                    3. Connections to Circuit Complexity:<br>
+                    There are several connections between interactive proofs and circuit complexity. One important connection is the notion of interactive proofs with polynomial-time verifiers. It has been shown that any language that can be decided by a polynomial-time verifier with access to an NP oracle can also be decided by a polynomial-size circuit. This result highlights the power of interactive proofs and their relationship to circuit complexity.<br>
+                    <br>
+                    4. Advanced Theoretical Concepts:<br>
+                    In addition to the connections between interactive proofs and circuit complexity, there are several advanced theoretical concepts that are relevant to this topic. These include:<br>
+                    <br>
+                    - Zero-knowledge proofs: Zero-knowledge proofs are interactive proofs that allow a prover to convince a verifier of the truth of a statement without revealing any additional information beyond the fact that the statement is true. This concept has important applications in cryptography and privacy.<br>
+                    <br>
+                    - Hardness amplification: Hardness amplification is a technique used to increase the hardness of a computational problem. It involves transforming a problem that is moderately hard to solve into a problem that is exponentially hard to solve. This concept is particularly useful in the design of cryptographic protocols.<br>
+                    <br>
+                    - Circuit lower bounds: Circuit lower bounds refer to the minimum size or depth of a circuit required to compute a specific function. These lower bounds provide insights into the inherent difficulty of computational problems and can help guide the design of efficient algorithms.<br>
+                    <br>
+                    - Complexity classes: Complexity classes are sets of computational problems that share certain properties. They provide a framework for classifying problems based on their computational difficulty. Some well-known complexity classes include P, NP, and PSPACE.<br>
+                    <br>
+                    Now that we have covered the required concepts, let's move on to the multiple-choice questions.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
