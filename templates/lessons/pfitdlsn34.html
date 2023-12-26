@@ -91,56 +91,121 @@
                 [array[i], array[j]] = [array[j], array[i]];
             }
         }
-        const questions = [
+        const questions = [const mortgageDeductionQuestions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which of the following deductions allows taxpayers to deduct the interest paid on their mortgage loans?",
+                options: ["Home Sale Exclusion", "Points Deduction", "Mortgage Insurance Premiums Deduction", "Principal Payments"],
+                answer: "Points Deduction"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of paying points when obtaining a mortgage?",
+                options: ["To reduce the interest rate on the mortgage", "To deduct the points paid in the year of purchase", "To build equity in the home", "To qualify for the home mortgage interest deduction"],
+                answer: "To reduce the interest rate on the mortgage"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which of the following is a requirement to qualify for the mortgage insurance premiums deduction?",
+                options: ["Paying mortgage insurance premiums on loans taken out after 2006", "Having a down payment of less than 20%", "Using the loan to purchase or improve the primary residence", "Having a high income"],
+                answer: "Using the loan to purchase or improve the primary residence"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "True or False: Principal payments on a mortgage are directly deductible.",
+                options: ["True", "False"],
+                answer: "False"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of keeping accurate records of mortgage interest, points, and mortgage insurance premiums paid?",
+                options: ["To qualify for the home sale exclusion", "To calculate the home mortgage interest deduction limit", "To determine the amount of principal payments", "To support the deductions for home loan interest and principal"],
+                answer: "To support the deductions for home loan interest and principal"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is one requirement to qualify for the deduction for education loan interest?",
+                options: [
+                    "The loan must be in your name, your spouse's name, or your dependent's name.",
+                    "The loan must be taken out solely for qualified education expenses.",
+                    "You must have paid the interest on the loan during the tax year.",
+                    "All of the above."
+                ],
+                answer: "All of the above."
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the maximum deduction amount for education loan interest?",
+                options: ["$1,000", "$2,500", "$5,000", "There is no maximum deduction amount."],
+                answer: "$2,500"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is one requirement to qualify for the deduction for medical expenses?",
+                options: [
+                    "Your medical expenses must exceed a certain percentage of your adjusted gross income (AGI).",
+                    "The expenses must be for the diagnosis, cure, mitigation, treatment, or prevention of disease.",
+                    "You can only deduct expenses that you paid during the tax year.",
+                    "All of the above."
+                ],
+                answer: "All of the above."
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the current threshold for medical expenses to qualify for the deduction?",
+                options: ["5% of AGI", "7.5% of AGI", "10% of AGI", "15% of AGI"],
+                answer: "7.5% of AGI"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Why is it important to keep detailed records of medical expenses?",
+                options: [
+                    "To accurately calculate your deduction.",
+                    "To provide documentation in case of an IRS audit.",
+                    "To ensure you don't miss out on any eligible deductions.",
+                    "All of the above."
+                ],
+                answer: "All of the above."
+            },
+            {
+                question: "What can you deduct when you make a monetary donation to a charity?",
+                options: [
+                    "Transportation costs",
+                    "Fair market value of non-cash items",
+                    "The amount of the donation",
+                    "None of the above"
+                ],
+                answer: "The amount of the donation"
+            },
+            {
+                question: "How can you determine the fair market value of non-cash donations?",
+                options: [
+                    "Refer to online sales",
+                    "Ask the charity for an estimate",
+                    "Use the original purchase price",
+                    "None of the above"
+                ],
+                answer: "Refer to online sales"
+            },
+            {
+                question: "Can you deduct expenses incurred while performing activities for charitable organizations?",
+                options: [
+                    "Yes, only if they are transportation costs",
+                    "Yes, only if they are related to volunteering",
+                    "Yes, any expenses incurred are deductible",
+                    "No, expenses for charitable activities are not deductible"
+                ],
+                answer: "Yes, any expenses incurred are deductible"
+            },
+            {
+                question: "What documentation should you keep for non-cash donations?",
+                options: [
+                    "Detailed list signed by the charity",
+                    "Photographs of the donated items",
+                    "Receipts or invoices",
+                    "All of the above"
+                ],
+                answer: "All of the above"
+            },
+            {
+                question: "Can you deduct transportation costs for driving kids to school events?",
+                options: [
+                    "Yes, as long as it is for youth sports",
+                    "Yes, as long as it is for local schools",
+                    "Yes, as long as it is for charitable activities",
+                    "No, transportation costs are not deductible"
+                ],
+                answer: "Yes, as long as it is for charitable activities"
             }
         ];
 
@@ -382,21 +447,93 @@
             <div id="sublesson1">
                 <h2>Deductions for home loan interest and principal</h2>
                 <p>
-                    
+                    In this lesson, we will explore the deductions available for home loan interest and principal payments. These deductions can help homeowners reduce their taxable income and potentially save money on their taxes. Let's dive into the details:<br>
+                    <br>
+                    1. Home Mortgage Interest Deduction:<br>
+                    - Homeowners who have taken out a mortgage to buy, build, or improve their primary residence or a second home may be eligible for the home mortgage interest deduction.<br>
+                    - This deduction allows taxpayers to deduct the interest paid on their mortgage loans, up to a certain limit.<br>
+                    - The interest deduction is available for both traditional mortgages and home equity loans or lines of credit.<br>
+                    - To qualify for this deduction, the mortgage must be secured by the home, and the taxpayer must itemize their deductions on Schedule A of Form 1040.<br>
+                    <br>
+                    2. Points Deduction:<br>
+                    - Homebuyers who pay points, also known as loan origination fees, when obtaining a mortgage may be eligible for a deduction.<br>
+                    - Points are typically a percentage of the loan amount and are paid upfront to the lender to reduce the interest rate on the mortgage.<br>
+                    - Each point is equal to 1% of the loan amount.<br>
+                    - Taxpayers can deduct the points paid in the year of purchase if certain conditions are met, such as using the loan to purchase or improve their primary residence.<br>
+                    - Points paid for refinancing a mortgage are generally deducted over the life of the loan.<br>
+                    <br>
+                    3. Mortgage Insurance Premiums Deduction:<br>
+                    - Homeowners who pay for mortgage insurance premiums may be eligible for a deduction.<br>
+                    - Mortgage insurance is typically required for loans with a down payment of less than 20%.<br>
+                    - The deduction is available for mortgage insurance premiums paid on loans taken out after 2006 and before 2022.<br>
+                    - The amount of the deduction is subject to income limits and is gradually phased out for higher-income taxpayers.<br>
+                    <br>
+                    4. Principal Payments:<br>
+                    - While principal payments on a mortgage are not directly deductible, they can indirectly affect your taxes.<br>
+                    - As you make principal payments, you are building equity in your home, which can lead to potential tax benefits when you sell the property.<br>
+                    - When you sell your home, you may be eligible for the home sale exclusion, which allows you to exclude a portion of the capital gains from the sale of your primary residence from your taxable income.<br>
+                    <br>
+                    5. Documentation and Limitations:<br>
+                    - It is important to keep accurate records of mortgage interest, points, and mortgage insurance premiums paid throughout the year.<br>
+                    - The deductions for home loan interest and principal are subject to certain limitations, such as the mortgage interest deduction limit of $750,000 for loans taken out after December 15, 2017.<br>
+                    - Taxpayers should consult the latest IRS guidelines and publications for specific details and requirements related to these deductions.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Deductions for education loans and medical expenses</h2>
                 <p>
-
+                    In this lesson, we will explore common tax deductions, specifically focusing on deductions for education loans and medical expenses. Understanding these deductions can help you maximize your tax savings and reduce your overall tax liability.<br>
+                    <br>
+                    Deductions for Education Loans:<br>
+                    One common deduction is for the interest paid on education loans. If you have taken out loans to pay for qualified education expenses, such as tuition, fees, and books, you may be eligible to deduct the interest paid on those loans. This deduction can help reduce your taxable income and lower your tax bill.<br>
+                    <br>
+                    To qualify for this deduction, there are a few requirements:<br>
+                    1. The loan must have been taken out solely to pay for qualified education expenses.<br>
+                    2. The loan must be in your name, your spouse's name, or your dependent's name.<br>
+                    3. You must have paid the interest on the loan during the tax year.<br>
+                    4. Your modified adjusted gross income (MAGI) must be below a certain threshold.<br>
+                    <br>
+                    It's important to note that this deduction is subject to certain limitations. For example, you cannot claim the deduction if you are married filing separately or if you are claimed as a dependent on someone else's tax return. Additionally, the maximum deduction amount is $2,500 per year.<br>
+                    <br>
+                    Deductions for Medical Expenses:<br>
+                    Another common deduction is for medical expenses. If you have incurred significant medical expenses that are not reimbursed by insurance, you may be able to deduct those expenses from your taxable income.<br>
+                    <br>
+                    To qualify for this deduction, there are a few requirements:<br>
+                    1. Your medical expenses must exceed a certain percentage of your adjusted gross income (AGI). For federal tax purposes, the threshold is currently 7.5% of your AGI.<br>
+                    2. The expenses must be for the diagnosis, cure, mitigation, treatment, or prevention of disease, as well as for treatments affecting any part or function of the body.<br>
+                    3. You can only deduct expenses that you paid during the tax year.<br>
+                    <br>
+                    It's important to keep detailed records of your medical expenses, including receipts, invoices, and statements from healthcare providers. This will help you accurately calculate your deduction and provide documentation if you are ever audited by the IRS.
                 </p>
             </div>
             <!-- Sub Lesson 3 Content -->
             <div id="sublesson3">
                 <h2>Deductions for donations and contributions</h2>
                 <p>
-
+                    In this lesson, we will explore the deductions available for donations and contributions. When you itemize your deductions on Schedule A, you can deduct contributions made to charities. This includes both monetary donations and expenses incurred while performing activities for charitable organizations.<br>
+                    <br>
+                    1. Monetary Donations:<br>
+                    - When you make a monetary donation to a charity, such as writing a check to your favorite house of worship or college, you can deduct the amount from your taxable income.<br>
+                    - It is important to keep records of your donations, such as receipts or bank statements, to substantiate your deductions.<br>
+                    <br>
+                    2. Expenses for Charitable Activities:<br>
+                    - In addition to monetary donations, you can also deduct expenses incurred while performing activities for charitable organizations.<br>
+                    - For example, if you volunteer at a soup kitchen and incur transportation costs to get there, such as bus fares or mileage, you can deduct those expenses.<br>
+                    - It is important to keep track of your expenses and maintain proper documentation, such as receipts or a detailed list signed by the charity.<br>
+                    <br>
+                    3. Non-Cash Donations:<br>
+                    - You can also deduct the fair market value of non-cash donations, such as clothing, household appliances, furniture, and other goods, that you donate to charities.<br>
+                    - To determine the fair market value, you can refer to online sales or other sources.<br>
+                    - Some charities even offer pick-up services for donated items, so make sure to keep documentation of the items donated, such as a detailed list or photographs.<br>
+                    <br>
+                    4. Contributions to Local Schools and Youth Sports:<br>
+                    - If you contribute money to your local schools, including for youth sports, you can deduct it as long as the money goes toward the overall program and team, rather than being specifically earmarked for your child.<br>
+                    - Additionally, if you incur transportation costs while driving kids to school events, you can deduct those expenses as well.<br>
+                    <br>
+                    5. Deducting Unreimbursed Costs:<br>
+                    - If a charitable organization selects you as a representative, such as to attend its national convention, you may be able to deduct unreimbursed costs for the trip and event.<br>
+                    - It is important to keep records of your expenses, such as receipts or invoices, to support your deductions.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
