@@ -93,54 +93,64 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which complexity class captures problems that can be solved in polynomial time?",
+                options: ["P", "NP", "PH", "PSPACE"],
+                answer: "P"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which complexity class includes problems that can be verified in polynomial time?",
+                options: ["P", "NP", "PH", "PSPACE"],
+                answer: "NP"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which complexity class represents a hierarchy of complexity classes beyond NP?",
+                options: ["P", "NP", "PH", "PSPACE"],
+                answer: "PH"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which complexity class includes problems that can be solved using polynomial space?",
+                options: ["P", "NP", "PH", "PSPACE"],
+                answer: "PSPACE"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which complexity class is believed to be larger than both P and NP?",
+                options: ["P", "NP", "PH", "PSPACE"],
+                answer: "PSPACE"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which complexity class represents problems that require exponential resources to solve?",
+                options: ["P", "NP", "PSPACE", "EXPTIME"],
+                answer: "EXPTIME"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "The P vs. NP problem asks whether:",
+                options: ["P = NP", "P ≠ NP", "PSPACE = NP", "EXPTIME = NP"],
+                answer: "P = NP"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What are the theoretical implications of P = NP?",
+                options: [
+                    "Problems can be solved efficiently.",
+                    "Cryptography becomes insecure.",
+                    "Optimization becomes easier.",
+                    "All of the above."
+                ],
+                answer: "All of the above."
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which field benefits from complexity theory in designing secure algorithms?",
+                options: ["Cryptography", "Artificial Intelligence", "Network Design", "Optimization"],
+                answer: "Cryptography"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What does complexity theory help us understand?",
+                options: [
+                    "The limits of efficient algorithms",
+                    "The difficulty of computational problems",
+                    "The resources required to solve problems",
+                    "All of the above"
+                ],
+                answer: "All of the above"
             }
         ];
 
@@ -383,14 +393,53 @@
             <div id="sublesson1">
                 <h2>Beyond P and NP - complexity classes like PH and PSPACE</h2>
                 <p>
-                    
+                    In this lesson, we will explore complexity classes beyond P and NP, specifically focusing on PH and PSPACE. These complexity classes provide a deeper understanding of the complexity of computational problems and help us classify problems based on their difficulty.<br>
+                    <br>
+                    1. Complexity Classes:<br>
+                    - P: Problems that can be solved in polynomial time.<br>
+                    - NP: Problems for which a solution can be verified in polynomial time.<br>
+                    - PH (Polynomial Hierarchy): A hierarchy of complexity classes that extends beyond NP. It captures the complexity of problems that can be solved using polynomial time and multiple levels of quantifiers.<br>
+                    - PSPACE: The class of problems that can be solved using polynomial space on a deterministic Turing machine.<br>
+                    <br>
+                    2. Understanding PH:<br>
+                    - PH is a hierarchy of complexity classes that consists of multiple levels, each representing a different level of quantifiers.<br>
+                    - The levels of PH are defined using alternating quantifiers and polynomial time.<br>
+                    - For example, PH0 represents problems that can be solved in polynomial time, PH1 represents problems that can be solved using polynomial time and one level of quantifiers, and so on.<br>
+                    - The higher the level of PH, the more complex the problems it captures.<br>
+                    <br>
+                    3. Understanding PSPACE:<br>
+                    - PSPACE is the class of problems that can be solved using polynomial space on a deterministic Turing machine.<br>
+                    - It includes problems that require exponential time but can be solved using polynomial space.<br>
+                    - PSPACE-complete problems are the hardest problems in PSPACE, meaning that any problem in PSPACE can be reduced to a PSPACE-complete problem in polynomial time.<br>
+                    <br>
+                    4. Relationship between Complexity Classes:<br>
+                    - P is a subset of NP, which is a subset of PH.<br>
+                    - PSPACE includes P and NP, and is believed to be larger than both.<br>
+                    - The relationship between PH and PSPACE is still an open question in complexity theory.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Theoretical implications and applications</h2>
                 <p>
-                    
+                    In this sub-lesson, we will explore the theoretical implications and applications of advanced complexity classes. Complexity theory is a branch of computer science that studies the resources required to solve computational problems. It helps us understand the inherent difficulty of problems and provides insights into the limits of efficient algorithms.<br>
+                    <br>
+                    1. Advanced Complexity Classes:<br>
+                        - Complexity classes like P, NP, and NP-complete have been extensively studied. However, there are more advanced complexity classes that provide a deeper understanding of computational complexity.<br>
+                        - Some of these advanced complexity classes include PSPACE, EXPTIME, and EXPSPACE. These classes represent problems that require polynomial, exponential, or even higher amounts of resources to solve.<br>
+                        - Understanding these complexity classes helps us classify problems based on their computational difficulty and provides a framework for analyzing the efficiency of algorithms.<br>
+                        <br>
+                    2. Theoretical Implications:<br>
+                        - Advanced complexity classes have theoretical implications for the field of computer science. For example, the P vs. NP problem, which asks whether P = NP, is one of the most famous unsolved problems in computer science.<br>
+                        - If P = NP, it would mean that every problem for which a solution can be verified in polynomial time can also be solved in polynomial time. This would have profound implications for cryptography, optimization, and many other areas of computer science.<br>
+                        - On the other hand, if P ≠ NP, it would mean that there are problems that are inherently difficult to solve efficiently. This has implications for the limits of computation and the existence of efficient algorithms for certain problems.<br>
+                        <br>
+                    3. Applications:<br>
+                        - Complexity theory and advanced complexity classes have practical applications in various fields. Some examples include:<br>
+                        - Cryptography: Complexity theory helps in designing secure cryptographic algorithms and understanding the hardness of breaking them.<br>
+                        - Optimization: Complexity classes provide insights into the difficulty of optimization problems and help in developing efficient algorithms for solving them.<br>
+                        - Artificial Intelligence: Complexity theory helps in understanding the computational complexity of AI algorithms and designing efficient AI systems.<br>
+                        - Network Design: Complexity classes help in analyzing the efficiency of routing algorithms and designing optimal network topologies.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
