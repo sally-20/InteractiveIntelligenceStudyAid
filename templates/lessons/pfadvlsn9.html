@@ -91,8 +91,157 @@
                 [array[i], array[j]] = [array[j], array[i]];
             }
         }
-        const questions = [
-            
+        const questions = [const currencyRiskQuestions = [
+            {
+                question: "What is currency risk?",
+                options: [
+                    "The risk of losing money in the foreign exchange market",
+                    "The risk of fluctuations in exchange rates affecting the value of foreign currency holdings",
+                    "The risk of counterfeit currency being used in transactions",
+                    "The risk of currency devaluation by the government"
+                ],
+                answer: "The risk of fluctuations in exchange rates affecting the value of foreign currency holdings"
+            },
+            {
+                question: "How can businesses hedge currency risk with futures?",
+                options: [
+                    "By buying or selling futures contracts on foreign currencies",
+                    "By investing in foreign currency-denominated assets",
+                    "By diversifying their currency holdings across multiple countries",
+                    "By avoiding international trade altogether"
+                ],
+                answer: "By buying or selling futures contracts on foreign currencies"
+            },
+            {
+                question: "What is the role of futures contracts in hedging currency risk?",
+                options: [
+                    "Futures contracts allow businesses to lock in a specific exchange rate for future currency transactions",
+                    "Futures contracts eliminate the need for businesses to engage in currency transactions",
+                    "Futures contracts provide businesses with insurance against currency fluctuations",
+                    "Futures contracts guarantee a profit for businesses in foreign currency transactions"
+                ],
+                answer: "Futures contracts allow businesses to lock in a specific exchange rate for future currency transactions"
+            },
+            {
+                question: "What are the advantages of hedging currency risk with futures?",
+                options: [
+                    "It allows businesses to budget and plan for future currency transactions with certainty",
+                    "It eliminates the need for businesses to monitor exchange rates constantly",
+                    "It protects businesses from losses due to adverse currency movements",
+                    "All of the above"
+                ],
+                answer: "All of the above"
+            },
+            {
+                question: "What are the potential risks of hedging currency risk with futures?",
+                options: [
+                    "The futures contracts may expire worthless if exchange rates move in the opposite direction",
+                    "The cost of entering into futures contracts may be high",
+                    "The futures market may be illiquid, making it difficult to enter or exit positions",
+                    "All of the above"
+                ],
+                answer: "All of the above"
+            },
+            {
+                question: "Which of the following derivatives instruments is commonly used to convert a floating interest rate into a fixed interest rate?",
+                options: [
+                    "Interest Rate Swaps",
+                    "Interest Rate Futures",
+                    "Interest Rate Options",
+                    "Forward Rate Agreements"
+                ],
+                answer: "Interest Rate Swaps"
+            },
+            {
+                question: "Interest rate futures in India are settled in cash based on:",
+                options: [
+                    "Stock prices",
+                    "Currency exchange rates",
+                    "Government bond yields",
+                    "Commodity prices"
+                ],
+                answer: "Government bond yields"
+            },
+            {
+                question: "Interest rate options give the holder the right to:",
+                options: [
+                    "Buy or sell an underlying interest rate at a predetermined price",
+                    "Buy or sell an underlying stock at a predetermined price",
+                    "Buy or sell an underlying commodity at a predetermined price",
+                    "Buy or sell an underlying currency at a predetermined price"
+                ],
+                answer: "Buy or sell an underlying interest rate at a predetermined price"
+            },
+            {
+                question: "Interest rate caps and floors are used to:",
+                options: [
+                    "Limit exposure to rising interest rates",
+                    "Convert a floating interest rate into a fixed interest rate",
+                    "Hedge against adverse currency movements",
+                    "Hedge against commodity price fluctuations"
+                ],
+                answer: "Limit exposure to rising interest rates"
+            },
+            {
+                question: "Forward rate agreements (FRAs) are contracts to exchange:",
+                options: [
+                    "A fixed interest rate for a floating interest rate",
+                    "A fixed currency exchange rate for a floating currency exchange rate",
+                    "A fixed stock price for a floating stock price",
+                    "A fixed commodity price for a floating commodity price"
+                ],
+                answer: "A fixed interest rate for a floating interest rate"
+            },
+            {
+                question: "Which risk is commonly faced by Indian businesses involved in international trade?",
+                options: [
+                    "Currency risk",
+                    "Commodity price risk",
+                    "Interest rate risk",
+                    "Equity market risk"
+                ],
+                answer: "Currency risk"
+            },
+            {
+                question: "Which risk is commonly faced by Indian businesses in the oil and gas industry?",
+                options: [
+                    "Currency risk",
+                    "Commodity price risk",
+                    "Interest rate risk",
+                    "Equity market risk"
+                ],
+                answer: "Commodity price risk"
+            },
+            {
+                question: "Which risk is commonly faced by Indian businesses with high levels of debt?",
+                options: [
+                    "Currency risk",
+                    "Commodity price risk",
+                    "Interest rate risk",
+                    "Equity market risk"
+                ],
+                answer: "Interest rate risk"
+            },
+            {
+                question: "Which risk is commonly faced by Indian businesses listed on the stock exchange?",
+                options: [
+                    "Currency risk",
+                    "Commodity price risk",
+                    "Interest rate risk",
+                    "Equity market risk"
+                ],
+                answer: "Equity market risk"
+            },
+            {
+                question: "Which risk is commonly faced by Indian businesses in the agriculture sector?",
+                options: [
+                    "Currency risk",
+                    "Commodity price risk",
+                    "Interest rate risk",
+                    "Weather risk"
+                ],
+                answer: "Weather risk"
+            }
         ];
 
         const questionsCopy = [...questions];
@@ -333,21 +482,50 @@
             <div id="sublesson1">
                 <h2>Hedging currency risk with futures in India</h2>
                 <p>
-                    <br>
+                    In this sub-lesson, we will discuss the concept of hedging currency risk with futures in India. <br>
+                    Hedging currency risk is an important strategy for businesses that engage in international trade or have exposure to foreign currencies. <br>
+                    By using futures contracts, businesses can protect themselves against adverse movements in exchange rates.<br>
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Interest rate risk management through derivatives in India</h2>
                 <p>
+                    In this sub-lesson, we will discuss interest rate risk management through derivatives in India. Interest rate risk refers to the potential loss that an investor may face due to changes in interest rates. Derivatives are financial instruments that derive their value from an underlying asset, such as an interest rate. They can be used to hedge against interest rate risk.<br>
                     <br>
+                    In India, there are several derivatives instruments available for interest rate risk management. Let's discuss some of the commonly used ones:<br>
+                    <br>
+                    1. Interest Rate Swaps: An interest rate swap is an agreement between two parties to exchange interest rate payments. In India, interest rate swaps are commonly used to manage interest rate risk. For example, a company with a floating rate loan can enter into an interest rate swap to convert the floating rate into a fixed rate, thereby reducing the risk of interest rate fluctuations.<br>
+                    <br>
+                    2. Interest Rate Futures: Interest rate futures are standardized contracts that allow market participants to hedge against interest rate risk. In India, interest rate futures are available for various tenures, such as 1-year, 2-year, and 5-year. These futures contracts are settled in cash based on a reference interest rate, such as the government bond yield.<br>
+                    <br>
+                    3. Interest Rate Options: Interest rate options give the holder the right, but not the obligation, to buy or sell an underlying interest rate at a predetermined price within a specified period. In India, interest rate options are available for managing interest rate risk. These options can be used to hedge against adverse interest rate movements.<br>
+                    <br>
+                    4. Interest Rate Caps and Floors: Interest rate caps and floors are derivative instruments that provide protection against interest rate fluctuations. A cap sets a maximum interest rate, while a floor sets a minimum interest rate. These instruments are commonly used by borrowers to limit their exposure to rising interest rates.<br>
+                    <br>
+                    5. Forward Rate Agreements: Forward rate agreements (FRAs) are contracts between two parties to exchange a fixed interest rate for a floating interest rate at a future date. FRAs are used to hedge against interest rate risk by locking in a future interest rate.
                 </p>
             </div>
             <!-- Sub Lesson 3 Content -->
             <div id="sublesson3">
                 <h2>Case studies of effective hedging in Indian business context</h2>
                 <p>
+                    In this sub-lesson, we will explore case studies of effective hedging strategies used by Indian businesses. Hedging is a risk management technique that involves using derivatives to offset potential losses in the value of an asset or investment. It is particularly important in the Indian business context due to the volatility of the market and the exposure to various risks.<br>
                     <br>
+                    Case Study 1: Hedging against currency risk<br>
+                    One common risk faced by Indian businesses is currency risk, especially for those involved in international trade. Let's consider the case of a textile exporter who imports raw materials from China and exports finished products to the United States. The exporter is exposed to fluctuations in the exchange rate between the Indian rupee, Chinese yuan, and US dollar. To hedge against this risk, the exporter can use currency futures or options contracts to lock in a favorable exchange rate for future transactions. By doing so, the exporter can protect its profit margins and reduce the impact of currency fluctuations.<br>
+                    <br>
+                    Case Study 2: Hedging against commodity price risk<br>
+                    Another risk faced by Indian businesses is commodity price risk, particularly for industries such as oil and gas, agriculture, and metals. Let's take the example of an oil refinery that relies on crude oil as its main raw material. Fluctuations in the price of crude oil can significantly impact the refinery's profitability. To hedge against this risk, the refinery can use commodity futures contracts to lock in the price of crude oil for future delivery. By doing so, the refinery can ensure a stable cost of raw materials and protect its profit margins.<br>
+                    <br>
+                    Case Study 3: Hedging against interest rate risk<br>
+                    Interest rate risk is another significant risk faced by Indian businesses, especially those with high levels of debt or those involved in the financial sector. Let's consider the case of a real estate developer who has taken a loan from a bank to finance a construction project. The developer is exposed to fluctuations in interest rates, which can impact the cost of borrowing and the profitability of the project. To hedge against this risk, the developer can use interest rate futures or options contracts to lock in a fixed interest rate for future loan repayments. By doing so, the developer can mitigate the impact of interest rate fluctuations and ensure a predictable cost of borrowing.<br>
+                    <br>
+                    Case Study 4: Hedging against equity market risk<br>
+                    Equity market risk is a significant concern for Indian businesses, particularly those listed on the stock exchange. Let's take the example of a manufacturing company whose stock price is highly correlated with the overall market index. Fluctuations in the market index can impact the company's stock price and, consequently, its market capitalization. To hedge against this risk, the company can use stock index futures or options contracts to offset potential losses in its stock portfolio. By doing so, the company can protect its market value and reduce the impact of market volatility.<br>
+                    <br>
+                    Case Study 5: Hedging against weather risk<br>
+                    Weather risk is a unique risk faced by certain Indian businesses, such as agriculture and tourism. Let's consider the case of a mango farmer who relies on a good monsoon season for a bountiful harvest. However, a poor monsoon can lead to crop failure and significant financial losses. To hedge against this risk, the farmer can use weather derivatives, such as rainfall futures or options contracts, to offset potential losses due to adverse weather conditions. By doing so, the farmer can protect their income and reduce the impact of unpredictable weather patterns.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
