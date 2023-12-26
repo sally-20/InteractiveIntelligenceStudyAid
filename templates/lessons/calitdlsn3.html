@@ -93,54 +93,79 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the formula for integration by parts?",
+                options: [
+                    "∫ u dv = uv - ∫ v du",
+                    "∫ u dv = ∫ v du - uv",
+                    "∫ u dv = u + v",
+                    "∫ u dv = ∫ u du"
+                ],
+                answer: "∫ u dv = uv - ∫ v du"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What are the steps involved in integration by parts?",
+                options: [
+                    "Identify u and dv, calculate du and v, apply the formula, simplify and evaluate",
+                    "Identify u and dv, calculate du and v, substitute into the formula, simplify and evaluate",
+                    "Identify u and dv, calculate du and v, integrate u and dv, simplify and evaluate",
+                    "Identify u and dv, calculate du and v, differentiate u and dv, simplify and evaluate"
+                ],
+                answer: "Identify u and dv, calculate du and v, apply the formula, simplify and evaluate"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which part of the integral is usually chosen as u in integration by parts?",
+                options: [
+                    "The simpler part",
+                    "The more complex part",
+                    "Either part can be chosen as u",
+                    "None of the above"
+                ],
+                answer: "Either part can be chosen as u"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What is the purpose of integration by parts?",
+                options: [
+                    "To evaluate complex integrals",
+                    "To differentiate functions",
+                    "To find the antiderivative of a function",
+                    "To simplify integrals"
+                ],
+                answer: "To evaluate complex integrals"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "When should integration by parts be used?",
+                options: [
+                    "When the integral involves a product of functions",
+                    "When the integral involves a quotient of functions",
+                    "When the integral involves a trigonometric function",
+                    "When the integral involves a polynomial function"
+                ],
+                answer: "When the integral involves a product of functions"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which substitution should be used for the integral of sqrt(9 - x^2)?",
+                options: ["x = 3*sin(theta)", "x = 3*cos(theta)", "x = 3*tan(theta)", "x = 3*sec(theta)"],
+                answer: "x = 3*sin(theta)"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which substitution should be used for the integral of sqrt(x^2 + 16)?",
+                options: ["x = 4*sin(theta)", "x = 4*cos(theta)", "x = 4*tan(theta)", "x = 4*sec(theta)"],
+                answer: "x = 4*cos(theta)"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which substitution should be used for the integral of sqrt(x^2 - 25)?",
+                options: ["x = 5*sin(theta)", "x = 5*cos(theta)", "x = 5*tan(theta)", "x = 5*sec(theta)"],
+                answer: "x = 5*sec(theta)"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which substitution should be used for the integral of sqrt(16 - x^2)?",
+                options: ["x = 4*sin(theta)", "x = 4*cos(theta)", "x = 4*tan(theta)", "x = 4*sec(theta)"],
+                answer: "x = 4*sin(theta)"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which substitution should be used for the integral of sqrt(9x^2 - 1)?",
+                options: ["x = (1/3)*sin(theta)", "x = (1/3)*cos(theta)", "x = (1/3)*tan(theta)", "x = (1/3)*sec(theta)"],
+                answer: "x = (1/3)*tan(theta)"
             }
         ];
 
@@ -381,15 +406,71 @@
             <h1>Techniques of Integration</h1>
             <div id="sublesson1">
                 <h2>Integration by parts for complex integrals</h2>
-                <p>
-                    
+                <p><br>
+                    In this lesson, we will learn about integration by parts for complex integrals. Integration by parts is a technique used to simplify the integration of products of functions. It is particularly useful when dealing with complex integrals that cannot be easily evaluated using other methods.<br>
+                    <br>
+                    To understand integration by parts, let's start with the formula:<br>
+                    <br>
+                    ∫ u dv = uv - ∫ v du<br>
+                    <br>
+                    Here, u and v are functions of x, and du and dv are their respective differentials. The formula allows us to rewrite the integral of a product of functions as the product of their antiderivatives minus the integral of the product of their derivatives.<br>
+                    <br>
+                    To apply integration by parts, we follow these steps:<br>
+                    <br>
+                    1. Identify u and dv: Choose u and dv such that the product u dv is simpler to integrate than the original integral.<br>
+                    <br>
+                    2. Calculate du and v: Take the derivative of u to find du, and find the antiderivative of dv to find v.<br>
+                    <br>
+                    3. Apply the formula: Substitute the values of u, du, v, and dv into the integration by parts formula.<br>
+                    <br>
+                    4. Simplify and evaluate: Simplify the resulting integral and evaluate it if possible. If not, repeat the integration by parts process until the integral becomes manageable.<br>
+                    <br>
+                    Now, let's work through an example to see how integration by parts can be used for complex integrals.
+                    <br>
+                    Example:<br>
+                    ∫ x^2 ln(x) dx<br>
+                    <br>
+                    Step 1: Identify u and dv<br>
+                    Let u = ln(x) and dv = x^2 dx<br>
+                    <br>
+                    Step 2: Calculate du and v<br>
+                    Taking the derivative of u, we get du = (1/x) dx<br>
+                    Finding the antiderivative of dv, we get v = (1/3) x^3<br>
+                    <br>
+                    Step 3: Apply the formula<br>
+                    Using the integration by parts formula, we have:<br>
+                    ∫ x^2 ln(x) dx = (1/3) x^3 ln(x) - ∫ (1/3) x^3 (1/x) dx<br>
+                    <br>
+                    Step 4: Simplify and evaluate<br>
+                    Simplifying the integral, we have:<br>
+                    ∫ x^2 ln(x) dx = (1/3) x^3 ln(x) - (1/3) ∫ x^2 dx<br>
+                    <br>
+                    Evaluating the integral, we get:<br>
+                    ∫ x^2 ln(x) dx = (1/3) x^3 ln(x) - (1/9) x^3 + C<br>
+                    <br>
+                    Therefore, the solution to the integral is:<br>
+                    ∫ x^2 ln(x) dx = (1/3) x^3 ln(x) - (1/9) x^3 + C
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Trigonometric and algebraic substitutions</h2>
                 <p>
-
+                    In this sub-lesson, we will learn about trigonometric and algebraic substitutions, which are techniques used in integration. These substitutions help simplify the integrand and make the method of integration more obvious.<br>
+                    <br>
+                    Trigonometric Substitutions:<br>
+                    Trigonometric substitutions are used when the integrand involves expressions with trigonometric functions. There are two common trigonometric substitutions:<br>
+                    1. If the integrand contains expressions of the form sqrt(a^2 - x^2), we use the substitution x = a*sin(theta).<br>
+                    2. If the integrand contains expressions of the form sqrt(x^2 + a^2), we use the substitution x = a*tan(theta).<br>
+                    <br>
+                    Algebraic Substitutions:<br>
+                    Algebraic substitutions are used when the integrand involves expressions with algebraic functions. There are two common algebraic substitutions:<br>
+                    1. If the integrand contains expressions of the form sqrt(x^2 - a^2), we use the substitution x = a*sec(theta).<br>
+                    2. If the integrand contains expressions of the form sqrt(a^2 - x^2), we use the substitution x = a*sin(theta).<br>
+                    <br>
+                    By making these substitutions, we can simplify the integrand and transform the integral into a form that is easier to evaluate. It is important to choose the appropriate substitution based on the form of the integrand.<br>
+                    <br>
+                    Now, let's practice with some multiple-choice questions.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
