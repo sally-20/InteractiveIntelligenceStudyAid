@@ -91,56 +91,81 @@
                 [array[i], array[j]] = [array[j], array[i]];
             }
         }
-        const questions = [
+        const questions = [const interestRateOptionsQuestions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which interest rate option provides stability and predictability?",
+                options: ["Fixed Interest Rate", "Floating Interest Rate", "Hybrid Interest Rate", "Step-Up/Step-Down Interest Rate"],
+                answer: "Fixed Interest Rate"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which interest rate option can change over time?",
+                options: ["Fixed Interest Rate", "Floating Interest Rate", "Hybrid Interest Rate", "Step-Up/Step-Down Interest Rate"],
+                answer: "Floating Interest Rate"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which interest rate option starts with a fixed rate and then switches to a floating rate?",
+                options: ["Fixed Interest Rate", "Floating Interest Rate", "Hybrid Interest Rate", "Step-Up/Step-Down Interest Rate"],
+                answer: "Hybrid Interest Rate"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which interest rate option is suitable for borrowers who expect their income to increase in the future?",
+                options: ["Fixed Interest Rate", "Floating Interest Rate", "Hybrid Interest Rate", "Step-Up/Step-Down Interest Rate"],
+                answer: "Step-Up/Step-Down Interest Rate"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which interest rate option allows borrowers to split their loan amount into fixed and floating rate components?",
+                options: ["Fixed Interest Rate", "Floating Interest Rate", "Hybrid Interest Rate", "Fixed-Cum-Floating Interest Rate"],
+                answer: "Fixed-Cum-Floating Interest Rate"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What does EMI stand for?",
+                options: ["Equated Monthly Installment", "Equated Mortgage Interest", "Effective Monthly Investment", "Effective Mortgage Installment"],
+                answer: "Equated Monthly Installment"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How is the EMI calculated?",
+                options: ["Loan amount * interest rate", "Loan amount / loan tenure", "(Loan amount * interest rate) / loan tenure", "(Loan amount / loan tenure) * interest rate"],
+                answer: "(Loan amount * interest rate) / loan tenure"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What does an amortization schedule show?",
+                options: ["Breakup of each EMI into principal and interest components", "Loan amount and interest rate", "Loan tenure and EMI amount", "Outstanding loan balance only"],
+                answer: "Breakup of each EMI into principal and interest components"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "In an amortization schedule, what happens to the interest component over time?",
+                options: ["It increases", "It decreases", "It remains constant", "It fluctuates randomly"],
+                answer: "It decreases"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "How does a prepayment affect the outstanding loan amount?",
+                options: ["It reduces the principal part", "It reduces the interest part", "It reduces the EMI amount", "It has no effect on the loan amount"],
+                answer: "It reduces the principal part"
+            },
+            {
+                question: "What is mortgage refinancing?",
+                options: ["Replacing an existing mortgage with a new one", "Paying off a mortgage loan before the scheduled maturity date", "Taking out a loan to purchase a home", "None of the above"],
+                answer: "Replacing an existing mortgage with a new one"
+            },
+            {
+                question: "Why do borrowers consider mortgage refinancing?",
+                options: ["To take advantage of lower interest rates", "To change the terms of the loan", "Both a and b", "None of the above"],
+                answer: "Both a and b"
+            },
+            {
+                question: "What is prepayment?",
+                options: ["Paying off a mortgage loan before the scheduled maturity date", "Taking out a loan to purchase a home", "Replacing an existing mortgage with a new one", "None of the above"],
+                answer: "Paying off a mortgage loan before the scheduled maturity date"
+            },
+            {
+                question: "What should borrowers consider before refinancing or making prepayments?",
+                options: ["Lower interest rates", "Change in loan terms", "Prepayment penalties", "All of the above"],
+                answer: "All of the above"
+            },
+            {
+                question: "What are the tax implications of mortgage refinancing and prepayment in India?",
+                options: ["No tax implications", "Tax benefits on the principal and interest components of the home loan", "Tax penalties for refinancing or prepayment", "None of the above"],
+                answer: "Tax benefits on the principal and interest components of the home loan"
             }
         ];
 
@@ -382,21 +407,230 @@
             <div id="sublesson1">
                 <h2>Interest rate options for Indian home loans</h2>
                 <p>
-                    
+                    In this sub-lesson, we will discuss the different interest rate options available for Indian home loans. Understanding these options is crucial as it can have a significant impact on your monthly mortgage payments and the overall cost of your loan.<br>
+                    <br>
+                    1. Fixed Interest Rate:<br>
+                    A fixed interest rate remains the same throughout the entire loan term. This means that your monthly mortgage payments will also remain constant. This option provides stability and predictability, making it easier to budget for your mortgage payments. However, it may have a higher initial interest rate compared to other options.<br>
+                    <br>
+                    2. Floating Interest Rate:<br>
+                    Also known as a variable or adjustable interest rate, a floating interest rate can change over time. It is usually linked to a benchmark rate, such as the Reserve Bank of India's repo rate or the Marginal Cost of Funds based Lending Rate (MCLR). When the benchmark rate changes, your interest rate and monthly payments may also change. This option offers the potential for lower interest rates initially, but there is uncertainty about future payments.<br>
+                    <br>
+                    3. Hybrid Interest Rate:<br>
+                    A hybrid interest rate is a combination of fixed and floating interest rates. It typically starts with a fixed rate for a certain period, such as 3 or 5 years, and then switches to a floating rate for the remaining loan term. This option provides the benefits of both stability and potential lower rates in the initial years.<br>
+                    <br>
+                    4. Step-Up/Step-Down Interest Rate:<br>
+                    Step-up and step-down interest rates are variations of the floating interest rate. In a step-up rate, the interest rate increases gradually over time, usually at predetermined intervals. This option is suitable for borrowers who expect their income to increase in the future. On the other hand, a step-down rate decreases over time, which can be beneficial for borrowers who anticipate a decrease in their income.<br>
+                    <br>
+                    5. Fixed-Cum-Floating Interest Rate:<br>
+                    This option allows borrowers to split their loan amount into fixed and floating interest rate components. For example, a certain percentage of the loan may have a fixed rate, while the remaining amount has a floating rate. This provides a balance between stability and potential savings.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>EMI calculation and amortization schedules in India</h2>
                 <p>
-
-                </p>
+                    In this sub-lesson, we will delve into EMI calculation and amortization schedules in India. EMI, or Equated Monthly Installment, represents the fixed amount that a borrower needs to pay every month towards their loan repayment. It comprises both principal and interest components.<br>
+                    <br>
+                    <strong>1. EMI Calculation:</strong><br>
+                    To calculate the EMI, knowledge of the loan amount, interest rate, and loan tenure is required. The formula for EMI is as follows:<br>
+                    <br>
+                    EMI = (P * r * (1 + r)^n) / ((1 + r)^n - 1)<br>
+                    <br>
+                    Where,<br>
+                    P = Loan amount<br>
+                    r = Monthly interest rate (annual interest rate divided by 12)<br>
+                    n = Loan tenure in months<br>
+                    <br>
+                    Let's consider an example. Suppose you have taken a home loan of Rs. 30 lakhs for 20 years at an interest rate of 10%. The monthly interest rate would be 10%/12 = 0.00833. Using the formula, we can calculate the EMI:<br>
+                    <br>
+                    EMI = (30,00,000 * 0.00833 * (1 + 0.00833)^240) / ((1 + 0.00833)^240 - 1) = Rs. 28,950<br>
+                    <br>
+                    So, the EMI for this loan would be Rs. 28,950.<br>
+                    <br>
+                    <strong>2. Amortization Schedule:</strong><br>
+                    An amortization schedule is a table illustrating the breakup of each EMI into principal and interest components over the loan tenure. It helps borrowers understand how their loan balance decreases over time.<br>
+                    <br>
+                    Here is a simplified version of the amortization schedule for the first 20 months of a Rs. 30 lakh loan for 20 years at a 10% interest rate:<br>
+                    <br>
+                    <table border="1">
+                        <thead>
+                        <tr>
+                            <th>EMI No.</th>
+                            <th>EMI Amount</th>
+                            <th>Principal</th>
+                            <th>Interest</th>
+                            <th>Outstanding Loan Balance</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Rs. 28,950</td>
+                            <td>Rs. 3,950</td>
+                            <td>Rs. 25,000</td>
+                            <td>Rs. 29,96,050</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Rs. 28,950</td>
+                            <td>Rs. 4,000</td>
+                            <td>Rs. 24,950</td>
+                            <td>Rs. 29,92,050</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Rs. 28,950</td>
+                            <td>Rs. 4,051</td>
+                            <td>Rs. 24,899</td>
+                            <td>Rs. 29,88,999</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Rs. 28,950</td>
+                            <td>Rs. 4,103</td>
+                            <td>Rs. 24,847</td>
+                            <td>Rs. 29,85,896</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Rs. 28,950</td>
+                            <td>Rs. 4,155</td>
+                            <td>Rs. 24,795</td>
+                            <td>Rs. 29,82,741</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Rs. 28,950</td>
+                            <td>Rs. 4,208</td>
+                            <td>Rs. 24,742</td>
+                            <td>Rs. 29,79,533</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Rs. 28,950</td>
+                            <td>Rs. 4,261</td>
+                            <td>Rs. 24,689</td>
+                            <td>Rs. 29,76,272</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Rs. 28,950</td>
+                            <td>Rs. 4,315</td>
+                            <td>Rs. 24,635</td>
+                            <td>Rs. 29,72,957</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>Rs. 28,950</td>
+                            <td>Rs. 4,369</td>
+                            <td>Rs. 24,581</td>
+                            <td>Rs. 29,69,588</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>Rs. 28,950</td>
+                            <td>Rs. 4,424</td>
+                            <td>Rs. 24,526</td>
+                            <td>Rs. 29,66,164</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>Rs. 28,950</td>
+                            <td>Rs. 4,479</td>
+                            <td>Rs. 24,471</td>
+                            <td>Rs. 29,62,685</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>Rs. 28,950</td>
+                            <td>Rs. 4,535</td>
+                            <td>Rs. 24,415</td>
+                            <td>Rs. 29,59,150</td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td>Rs. 28,950</td>
+                            <td>Rs. 4,591</td>
+                            <td>Rs. 24,359</td>
+                            <td>Rs. 29,55,559</td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td>Rs. 28,950</td>
+                            <td>Rs. 4,648</td>
+                            <td>Rs. 24,302</td>
+                            <td>Rs. 29,51,911</td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td>Rs. 28,950</td>
+                            <td>Rs. 4,705</td>
+                            <td>Rs. 24,245</td>
+                            <td>Rs. 29,48,206</td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td>Rs. 28,950</td>
+                            <td>Rs. 4,763</td>
+                            <td>Rs. 24,187</td>
+                            <td>Rs. 29,44,443</td>
+                        </tr>
+                        <tr>
+                            <td>17</td>
+                            <td>Rs. 28,950</td>
+                            <td>Rs. 4,821</td>
+                            <td>Rs. 24,129</td>
+                            <td>Rs. 29,40,622</td>
+                        </tr>
+                        <tr>
+                            <td>18</td>
+                            <td>Rs. 28,950</td>
+                            <td>Rs. 4,880</td>
+                            <td>Rs. 24,070</td>
+                            <td>Rs. 29,36,742</td>
+                        </tr>
+                        <tr>
+                            <td>19</td>
+                            <td>Rs. 28,950</td>
+                            <td>Rs. 4,939</td>
+                            <td>Rs. 24,011</td>
+                            <td>Rs. 29,32,803</td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td>Rs. 28,950</td>
+                            <td>Rs. 4,999</td>
+                            <td>Rs. 23,951</td>
+                            <td>Rs. 29,28,804</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    This schedule demonstrates how the principal component gradually increases over time, while the interest component decreases. The outstanding loan balance also decreases with each EMI payment.
+                </p>                  
             </div>
             <!-- Sub Lesson 3 Content -->
             <div id="sublesson3">
                 <h2>Mortgage refinancing and prepayment in India</h2>
                 <p>
-
+                    In this sub-lesson, we will discuss mortgage refinancing and prepayment in India. <br>
+                    <br>
+                    Mortgage refinancing is the process of replacing an existing mortgage with a new one. This is usually done to take advantage of lower interest rates or to change the terms of the loan. When you refinance a mortgage, you essentially pay off the existing loan and take out a new loan with different terms.<br>
+                    <br>
+                    Prepayment refers to paying off a mortgage loan before the scheduled maturity date. This can be done in part or in full. Prepayment can help borrowers save on interest payments and reduce the overall cost of the loan.<br>
+                    <br>
+                    In India, mortgage refinancing and prepayment options are available to borrowers. However, it is important to carefully consider the terms and conditions of the new loan and any prepayment penalties that may apply.<br>
+                    <br>
+                    Some key points to remember about mortgage refinancing and prepayment in India:<br>
+                    <br>
+                    1. Lower interest rates: Refinancing can be a good option if interest rates have decreased since you took out your original mortgage. By refinancing at a lower interest rate, you can potentially save money on your monthly payments and overall interest costs.<br>
+                    <br>
+                    2. Change in loan terms: Refinancing also allows you to change the terms of your loan. For example, you may choose to switch from an adjustable-rate mortgage to a fixed-rate mortgage, or vice versa. This can provide more stability in your monthly payments.<br>
+                    <br>
+                    3. Prepayment penalties: Before refinancing or making prepayments, it is important to check if there are any prepayment penalties associated with your existing loan. Some lenders may charge a fee if you pay off your loan early. Make sure to consider these penalties when evaluating the cost-effectiveness of refinancing or prepayment.<br>
+                    <br>
+                    4. Tax implications: In India, prepayment of a home loan can have tax implications. Under certain conditions, you may be eligible for tax benefits on the principal and interest components of your home loan. It is advisable to consult with a tax professional to understand the specific tax implications of mortgage refinancing and prepayment.<br>
+                    <br>
+                    Now that we have covered the basics of mortgage refinancing and prepayment in India, let's move on to the multiple-choice questions.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
