@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytic Functions and Complex Integration</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/learningstyles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .quiz-container {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+            max-width: 80%;
+            max-height: 80%;
+            overflow-y: auto;
+        }
+        .question-box {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+        }
+        .options-box {
+            display: flex;
+            flex-direction: column;
+        }
+        .option-box {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .option-box.selected {
+            background-color: #3498db;
+            color: white;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 1);
+            z-index: 999;
+            display: none;
+        }
+        .modal-button-container button {
+            width: 10rem;
+            height: 2rem;
+            background-color: #3498db;
+            outline: none;
+            border: 1px solid rgb(252, 242, 241);
+            color: white;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border-radius: 20px;
+            text-align: center;
+            line-height: 2rem;
+            padding: 5px;
+        }
+        .modal-button-container button:hover {
+            background-color: #2980b9;
+        }
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity:1 ;}
+        }
+        @-webkit-keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        .completion-message {
+            color: green; 
+        } 
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='js/learningscript.js') }}" defer></script>
+    <script>
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+        const questions = [
+            {
+                question: "Which of the following statements is true about analytic functions?",
+                options: [
+                    "They are not differentiable at any point.",
+                    "They can be represented by a power series expansion.",
+                    "They do not satisfy the Cauchy-Riemann equations.",
+                    "They are only defined for real numbers."
+                ],
+                answer: "They can be represented by a power series expansion."
+            },
+            {
+                question: "What are the Cauchy-Riemann equations?",
+                options: [
+                    "A set of partial differential equations that relate the real and imaginary parts of an analytic function.",
+                    "A set of algebraic equations that determine the radius of convergence of a power series.",
+                    "A set of equations that determine the maximum and minimum values of a function.",
+                    "A set of equations that relate the derivative of a function to its integral."
+                ],
+                answer: "A set of partial differential equations that relate the real and imaginary parts of an analytic function."
+            },
+            {
+                question: "If a function fails to satisfy the Cauchy-Riemann equations at any point, it is:",
+                options: [
+                    "Analytic at that point.",
+                    "Not analytic at that point.",
+                    "A constant function.",
+                    "A linear function."
+                ],
+                answer: "Not analytic at that point."
+            },
+            {
+                question: "Which of the following is a property of analytic functions?",
+                options: [
+                    "They are not differentiable within their domain.",
+                    "They cannot be represented by a power series expansion.",
+                    "They do not satisfy Laplace's equation.",
+                    "They preserve angles and conformal mappings."
+                ],
+                answer: "They preserve angles and conformal mappings."
+            },
+            {
+                question: "Analytic functions have applications in:",
+                options: [
+                    "Fluid dynamics.",
+                    "Electromagnetism.",
+                    "Both a and b.",
+                    "None of the above."
+                ],
+                answer: "Both a and b."
+            }
+            {
+                question: "What is contour integration?",
+                options: [
+                    "Integrating a function along a straight line",
+                    "Integrating a function along a closed curve in the complex plane",
+                    "Integrating a function along a curve in the real plane",
+                    "Integrating a function along a curve in the polar plane"
+                ],
+                answer: "Integrating a function along a closed curve in the complex plane"
+            },
+            {
+                question: "What are residues?",
+                options: [
+                    "Complex numbers that capture the behavior of a function near a point",
+                    "Complex numbers that capture the behavior of a function at infinity",
+                    "Complex numbers that capture the behavior of a function at the origin",
+                    "Complex numbers that capture the behavior of a function at singularities"
+                ],
+                answer: "Complex numbers that capture the behavior of a function at singularities"
+            },
+            {
+                question: "What does the residue theorem state?",
+                options: [
+                    "The integral of a function around a closed curve is equal to the sum of the residues inside the curve",
+                    "The integral of a function around a closed curve is equal to the product of the residues inside the curve",
+                    "The integral of a function around a closed curve is equal to the derivative of the residues inside the curve",
+                    "The integral of a function around a closed curve is equal to the square of the residues inside the curve"
+                ],
+                answer: "The integral of a function around a closed curve is equal to the sum of the residues inside the curve"
+            },
+            {
+                question: "Which of the following is true about contour integration?",
+                options: [
+                    "It can only be done along a straight line",
+                    "It can only be done along a curve in the real plane",
+                    "It can be done along any closed curve in the complex plane",
+                    "It can be done along any curve in the polar plane"
+                ],
+                answer: "It can be done along any closed curve in the complex plane"
+            },
+            {
+                question: "What type of integrals can be calculated using residues?",
+                options: [
+                    "Integrals involving poles or singularities of a function",
+                    "Integrals involving only real-valued functions",
+                    "Integrals involving only complex-valued functions",
+                    "Integrals involving only smooth functions"
+                ],
+                answer: "Integrals involving poles or singularities of a function"
+            }
+        ];
+
+        const questionsCopy = [...questions];
+        let currentQuestionIndex = 0;
+
+        // Open quiz modal
+        function openQuizModal() {
+            document.getElementById('quiz-container').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        // Close quiz modal
+        function closeQuizModal() {
+            document.getElementById('quiz-container').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+        // Shuffle and display questions
+        function showRandomQuestion() {
+            shuffleArray(questionsCopy);
+            showQuestion(currentQuestionIndex);
+        }
+
+        // Call this function when starting the quiz
+        function startQuiz() {
+            currentQuestionIndex = 0;
+            showRandomQuestion();
+        }
+
+        function showQuestion(index) {
+            const quizBox = document.querySelector('.quiz-container');
+            const currentQuestion = questionsCopy[index];
+            // Clear previous content
+            quizBox.innerHTML = '';
+            if (currentQuestion) {
+                const questionBox = document.createElement('div');
+                questionBox.classList.add('question-box');
+                questionBox.innerHTML = `
+                    <div class="question">${currentQuestion.question}<br></div>
+                    <div class="options-box">
+                        ${currentQuestion.options.map((option, optionIndex) => `<div class="option-box" data-index="${optionIndex}">${option}</div>`).join('')}
+                    </div>
+                    <div id="result"></div>
+                `;
+
+                // Add event listeners to the options
+                const optionBoxes = questionBox.querySelectorAll('.option-box');
+                optionBoxes.forEach(optionBox => {
+                    optionBox.addEventListener('click', function () {
+                        const selectedOptionIndex = this.getAttribute('data-index');
+                        checkAnswer(selectedOptionIndex, currentQuestion.answer);
+                    });
+                });
+                quizBox.appendChild(questionBox);
+                // Create a separate container for the button
+                const buttonContainer = document.createElement('div');
+                buttonContainer.classList.add('modal-button-container');
+                buttonContainer.innerHTML = `<button onclick="showNextQuestion()">Next Question</button>`;
+                // Append the button container to the quiz box
+                quizBox.appendChild(buttonContainer);
+            } else {
+                quizBox.innerHTML = `
+                    <div class="result">Quiz completed! Thanks for playing.</div>
+                `;
+                // Create a separate container for the button
+                const buttonContainer = document.createElement('div');
+                buttonContainer.classList.add('modal-button-container');
+                buttonContainer.innerHTML = `<button onclick="closeQuizModal()">Close Quiz</button>`;
+                // Append the button container to the quiz box
+                quizBox.appendChild(buttonContainer);
+            }
+        }
+
+        let score = 0;
+
+        // Check user's answer and show next question
+        function showNextQuestion() {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < 5) {
+                showRandomQuestion();
+            } else {
+                evaluateAndDisplayResult();
+            }
+        }
+
+        function checkAnswer(selectedOptionIndex, correctAnswer) {
+            const options = document.querySelectorAll('.options-box .option-box');
+            
+            // Remove the 'selected' class from all options
+            options.forEach(option => {
+                option.classList.remove('selected');
+            });
+        
+            // Add the 'selected' class to the clicked option
+            options[selectedOptionIndex].classList.add('selected');
+        
+            // Get the selected option's text
+            const selectedOptionText = options[selectedOptionIndex].innerText;
+        
+            // Check if the selected option is correct
+            const isCorrect = selectedOptionText === correctAnswer;
+        
+            // Update the UI to indicate correctness
+            const resultContainer = document.getElementById('result');
+            resultContainer.innerHTML = isCorrect
+                ? '<p style="color: green;">Correct!</p>'
+                : `<p style="color: red;">Incorrect. The correct answer is: ${correctAnswer}</p>`;
+        
+            // Update the score if the answer is correct
+            if (isCorrect) {
+                score++;
+            }
+            
+            // For demonstration purposes, let's log the selected option index and correctness
+            console.log('Selected Option Index:', selectedOptionIndex);
+            console.log('Is Correct:', isCorrect);
+        }
+
+        let quizCompleted = false;
+
+        // Evaluate user's performance and display result
+        function evaluateAndDisplayResult() {
+            const resultContainer = document.getElementById('quiz-container');
+            let correctAnswersCount = 0;
+            let totalQuestions = 5;
+            if (score >= 4) {
+                quizCompleted = true;
+                resultContainer.innerHTML = `
+                <div class="result">Congratulations! You can move on to the next lesson.</div>
+                <div class="score-details">
+                    <p>Your Score <br> ${score} out of ${totalQuestions}</p>
+                </div>
+                <div class="modal-button-container">
+                    <button onclick="closeQuizModal()">Close Quiz</button>
+                </div>`;
+                updateUIOnQuizCompletion();
+                document.getElementById('completion-message').style.display = 'block';
+            } else {
+                resultContainer.innerHTML = `
+                <div class="result">Please review the lesson again and try again later.</div>
+                <div class="score-details">
+                    <p><center>Your Score</center> <br> <center>${score} out of ${totalQuestions}</center></p>
+                </div>
+                <div class="modal-button-container">
+                    <button onclick="closeQuizModal()">Close Quiz</button>
+                </div>`;
+            }
+        }
+
+        function closeQuizModal() {
+            document.getElementById('quiz-container').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+    
+            // Redirect to the Calculus page
+            window.location.href = "{{ url_for('calculus') }}";
+        }
+        function updateUIOnQuizCompletion() {
+            // Change the color of the flash to gold
+            const flash = document.querySelector('.bolt[data-target="dialog-boxcaladv4"]');
+            if (flash) {
+                flash.style.backgroundColor = '#ffd700'; // Hex code for gold
+
+            // Change the dialog box border color to gold and display the completion message
+            const dialogBoxCaladv4 = document.getElementById('dialog-boxcaladv4');
+            if (dialogBoxCaladv4) {
+                dialogBoxCaladv4.style.borderColor = '#ffd700'; // Hex code for gold
+                const dialogText = dialogBoxCaladv4.querySelector('.dialog-text');
+                dialogText.innerText = 'Completed'; // Update the message inside the dialog box
+
+                // Save the completion status in localStorage
+                localStorage.setItem('caladvlsn4Completed', 'true');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            startQuiz();
+            const caladvlsn4Completed = localStorage.getItem('caladvlsn4Completed');
+            if (caladvlsn4Completed === 'true') {
+                updateUIOnQuizCompletion();
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <aside class="sidebar-left">
+            <ul class="sidebar-menu">
+                <li>
+                    <h2 class="sidebar-title">Study Aid</h2>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="colored-icon">
+                        <i class="fas fa-graduation-cap"></i> Learn
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="courses-toggle">
+                        <i class="fas fa-book"></i> Courses
+                    </a>
+                    <ul class="course-list hidden">
+                        <li>
+                            <a href="{{ url_for('algorithms') }}">
+                                <i class="fas fa-chart-line"></i> Algorithms
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url_for('personalfinance') }}">
+                                <i class="fas fa-rupee-sign"></i> Personal Finance
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url_for('calculus') }}">
+                                <i class="fas fa-calculator"></i> Calculus
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sidebar-item">
+                    <a href="{{ url_for('profile') }}" class="colored-icon">
+                        <i class="fas fa-user"></i> Profile
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="{{ url_for('settings') }}" class="colored-icon">
+                        <i class="fas fa-cog"></i> Settings
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="{{ url_for('home') }}" class="colored-icon">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <main class="lesson-main-content">
+            <h1>Analytic Functions and Complex Integration</h1>
+            <div id="sublesson1">
+                <h2>Analyticity and Cauchy-Riemann equations</h2>
+                <p>
+                    In this sub-lesson, we will be discussing the concept of analyticity and the Cauchy-Riemann equations. Analytic functions are an important topic in complex analysis and have various applications in mathematics and physics.<br>
+                    <br>
+                    An analytic function is a complex-valued function that is differentiable at every point within its domain. It can be represented as a power series expansion, which converges within a certain radius of convergence. Analytic functions satisfy the Cauchy-Riemann equations, which are a set of partial differential equations that relate the real and imaginary parts of the function.<br>
+                    <br>
+                    The Cauchy-Riemann equations state that if a complex function f(z) = u(x, y) + iv(x, y) is differentiable at a point z = x + iy, then its partial derivatives with respect to x and y must satisfy the following conditions:<br>
+                    <br>
+                    ∂u/∂x = ∂v/∂y<br>
+                    ∂u/∂y = -∂v/∂x<br>
+                    <br>
+                    These equations provide a necessary condition for a function to be analytic. If a function fails to satisfy these equations at any point, it is not analytic at that point.<br>
+                    <br>
+                    Analytic functions have some important properties. They are infinitely differentiable within their domain and can be represented by a power series expansion. The real and imaginary parts of an analytic function are harmonic functions, which satisfy Laplace's equation. Analytic functions also preserve angles and conformal mappings, which have applications in fluid dynamics, electromagnetism, and other areas of physics.                    
+                </p>
+            </div>    
+            <!-- Sub Lesson 2 Content -->
+            <div id="sublesson2">
+                <h2>Contour integration and residues</h2>
+                <p>
+                    In this sub-lesson, we will be focusing on contour integration and residues. Contour integration is a powerful technique used in complex analysis to evaluate integrals along closed curves in the complex plane. Residues, on the other hand, are a key concept in complex analysis that allow us to calculate certain types of integrals using the residues of functions.<br>
+                    <br>
+                    Contour Integration:<br>
+                    Contour integration involves integrating a complex-valued function along a closed curve in the complex plane. The curve can be any closed path, such as a circle, a square, or even a more complex shape. The key idea is to parameterize the curve and then evaluate the integral using the parameterization.<br>
+                    <br>
+                    Residues:<br>
+                    The residue of a function at a point is a complex number that captures the behavior of the function near that point. It is particularly useful when calculating certain types of integrals, such as those involving poles or singularities of a function. The residue theorem states that the integral of a function around a closed curve is equal to 2πi times the sum of the residues inside the curve.<br>
+                    <br>
+                    Now that we have covered the basic concepts of contour integration and residues, let's move on to the multiple-choice questions.                    
+                </p>
+            </div>
+            <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
+            <div id="quiz-container" class="quiz-container"></div>
+            <div id="overlay" class="overlay"></div>
+            <div id="completion-message" style="display: none;">
+                <p class="completion-message">Lesson Completed!</p>
+            </div>
+        </main>
+        <aside class="sidebar-right">
+            <h2>Analytic Functions and Complex Integration</h2>
+            <ul class="sub-lesson-links">
+                <li><a href="#sublesson1">Analyticity and Cauchy-Riemann equations</a></li>
+                <li><a href="#sublesson2">Contour integration and residues</a></li>
+            </ul>
+        </aside>
+</body>
+
+</html>
