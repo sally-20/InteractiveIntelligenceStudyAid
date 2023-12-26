@@ -93,55 +93,155 @@
         }
         const questions = [
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which social security scheme is mandatory for employees in India?",
+                options: [
+                    "National Pension Scheme (NPS)",
+                    "Employee Provident Fund (EPF)",
+                    "Atal Pension Yojana (APY)",
+                    "Employees' State Insurance (ESI)"
+                ],
+                answer: "Employee Provident Fund (EPF)"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Who can contribute to the National Pension Scheme (NPS)?",
+                options: [
+                    "Only government employees",
+                    "Only individuals between the ages of 18 and 40",
+                    "Only individuals between the ages of 18 and 60",
+                    "All Indian citizens between the ages of 18 and 60"
+                ],
+                answer: "All Indian citizens between the ages of 18 and 60"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which social security scheme is targeted at the unorganized sector?",
+                options: [
+                    "Employee Provident Fund (EPF)",
+                    "National Pension Scheme (NPS)",
+                    "Atal Pension Yojana (APY)",
+                    "Employees' State Insurance (ESI)"
+                ],
+                answer: "Atal Pension Yojana (APY)"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which social security scheme provides medical and cash benefits to employees?",
+                options: [
+                    "Employee Provident Fund (EPF)",
+                    "National Pension Scheme (NPS)",
+                    "Atal Pension Yojana (APY)",
+                    "Employees' State Insurance (ESI)"
+                ],
+                answer: "Employees' State Insurance (ESI)"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Who is eligible for the Pradhan Mantri Shram Yogi Maandhan (PMSYM) scheme?",
+                options: [
+                    "Only government employees",
+                    "Only individuals between the ages of 18 and 40",
+                    "Only individuals between the ages of 18 and 60",
+                    "All unorganized workers between the ages of 18 and 40"
+                ],
+                answer: "All unorganized workers between the ages of 18 and 40"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which of the following is NOT a type of government pension plan in India?",
+                options: [
+                    "Central Government Pension",
+                    "Defense Pension",
+                    "Private Sector Pension",
+                    "State Government Pension"
+                ],
+                answer: "Private Sector Pension"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What factors should be considered when evaluating government pension plans?",
+                options: [
+                    "Eligibility and benefit calculation",
+                    "Cost of living adjustments and survivor benefits",
+                    "Portability and comparison with other plans",
+                    "All of the above"
+                ],
+                answer: "All of the above"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "Which aspect should be compared when evaluating different government pension plans?",
+                options: [
+                    "Benefit amount",
+                    "Vesting period",
+                    "Cost of living adjustments",
+                    "All of the above"
+                ],
+                answer: "All of the above"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
+                question: "What should be considered when making an informed decision about government pension plans?",
+                options: [
+                    "Personal financial goals and risk tolerance",
+                    "Other sources of retirement income",
+                    "Benefits and limitations of each plan",
+                    "All of the above"
+                ],
+                answer: "All of the above"
             },
             {
-                question: "",
-                options: ["", "", "", ""],
-                answer: ""
-            }
+                question: "Which of the following is NOT a factor to consider when evaluating government pension plans?",
+                options: [
+                    "Flexibility to commute a portion of the pension into a lump sum",
+                    "Eligibility based on employment category",
+                    "Survivor benefits in case of death",
+                    "Current market conditions"
+                ],
+                answer: "Current market conditions"
+            },
+            {
+                question: "Which retirement savings scheme is voluntary in India?",
+                options: [
+                    "National Pension System (NPS)",
+                    "Employee Provident Fund (EPF)",
+                    "Atal Pension Yojana (APY)",
+                    "Senior Citizen Savings Scheme (SCSS)"
+                ],
+                answer: "National Pension System (NPS)"
+            },
+            {
+                question: "Which scheme is targeted towards the unorganized sector in India?",
+                options: [
+                    "National Pension System (NPS)",
+                    "Employee Provident Fund (EPF)",
+                    "Atal Pension Yojana (APY)",
+                    "Senior Citizen Savings Scheme (SCSS)"
+                ],
+                answer: "Atal Pension Yojana (APY)"
+            },
+            {
+                question: "Which scheme offers attractive interest rates for senior citizens?",
+                options: [
+                    "National Pension System (NPS)",
+                    "Employee Provident Fund (EPF)",
+                    "Senior Citizen Savings Scheme (SCSS)",
+                    "Pradhan Mantri Vaya Vandana Yojana (PMVVY)"
+                ],
+                answer: "Senior Citizen Savings Scheme (SCSS)"
+            },
+            {
+                question: "Which scheme provides a guaranteed pension income for 10 years?",
+                options: [
+                    "National Pension System (NPS)",
+                    "Employee Provident Fund (EPF)",
+                    "Pradhan Mantri Vaya Vandana Yojana (PMVVY)",
+                    "Atal Pension Yojana (APY)"
+                ],
+                answer: "Pradhan Mantri Vaya Vandana Yojana (PMVVY)"
+            },
+            {
+                question: "Which scheme is mandatory for employees in India?",
+                options: [
+                    "National Pension System (NPS)",
+                    "Employee Provident Fund (EPF)",
+                    "Atal Pension Yojana (APY)",
+                    "Senior Citizen Savings Scheme (SCSS)"
+                ],
+                answer: "Employee Provident Fund (EPF)"
+            },
         ];
 
         const questionsCopy = [...questions];
@@ -382,21 +482,80 @@
             <div id="sublesson1">
                 <h2>Overview of Indian social security schemes</h2>
                 <p>
-                    
+                    In this lesson, we will discuss the overview of Indian social security schemes. Social security schemes are designed to provide financial support to individuals after their retirement. These schemes aim to ensure that individuals have a stable income and can maintain their standard of living even after they stop working.<br>
+                    <br>
+                    1. Employee Provident Fund (EPF):<br>
+                    The Employee Provident Fund is a mandatory savings scheme for employees in India. Both the employer and the employee contribute a certain percentage of the employee's salary to the EPF. The accumulated amount in the EPF account can be withdrawn by the employee after retirement.<br>
+                    <br>
+                    2. National Pension Scheme (NPS):<br>
+                    The National Pension Scheme is a voluntary pension scheme introduced by the Indian government. It is open to all Indian citizens between the ages of 18 and 60. Individuals can contribute to the NPS during their working years and receive a regular pension after retirement.<br>
+                    <br>
+                    3. Atal Pension Yojana (APY):<br>
+                    The Atal Pension Yojana is a government-backed pension scheme targeted at the unorganized sector. It is available to individuals between the ages of 18 and 40. Under this scheme, individuals make regular contributions and receive a fixed pension amount after the age of 60.<br>
+                    <br>
+                    4. Employees' State Insurance (ESI):<br>
+                    The Employees' State Insurance scheme provides medical and cash benefits to employees in case of sickness, maternity, and employment injury. Both the employer and the employee contribute a certain percentage of the employee's salary to the ESI fund.<br>
+                    <br>
+                    5. Pradhan Mantri Shram Yogi Maandhan (PMSYM):<br>
+                    The Pradhan Mantri Shram Yogi Maandhan is a pension scheme for unorganized workers. It is available to individuals between the ages of 18 and 40. Under this scheme, individuals make regular contributions and receive a monthly pension after the age of 60.<br>
+                    <br>
+                    These social security schemes play a crucial role in ensuring financial security for individuals after retirement. It is important to understand the eligibility criteria, contribution requirements, and benefits of each scheme to make informed decisions about retirement planning.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Evaluating government pension plans in India</h2>
                 <p>
-
+                    In this lesson, we will discuss the importance of evaluating government pension plans in India as part of your post-retirement income planning. Government pension plans can provide a significant portion of your retirement income, so it is crucial to understand how they work and evaluate their suitability for your needs.<br>
+                    <br>
+                    1. What are government pension plans?<br>
+                    Government pension plans are retirement benefit programs provided by the government to its employees. These plans aim to provide a stable and reliable source of income during retirement. In India, government pension plans are available for employees of the Central Government, Defense forces, and some other specific categories.<br>
+                    <br>
+                    2. Types of government pension plans in India:<br>
+                    a) Central Government Pension: This plan is available for employees who have joined the Central Government prior to 2004. It provides a defined benefit based on the employee's years of service and average salary.<br>
+                    b) Defense Pension: This plan is available for personnel serving in the Defense forces. It provides a defined benefit based on the employee's rank, length of service, and average salary.<br>
+                    c) State Government Pension: Each state in India has its own pension plan for its employees. The benefits and eligibility criteria may vary from state to state.<br>
+                    <br>
+                    3. Evaluating government pension plans:<br>
+                    When evaluating government pension plans, consider the following factors:<br>
+                    a) Eligibility: Check if you are eligible for the specific government pension plan based on your employment category.<br>
+                    b) Benefit Calculation: Understand how the pension benefits are calculated, such as years of service, salary, and other factors.<br>
+                    c) Cost of Living Adjustments: Determine if the pension benefits are adjusted for inflation to maintain your purchasing power over time.<br>
+                    d) Survivor Benefits: Assess if the plan provides benefits to your spouse or dependents in case of your death.<br>
+                    e) Portability: Consider if the pension benefits can be transferred or continued if you switch jobs or relocate.<br>
+                    <br>
+                    4. Comparing government pension plans:<br>
+                    To evaluate different government pension plans, you can compare the following aspects:<br>
+                    a) Benefit Amount: Compare the projected pension amount you would receive from each plan.<br>
+                    b) Vesting Period: Check the minimum years of service required to be eligible for pension benefits.<br>
+                    c) Cost of Living Adjustments: Compare how the plans adjust for inflation to ensure your income keeps pace with rising expenses.<br>
+                    d) Survivor Benefits: Assess the benefits provided to your spouse or dependents in case of your death.<br>
+                    e) Flexibility: Consider the flexibility to commute a portion of the pension into a lump sum or opt for a higher pension amount.<br>
+                    <br>
+                    5. Making an informed decision:<br>
+                    To make an informed decision about government pension plans, consider your personal financial goals, risk tolerance, and other sources of retirement income. Evaluate the benefits and limitations of each plan and choose the one that aligns with your needs and preferences.
                 </p>
             </div>
             <!-- Sub Lesson 3 Content -->
             <div id="sublesson3">
                 <h2>Maximizing retirement benefits through Indian social security</h2>
                 <p>
-
+                    In this sub-lesson, we will discuss how to maximize retirement benefits through the Indian social security system. The Indian social security system includes various schemes and programs that provide financial support to individuals after retirement. By understanding and utilizing these programs effectively, individuals can enhance their post-retirement income.<br>
+                    <br>
+                    1. National Pension System (NPS):<br>
+                    The National Pension System is a voluntary retirement savings scheme introduced by the Indian government. It allows individuals to contribute towards their retirement savings and receive a pension after retirement. By contributing regularly to the NPS, individuals can accumulate a substantial retirement corpus and receive a steady income in their post-retirement years.<br>
+                    <br>
+                    2. Employee Provident Fund (EPF):<br>
+                    The Employee Provident Fund is a mandatory savings scheme for employees in India. Both the employer and the employee contribute a certain percentage of the employee's salary towards the EPF. The accumulated amount in the EPF account can be withdrawn after retirement, providing a source of income during the post-retirement period.<br>
+                    <br>
+                    3. Atal Pension Yojana (APY):<br>
+                    The Atal Pension Yojana is a government-backed pension scheme targeted towards the unorganized sector. It aims to provide a fixed pension amount to individuals after retirement. By enrolling in the APY and making regular contributions, individuals can secure a reliable source of income in their post-retirement years.<br>
+                    <br>
+                    4. Senior Citizen Savings Scheme (SCSS):<br>
+                    The Senior Citizen Savings Scheme is a savings scheme specifically designed for senior citizens. It offers attractive interest rates and provides a regular income stream to individuals above the age of 60. By investing in the SCSS, individuals can maximize their retirement benefits and ensure a comfortable post-retirement life.<br>
+                    <br>
+                    5. Pradhan Mantri Vaya Vandana Yojana (PMVVY):<br>
+                    The Pradhan Mantri Vaya Vandana Yojana is a pension scheme for senior citizens. It provides a guaranteed pension income for a period of 10 years. By opting for the PMVVY, individuals can secure a fixed income during their post-retirement years and mitigate the risk of financial uncertainty.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
