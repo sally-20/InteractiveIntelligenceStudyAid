@@ -91,8 +91,108 @@
                 [array[i], array[j]] = [array[j], array[i]];
             }
         }
-        const questions = [
-            
+        const questions = [const optionsTradingRiskQuestions = [
+            {
+                question: "Which risk refers to the risk of price fluctuations in the underlying asset?",
+                options: ["Market Risk", "Volatility Risk", "Time Decay Risk", "Liquidity Risk"],
+                answer: "Market Risk"
+            },
+            {
+                question: "Which risk is associated with the volatility of the underlying asset?",
+                options: ["Market Risk", "Volatility Risk", "Time Decay Risk", "Credit Risk"],
+                answer: "Volatility Risk"
+            },
+            {
+                question: "Which risk is associated with the passage of time?",
+                options: ["Market Risk", "Volatility Risk", "Time Decay Risk", "Liquidity Risk"],
+                answer: "Time Decay Risk"
+            },
+            {
+                question: "Which risk refers to the risk of not being able to buy or sell options at desired prices?",
+                options: ["Market Risk", "Volatility Risk", "Time Decay Risk", "Liquidity Risk"],
+                answer: "Liquidity Risk"
+            },
+            {
+                question: "Which risk is associated with the counterparty defaulting on their obligations?",
+                options: ["Market Risk", "Volatility Risk", "Time Decay Risk", "Credit Risk"],
+                answer: "Credit Risk"
+            },
+        ];const optionsTradingCalculationQuestions = [
+            {
+                question: "What is the upfront cost of an options contract?",
+                options: [
+                    "The premium paid to purchase the contract",
+                    "The difference between the stock price and the strike price",
+                    "The total gain from exercising the option",
+                    "The total loss from not exercising the option"
+                ],
+                answer: "The premium paid to purchase the contract"
+            },
+            {
+                question: "How is the total gain calculated in options trading?",
+                options: [
+                    "By subtracting the upfront cost from the difference between the stock price and the strike price",
+                    "By adding the upfront cost to the difference between the stock price and the strike price",
+                    "By multiplying the upfront cost by the stock price",
+                    "By dividing the upfront cost by the strike price"
+                ],
+                answer: "By subtracting the upfront cost from the difference between the stock price and the strike price"
+            },
+            {
+                question: "What is the total loss in options trading?",
+                options: [
+                    "The upfront cost of the options contract",
+                    "The difference between the stock price and the strike price",
+                    "The total gain from exercising the option",
+                    "The total gain from not exercising the option"
+                ],
+                answer: "The upfront cost of the options contract"
+            },
+            {
+                question: "What factors determine the upfront cost of an options contract?",
+                options: [
+                    "The current price of the underlying asset, the strike price, the time to expiration, and market volatility",
+                    "The total gain from exercising the option",
+                    "The total loss from not exercising the option",
+                    "The difference between the stock price and the strike price"
+                ],
+                answer: "The current price of the underlying asset, the strike price, the time to expiration, and market volatility"
+            },
+            {
+                question: "Why is it important to analyze the potential risks and rewards before entering into an options trade?",
+                options: [
+                    "To determine the upfront cost of the options contract",
+                    "To calculate the total gain from exercising the option",
+                    "To calculate the total loss from not exercising the option",
+                    "To make informed decisions and minimize potential losses"
+                ],
+                answer: "To make informed decisions and minimize potential losses"
+            },
+            {
+                question: "Which option strategy involves selling call options against existing stock holdings?",
+                options: ["Covered calls", "Protective puts", "Vertical spreads", "Butterfly spreads"],
+                answer: "Covered calls"
+            },
+            {
+                question: "What is the key to managing risk in options trading?",
+                options: ["Diversification", "Speculation", "Leverage", "Timing"],
+                answer: "Diversification"
+            },
+            {
+                question: "Which factor should be considered when evaluating potential option trades?",
+                options: ["Time decay", "Inflation rate", "Interest rates", "Dividend yield"],
+                answer: "Time decay"
+            },
+            {
+                question: "When should Indian investors make adjustments to their option strategies?",
+                options: ["When market conditions change", "When stock prices are high", "When there is high volatility", "When interest rates increase"],
+                answer: "When market conditions change"
+            },
+            {
+                question: "What should Indian investors do to understand the tax implications of options trading?",
+                options: ["Consult with a tax professional", "Ignore the tax implications", "Report profits as regular income", "Offset losses against other losses"],
+                answer: "Consult with a tax professional"
+            }
         ];
 
         const questionsCopy = [...questions];
@@ -333,21 +433,73 @@
             <div id="sublesson1">
                 <h2>Risk assessment in Indian options trading</h2>
                 <p>
+                    In this sub-lesson, we will discuss the concept of risk assessment in Indian options trading. Options trading involves a certain level of risk, and it is important for traders to understand and assess these risks before making any investment decisions.<br>
                     <br>
+                    1. Market Risk:<br>
+                    Market risk refers to the risk of price fluctuations in the underlying asset. In options trading, the value of an option is directly influenced by the price movement of the underlying asset. Traders need to assess the market risk by analyzing the historical price data, market trends, and other relevant factors.<br>
+                    <br>
+                    2. Volatility Risk:<br>
+                    Volatility risk is the risk associated with the volatility of the underlying asset. Higher volatility increases the chances of large price swings, which can be both advantageous and disadvantageous for options traders. Traders need to assess the volatility risk by analyzing the historical volatility of the asset and considering any upcoming events or news that may impact volatility.<br>
+                    <br>
+                    3. Time Decay Risk:<br>
+                    Time decay risk, also known as theta risk, is the risk associated with the passage of time. As options approach their expiration date, their value tends to decrease due to time decay. Traders need to assess the time decay risk by considering the time remaining until expiration and the impact of time decay on the option's value.<br>
+                    <br>
+                    4. Liquidity Risk:<br>
+                    Liquidity risk refers to the risk of not being able to buy or sell options at desired prices due to low trading volume or lack of market participants. Traders need to assess the liquidity risk by analyzing the trading volume and open interest of the options they are interested in trading.<br>
+                    <br>
+                    5. Credit Risk:<br>
+                    Credit risk is the risk associated with the counterparty defaulting on their obligations. In options trading, this risk arises when trading options with a broker or other financial institutions. Traders need to assess the credit risk by considering the creditworthiness and reputation of the counterparty.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Calculating option trading costs and returns in India</h2>
                 <p>
+                    In this sub-lesson, we will learn how to calculate the costs and returns associated with options trading in India. Options trading involves buying and selling options contracts, which give the holder the right to buy or sell an underlying asset at a predetermined price within a specified time period.<br>
                     <br>
+                    1. Upfront Cost:<br>
+                    The upfront cost of an options contract is the premium paid to purchase the contract. This premium is determined by various factors such as the current price of the underlying asset, the strike price, the time to expiration, and market volatility. It is important to consider the upfront cost when entering into an options trade, as it directly affects the overall profitability of the trade.<br>
+                    <br>
+                    2. Total Gain:<br>
+                    The total gain from an options trade depends on the price of the underlying asset at the expiration of the contract. If the stock price in September is higher than the strike price, the option holder can exercise the option and make a profit. The total gain is calculated by subtracting the upfront cost from the difference between the stock price and the strike price.<br>
+                    <br>
+                    3. Total Loss:<br>
+                    On the other hand, if the stock price in September is lower than the strike price, the option holder may choose not to exercise the option, resulting in a loss. The total loss is equal to the upfront cost of the options contract.<br>
+                    <br>
+                    Calculating the costs and returns of options trading requires a thorough understanding of the underlying asset, market conditions, and the factors that affect option prices. It is important to carefully analyze the potential risks and rewards before entering into any options trade.
                 </p>
             </div>
             <!-- Sub Lesson 3 Content -->
             <div id="sublesson3">
                 <h2>Balancing option strategies for Indian investors</h2>
                 <p>
+                    In this sub-lesson, we will discuss how Indian investors can balance their option strategies to manage risk and maximize rewards. Options trading can be a powerful tool for investors to hedge their positions, generate income, and speculate on market movements. However, it is important to understand the risks involved and implement strategies that align with individual risk tolerance and investment goals.<br>
                     <br>
+                    1. Understanding Option Strategies:<br>
+                    - Indian investors can utilize various option strategies such as covered calls, protective puts, and spreads to balance risk and reward.<br>
+                    - Covered calls involve selling call options against existing stock holdings to generate income and limit potential losses.<br>
+                    - Protective puts involve buying put options to protect against potential downside risk in a stock position.<br>
+                    - Spreads, such as vertical spreads and butterfly spreads, can be used to limit risk and potential losses while still allowing for potential gains.<br>
+                    <br>
+                    2. Risk Management:<br>
+                    - Indian investors should carefully assess their risk tolerance and investment objectives before implementing option strategies.<br>
+                    - It is important to understand the potential risks associated with each strategy and have a plan in place to manage and mitigate those risks.<br>
+                    - Diversification is key to managing risk. Investors should consider spreading their option positions across different stocks or sectors to reduce exposure to any single stock or market event.<br>
+                    <br>
+                    3. Maximizing Rewards:<br>
+                    - Indian investors can maximize their rewards in options trading by selecting strategies that align with their market outlook and investment goals.<br>
+                    - It is important to conduct thorough research and analysis to identify potential opportunities and select the most appropriate strategy.<br>
+                    - Investors should also consider factors such as time decay, implied volatility, and liquidity when evaluating potential option trades.<br>
+                    <br>
+                    4. Monitoring and Adjusting Strategies:<br>
+                    - Indian investors should regularly monitor their option positions and make adjustments as needed.<br>
+                    - Market conditions and individual stock performance can change, requiring adjustments to option strategies.<br>
+                    - It is important to have a plan in place for exiting or adjusting positions based on predetermined criteria or market events.<br>
+                    <br>
+                    5. Tax Implications:<br>
+                    - Indian investors should be aware of the tax implications of options trading.<br>
+                    - Profits from options trading are subject to capital gains tax, and losses can be offset against other capital gains.<br>
+                    - It is advisable to consult with a tax professional to understand the specific tax rules and regulations related to options trading in India.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
