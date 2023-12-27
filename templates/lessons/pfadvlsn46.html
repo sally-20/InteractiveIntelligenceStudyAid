@@ -92,8 +92,158 @@
             }
         }
         const questions = [
-            
-        ];
+            {
+                question: "What is the first step in planning for your child's education expenses?",
+                options: [
+                    "a) Setting realistic goals",
+                    "b) Understanding the current cost of education",
+                    "c) Balancing risk and return",
+                    "d) Monitoring and adjusting your plan"
+                ],
+                answer: "b) Understanding the current cost of education"
+            },
+            {
+                question: "How can you estimate the future cost of education?",
+                options: [
+                    "a) Assume a moderate inflation rate",
+                    "b) Multiply the current cost by 12",
+                    "c) Divide the projected future cost by the number of years",
+                    "d) Choose lower-risk investments"
+                ],
+                answer: "a) Assume a moderate inflation rate"
+            },
+            {
+                question: "What should you consider when setting goals for saving?",
+                options: [
+                    "a) Your child's age",
+                    "b) Your risk tolerance",
+                    "c) The current cost of education",
+                    "d) The number of months left until the goal needs to be achieved"
+                ],
+                answer: "b) Your risk tolerance"
+            },
+            {
+                question: "What should you do if the goal is approaching in the next few years?",
+                options: [
+                    "a) Choose higher-risk investments",
+                    "b) Increase your monthly savings",
+                    "c) Adjust your investment strategy",
+                    "d) Be flexible and adapt your plan"
+                ],
+                answer: "c) Adjust your investment strategy"
+            },
+            {
+                question: "Why is it important to monitor and adjust your plan?",
+                options: [
+                    "a) To protect your savings",
+                    "b) To stay on track towards your goal",
+                    "c) To take advantage of higher returns",
+                    "d) To estimate the future cost accurately"
+                ],
+                answer: "b) To stay on track towards your goal"
+            },
+        ];const investmentOptionsQuestions = [
+            {
+                question: "Which investment option offers tax benefits and a fixed interest rate?",
+                options: [
+                    "a) Public Provident Fund (PPF)",
+                    "b) Sukanya Samriddhi Yojana (SSY)",
+                    "c) Education Loans",
+                    "d) Mutual Funds"
+                ],
+                answer: "a) Public Provident Fund (PPF)"
+            },
+            {
+                question: "Which savings scheme is specifically designed for the girl child?",
+                options: [
+                    "a) Public Provident Fund (PPF)",
+                    "b) Sukanya Samriddhi Yojana (SSY)",
+                    "c) Education Loans",
+                    "d) Mutual Funds"
+                ],
+                answer: "b) Sukanya Samriddhi Yojana (SSY)"
+            },
+            {
+                question: "Which investment option provides the opportunity to invest in a diversified portfolio of stocks and bonds?",
+                options: [
+                    "a) Public Provident Fund (PPF)",
+                    "b) Sukanya Samriddhi Yojana (SSY)",
+                    "c) Education Loans",
+                    "d) Mutual Funds"
+                ],
+                answer: "d) Mutual Funds"
+            },
+            {
+                question: "Which investment-cum-insurance plan offers education-specific features and benefits?",
+                options: [
+                    "a) Public Provident Fund (PPF)",
+                    "b) Sukanya Samriddhi Yojana (SSY)",
+                    "c) Education Loans",
+                    "d) Unit Linked Insurance Plans (ULIPs)"
+                ],
+                answer: "d) Unit Linked Insurance Plans (ULIPs)"
+            },
+            {
+                question: "Which investment option requires repayment with interest after the completion of the course?",
+                options: [
+                    "a) Public Provident Fund (PPF)",
+                    "b) Sukanya Samriddhi Yojana (SSY)",
+                    "c) Education Loans",
+                    "d) Mutual Funds"
+                ],
+                answer: "c) Education Loans"
+            },
+            {
+                question: "Which section of the Income Tax Act allows a deduction on the amount invested in specified financial instruments for education savings?",
+                options: [
+                    "a) Section 80C",
+                    "b) Section 80D",
+                    "c) Section 80E",
+                    "d) Section 80G"
+                ],
+                answer: "a) Section 80C"
+            },
+            {
+                question: "Which scheme is specifically designed for the girl child's education and marriage expenses?",
+                options: [
+                    "a) Sukanya Samriddhi Yojana (SSY)",
+                    "b) Public Provident Fund (PPF)",
+                    "c) National Savings Certificate (NSC)",
+                    "d) Education Loan"
+                ],
+                answer: "a) Sukanya Samriddhi Yojana (SSY)"
+            },
+            {
+                question: "What is the maximum deduction limit under Section 80C for education savings?",
+                options: [
+                    "a) Rs. 50,000",
+                    "b) Rs. 1 lakh",
+                    "c) Rs. 1.5 lakh",
+                    "d) Rs. 2 lakh"
+                ],
+                answer: "c) Rs. 1.5 lakh"
+            },
+            {
+                question: "Which savings scheme offers tax-free returns on both the interest earned and the maturity amount?",
+                options: [
+                    "a) National Savings Certificate (NSC)",
+                    "b) Public Provident Fund (PPF)",
+                    "c) Sukanya Samriddhi Yojana (SSY)",
+                    "d) Education Loan"
+                ],
+                answer: "b) Public Provident Fund (PPF)"
+            },
+            {
+                question: "How long can you claim a deduction for education loan interest under Section 80E?",
+                options: [
+                    "a) 5 years",
+                    "b) 8 years",
+                    "c) 10 years",
+                    "d) No time limit"
+                ],
+                answer: "b) 8 years"
+            }
+        ];        
 
         const questionsCopy = [...questions];
         let currentQuestionIndex = 0;
@@ -333,21 +483,78 @@
             <div id="sublesson1">
                 <h2>Indian education cost analysis and goal setting</h2>
                 <p>
+                    In this lesson, we will discuss the financial considerations for planning and saving for your children's education expenses in India. We will focus on analyzing the current cost of education and setting realistic goals for the future.<br>
                     <br>
+                    1. Understanding the current cost of education:<br>
+                    To start planning for your children's education, it is important to know the current cost of education in India. This includes tuition fees, accommodation, books, and other expenses. The cost of education varies depending on the level of education and the institution. For example, an MBA from a decent college currently costs around Rs. 8-10 lakhs.<br>
+                    <br>
+                    2. Projecting the future cost of education:<br>
+                    Since education costs tend to increase over time due to inflation, it is important to project the future cost of education. You can assume a moderate inflation rate of around 8% and use it to estimate the future cost. For example, if the current cost of education is Rs. 10 lakhs and you want to plan for your child's post-graduation in 15 years, the projected future cost would be around Rs. 30 lakhs.<br>
+                    <br>
+                    3. Setting realistic goals:<br>
+                    Once you have estimated the future cost of education, you can set realistic goals for saving. Consider your financial situation and determine how much you can save each month towards your child's education. Divide the projected future cost by the number of months left until the goal needs to be achieved to determine the monthly savings required.<br>
+                    <br>
+                    4. Balancing risk and return:<br>
+                    When planning for your child's education, it is important to consider your risk tolerance. If you have a longer time horizon, you can afford to take on higher-risk investments that have the potential for higher returns. However, if the goal is approaching in the next few years, it is advisable to choose lower-risk investments to protect your savings.<br>
+                    <br>
+                    5. Monitoring and adjusting your plan:<br>
+                    Regularly monitor your savings and investment progress towards your child's education goal. Adjust your savings and investment strategy as needed to stay on track. Keep in mind that circumstances may change, and it is important to be flexible and adapt your plan accordingly.
                 </p>
             </div>    
             <!-- Sub Lesson 2 Content -->
             <div id="sublesson2">
                 <h2>Education savings plans and investment vehicles in India</h2>
                 <p>
+                    In this lesson, we will discuss various education savings plans and investment vehicles available in India to help you save for your children's education expenses. It is important to start planning early to ensure that you have enough funds when the time comes.<br>
                     <br>
+                    1. Public Provident Fund (PPF):<br>
+                    - PPF is a popular long-term investment option in India.<br>
+                    - It offers tax benefits and a fixed interest rate.<br>
+                    - You can open a PPF account for your child and contribute regularly.<br>
+                    - The funds can be used for education expenses when your child reaches the age of 18.<br>
+                    <br>
+                    2. Sukanya Samriddhi Yojana (SSY):<br>
+                    - SSY is a government-backed savings scheme for the girl child.<br>
+                    - It offers attractive interest rates and tax benefits.<br>
+                    - The funds can be used for education and marriage expenses.<br>
+                    - The account can be opened in the name of a girl child below the age of 10.<br>
+                    <br>
+                    3. Education Loans:<br>
+                    - Education loans are offered by banks and financial institutions.<br>
+                    - They provide funds to cover the cost of education.<br>
+                    - The loan needs to be repaid with interest after the completion of the course.<br>
+                    - It is important to compare interest rates and repayment terms before choosing a loan.<br>
+                    <br>
+                    4. Mutual Funds:<br>
+                    - Mutual funds offer the opportunity to invest in a diversified portfolio of stocks and bonds.<br>
+                    - They can provide higher returns compared to traditional savings accounts.<br>
+                    - There are specific mutual funds designed for education planning.<br>
+                    - It is important to consider the risk profile and investment horizon before investing.<br>
+                    <br>
+                    5. Unit Linked Insurance Plans (ULIPs):<br>
+                    - ULIPs are investment-cum-insurance plans.<br>
+                    - They offer the dual benefit of investment and life insurance coverage.<br>
+                    - Some ULIPs have education-specific features and benefits.<br>
+                    - It is important to understand the charges and returns associated with ULIPs.
                 </p>
             </div>
             <!-- Sub Lesson 3 Content -->
             <div id="sublesson3">
                 <h2>Tax benefits and incentives for education savings in India</h2>
                 <p>
+                    In this lesson, we will discuss the tax benefits and incentives available in India for education savings. Saving for your child's education is an important financial goal, and taking advantage of tax benefits can help you maximize your savings. Let's explore the various tax benefits and incentives for education savings in India.<br>
                     <br>
+                    1. Section 80C: Under this section, you can claim a deduction of up to Rs. 1.5 lakh on the amount invested in specified financial instruments, including certain education savings schemes. This deduction can be claimed by the parent or legal guardian of the child.<br>
+                    <br>
+                    2. Sukanya Samriddhi Yojana (SSY): This scheme is specifically designed for the girl child's education and marriage expenses. Contributions made to the SSY account are eligible for a deduction under Section 80C. The interest earned and the maturity amount are also tax-free.<br>
+                    <br>
+                    3. Education Loan Interest: If you take an education loan to finance your child's higher education, the interest paid on the loan is eligible for a deduction under Section 80E. There is no upper limit on the deduction, and it can be claimed for a maximum of 8 years or until the interest is fully repaid, whichever is earlier.<br>
+                    <br>
+                    4. National Savings Certificate (NSC): NSC is a government-backed savings scheme that offers a fixed interest rate. The interest earned on NSC is taxable, but it qualifies for a deduction under Section 80C.<br>
+                    <br>
+                    5. Public Provident Fund (PPF): PPF is a long-term savings scheme that offers tax-free returns. The contributions made to PPF are eligible for a deduction under Section 80C. The interest earned and the maturity amount are also tax-free.<br>
+                    <br>
+                    Now, let's test your understanding with some multiple-choice questions.
                 </p>
             </div>
             <center><button id="startQuizBtn" onclick="openQuizModal()">Take Quiz</button></center>
